@@ -1,0 +1,12 @@
+---
+:development: &defaults
+  :adapter: postgresql
+  :database: as2008_development
+
+:test:
+  <<: *defaults
+  :database: as2008_test
+
+:production:
+  <<: *defaults
+  :database: as2008_production
