@@ -1,0 +1,6 @@
+*.swp
+*.pid
+*.css
+*.tmproj
+tags
+log/*.*
