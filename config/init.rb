@@ -1,3 +1,4 @@
+require "merb_rspec"
 # Make the app's "gems" directory a place where gems are loaded from
 Gem.clear_paths
 Gem.path.unshift(Merb.root / "gems")
@@ -31,6 +32,8 @@ use_orm :datamapper
 use_test :rspec
 
 ### Add your other dependencies here
+
+#dependencies "merb_helpers"
 
 # These are some examples of how you might specify dependencies.
 # 

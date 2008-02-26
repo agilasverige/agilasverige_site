@@ -1,0 +1,12 @@
+Story: Attendant signs up for conference
+
+  As a prospective attendant
+  I want to signup for the conference
+  So that the organizers know I am coming 
+  
+  Scenario: seeing all fields
+  
+    When prospective attendant is on signup page
+    Then he can see fields for first_name, last_name, email, telephone_number, company, street_address, zipcode, postal_address and country
+    
+  
