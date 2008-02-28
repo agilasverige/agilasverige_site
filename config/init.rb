@@ -1,4 +1,3 @@
-require "merb_rspec"
 # Make the app's "gems" directory a place where gems are loaded from
 Gem.clear_paths
 Gem.path.unshift(Merb.root / "gems")
@@ -32,8 +31,9 @@ use_orm :datamapper
 use_test :rspec
 
 ### Add your other dependencies here
+dependency "haml"
 
-#dependencies "merb_helpers"
+dependency "merb_helpers"
 
 # These are some examples of how you might specify dependencies.
 # 
@@ -45,6 +45,6 @@ use_test :rspec
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:
-
+  require 'merb-haml'
   # dependency "magic_admin" # this gem uses the app's model classes
 end

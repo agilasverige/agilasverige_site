@@ -1,5 +1,5 @@
 class Attendants < Application
-  # provides :xml, :yaml, :js
+  provides :html
   
   def index
     @attendants = Attendant.all

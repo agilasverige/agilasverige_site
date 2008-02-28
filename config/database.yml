@@ -2,6 +2,7 @@
 :development: &defaults
   :adapter: postgresql
   :database: as2008_development
+  :username: mahnve
 
 :test:
   <<: *defaults
