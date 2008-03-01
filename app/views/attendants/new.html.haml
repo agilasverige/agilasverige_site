@@ -1,23 +1,30 @@
-%h1
-- form_for(:attendant, :action => :create) do
-  %fieldset
-    %legend Anmäl dig här:
-    %p
-      = text_control :first_name, :label => "Förnamn"
-    %p
-      = text_control :last_name, :label => "Efternamn"
-    %p
-      = text_control :email, :label => "E-postadress"
-    %p
-      = text_control :company, :label => "Företag"
-    %p
-      = text_control :street_address, :label => "Gatuadress"
-    %p
-      = text_control :zip_code, :label => "Postnummer"
-    %p
-      = text_control :postal_address, :label => "Postadress"
-    %p
-      = text_control :country, :label => "Land"
-    %p
-      = text_control :telephone_number, :label => "Telefonnummer"
-    = submit_button "Anmäl"
+#bd
+  .yui-gc 
+    %div{:class => "yui-u first"} 
+      %p
+        Välkommen att anmäla dig till Agila Sverige 2008. När vi fått dina personuppgifter kommer vi att skicka en faktura till den adress du uppgivit. Priset för konferensen är SEK500 fram till och med den 30 april, därefter är priset SEK1000.
+      - form_for(:attendant, :action => :create) do
+        %fieldset
+          %legend 
+            %span Personuppgifter:
+          %p
+            = text_control :first_name, :label => "Förnamn"
+          %p
+            = text_control :last_name, :label => "Efternamn"
+          %p
+            = text_control :email, :label => "E-postadress"
+          %p
+            = text_control :company, :label => "Företag"
+          %p
+            = text_control :street_address, :label => "Gatuadress"
+          %p
+            = text_control :zip_code, :label => "Postnummer"
+          %p
+            = text_control :postal_address, :label => "Postadress"
+          %p
+            = text_control :country, :label => "Land"
+          %p
+            = text_control :telephone_number, :label => "Telefonnummer"
+          = submit_button "Anmäl"
+    .yui-u
+      %h2 Sponsorer
