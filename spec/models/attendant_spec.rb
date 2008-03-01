@@ -21,6 +21,11 @@ describe Attendant do
     @attendant.email.should == "em@il.com"
   end
   
+  it "should have c/o address" do
+    @attendant.co_address = "owner"
+    @attendant.co_address.should == "owner"
+  end
+
   it "should have a street address" do
     @attendant.street_address = "address"
     @attendant.street_address.should == "address"
@@ -41,15 +46,16 @@ describe Attendant do
     @attendant.country.should == "Sweden"
   end
   
-  it "should have a company" do
-    @attendant.company = "com"
-    @attendant.company.should == "com"
+  it "should have a organization" do
+    @attendant.organization = "com"
+    @attendant.organization.should == "com"
   end
   
   it "should have a telephone number" do
     @attendant.telephone_number = "000"
     @attendant.telephone_number.should == "000"
   end
-    
+  
+  
 
 end
