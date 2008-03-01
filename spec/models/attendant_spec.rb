@@ -6,7 +6,9 @@ describe Attendant do
     @attendant = Attendant.new
   end
 
-  it "should have first name" do
+  it "should require a first name" do
+    @attendant.save.should == false
+    @attendant.errors.full_messages.should include("måste fyllas i")
     @attendant.first_name = "first"
     @attendant.first_name.should == "first"
   end
@@ -55,7 +57,5 @@ describe Attendant do
     @attendant.telephone_number = "000"
     @attendant.telephone_number.should == "000"
   end
-  
-  
 
 end

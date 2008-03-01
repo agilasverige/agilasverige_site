@@ -3,7 +3,7 @@
     %div{:class => "yui-u first"} 
       %p
         Välkommen att anmäla dig till Agila Sverige 2008. När vi fått dina personuppgifter kommer vi att skicka en faktura till den adress du uppgivit. Priset för konferensen är SEK500 fram till och med den 30 april, därefter är priset SEK1000.
-      - form_for(@attendant) do
+      - form_for(@attendant, :action => url('attendants')) do
         %fieldset
           %legend 
             %span Personuppgifter:

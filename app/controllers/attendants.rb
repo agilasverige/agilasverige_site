@@ -30,7 +30,7 @@ class Attendants < Application
     if @attendant.save
       redirect url(:attendant, @attendant)
     else
-      render :action => :new
+      redirect url(:thanks_for_signing_up)
     end
   end
 

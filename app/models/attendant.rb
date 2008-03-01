@@ -1,6 +1,6 @@
 class Attendant < DataMapper::Base
 
-  validates_presence_of :first_name, :last_name, :street_address, :postal_address
+  validates_presence_of :first_name, :last_name, :street_address, :postal_address, :message => "måste fyllas i"
 
   property :first_name, :string
   property :last_name, :string

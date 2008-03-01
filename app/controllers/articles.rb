@@ -4,4 +4,8 @@ class Articles < Application
     render
   end
   
+  def thanks
+    render
+  end
+  
 end

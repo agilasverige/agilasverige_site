@@ -29,6 +29,7 @@ Merb::Router.prepare do |r|
   # routes, you may want to comment/remove this line to prevent
   # clients from calling your create or destroy actions with a GET
   r.match('/').to(:controller => 'articles', :action => 'index')
+  r.match('/tack').to(:controller => 'articles', :action => 'thanks').name(:thanks_for_signing_up)
   r.resources :attendants
   r.default_routes
   
