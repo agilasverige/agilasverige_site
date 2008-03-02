@@ -5,14 +5,20 @@
 !text = #454545
 !background = #FFF
 
+
 body 
   :font-family Helvetica
   :color = !text
-p
+p, table, tr, td, th
   :font-size 100%
-  :padding-left 10px
+  :margin-left 10px
   :margin-bottom 20px
   :margin-top 10px
+
+tr
+  :border-bottom-style dotted
+  :border-bottom-width thin
+  :border-bottom-color !green
 h1
   :font-size 197%
   span
@@ -25,6 +31,10 @@ a
   :text-decoration none
   &:hover
     :text-decoration underline
+em
+  :background-color = !yellow
+  :padding 5px
+  :font-weight bold
 
 legend span
   :margin-left 10px
@@ -36,6 +46,11 @@ legend span
   :border-top-style solid
   :border-top-width thin
   :border-top-color !green
+
+.part
+  :border-bottom-color = !green
+  :border-bottom-style solid
+  :border-bottom-width thin
 
 label
   :float left

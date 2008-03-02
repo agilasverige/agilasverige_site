@@ -1,5 +1,7 @@
 class Attendant < DataMapper::Base
 
+  has_many :speaking_proposals
+
   validates_presence_of :first_name, :last_name, :street_address, :postal_address, :message => "måste fyllas i"
 
   property :first_name, :string

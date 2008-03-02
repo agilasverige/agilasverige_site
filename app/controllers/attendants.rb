@@ -15,6 +15,7 @@ class Attendants < Application
   def new
     only_provides :html
     @attendant = Attendant.new
+    @speaking_proposal = SpeakingProposal.new
     render
   end
 
