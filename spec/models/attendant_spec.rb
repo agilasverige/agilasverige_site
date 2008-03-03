@@ -57,5 +57,10 @@ describe Attendant do
     @attendant.telephone_number = "000"
     @attendant.telephone_number.should == "000"
   end
+  
+  it "should have a option to want to speak" do
+    @attendant.wants_to_speak = true
+    @attendant.wants_to_speak.should == true
+  end
 
 end

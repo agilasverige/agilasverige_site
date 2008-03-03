@@ -14,4 +14,5 @@ class Attendant < DataMapper::Base
   property :country, :string
   property :organization, :string
   property :telephone_number, :string
+  property :wants_to_speak, :boolean
 end
