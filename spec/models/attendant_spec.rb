@@ -1,6 +1,6 @@
 require File.join( File.dirname(__FILE__), "..", "spec_helper" )
 
-describe Attendant do
+describe "An regular attendant", Attendant do
 
   before :each do
     @attendant = Attendant.new
@@ -63,4 +63,25 @@ describe Attendant do
     @attendant.wants_to_speak.should == true
   end
 
+
+  it "has no speaking proposals" do
+    @attendant.speaking_proposals.size.should == 0
+  end
 end
+
+describe "An attendant with two speaking proposals" do
+
+  it "should be a prospective speaker"
+
+  it "should have two speaking proposals"
+end
+
+describe "An attendant with accepted proposals" do
+   it "should be a speaker" 
+end
+
+describe "An attendant with a not accepted proposal" do
+  
+  it "should be an attendant???"
+    
+  end
