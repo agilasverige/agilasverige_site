@@ -11,7 +11,7 @@
           öppna ytor för diskussion (Open Space).
         = partial 'shared/prices'
         %p.register
-          %a{:href => "#{url(:new_attendant)}"} Jag vill anmäla mig till Agila Sverige!
+          %a{:href => "#{url(:register)}"} Jag vill anmäla mig till Agila Sverige!
       #speakerinfo
         %h2 Tala på Agila Sverige 2008!
         %p
@@ -28,7 +28,7 @@
           exempelvis vara fallstudier, handla om utmaningar kring införandet av 
           praxis eller erfarenheter av verktyg och metoder.
         %p.register
-          %a{:href => "#{url(:new_attendant)}"} Jag vill tala på Agila Sverige!
+          %a{:href => "#{url(:register)}?speaker=true"} Jag vill tala på Agila Sverige!
     #sponsors.yui-u
       = partial 'shared/sponsors'
 #ft

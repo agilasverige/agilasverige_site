@@ -9,6 +9,7 @@ $LOAD_PATH.unshift(Merb.root / "lib")
 Merb::Config.use do |c|
   c[:session_secret_key]  = 'f6214d6a4702ff061096fe46736093d36e4e6acf'
   c[:session_store] = 'cookie'
+  c[:use_mutex] = false
 end  
 
 ### Merb doesn't come with database support by default.  You need
