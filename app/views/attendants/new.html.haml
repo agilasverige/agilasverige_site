@@ -3,26 +3,7 @@
     %div{:class => "yui-u first"} 
       %p
         Välkommen att anmäla dig till Agila Sverige 2008. 
-      %table
-        %tr
-          %th
-          %th
-            Pris
-        %tr
-          %td
-            Till och med 1 maj:
-          %td
-            500 kronor
-        %tr
-          %td
-            Efter 1 maj:
-          %td
-            1000 kronor
-        %tr
-          %td
-            Talare:
-          %td
-            0 kronor
+      = partial 'shared/prices'
       %p
         När vi fått dina personuppgifter kommer vi att skicka en faktura till den adress du uppgivit.
       - form_for(@attendant, :action => url('attendants')) do
@@ -61,7 +42,7 @@
               = text_area_control :description, :label => "Beskrivning"
             
         = submit_button "Anmäl"
-    .yui-u
-      %h2 Sponsorer
+    .yui-u#sponsors
+      = partial 'shared/sponsors'
 #ft
-  footer
+  = partial 'shared/footer'

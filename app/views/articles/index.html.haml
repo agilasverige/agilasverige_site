@@ -9,13 +9,7 @@
           individer och interaktion dessa emellan. Den består av 
           förmiddagar med blixttal (Lightning talks) och eftermiddagar med 
           öppna ytor för diskussion (Open Space).
-        %p
-          Priset för två dagars konferens och konferensmiddag är 
-          %em
-            500 kronor 
-          fram till och med 1 maj 2008. Därefter är priset 1000 kronor. Talare går 
-          %em 
-            gratis 
+        = partial 'shared/prices'
         %p.register
           %a{:href => "#{url(:new_attendant)}"} Jag vill anmäla mig till Agila Sverige!
       #speakerinfo
@@ -36,13 +30,6 @@
         %p.register
           %a{:href => "#{url(:new_attendant)}"} Jag vill tala på Agila Sverige!
     #sponsors.yui-u
-      %h2 
-        Sponsorer
-        %p
-          %img{:src => '/images/tw_logo.png'}
-        %p
-          %img{:src => '/images/valtech_logo.png'}
-        %p
-          %img{:src => '/images/agical_logo.png'}
+      = partial 'shared/sponsors'
 #ft
-  %p &copy; 2008 Nätverket Agile Sweden 
+  = partial 'shared/footer'
