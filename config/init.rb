@@ -35,6 +35,7 @@ use_test :rspec
 dependency "haml"
 
 dependency "merb_helpers"
+dependency "merb_stories"
 
 # These are some examples of how you might specify dependencies.
 # 
