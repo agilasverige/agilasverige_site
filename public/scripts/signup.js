@@ -9,9 +9,9 @@ $(document).ready(function() {
 
   function toggleCheckBox() {
     if($('#attendant_wants_to_speak').attr('checked')) {
-      $('#speakingproposal').show('slow')
+      $('#speakingproposal').show()
     } else {
-      $('#speakingproposal').hide('slow')      
+      $('#speakingproposal').hide()      
     }    
   }
 });
