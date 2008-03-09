@@ -1,14 +1,14 @@
 #bd
-  .yui-gc 
-    %div{:class => "yui-u first"} 
+  .yui-gc
+    %div{:class => "yui-u first"}
       %p
-        Välkommen att anmäla dig till Agila Sverige 2008. 
+        Välkommen att anmäla dig till Agila Sverige 2008.
       = partial 'shared/prices'
       %p
         När vi fått dina personuppgifter kommer vi att skicka en faktura till den adress du uppgivit.
-      - form_for(@attendant, :action => url('attendants')) do
+      - form_for :attendant, :action => url('attendants') do
         %fieldset
-          %legend 
+          %legend
             %span Personuppgifter:
           %p
             = text_control :first_name, :label => "Förnamn"
@@ -35,7 +35,6 @@
               = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag", :checked => true
             - else
               = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag"
-            
         #speakingproposal
           %fieldset
             %legend
@@ -43,11 +42,10 @@
             %p
               Om du vill tala på Agila Sverige 2008, fyll i fälten nedan i samband med din anmälan. Om du vill anmäla fler förslag räcker det med att ange samma e-postadress vid de tillkommande förslagen.
             - fields_for @speaking_proposal do
-              %p  
+              %p
                 = text_control :title, :label => "Titel"
               %p
                 = text_area_control :description, :label => "Beskrivning"
-            
         = submit_button "Anmäl"
     .yui-u#sponsors
       = partial 'shared/sponsors'
