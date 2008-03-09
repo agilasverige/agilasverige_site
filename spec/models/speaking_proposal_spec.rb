@@ -16,5 +16,10 @@ describe SpeakingProposal do
     @speaking_proposal.description.should == "des"
     
   end
-
+  
+  it "should have a level" do
+    @speaking_proposal.level = 1
+    @speaking_proposal.level.should == 1
+  end
+  
 end
