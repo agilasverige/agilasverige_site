@@ -18,8 +18,8 @@ describe SpeakingProposal do
   end
   
   it "should have a level" do
-    @speaking_proposal.level = 1
-    @speaking_proposal.level.should == 1
+    @speaking_proposal.level = "lätt"
+    @speaking_proposal.level.should == "lätt"
   end
   
 end

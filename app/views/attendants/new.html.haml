@@ -46,6 +46,8 @@
                 = text_control :title, :label => "Titel"
               %p
                 = text_area_control :description, :label => "Beskrivning"
+              %p
+                = select_control :level, :label => "Nivå", :collection => ["Lätt", "Medel", "Svår"]
         = submit_button "Anmäl"
     .yui-u#sponsors
       = partial 'shared/sponsors'
