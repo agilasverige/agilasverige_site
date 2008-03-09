@@ -15,4 +15,19 @@ class Attendant < DataMapper::Base
   property :organization, :string
   property :telephone_number, :string
   property :wants_to_speak, :boolean
+  
+  def add_speaking_proposal(proposal)
+    speaking_proposals << proposal
+  end
+  
+  def prospective_speaker?
+    !speaking_proposals.empty?
+  end
+  
+  def speaker?
+    speaking_proposals.each do |proposal|
+      return true if proposal.accepted?
+    end
+  end
+  
 end

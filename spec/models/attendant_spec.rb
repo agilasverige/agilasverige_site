@@ -71,13 +71,35 @@ end
 
 describe "An attendant with two speaking proposals" do
 
-  it "should be a prospective speaker"
+  before(:each) do
+    @attendant = Attendant.new
+    @speaking_proposal1 = SpeakingProposal.new
+    @speaking_proposal2 = SpeakingProposal.new
+    @attendant.add_speaking_proposal @speaking_proposal1
+    @attendant.add_speaking_proposal @speaking_proposal2
+  end
 
-  it "should have two speaking proposals"
+  it "should be a prospective speaker" do
+    @attendant.prospective_speaker?.should == true
+  end
+  
+
+  it "should have two speaking proposals" do
+    @attendant.speaking_proposals.size.should == 2
+  end
 end
 
 describe "An attendant with accepted proposals" do
-   it "should be a speaker" 
+  before(:each) do
+    @attendant = Attendant.new
+    proposal = SpeakingProposal.new
+    proposal.stub!(:accepted?).and_return(true)
+    @attendant.add_speaking_proposal(proposal)
+  end
+    
+  it "should be a speaker" do
+    @attendant.speaker?.should == true
+  end
 end
 
 describe "An attendant with a not accepted proposal" do
