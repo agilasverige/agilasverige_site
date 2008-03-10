@@ -28,12 +28,14 @@ class Attendants < Application
   end
 
   def create
-    #TODO: Byt ut mot find_or_create och DM-magiska metoder 
     @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
-    @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal])
+    if(@attendant.wants_to_speak)
+      @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal]) 
+    end
     if @attendant.save
       redirect url(:thanks_for_signing_up)
     else
+      @speaking_proposal = SpeakingProposal.new
       render @attendant, :template => '/attendants/new.html'
     end
   end
