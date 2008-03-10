@@ -16,9 +16,6 @@ class Attendant < DataMapper::Base
   property :telephone_number, :string
   property :wants_to_speak, :boolean
   
-  def add_speaking_proposal(proposal)
-    speaking_proposals << proposal
-  end
   
   def prospective_speaker?
     !speaking_proposals.empty?

@@ -32,9 +32,9 @@
             = text_control :telephone_number, :label => "Telefonnummer"
           %p
             - if @wants_to_speak
-              = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag", :checked => true
+              = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag", :checked => true, :value => "1"
             - else
-              = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag"
+              = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag", :value => "1"
         #speakingproposal
           %fieldset
             %legend

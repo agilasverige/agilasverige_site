@@ -73,10 +73,8 @@ describe "An attendant with two speaking proposals" do
 
   before(:each) do
     @attendant = Attendant.new
-    @speaking_proposal1 = SpeakingProposal.new
-    @speaking_proposal2 = SpeakingProposal.new
-    @attendant.add_speaking_proposal @speaking_proposal1
-    @attendant.add_speaking_proposal @speaking_proposal2
+    @attendant.speaking_proposals.create :title => "hej"
+    @attendant.speaking_proposals.create :title  => "hej"
   end
 
   it "should be a prospective speaker" do
@@ -92,9 +90,7 @@ end
 describe "An attendant with accepted proposals" do
   before(:each) do
     @attendant = Attendant.new
-    proposal = SpeakingProposal.new
-    proposal.stub!(:accepted?).and_return(true)
-    @attendant.add_speaking_proposal(proposal)
+    @attendant.speaking_proposals.create :title => "hej", :accepted => true
   end
     
   it "should be a speaker" do

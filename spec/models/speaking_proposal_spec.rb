@@ -21,5 +21,9 @@ describe SpeakingProposal do
     @speaking_proposal.level = "lätt"
     @speaking_proposal.level.should == "lätt"
   end
-  
+
+  it "should tell if it is accepted" do
+    @speaking_proposal.accepted = true
+    @speaking_proposal.accepted?.should == true
+  end
 end
