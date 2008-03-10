@@ -3,3 +3,4 @@ class SpeakingProposal < DataMapper::Base
   property :description, :text
   property :level, :string
 end
+
