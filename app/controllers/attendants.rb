@@ -31,15 +31,23 @@ class Attendants < Application
     @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
     if(@attendant.wants_to_speak)
       @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal]) 
-    elsif(@attendant.save)
+    end
+    if(@attendant.save)
+      send_mail(ConfirmationMailer, :confirm, {
+        :from => "info@agilasverige.se",
+        :to => @attendant.email,
+        :subject => "Din anmälan till Agila Sverige 2008 är mottagen"
+      }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
+      send_mail(ConfirmationMailer, :notify, {
+        :from => "info@agilasverige.se",
+        :to => "registrar@agilasverige.se",
+        :subject => "En anmälan till Agila Sverige 2008 är mottagen"
+      }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
       redirect url(:thanks_for_signing_up)
     else
       @speaking_proposal = SpeakingProposal.new
       render @attendant, :template => '/attendants/new.html'
-    end
-    if(@attendant.save)
-    else
-    end
+    end  
   end
 
   def update

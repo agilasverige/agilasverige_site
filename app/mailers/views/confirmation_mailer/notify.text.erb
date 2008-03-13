@@ -1,0 +1,23 @@
+En anmälan till Agila Sverige 2008!
+
+Namn: <%= "#{@attendant.first_name} #{@attendant.last_name}"%>
+Organisation: <%= @attendant.organization%>
+Adress: <%= @attendant.street_address%>
+c/o: <%= @attendant.co_address%>
+Postnummer: <%= @attendant.zip_code%>
+Postadress: <%= @attendant.postal_address%>
+Land: <%= @attendant.country%>
+Telefonnummer: <%= @attendant.telephone_number%>
+
+<%- unless(@speaking_proposal.nil?)%>
+  Förslag till blixttal:
+  ----------------------
+  
+  Titel: <%= @speaking_proposal.title%>
+  Beskrivning: <%= @speaking_proposal.description%>
+  Nivå: <%= @speaking_proposal.level%>
+<%- end%>
+
+Med vänliga hälsningar
+
+Er server i cyberrymden

@@ -32,7 +32,9 @@ use_orm :datamapper
 use_test :rspec
 
 ### Add your other dependencies here
-dependencies "haml", "merb-haml"
+dependencies "haml", "merb-haml" 
+
+require "merb-mailer"
 
 dependency "merb_helpers"
 dependency "merb_stories"
@@ -44,6 +46,8 @@ dependency "merb_stories"
 # dependency "RedCloth", "> 3.0"
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
+Merb::Mailer.config = {:sendmail_path => '/usr/sbin/sendmail'}
+Merb::Mailer.delivery_method = :sendmail
 
 Merb::BootLoader.after_app_loads do
   ### Add dependencies here that must load after the application loads:

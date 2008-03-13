@@ -1,0 +1,31 @@
+Hej <%= @attendant.first_name %>
+
+Tack för din anmälan till Agila Sverige 2008!
+
+Vi har registrerat följande uppgifter från dig:
+
+Namn: <%= "#{@attendant.first_name} #{@attendant.last_name}"%>
+Organisation: <%= @attendant.organization%>
+Adress: <%= @attendant.street_address%>
+c/o: <%= @attendant.co_address%>
+Postnummer: <%= @attendant.zip_code%>
+Postadress: <%= @attendant.postal_address%>
+Land: <%= @attendant.country%>
+Telefonnummer: <%= @attendant.telephone_number%>
+
+<%- unless(@speaking_proposal.nil?)%>
+  Förslag till blixttal:
+  ----------------------
+  
+  Titel: <%= @speaking_proposal.title%>
+  Beskrivning: <%= @speaking_proposal.description%>
+  Nivå: <%= @speaking_proposal.level%>
+<%- end%>
+
+Om något av ovanstående skulle vara fel kan du kontakta oss på info@agilasverige.se
+
+Vi ser fram emot att träffa dig den 2-3 juni.
+
+
+Med vänliga hälsningar
+Arrangörskommittén bakom Agila Sverige 2008
