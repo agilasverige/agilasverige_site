@@ -2,7 +2,13 @@ class Attendant < DataMapper::Base
 
   has_many :speaking_proposals
 
-  validates_presence_of :first_name, :last_name, :street_address, :postal_address, :message => "måste fyllas i"
+  validates_presence_of :first_name, :last_name, :street_address, 
+                        :postal_address, :zip_code, :message => "måste fyllas i"
+    
+  validates_uniqueness_of :email, :case_sensitive => false, :message => "redan registrerad"
+  validates_format_of :email, :with => :email_address, :message => "är inte en korrekt e-postadress"
+  
+  
 
   property :first_name, :string
   property :last_name, :string

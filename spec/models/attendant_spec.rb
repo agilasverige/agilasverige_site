@@ -102,4 +102,29 @@ describe "An attendant with a not accepted proposal" do
   
   it "should be an attendant???"
     
+end
+
+
+describe "an attendant registering with the the same email address as already registered" do
+  
+  before(:each) do
+    Attendant.create(:first_name => "first", 
+                     :last_name => 'last', 
+                     :email => "em@il.com", 
+                     :street_address => "address",
+                     :zip_code => "16876",
+                     :postal_code => "86876",
+                     :postal_address => "hhh")
   end
+  it "should receive error message saying it is already registered" do
+    attendant = Attendant.new(:first_name => "first", 
+                  :last_name => 'last', 
+                  :email => "em@il.com", 
+                  :street_address => "address",
+                  :zip_code => "16876",
+                  :postal_code => "86876",
+                  :postal_address => "hhh")
+    attendant.valid?.should be_false
+    attendant.errors.on(:email).should include("redan registrerad")
+  end
+end

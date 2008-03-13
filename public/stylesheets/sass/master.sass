@@ -28,6 +28,7 @@ h2
   :font-size 167%
   :margin-top 20px
   :margin-left 10px
+
 a
   :text-decoration none
   &:hover
@@ -69,28 +70,42 @@ label
     :float left
     :margin-left 20px
     :margin-right 20px
+  #date
+    :float right
   h2
-    :padding 20px
+    :padding 0
+    :margin 0
+    span
+      :display none
 #bd
   :padding 10px
+#maintext, #info
+  :padding-right 20px
+
 .register
-  :margin-top 40px
+  :text-align center
   :margin-bottom 40px
-  :padding-left 10px
+  :padding 15px
+  :background-color = !red 
   a
     :font-size 113%
     :font-weight bold
-    :padding 15px
-    :background-color= !red 
     :color white
 
+.error
+  :background-color = !lightred
+
+.error_message
+  :color = !lightred
+
 #sponsors
+  :padding-left 20px
   :margin-left 1px
   :border-left-width thin
   :border-left-style solid
   :border-left-color = !green
   img 
-    :max-width 300px
+    :max-width 200px
 #ft 
   :border-top-width thin 
   :border-top-style solid

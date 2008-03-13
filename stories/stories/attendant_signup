@@ -12,6 +12,8 @@ Story: Attendant signs up for conference
     Then a new attendant is created
     
   Scenario: Signing up with taken email address
-    When a prospective client signs up with an already registered email address
-    Then he gets an info message saying it is already taken
+    Given an attendant is already registered with email 'em@il.com'
+    When a prospective client signs up with email 'em@il.com'
+    Then he is redirected to '/anmal'
+    And he gets an info message saying 'redan registrerad'
   

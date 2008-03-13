@@ -1,35 +1,41 @@
 #bd
-  .yui-gc 
+  .yui-g 
     %div{:class => "yui-u first"}
-      #attendantinfo
-        %h2 Äntligen!
-        %p 
-          Var med på Sveriges första agila konferens om agila metoder! Agila    
-          Sverige 2008 är unik i sitt fokus på 
-          individer och interaktion dessa emellan. Den består av 
-          förmiddagar med blixttal (Lightning talks) och eftermiddagar med 
-          öppna ytor för diskussion (Open Space).
-        = partial 'shared/prices'
-        %p.register
-          %a{:href => "#{url(:register)}"} Jag vill anmäla mig till Agila Sverige!
-      #speakerinfo
-        %h2 Tala på Agila Sverige 2008!
-        %p
-          Vi söker talare, både erfarna och mindre erfarna personer som vill 
-          dela med sig av sina kunskaper, berätta om nya tekniker, förklara     
-          gamla eller kanske bara testa nya idéer inför en engagerad och kunnig     
-          publik. Nivån på föredragen kan spänna över hela spektrat från 
-          nybörjare till experter. Du behöver alltså inte vara expert för att 
-          tala. Eftersom det handlar om blixttal (max 10 minuter) så bör ämnet 
-          vara väldefinierat och kondenserat.
-        %p
-          Vi vill att talen skall ha en tydlig koppling till 
-          lättrörliga metoder och/eller utövandet kring dessa. Det kan 
-          exempelvis vara fallstudier, handla om utmaningar kring införandet av 
-          praxis eller erfarenheter av verktyg och metoder.
-        %p.register
-          %a{:href => "#{url(:register)}?speaker=true"} Jag vill tala på Agila Sverige!
-    #sponsors.yui-u
-      = partial 'shared/sponsors'
+      #maintext
+        #attendantinfo
+          %h2 Äntligen!
+          %p 
+            Var med på Sveriges första agila konferens om agila metoder! Agila    
+            Sverige 2008 är unik i sitt fokus på 
+            individer och interaktion dessa emellan. Den består av 
+            förmiddagar med blixttal (Lightning talks) och eftermiddagar med 
+            öppna ytor för diskussion (Open Space).
+        #speakerinfo
+          %h2 Tala på Agila Sverige 2008!
+          %p
+            Vi söker talare, både erfarna och mindre erfarna personer som vill 
+            dela med sig av sina kunskaper, berätta om nya tekniker, förklara     
+            gamla eller kanske bara testa nya idéer inför en engagerad och kunnig     
+            publik. Nivån på föredragen kan spänna över hela spektrat från 
+            nybörjare till experter. Du behöver alltså inte vara expert för att 
+            tala. Eftersom det handlar om blixttal (max 10 minuter) så bör ämnet 
+            vara väldefinierat och kondenserat.
+          %p
+            Vi vill att talen skall ha en tydlig koppling till 
+            lättrörliga metoder och/eller utövandet kring dessa. Det kan 
+            exempelvis vara fallstudier, handla om utmaningar kring införandet av 
+            praxis eller erfarenheter av verktyg och metoder.
+    .yui-g
+      %div{:class => "yui-u first"}
+        #info
+          = partial 'shared/prices'
+          %p.register
+            %a{:href => "#{url(:register)}"} Jag vill anmäla mig till Agila Sverige 2008!
+            %p.register
+              %a{:href => "#{url(:register)}?speaker=true"} Jag vill tala på Agila Sverige 2008!
+      
+      .yui-u
+        #sponsors
+          = partial 'shared/sponsors'
 #ft
   = partial 'shared/footer'

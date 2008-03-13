@@ -1,13 +1,14 @@
+!!! XML
 !!! Strict
-%html{ "xml:lang" => "en-us", :lang => "en-us", :xmlns => "http://www.w3.org/1999/xhtml" }
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv"}
   %head
     %title
       Agila Sverige 2008
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }/
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
+    %script{:type => 'text/javascript', :src => '/scripts/jquery-1.2.3.min.js'}
+    %script{:type => 'text/javascript', :src => '/scripts/signup.js'}
     %link{ :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"}/
-    %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8" }/
-    %script{:type => 'text/javascript', :src => '/scripts/jquery-1.2.3.min.js'}/
-    %script{:type => 'text/javascript', :src => '/scripts/signup.js'}/
+    %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"}/
   %body
     #doc4.yui-t7 
       #hd
@@ -16,6 +17,7 @@
         %h1
           %span Agila Sverige 2008
         %h2
-          Stockholm 2-3 juni 2008
+          %span Stockholm 2-3 juni 2008
+        %img#date{:src => '/images/postit_dates.png'}
       = catch_content :for_layout
     

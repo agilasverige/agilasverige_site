@@ -6,26 +6,34 @@
       = partial 'shared/prices'
       %p
         När vi fått dina personuppgifter kommer vi att skicka en faktura till den adress du uppgivit.
+      %p
+        = @attendant.errors.on :first_name
       - form_for :attendant, :action => url('attendants') do
         %fieldset
           %legend
             %span Personuppgifter:
           %p
             = text_control :first_name, :label => "Förnamn"
+            %span.error_message= @attendant.errors.on :first_name
           %p
             = text_control :last_name, :label => "Efternamn"
+            %span.error_message= @attendant.errors.on :last_name
           %p
             = text_control :email, :label => "E-postadress"
+            %span.error_message= @attendant.errors.on :email
           %p
             = text_control :organization, :label => "Organisation"
           %p
             = text_control :co_address, :label => "c/o adress"
           %p
             = text_control :street_address, :label => "Gatuadress"
+            %span.error_message= @attendant.errors.on :street_address
           %p
             = text_control :zip_code, :label => "Postnummer"
+            %span.error_message= @attendant.errors.on :first_name
           %p
             = text_control :postal_address, :label => "Postadress"
+            %span.error_message= @attendant.errors.on :first_name
           %p
             = text_control :country, :label => "Land"
           %p

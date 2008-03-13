@@ -31,12 +31,14 @@ class Attendants < Application
     @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
     if(@attendant.wants_to_speak)
       @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal]) 
-    end
-    if @attendant.save
+    elsif(@attendant.save)
       redirect url(:thanks_for_signing_up)
     else
       @speaking_proposal = SpeakingProposal.new
       render @attendant, :template => '/attendants/new.html'
+    end
+    if(@attendant.save)
+    else
     end
   end
 
