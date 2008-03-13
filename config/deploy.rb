@@ -30,4 +30,6 @@ namespace :deploy do
     # run "cd #{current_path};env EVENT=1 merb -e production -c 1" # for evented mongrel
     run "cd #{current_path}; merb -e production -c 3 -p 12000" # plain old mongrel
   end
+  
+  
 end
