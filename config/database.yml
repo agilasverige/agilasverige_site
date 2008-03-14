@@ -4,10 +4,3 @@
   :database: as2008_development
   :username: mahnve
 
-:test:
-  <<: *defaults
-  :database: as2008_test
-
-:production:
-  <<: *defaults
-  :database: as2008_production
