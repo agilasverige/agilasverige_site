@@ -30,6 +30,15 @@
     .yui-g
       %div{:class => "yui-u first"}
         #info
+          %h2
+            Vad ingår
+          %ul
+            %li 
+              Två dagars konferens i
+              %a{:href => "http://www.citykonferensen.se/"} Citykonferensen
+            %li Konferensmiddag den 2 juni
+          %h2 
+            Vad kostar det?
           = partial 'shared/prices'
           %p.register
             %a{:href => "#{url(:register)}"} Jag vill anmäla mig till Agila Sverige 2008!
