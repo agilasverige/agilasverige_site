@@ -1,7 +1,6 @@
 require 'rubygems'
-require 'spec'
-require 'spec/rake/spectask'
 require File.join(File.dirname(__FILE__), "..", "spec", "spec_helper")
+require 'spec/rake/spectask'
 require 'spec/mocks'
 require 'spec/story'
 

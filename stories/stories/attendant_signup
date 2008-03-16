@@ -16,4 +16,4 @@ Story: Attendant signs up for conference
     When a prospective client signs up with email 'em@il.com'
     Then he is redirected to '/anmal'
     And he gets an info message saying 'redan registrerad'
-  
+ 

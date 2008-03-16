@@ -116,6 +116,7 @@ describe "an attendant registering with the the same email address as already re
                      :postal_code => "86876",
                      :postal_address => "hhh")
   end
+  
   it "should receive error message saying it is already registered" do
     attendant = Attendant.new(:first_name => "first", 
                   :last_name => 'last', 

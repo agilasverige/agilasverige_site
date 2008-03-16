@@ -35,20 +35,19 @@
           %p
             %a{:href => "http://www.citykonferensen.se/"}
               %img{:src => "/images/citykonferens.png"} 
+          %h2 
+            Vad kostar det?
+          = partial 'shared/prices'
           %h2
             Vad ingår?
           %ul
             %li 
               Två dagars konferens
             %li Konferensmiddag den 2 juni
-          %h2 
-            Vad kostar det?
-          = partial 'shared/prices'
           %p.register
             %a{:href => "#{url(:register)}"} Jag vill anmäla mig till Agila Sverige 2008!
             %p.register
-              %a{:href => "#{url(:register)}?speaker=true"} Jag vill tala på Agila Sverige 2008!
-      
+              %a{:href => "#{url(:register)}?speaker=true"} Jag vill tala på Agila Sverige 2008!      
       .yui-u
         #sponsors
           = partial 'shared/sponsors'
