@@ -31,7 +31,6 @@ Merb::Router.prepare do |r|
   r.match('/').to(:controller => 'articles', :action => 'index')
   r.match('/tack').to(:controller => 'articles', :action => 'thanks').name(:thanks_for_signing_up)
   r.resources :attendants
-  r.match('/anmal').to(:controller => 'attendants', :action => 'new').name(:register)
   r.default_routes
   
   

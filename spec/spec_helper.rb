@@ -6,6 +6,7 @@ require 'merb-core'
 Merb.start :environment => (ENV['MERB_ENV'] || 'test'),
            :merb_root  => File.join(File.dirname(__FILE__), ".." )
 
+DataMapper::Base.auto_migrate!
 
 Spec::Runner.configure do |config|
   config.include(Merb::Test::ViewHelper)

@@ -6,7 +6,7 @@
 !background = #FFF
 
 
-body 
+body, a
   :font-family Helvetica
   :color = !text
 p, table, tr, td, th, ul
@@ -33,10 +33,6 @@ h2
   :margin-top 20px
   :margin-left 10px
 
-a
-  :text-decoration none
-  &:hover
-    :text-decoration underline
 em
   :background-color = !yellow
   :padding 5px
@@ -97,9 +93,12 @@ label
   :padding 15px
   :background-color = !red 
   a
+    :text-decoration none
     :font-size 113%
     :font-weight bold
     :color white
+    &:hover
+      :text-decoration underline
 
 .error
   :background-color = !lightred

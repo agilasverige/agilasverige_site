@@ -15,7 +15,7 @@ class Attendants < Application
   def new
     only_provides :html
     @wants_to_speak = params['speaker']
-    @attendant = Attendant.new
+    @attendant = flash[:attendant] || Attendant.new
     @speaking_proposal = SpeakingProposal.new
     render
   end
@@ -28,10 +28,7 @@ class Attendants < Application
   end
 
   def create
-    @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
-    if(@attendant.wants_to_speak)
-      @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal]) 
-    end
+    @attendant = Attendant.new(params[:attendant])
     if(@attendant.save)
       send_mail(ConfirmationMailer, :confirm, {
         :from => "info@agilasverige.se",
@@ -45,9 +42,9 @@ class Attendants < Application
       }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
       redirect url(:thanks_for_signing_up)
     else
-      @speaking_proposal = SpeakingProposal.new
-      render @attendant, :template => '/attendants/new.html'
-    end  
+      flash[:attendant] = @attendant
+      redirect '/attendants/new'
+    end 
   end
 
   def update

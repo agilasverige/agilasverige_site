@@ -7,6 +7,7 @@
       %p
         När vi fått dina personuppgifter kommer vi att skicka en faktura till den adress du uppgivit.
       %p
+        
         = @attendant.errors.on :first_name
       - form_for :attendant, :action => url('attendants') do
         %fieldset
