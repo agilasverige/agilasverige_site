@@ -30,7 +30,7 @@ class Attendants < Application
   def create
     
     wants_to_speak = (params[:attendant][:wants_to_speak] == "1")
-    @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
+    @attendant = Attendant.first(:email => params[:attendant][:email]) || Attendant.new(params[:attendant])
 
     if(@attendant.new_record?)
       if(wants_to_speak)
