@@ -13,6 +13,8 @@
         %fieldset
           %legend
             %span Personuppgifter:
+          - if flash[:error_message]
+            %p.error_message= flash[:error_message]
           %p
             = text_control :first_name, :label => "Förnamn"
             %span.error_message= @attendant.errors.on :first_name

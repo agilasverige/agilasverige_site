@@ -21,6 +21,8 @@ class Attendant < DataMapper::Base
   property :organization, :string
   property :telephone_number, :string
   property :wants_to_speak, :boolean
+  property :created_at, :datetime
+  
   
   
   def prospective_speaker?

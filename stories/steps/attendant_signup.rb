@@ -53,7 +53,7 @@ steps_for(:attendant_signup) do
   
   Then "he gets an info message saying '$message'" do |message|
     # TODO fix this test
-    #@redirect.body.should =~ Regexp.new(message)
+    # @redirect.body.should =~ Regexp.new(message)
   end 
   
 end

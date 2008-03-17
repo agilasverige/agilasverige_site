@@ -29,12 +29,12 @@ class Attendants < Application
 
   def create
     
-    wants_to_speak = params[:attendant][:wants_to_speak]
+    wants_to_speak = (params[:attendant][:wants_to_speak] == "1")
     @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
 
     if(@attendant.new_record?)
       if(wants_to_speak)
-        @attendant.speaking_proposals.create(params[:speaking_proposal])
+        @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal])
       end
       if(@attendant.save)
         send_mail(ConfirmationMailer, :confirm, {
@@ -47,16 +47,20 @@ class Attendants < Application
           :to => "registrar@agilasverige.se",
           :subject => "En anmälan till Agila Sverige 2008 är mottagen"
         }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
+        flash[:attendant] = @attendant
+        flash[:speaking_proposal] = @speaking_proposal
         redirect url(:thanks_for_signing_up)
       else
         flash[:attendant] = @attendant
         redirect '/attendants/new'
       end 
     elsif(wants_to_speak)
-      @attendant.speaking_proposals.create(params[:speaking_proposal])
-      @attendant.save
-    else
+      @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal])
       flash[:attendant] = @attendant
+      flash[:speaking_proposal] = @speaking_proposal
+      redirect url(:thanks_for_signing_up)
+    else
+      flash[:error_message] = "Den emailadressen är redan registrerad"
       redirect '/attendants/new'
     end      
   end

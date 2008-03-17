@@ -4,9 +4,13 @@
   .yui-gc 
     %div{:class => "yui-u first"} 
       %h2 Tack!
-      %p 
-        Du är nu anmäld till Agila Sverige 2008. Vi kommer att skicka en faktura till adressen du angivit inom ett antal dagar.
-      %p 
+      - if(flash[:attendant])
+        %p
+          - if(flash[:speaking_proposal].nil?)
+            Du är nu anmäld till Agila Sverige 2008. Vi kommer att skicka en faktura till adressen du angivit inom ett antal dagar.
+          - else
+            = "Vi har tagit emot ditt talarförslag '#{flash[:speaking_proposal].title}'. Vi kommer att höra av oss i början av maj med besked om vilka som blivit antagna."
+      %p
         Vi ser fram emot att möta dig den 2-3 juni!
     #sponsors.yui-u
       = partial 'shared/sponsors'

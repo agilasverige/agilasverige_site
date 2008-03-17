@@ -29,7 +29,6 @@ steps_for(:speaker_signup) do
     attendant.speaking_proposals.size.should == 1
   end
 
-  
   Given "a speaker is already registered" do
     @registered_attendant = Attendant.new(:first_name => "first", 
                                          :last_name => 'last', 
