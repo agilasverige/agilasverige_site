@@ -28,23 +28,37 @@ class Attendants < Application
   end
 
   def create
-    @attendant = Attendant.new(params[:attendant])
-    if(@attendant.save)
-      send_mail(ConfirmationMailer, :confirm, {
-        :from => "info@agilasverige.se",
-        :to => @attendant.email,
-        :subject => "Din anmälan till Agila Sverige 2008 är mottagen"
-      }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
-      send_mail(ConfirmationMailer, :notify, {
-        :from => "info@agilasverige.se",
-        :to => "registrar@agilasverige.se",
-        :subject => "En anmälan till Agila Sverige 2008 är mottagen"
-      }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
-      redirect url(:thanks_for_signing_up)
+    
+    wants_to_speak = params[:attendant][:wants_to_speak]
+    @attendant = Attendant.find_or_create({:email => params[:attendant][:email]}, params[:attendant])
+
+    if(@attendant.new_record?)
+      if(wants_to_speak)
+        @attendant.speaking_proposals.create(params[:speaking_proposal])
+      end
+      if(@attendant.save)
+        send_mail(ConfirmationMailer, :confirm, {
+          :from => "info@agilasverige.se",
+          :to => @attendant.email,
+          :subject => "Din anmälan till Agila Sverige 2008 är mottagen"
+        }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
+        send_mail(ConfirmationMailer, :notify, {
+          :from => "info@agilasverige.se",
+          :to => "registrar@agilasverige.se",
+          :subject => "En anmälan till Agila Sverige 2008 är mottagen"
+        }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
+        redirect url(:thanks_for_signing_up)
+      else
+        flash[:attendant] = @attendant
+        redirect '/attendants/new'
+      end 
+    elsif(wants_to_speak)
+      @attendant.speaking_proposals.create(params[:speaking_proposal])
+      @attendant.save
     else
       flash[:attendant] = @attendant
       redirect '/attendants/new'
-    end 
+    end      
   end
 
   def update
