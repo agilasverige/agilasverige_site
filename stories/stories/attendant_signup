@@ -13,6 +13,6 @@ Story: Attendant signs up for conference
   Scenario: Signing up with taken email address
     Given an attendant is already registered with email 'ema@il.com'
     When a prospective client signs up with email 'ema@il.com'
-    Then he is redirected to '/attendants/new'
+    Then he is redirected to '/2008/attendants/new'
     And he gets an info message saying 'redan registrerad'
  

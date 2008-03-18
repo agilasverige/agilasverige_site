@@ -9,7 +9,7 @@
       %p
         
         = @attendant.errors.on :first_name
-      - form_for :attendant, :action => url('attendants') do
+      - form_for :attendant, :action => url(:attendants) do
         %fieldset
           %legend
             %span Personuppgifter:
@@ -61,7 +61,8 @@
               %p
                 = select_control :level, :label => "Nivå", :collection => ["Lätt", "Medel", "Svår"]
         = submit_button "Anmäl"
-    .yui-u#sponsors
-      = partial 'shared/sponsors'
+    .yui-u
+      #sponsors
+        = partial 'shared/sponsors'
 #ft
   = partial 'shared/footer'

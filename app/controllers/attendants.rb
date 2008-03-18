@@ -2,14 +2,14 @@ class Attendants < Application
   provides :html
   
   def index
-    @attendants = Attendant.all
-    display @attendants
+    # @attendants = Attendant.all
+    # display @attendants
   end
 
   def show
-    @attendant = Attendant.first(params[:id])
-    raise NotFound unless @attendant
-    display @attendant
+    # @attendant = Attendant.first(params[:id])
+    # raise NotFound unless @attendant
+    # display @attendant
   end
 
   def new
@@ -21,10 +21,10 @@ class Attendants < Application
   end
 
   def edit
-    only_provides :html
-    @attendant = Attendant.first(params[:id])
-    raise NotFound unless @attendant
-    render
+    # only_provides :html
+    # @attendant = Attendant.first(params[:id])
+    # raise NotFound unless @attendant
+    # render
   end
 
   def create
@@ -52,7 +52,7 @@ class Attendants < Application
         redirect url(:thanks_for_signing_up)
       else
         flash[:attendant] = @attendant
-        redirect '/attendants/new'
+        redirect "#{url(:attendants)}/new"
       end 
     elsif(wants_to_speak)
       @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal])
@@ -61,28 +61,28 @@ class Attendants < Application
       redirect url(:thanks_for_signing_up)
     else
       flash[:error_message] = "Den emailadressen är redan registrerad"
-      redirect '/attendants/new'
+      redirect "#{url(:attendants)}/new"
     end      
   end
 
   def update
-    @attendant = Attendant.first(params[:id])
-    raise NotFound unless @attendant
-    if @attendant.update_attributes(params[:attendant])
-      redirect url(:attendant, @attendant)
-    else
-      raise BadRequest
-    end
+    # @attendant = Attendant.first(params[:id])
+    # raise NotFound unless @attendant
+    # if @attendant.update_attributes(params[:attendant])
+    #   redirect url(:attendant, @attendant)
+    # else
+    #   raise BadRequest
+    # end
   end
 
   def destroy
-    @attendant = Attendant.first(params[:id])
-    raise NotFound unless @attendant
-    if @attendant.destroy!
-      redirect url(:attendants)
-    else
-      raise BadRequest
-    end
-  end
+    # @attendant = Attendant.first(params[:id])
+    #     raise NotFound unless @attendant
+    #     if @attendant.destroy!
+    #       redirect url(:attendants)
+    #     else
+    #       raise BadRequest
+    #     end
+      end
   
 end
