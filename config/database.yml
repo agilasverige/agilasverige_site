@@ -7,3 +7,7 @@
 test:
   <<: *defaults
   :database: as2008_test
+
+production:
+  <<: *defaults
+  :database: as2008_test
