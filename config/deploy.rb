@@ -8,9 +8,9 @@ set :scm, "git"
 set :deploy_via, :remote_cache
 set :branch, "origin/master"
 
-role :app, "stjernstrom.se"
-role :web, "stjernstrom.se"
-role :db, "stjernstrom.se", :primary => true
+role :app, "svr.stjernstrom.se"
+role :web, "svr.stjernstrom.se"
+role :db, "svr.stjernstrom.se", :primary => true
 
 default_run_options[:pty] = true
 
