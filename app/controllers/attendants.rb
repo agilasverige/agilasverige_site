@@ -47,20 +47,20 @@ class Attendants < Application
           :to => "registrar@agilasverige.se",
           :subject => "En anmälan till Agila Sverige 2008 är mottagen"
         }, { :attendant => @attendant, :speaking_proposal => @speaking_proposal })
-        flash[:attendant] = @attendant
-        flash[:speaking_proposal] = @speaking_proposal
+        flash[:attendant_name] = @attendant.first_name
+        flash[:speaking_proposal_title] = @speaking_proposal.title if @speaking_proposal
         redirect url(:thanks_for_signing_up)
       else
-        flash[:attendant] = @attendant
+        flashify_error_messages_for_attendant
         redirect "#{url(:attendants)}/new"
       end 
     elsif(wants_to_speak)
       @speaking_proposal = @attendant.speaking_proposals.create(params[:speaking_proposal])
-      flash[:attendant] = @attendant
-      flash[:speaking_proposal] = @speaking_proposal
+      flash[:attendant_name] = @attendant.first_name
+      flash[:speaking_proposal_title] = @speaking_proposal.title
       redirect url(:thanks_for_signing_up)
     else
-      flash[:error_message] = "Den emailadressen är redan registrerad"
+      flash[:error_message_email_taken] = "Den emailadressen är redan registrerad"
       redirect "#{url(:attendants)}/new"
     end      
   end
@@ -84,5 +84,12 @@ class Attendants < Application
     #       raise BadRequest
     #     end
       end
+  private
+  
+  def flashify_error_messages_for_attendant
+    ["first_name", "last_name", "email", "street_address", "zip_code", "postal_address"].each do |attribute|
+      flash["error_message_#{attribute}"] = @attendant.errors.on(attribute)
+    end
+  end
   
 end

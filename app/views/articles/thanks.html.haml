@@ -3,16 +3,19 @@
 #bd
   .yui-gc 
     %div{:class => "yui-u first"} 
-      %h2 Tack!
-      - if(flash[:attendant])
+      - if(flash[:attendant_name])
+        %h2= "Tack #{flash[:attendant_name]}"
         %p
-          - if(flash[:speaking_proposal].nil?)
+          - if(flash[:speaking_proposal_title].nil?)
             Du är nu anmäld till Agila Sverige 2008. Vi kommer att skicka en faktura till adressen du angivit inom ett antal dagar.
           - else
-            = "Vi har tagit emot ditt talarförslag '#{flash[:speaking_proposal].title}'. Vi kommer att höra av oss i början av maj med besked om vilka som blivit antagna."
+            = "Vi har tagit emot ditt talarförslag '#{flash[:speaking_proposal_title]}'. Vi kommer att höra av oss i början av maj med besked om vilka som blivit antagna."
+      - else
+        %h2 Tack!
       %p
         Vi ser fram emot att möta dig den 2-3 juni!
-    #sponsors.yui-u
-      = partial 'shared/sponsors'
+    .yui-u
+      #sponsors
+        = partial 'shared/sponsors'
 #ft
   %p &copy; 2008 Nätverket Agile Sweden 

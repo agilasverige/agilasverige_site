@@ -8,8 +8,8 @@ class Attendant < DataMapper::Base
   validates_uniqueness_of :email, :case_sensitive => false, :message => "redan registrerad"
   validates_format_of :email, :with => :email_address, :message => "är inte en korrekt e-postadress"
   
-  
 
+  
   property :first_name, :string
   property :last_name, :string
   property :email, :string
