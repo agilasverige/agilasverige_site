@@ -4,3 +4,4 @@
 *.tmproj
 tags
 log/*.*
+spec/log/*.*
