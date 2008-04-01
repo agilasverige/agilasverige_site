@@ -8,7 +8,7 @@ $LOAD_PATH.unshift(Merb.root / "lib")
 
 Merb::Config.use do |c|
   c[:session_secret_key]  = 'f6214d6a4702ff061096fe46736093d36e4e6acf'
-  c[:session_store] = 'memory'
+  c[:session_store] = 'datamapper'
   c[:use_mutex] = false
 end  
 
@@ -39,7 +39,7 @@ dependency "merb_stories"
 require 'merb_has_flash'
 require "merb-mailer"
 
-Merb::Config[:path_prefix] = "/2008"
+#Merb::Config[:path_prefix] = "/2008"
 
 # These are some examples of how you might specify dependencies.
 # 

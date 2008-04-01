@@ -1,7 +1,7 @@
 steps_for(:attendant_signup) do
 
   When "prospective attendant is on signup page" do
-    @response = get "/attendants/new"
+    @response = get "/2008/attendants/new"
   end
 
   When "there is no attendant who has registered with em@il.com" do
@@ -15,7 +15,7 @@ steps_for(:attendant_signup) do
   end
   
   When "he signs up with all fields" do
-    @response = post '/attendants', :attendant => {:first_name => "first", 
+    @response = post '/2008/attendants', :attendant => {:first_name => "first", 
                                                   :last_name => 'last', 
                                                   :email => "em@il.com", 
                                                   :street_address => "address",
@@ -38,7 +38,7 @@ steps_for(:attendant_signup) do
   end
   
   When "a prospective client signs up with email '$email'" do |email|
-    @response = post '/attendants', :attendant => {:first_name => "first", 
+    @response = post '/2008/attendants', :attendant => {:first_name => "first", 
                                                   :last_name => 'last', 
                                                   :email => email, 
                                                   :street_address => "address",

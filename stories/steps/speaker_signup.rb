@@ -1,7 +1,7 @@
 steps_for(:speaker_signup) do
 
   When "prospective speaker is on signup page" do
-    @response = get "/attendants/new"
+    @response = get "/2008/attendants/new"
   end
   
   Then "he can see all the input fields" do
@@ -11,7 +11,7 @@ steps_for(:speaker_signup) do
   end
   
   When "signing up as a prospective speaker with email '$email'" do |email|
-    @response = post '/attendants', {:attendant => {:first_name => "first", 
+    @response = post '/2008/attendants', {:attendant => {:first_name => "first", 
                                                   :last_name => 'last', 
                                                   :email => email, 
                                                   :street_address => "address",
@@ -43,7 +43,7 @@ steps_for(:speaker_signup) do
   end
   
   When "he signs up with a new proposal and the same email address" do
-    @response = post '/attendants', {:attendant => {:email => "already@registered.com", 
+    @response = post '/2008/attendants', {:attendant => {:email => "already@registered.com", 
                                                     :wants_to_speak => "1"},
                                      :speaking_proposal => {:title => "titel2",
                                                             :description => "des2",

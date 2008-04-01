@@ -3,7 +3,7 @@ require 'rubygems'
 require 'merb-core'
 
 # TODO: Boot Merb, via the Test Rack adapter
-Merb.start_environment(:testing => true, :adapter => 'runner', :environment => ENV['MERB_ENV'] || 'test')
+Merb.start_environment(:testing => true, :daemonize => false, :adapter => 'runner', :environment => ENV['MERB_ENV'] || 'test')
 
 #Merb.start :environment => (ENV['MERB_ENV'] || 'test'),
 #           :merb_root  => File.join(File.dirname(__FILE__), ".." )
