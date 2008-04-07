@@ -33,3 +33,10 @@ namespace :deploy do
   
   
 end
+
+after 'deploy:update_code', :copy_database_yml
+
+task :copy_database_yml do
+  run "cd #{release_path} && cp ../../db.yml config/database.yml"
+end
+  
