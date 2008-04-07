@@ -8,7 +8,7 @@ $LOAD_PATH.unshift(Merb.root / "lib")
 
 Merb::Config.use do |c|
   c[:session_secret_key]  = 'f6214d6a4702ff061096fe46736093d36e4e6acf'
-  c[:session_store] = 'datamapper'
+  c[:session_store] = 'memory'
   c[:use_mutex] = false
 end  
 
@@ -17,7 +17,7 @@ end
 ### if you need a database.
 
 ### Uncomment for DataMapper ORM
-use_orm :memory
+use_orm :datamapper
 
 ### Uncomment for ActiveRecord ORM
 # use_orm :activerecord

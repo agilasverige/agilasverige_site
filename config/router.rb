@@ -28,12 +28,15 @@ Merb::Router.prepare do |r|
   # This is fine for most cases.  If you're heavily using resource-based
   # routes, you may want to comment/remove this line to prevent
   # clients from calling your create or destroy actions with a GET  
+  
   r.match("/2008") do |year| 
     year.match('').to(:controller => 'articles', :action => 'index').name(:home)
     year.match('/tack').to(:controller => 'articles', :action => 'thanks').name(:thanks_for_signing_up)
   
     year.resources :attendants
   end
+  
+  r.match("/").to(:controller => 'articles', :action => 'index')
   
   # Change this for your home page to be available at /
   # r.match('/').to(:controller => 'whatever', :action =>'index')
