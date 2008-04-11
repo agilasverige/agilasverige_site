@@ -2,6 +2,7 @@
 *.pid
 *.css
 *.tmproj
+.DS_Store
 tags
 log/*.*
 spec/log/*.*
