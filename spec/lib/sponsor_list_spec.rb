@@ -6,8 +6,8 @@ describe "SponsorList" do
     @sponsor_list = SponsorList.new
   end
   
-  it "should have 7 sponsors" do
-    @sponsor_list.sponsors.size.should == 7
+  it "should have 8 sponsors" do
+    @sponsor_list.sponsors.size.should == 8
   end
   
   it "should have Agical" do
@@ -50,6 +50,12 @@ describe "SponsorList" do
     globalinn = @sponsor_list.sponsor("GlobalInn")
     globalinn.url.should == "http://www.globalinn.com"
     globalinn.logo_file.should == "globalinn_logo.png"
+  end
+  
+  it "should have Orc" do
+    globalinn = @sponsor_list.sponsor("Orc Software")
+    globalinn.url.should == "http://www.orcsoftware.se"
+    globalinn.logo_file.should == "orc_logo.png"
   end
   
   
