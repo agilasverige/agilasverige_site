@@ -39,6 +39,8 @@ dependency "merb_stories"
 require 'merb_has_flash'
 require "merb-mailer"
 
+require 'lib/sponsor_list'
+
 #Merb::Config[:path_prefix] = "/2008"
 
 # These are some examples of how you might specify dependencies.

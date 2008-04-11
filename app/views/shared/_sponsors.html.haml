@@ -1,23 +1,6 @@
 %h2 
   Sponsorer
-%p
-  %a{:href => 'http://www.thoughtworks.com'}
-    %img{:src => '/images/tw_logo.png'}
-%p
-  %a{:href => 'http://www.valtech.se'}
-    %img{:src => '/images/valtech_logo.png'}
-%p
-  %a{:href => 'http://www.agical.se'}
-    %img{:src => '/images/agical_logo.png'}
-%p
-  %a{:href => 'http://www.dynabyte.se'}
-    %img{:src => '/images/dynabyte_logo.png'}
-%p
-  %a{:href => 'http://www.globalinn.se'}
-    %img{:src => '/images/globalinn_logo.png'}
-%p
-  %a{:href => 'http://www.agero.se'}
-    %img{:src => '/images/agero_logo.png'}
+- SponsorList.new.sponsors.each do |sponsor|
   %p
-    %a{:href => 'http://www.citerus.se'}
-      %img{:src => '/images/citerus_logo.png'}
+    %a{:href => "#{sponsor.url}"}
+      %img{:src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"}
