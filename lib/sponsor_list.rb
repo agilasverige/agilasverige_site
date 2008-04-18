@@ -1,5 +1,6 @@
 Sponsor = Struct.new :name, :logo_file, :url
 
+
 class SponsorList
 
   attr_reader :sponsors
@@ -26,5 +27,9 @@ class SponsorList
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
       Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se")
     ]
+  end
+  
+  def random_order
+    @sponsors.sort_by{rand}
   end
 end

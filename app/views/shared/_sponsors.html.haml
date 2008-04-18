@@ -1,6 +1,6 @@
 %h2 
   Sponsorer
-- SponsorList.new.sponsors.each do |sponsor|
+- SponsorList.new.random_order.each do |sponsor|
   %p
     %a{:href => "#{sponsor.url}"}
       %img{:src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"}
