@@ -25,6 +25,7 @@ class SponsorList
       Sponsor.new("Orc Software", "orc_logo.png", "http://www.orcsoftware.com"),
       Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
+      Sponsor.new("Contactor", "contactor_logo.png", "http://www.contactor.se"),
       Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se")
     ]
   end
