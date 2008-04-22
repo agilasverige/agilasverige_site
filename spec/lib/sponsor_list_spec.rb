@@ -54,7 +54,7 @@ describe "SponsorList" do
   
   it "should have Orc" do
     globalinn = @sponsor_list.sponsor("Orc Software")
-    globalinn.url.should == "http://www.orcsoftware.se"
+    globalinn.url.should == "http://www.orcsoftware.com"
     globalinn.logo_file.should == "orc_logo.png"
   end
   

@@ -22,7 +22,7 @@ class SponsorList
       Sponsor.new("ThoughtWorks", "tw_logo.png", "http://www.thoughtworks.com"),
       Sponsor.new("Agero", "agero_logo.png", "http://www.agero.se"),
       Sponsor.new("GlobalInn", "globalinn_logo.png", "http://www.globalinn.com"),
-      Sponsor.new("Orc Software", "orc_logo.png", "http://www.orcsoftware.se"),
+      Sponsor.new("Orc Software", "orc_logo.png", "http://www.orcsoftware.com"),
       Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
       Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se")
