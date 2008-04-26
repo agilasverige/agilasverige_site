@@ -27,15 +27,10 @@
     .yui-g
       %div{:class => "yui-u first"}
         #info
-          %h2
-            Var?
-          %p
-            %a{:href => "http://www.citykonferensen.se/"}
-              %img{:src => "/images/citykonferens.png"} 
-          %h2 
+          %h3 
             Vad kostar det?
           = partial 'shared/prices'
-          %h2
+          %h3
             Vad ingår?
           %ul
             %li 
@@ -45,6 +40,15 @@
             %a{:href => "#{url(:attendants)}/new"} Jag vill anmäla mig till Agila Sverige 2008!
           %p.register
             %a{:href => "#{url(:attendants)}/new?speaker=true"} Jag vill tala på Agila Sverige 2008!
+          %h3
+            Var?
+          %p
+            %a{:href => "http://www.citykonferensen.se/"}
+              %img{:src => "/images/citykonferens.png"} 
+          %p.addressline
+            Malmskillnadsgatan 46
+          %p.addressline
+            Stockholm
       .yui-u
         #sponsors
           = partial 'shared/sponsors'

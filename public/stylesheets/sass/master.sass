@@ -1,14 +1,23 @@
 !red = #E83F2F
 !green = #94A951
 !yellow = #FBF796
-!lightred = #EB615A
+!pink = #e20d81
+!lightgrey = #f1f1f1
+!grey = #a7a7a7
+!darkgrey = #212121
 !text = #454545
 !background = #FFF
 
 
 body, a
   :font-family Helvetica
+body
   :color = !text
+a
+  :color = !pink
+  :text-decoration none
+  &:hover
+    :text-decoration underline
 p, table, tr, td, th, ul
   :font-size 100%
   :margin-left 10px
@@ -28,12 +37,13 @@ h1
   :font-size 197%
   span
     :display none
-h2
-  :font-variant small-caps 
-  :font-size 167%
+h2, h3
+  :font-size 182%
   :margin-top 20px
   :margin-left 10px
-
+h3
+  :font-size 153.9%
+  :color = !pink
 em
   :background-color = !yellow
   :padding 5px
@@ -64,9 +74,9 @@ label
   :background-color = !background
 #hd
   :padding-top 10px
-  :border-bottom-width medium 
+  :border-bottom-width thin 
   :border-bottom-style solid  
-  :border-bottom-color = !lightred
+  :border-bottom-color = !pink
   :height 120px
   img
     :float left
@@ -87,12 +97,14 @@ label
 #info
   img
     :width 200px
-
+.addressline
+  :margin-top 0px
+  :margin-bottom 0px
 .register
   :text-align center
   :margin-bottom 40px
   :padding 15px
-  :background-color = !red 
+  :background-color = !grey
   a
     :text-decoration none
     :font-size 113%
@@ -102,28 +114,24 @@ label
       :text-decoration underline
 
 .error
-  :background-color = !lightred
+  :background-color = !pink
 
 .error_message
-  :color = !lightred
+  :color = !pink
 
 #sponsors
   :padding-left 20px
   :margin-left 1px
   :border-left-width thin
   :border-left-style solid
-  :border-left-color = !green
+  :border-left-color = !darkgrey
   img 
     :max-width 200px
     :max-height 50px
-#credits
-  :padding 20px
-  :margin 40px
-  :background lightgrey
 #ft 
   :border-top-width thin 
   :border-top-style solid
-  :border-top-color = !green
+  :border-top-color = !pink
   p
     :padding-top 10px
     :text-align= center
