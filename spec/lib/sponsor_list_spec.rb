@@ -6,8 +6,8 @@ describe "SponsorList" do
     @sponsor_list = SponsorList.new
   end
   
-  it "should have 11 sponsors" do
-    @sponsor_list.sponsors.size.should == 11
+  it "should have 12 sponsors" do
+    @sponsor_list.sponsors.size.should == 12
   end
   
   it "should have Agical" do
@@ -76,6 +76,12 @@ describe "SponsorList" do
     contactor.logo_file.should == "contactor_logo.png"
   end
     
+  it "should have Informator" do
+    informator = @sponsor_list.sponsor("Informator")
+    informator.url.should == "http://www.informator.se"
+    informator.logo_file.should == "informator_logo.png"
+  end
+    
   
 end
 
@@ -86,8 +92,8 @@ describe "a random sponsorlist" do
     @random_ordered_sponsors = @sponsor_list.random_order
   end
 
-  it "should have 11 elements" do
-    @random_ordered_sponsors.length.should == 11
+  it "should have 12 elements" do
+    @random_ordered_sponsors.length.should == 12
   end
   
   it "should not provide the list ordered the same way twice" do
