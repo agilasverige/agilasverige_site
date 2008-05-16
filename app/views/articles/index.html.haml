@@ -36,10 +36,16 @@
             %li 
               Två dagars konferens
             %li Konferensmiddag den 2 juni
-          %p.register
-            %a{:href => "#{url(:attendants)}/new"} Jag vill anmäla mig till Agila Sverige 2008!
-          %p.register
-            %a{:href => "#{url(:attendants)}/new?speaker=true"} Jag vill tala på Agila Sverige 2008!
+          .register
+            %p
+              %a{:href => "#{url(:attendants)}/new"} Jag vill anmäla mig till Agila Sverige 2008!
+            %p.reminder Sista anmälningsdag: 
+            %p.reminder 25 maj 2008
+          .register
+            %p
+              %a{:href => "#{url(:attendants)}/new?speaker=true"} Jag vill tala på Agila Sverige 2008!
+            %p.reminder Sista anmälningsdag:
+            %p.reminder 18 maj 2008
           %h3
             Var?
           %p
