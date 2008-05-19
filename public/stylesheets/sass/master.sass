@@ -80,9 +80,6 @@ label
   :background-color = !background
 #hd
   :padding-top 10px
-  :border-bottom-width thin 
-  :border-bottom-style solid  
-  :border-bottom-color = !pink
   :height 120px
   img
     :float left
@@ -95,6 +92,27 @@ label
     :margin 0
     span
       :display none
+#menu
+  :border-bottom-width thin 
+  :border-bottom-style solid  
+  :border-bottom-color = !pink
+  ul
+    :margin-bottom 5px
+    li
+      :padding 5px
+      :display inline
+      :margin-left 5px
+      a
+        :padding 6px
+        :text-decoration none 
+        &:link, &:visited
+          :color #333
+        &:hover
+          :font-weight bold
+          :background-image url("/images/triangle.png")
+          :background-repeat no-repeat
+          :background-position bottom center
+
 #bd
   :padding 10px
 #maintext, #info
