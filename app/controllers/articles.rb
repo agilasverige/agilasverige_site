@@ -8,4 +8,7 @@ class Articles < Application
     render
   end
   
+  def program
+    render
+  end
 end

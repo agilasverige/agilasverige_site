@@ -9,7 +9,7 @@
     %script{:type => 'text/javascript', :src => '/scripts/signup.js'}
     %link{ :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"}/
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"}/
-  %body
+  %body{:id => "#{@controller_name}"}
     #doc4.yui-t7 
       #hd
         %a{:href => url(:home)}
@@ -25,8 +25,8 @@
             %li 
               %a{:id => "homelink", :href => "index.html"} Hem
             %li
-              %a{:id => "pricelink", :href => "priser.html"} Priser
+              %a{:id => "registrationlink", :href => "priser.html"} Registrering
             %li
-              %a{:id => "contactlink", :href => "kontakt.html"} Kontakt
+              %a{:id => "programlink", :href => "kontakt.html"} Program
       = catch_content :for_layout
     
