@@ -1,15 +1,17 @@
 class Attendants < Application
   provides :html
   
+  before :authenticate, :exclude => :create
+
   def index
-    # @attendants = Attendant.all
-    # display @attendants
+    @attendants = Attendant.all
+    display @attendants
   end
 
   def show
-    # @attendant = Attendant.first(params[:id])
-    # raise NotFound unless @attendant
-    # display @attendant
+    @attendant = Attendant.first(params[:id])
+    raise NotFound unless @attendant
+    display @attendant
   end
 
   def new
@@ -21,10 +23,10 @@ class Attendants < Application
   end
 
   def edit
-    # only_provides :html
-    # @attendant = Attendant.first(params[:id])
-    # raise NotFound unless @attendant
-    # render
+    only_provides :html
+    @attendant = Attendant.first(params[:id])
+    raise NotFound unless @attendant
+    render
   end
 
   def create
@@ -66,13 +68,13 @@ class Attendants < Application
   end
 
   def update
-    # @attendant = Attendant.first(params[:id])
-    # raise NotFound unless @attendant
-    # if @attendant.update_attributes(params[:attendant])
-    #   redirect url(:attendant, @attendant)
-    # else
-    #   raise BadRequest
-    # end
+    @attendant = Attendant.first(params[:id])
+    raise NotFound unless @attendant
+    if @attendant.update_attributes(params[:attendant])
+      redirect url(:attendant, @attendant)
+    else
+      raise BadRequest
+    end
   end
 
   def destroy
@@ -92,4 +94,7 @@ class Attendants < Application
     end
   end
   
+  def authenticate
+    basic_authentication { |u, p| Digest::SHA1.hexdigest(p) == "633f55e2df0c9cb68e634c465715476adc559c0e" }
+  end
 end

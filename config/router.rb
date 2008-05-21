@@ -34,7 +34,9 @@ Merb::Router.prepare do |r|
     year.match('/tack').to(:controller => 'articles', :action => 'thanks').name(:thanks_for_signing_up)
     year.match('/program').to(:controller => 'program', :action => 'index').name(:program)
   
-    year.resources :attendants
+    year.resources :attendants do |a|
+      a.resources :speaking_proposals
+    end
   end
   
   r.match("/").to(:controller => 'articles', :action => 'index')

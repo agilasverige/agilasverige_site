@@ -1,6 +1,17 @@
 %h1
-  Attendants controller, index action
-%p
-  Edit this file in
-  %tt
-    app/views/attendants/index.html.erb
+  Attendants 
+
+%table
+  %tr
+    %th Last Name
+    %th First Name
+    %th organization
+    %th Email
+    %th Anmäld
+  - @attendants.each do |attendant|
+    %tr 
+      %td= attendant.last_name
+      %td= attendant.first_name
+      %td= attendant.organization
+      %td= attendant.email
+      %td= attendant.created_at

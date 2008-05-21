@@ -41,6 +41,8 @@ require "merb-mailer"
 
 require 'lib/sponsor_list'
 
+require 'digest/sha1'
+
 #Merb::Config[:path_prefix] = "/2008"
 
 # These are some examples of how you might specify dependencies.
