@@ -32,7 +32,7 @@ Merb::Router.prepare do |r|
   r.match("/2008") do |year| 
     year.match('').to(:controller => 'articles', :action => 'index').name(:home)
     year.match('/tack').to(:controller => 'articles', :action => 'thanks').name(:thanks_for_signing_up)
-    year.match('/program').to(:controller => 'articles', :action => 'program').name(:program)
+    year.match('/program').to(:controller => 'program', :action => 'index').name(:program)
   
     year.resources :attendants
   end
