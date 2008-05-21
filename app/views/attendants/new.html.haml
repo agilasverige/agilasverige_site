@@ -10,25 +10,6 @@
         
         = @attendant.errors.on :first_name
       - form_for :attendant, :action => url(:attendants) do
-        %p
-          - if @wants_to_speak
-            = checkbox_control :wants_to_speak, :label => "Jag vill hålla föredrag", :checked => true, :value => "1"
-          - else
-            = checkbox_control :wants_to_speak, :label => "Jag vill hålla blixttal", :value => "1"
-        #speakingproposal
-          %fieldset
-            %legend
-              %span Förslag till föredrag
-            %p
-              Om du vill tala på Agila Sverige 2008, fyll i fälten nedan i samband med din anmälan. Om du vill anmäla fler förslag räcker det med att ange samma e-postadress vid de tillkommande förslagen.
-            %p Tänk på att din presentation skall vara högst tio minuter lång.
-            - fields_for @speaking_proposal do
-              %p
-                = text_control :title, :label => "Titel"
-              %p
-                = text_area_control :description, :label => "Beskrivning"
-              %p
-                = select_control :level, :label => "Nivå", :collection => ["Lätt - inga förkunskaper i ämnet krävs", "Medel - vissa förkunskaper i ämnet krävs", "Avancerad - Stora förkunskaper i ämnet krävs"]
         %fieldset
           %legend
             %span Personuppgifter:
