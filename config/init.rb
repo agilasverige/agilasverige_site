@@ -36,6 +36,7 @@ dependencies "haml", "merb-haml"
 dependency "merb_helpers"
 dependency "merb_stories"
 dependency "merb-assets"
+dependency "merb-cache" , "=0.9.2"
 
 require 'merb_has_flash'
 require "merb-mailer"
