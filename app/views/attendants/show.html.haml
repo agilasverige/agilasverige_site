@@ -13,3 +13,4 @@
   %p= "Anmäld #{@attendant.created_at}"
 
 = link_to "Editera", url(:edit_attendant, @attendant) 
+= link_to "Lägg till blixttal", url(:new_attendant_speaking_proposal, :attendant_id => @attendant.id)

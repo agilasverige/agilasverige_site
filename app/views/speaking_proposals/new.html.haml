@@ -1,0 +1,25 @@
+
+#bd
+  .yui-gc
+    %div{:class => "yui-u first"}
+      - form_for :speaking_proposal, :action => url(:attendant_speaking_proposal, @speaking_proposal) do
+        %fieldset
+          %legend
+            %span Förslag till Blixttal:
+          - if flash[:error_message_email_taken]
+            %p.error_message= flash[:error_message_email_taken]
+          %p
+            = text_control :title, :label => "Titel"
+            %span.error_message= flash["error_message_first_name"]
+          %p
+            = text_control :description, :label => "Beskrivning"
+            %span.error_message= flash["error_message_last_name"]
+          %p
+            = text_control :level, :label => "Nivå"
+            %span.error_message= flash["error_message_email"]
+        = submit_button "Spara"
+    .yui-u
+      #sponsors
+        = partial 'shared/sponsors'
+#ft
+  = partial 'shared/footer'
