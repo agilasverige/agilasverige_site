@@ -1,0 +1,101 @@
+From c19de8d86b7836c1d288f6781e86ee9b53d9440e Mon Sep 17 00:00:00 2001
+From: Marcus Ahnve <marcus@ahnve.com>
+Date: Thu, 22 May 2008 19:33:34 +0200
+Subject: scheduling extracted started
+
+---
+ lib/speaker_schedule.rb           |   51 +++++++++++++++++++++++++++++++++++++
+ spec/lib/speaker_schedule_spec.rb |   23 ++++++++++++++++
+ 2 files changed, 74 insertions(+), 0 deletions(-)
+ create mode 100644 lib/speaker_schedule.rb
+ create mode 100644 spec/lib/speaker_schedule_spec.rb
+
+diff --git a/lib/speaker_schedule.rb b/lib/speaker_schedule.rb
+new file mode 100644
+index 0000000000000000000000000000000000000000..b4f2f3fd3c4782f97c44bdddfa20937f09b37b95
+--- /dev/null
++++ b/lib/speaker_schedule.rb
+@@ -0,0 +1,51 @@
++class SpeakerSchedule
++
++  def initialize
++    setup_schedule
++  end
++
++  def speaker(args)
++    speaking_proposal(args).attendant
++  end
++
++  def title(args)
++    speaking_proposal(args).title
++  end
++
++  private
++
++  def speaking_proposal(args)
++    sp_id = parse_id(args)
++    SpeakingProposal.first(:id => sp_id)
++  end
++
++  def parse_id(args) 
++    day = args.delete(:day) - 1
++    track = args.delete(:track) - 1
++    slot = args.delete(:slot) - 1
++    talk = args.delete(:talk) - 1
++    @schedule[day][track][slot][talk]
++  end
++
++  def setup_schedule
++    slot1_1_1 = [1,2,3,4]
++    slot1_1_2 = []
++    slot1_1_3 = []
++    slot1_2_1 = []
++    slot1_2_2 = []
++    slot1_2_3 = []
++    slot2_1_1 = []
++    slot2_1_2 = []
++    slot2_1_3 = []
++    slot2_2_1 = []
++    slot2_2_2 = []
++    slot2_2_3 = []
++    track1_1 = [slot1_1_1, slot1_1_2, slot1_1_3]
++    track1_2 = [slot1_2_1, slot1_2_2, slot1_2_3]
++    track2_1 = [slot2_1_1, slot2_1_2, slot2_1_3]
++    track2_2 = [slot2_2_1, slot2_2_2, slot2_2_3]
++    day1 = [track1_1, track1_2]
++    day2 = [track2_1, track2_2]
++    @schedule = [day1, day2]
++  end
++end
+diff --git a/spec/lib/speaker_schedule_spec.rb b/spec/lib/speaker_schedule_spec.rb
+new file mode 100644
+index 0000000000000000000000000000000000000000..91496dc9974fd77d64dcc38b9db45c7e14bcde27
+--- /dev/null
++++ b/spec/lib/speaker_schedule_spec.rb
+@@ -0,0 +1,23 @@
++require File.join( File.dirname(__FILE__), "..", "spec_helper" )
++
++describe "SpeakerSchedule" do
++  
++  before(:each) do
++    @schedule = SpeakerSchedule.new
++  end
++  
++  it "should have id 1 on day 1, track 1, slot 1, talk 1" do
++    speaking_proposal = mock("speaking_proposal")
++    speaking_proposal.should_receive(:title).and_return("Introduktion")
++    SpeakingProposal.should_receive(:first).with(:id => 1).and_return(speaking_proposal)
++    @schedule.title(:day => 1, :track => 1, :slot => 1, :talk => 1).should == "Introduktion"
++  end
++
++  it "should have Marcus Ahnve on day 1, track 1, slot 1, talk 1" do
++    speaking_proposal = mock("speaking_proposal")
++    speaking_proposal.should_receive(:attendant).and_return("Marcus Ahnve")
++    SpeakingProposal.should_receive(:first).with(:id => 1).and_return(speaking_proposal)
++    @schedule.speaker(:day => 1, :track => 1, :slot => 1, :talk  => 1).should == "Marcus Ahnve"
++  end
++end
++
+-- 
+1.5.5.1
+
