@@ -1,9 +1,9 @@
 class SpeakingProposals < Application
   
   before :get_attendant
-
+  before :authenticate
   def index
-    @speaking_proposals = @attendant.speaking_proposals
+    @speaking_proposals = @attendant ? @attendant.speaking_proposals : SpeakingProposal.all
     render 
   end
 
@@ -37,4 +37,9 @@ class SpeakingProposals < Application
   def get_attendant
     @attendant = Attendant.first(:id => params[:attendant_id])
   end
+  
+  def authenticate
+    basic_authentication { |u, p| Digest::SHA1.hexdigest(p) == "633f55e2df0c9cb68e634c465715476adc559c0e" }
+  end
+
 end

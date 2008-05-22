@@ -37,6 +37,8 @@ Merb::Router.prepare do |r|
     year.resources :attendants do |a|
       a.resources :speaking_proposals
     end
+
+    year.resources :speaking_proposals
   end
   
   r.match("/").to(:controller => 'articles', :action => 'index')

@@ -1,4 +1,8 @@
-%h1= @attendant.first_name
+%h1
+  - if @attendant
+    = "#{@attendant.first_name} #{@attendant.last_name}:s blixttal"
+  - else
+    Alla blixtal
 %table
   %tr
     %th Id
@@ -12,4 +16,4 @@
       %td= link_to sp.title, url(:attendant_speaking_proposal, sp)
       %td= sp.description
       %td= sp.level
-      %td= link_to "#{sp.attendant.first_name} #{sp.attendant.last_name}", url(:attendant, @attendant)
+      %td= link_to "#{sp.attendant.first_name} #{sp.attendant.last_name}", url(:attendant, sp.attendant_id)
