@@ -8,10 +8,16 @@
     %th organization
     %th Email
     %th Anmäld
+    %th Talarförslag
   - @attendants.each do |attendant|
     %tr 
-      %td= attendant.last_name
+      %td= link_to(attendant.last_name, url(:edit_attendant, attendant))
       %td= attendant.first_name
       %td= attendant.organization
-      %td= attendant.email
+      %td
+        %a{:href => "mailto:#{attendant.email}"}
+          = attendant.email
       %td= attendant.created_at
+      %td 
+        %a{:href => url(:attendant_speaking_proposals, :attendant_id => attendant)} 
+          = attendant.speaking_proposals.size

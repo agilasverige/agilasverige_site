@@ -1,0 +1,11 @@
+%h1= @attendant.first_name
+%table
+  %tr
+    %th Titel
+    %th Beskrivning
+    %th Nivå
+  - @speaking_proposals.each do |sp|
+    %tr
+      %td= sp.title
+      %td= sp.description
+      %td= sp.level

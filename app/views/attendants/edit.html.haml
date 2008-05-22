@@ -1,6 +1,41 @@
-%h1
-  Attendants controller, edit action
-%p
-  Edit this file in
-  %tt
-    app/views/attendants/edit.html.erb
+#bd
+  .yui-gc
+    %div{:class => "yui-u first"}
+      - form_for :attendant, :action => url(:attendant, @attendant) do
+        %fieldset
+          %legend
+            %span Personuppgifter:
+          - if flash[:error_message_email_taken]
+            %p.error_message= flash[:error_message_email_taken]
+          %p
+            = text_control :first_name, :label => "Förnamn"
+            %span.error_message= flash["error_message_first_name"]
+          %p
+            = text_control :last_name, :label => "Efternamn"
+            %span.error_message= flash["error_message_last_name"]
+          %p
+            = text_control :email, :label => "E-postadress"
+            %span.error_message= flash["error_message_email"]
+          %p
+            = text_control :organization, :label => "Organisation"
+          %p
+            = text_control :co_address, :label => "c/o adress"
+          %p
+            = text_control :street_address, :label => "Gatuadress"
+            %span.error_message= flash["error_message_street_address"]
+          %p
+            = text_control :zip_code, :label => "Postnummer"
+            %span.error_message= flash["error_message_zip_code"]
+          %p
+            = text_control :postal_address, :label => "Postadress"
+            %span.error_message= flash["error_message_postal_address"]
+          %p
+            = text_control :country, :label => "Land"
+          %p
+            = text_control :telephone_number, :label => "Telefonnummer"
+        = submit_button "Spara"
+    .yui-u
+      #sponsors
+        = partial 'shared/sponsors'
+#ft
+  = partial 'shared/footer'

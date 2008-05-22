@@ -35,6 +35,7 @@ use_test :rspec
 dependencies "haml", "merb-haml" 
 dependency "merb_helpers"
 dependency "merb_stories"
+dependency "merb-assets"
 
 require 'merb_has_flash'
 require "merb-mailer"
