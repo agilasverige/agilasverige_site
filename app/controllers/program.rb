@@ -1,7 +1,7 @@
 class Program < Application
   
   def index
-    @schedule = Schedule.new
+    @schedule = SpeakerSchedule.new
     render
   end
   

@@ -5,11 +5,13 @@ class SpeakerSchedule
   end
 
   def speaker(args)
-    speaking_proposal(args).attendant
+    proposal = speaking_proposal(args)
+    proposal ? proposal.attendant : ""
   end
 
   def title(args)
-    speaking_proposal(args).title
+    proposal = speaking_proposal(args)
+    proposal ? proposal.title : ""
   end
 
   private
@@ -20,10 +22,10 @@ class SpeakerSchedule
   end
 
   def parse_id(args) 
-    day = args.delete(:day) - 1
-    track = args.delete(:track) - 1
-    slot = args.delete(:slot) - 1
-    talk = args.delete(:talk) - 1
+    day = args[:day] - 1
+    track = args[:track] - 1
+    slot = args[:slot] - 1
+    talk = args[:talk] - 1
     @schedule[day][track][slot][talk]
   end
 

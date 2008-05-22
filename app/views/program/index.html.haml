@@ -19,68 +19,93 @@
         %tr
           %td
           %td 
-            %a.title= @schedule.title_slot(1)
-            %p.speaker= @schedule.speaker_slot(1)
-
-          %td Teknisk skuld - Andreas Larsson
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 1, :talk => 1}
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 1, :talk => 1}
         %tr
           %td
-          %td Alla skall med - Andreas Ekström
-          %td KSSE-inspirerat task force team - Peter Antman
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 1, :talk => 2}
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 1, :talk => 2}
         %tr
           %td
-          %td Produktiva team - David Barnholdt
-          %td User Guide Driven Development (UGDD) - Daniel Brolund
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 1, :talk => 3}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 1, :talk => 3}
         %tr
           %td
-          %td Grupparbete eller teamwork - Tobias Anderberg
-          %td Varför utbilda dina konkurrenter? - Mattias Karlsson
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 1, :talk => 4}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 1, :talk => 5}
         %tr
           %td 10:00 - 10:20
           %td{:class => "paus", :colspan => "2"} Kaffepaus
         %tr
           %td 10:20 - 11:20
-          %td Agile Game Development - Fredrik Sjöö
-          %td Kontinuerlig integration med Ivy och Team City - Niklas Lindholm
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 2, :talk => 1}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 2, :talk => 1}
         %tr
           %td
-          %td Poängen med poäng - Ola Ellnestam
-          %td Nattliga tester med Linux och Perl - Erwan Lemonnier
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 2, :talk => 2}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 2, :talk => 2}
         %tr
           %td
-          %td Agile Decision Awareness - Staffan Nöteberg
-          %td Tester är inte poängen - Joakim Ohlrogge
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 2, :talk => 3}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 2, :talk => 3}
         %tr
           %td
-          %td Don quijote mot draken - Scrum med multi-team på FMV - Michael Albrecht
-          %td Agila metoder i inbyggda system - Emil Nordling och Johan Hernefeldt
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 2, :talk => 4}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 2, :talk => 4}
         %tr
           %td
-          %td Snurra hjulet - Joakim Holm
-          %td Verktyg för C++ - Andreas Larsson
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 2, :talk => 5}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 2, :talk => 5}
         %tr
           %td 11:20 - 11:30
           %td{:class => "paus", :colspan => "2"} Paus
         %tr
           %td 11:30 - 12:30
-          %td Agile BI/DW - Daniel Fagerström
-          %td Trafikstockning - Måns Sandström
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 3, :talk => 1}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 3, :talk => 1}
         %tr
           %td
-          %td Agil Biztalkutveckling - Joshua Anthony
-          %td Scrum på svenska - Gabriel Falkenberg och Mattias Köhlmark
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 3, :talk => 2}
+          %t
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 3, :talk => 2}
         %tr
           %td 
-          %td Aktiv systemförvaltning - agil systemutvecklings okände bror - Peter Tallungs
-          %td Agile Practices, Experiences and Adaptions - Mats Wahlberg
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 3, :talk => 3}
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 3, :talk => 3}
         %tr
           %td
-          %td Agil systemförvaltning - nyutveckling är bara början - Henrik Lilienberg
-          %td 5x snabbare utveckling mha Value Stream Mapping och Scrum - ett konkret exempel - Henrik Kniberg
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 3, :talk => 4}
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 3, :talk => 4}
         %tr
           %td
-          %td Traditionella testfaser i agila projekt - Jonas Hermansson
-          %td Erfarenheter från lean implementationer - Marcus Ahnve
+          %td 
+            = partial :talkinfo, :with => {:day => 1, :track => 1, :slot => 3, :talk => 5}
+          %td
+            = partial :talkinfo, :with => {:day => 1, :track => 2, :slot => 3, :talk => 5}
 
       %h1 Tisdag
       %table
@@ -90,70 +115,100 @@
           %th Celsiussalen
         %tr
           %td 09:00 - 10:00
-          %td Bygg bättre system - ett effektivt möte med användare - Johanna Särnå
-          %td Assert first, Backwards directed, Completion assisted - Thomas Nilsson
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 1, :talk => 1}
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 1, :talk => 1}
         %tr
           %td
-          %td Myter om kvalitet - Matti Hjelm
-          %td När jag till slut förstod Behaviour Driven Development - Niclas Nilsson
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 1, :talk => 2}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 1, :talk => 2}
         %tr
           %td
-          %td Att skapa en product backlog - Martin Persson
-          %td Using TDD with legacy code - Axel Andersson
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 1, :talk => 3}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 1, :talk => 3}
         %tr
           %td
-          %td Scrumteamet som produktägare - Torbjörn Kalin
-          %td Att testdriva feta klienter - Ola Ellnestam
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 1, :talk => 4}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 1, :talk => 4}
         %tr
           %td
-          %td En dag i en agil analytikers liv - Thomas Nilsson
-          %td Agila som fiskar - Johan Lind
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 1, :talk => 5}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 1, :talk => 5}
         %tr
           %td 10:00 - 10:20
           %td{:class => "paus", :colspan => "2"} Kaffepaus
         %tr
           %td 10:20 - 11:20
-          %td Du kodar väl på svenska? - Joakim Sundén
-          %td Ping-Pong-Kingen - Joakim Holm
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 2, :talk => 1}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 2, :talk => 1}
         %tr
           %td
-          %td Sjukvården har anammat kundmetaforen, är det dags för oss att anamma patientmetaforen? - Gabriel Falkenberg
-          %td Agil dokumentation med Bumblebee - Daniel Brolund
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 2, :talk => 2}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 2, :talk => 2}
         %tr
           %td
-          %td Agil data - Niklas Lindström
-          %td Funktionstester med Fitnesse - Joakim Karlsson
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 2, :talk => 3}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 2, :talk => 3}
         %tr
           %td
-          %td NLP som kommunikationsstrategi - Mats Oldin
-          %td Agila tester av inköpta system - Jonas Hermansson
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 2, :talk => 4}
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 2, :talk => 4}
         %tr
           %td
-          %td The Pomodoro Technique - Staffan Nöteberg
-          %td Det vi inte testdriver - Måns Sandström
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 2, :talk => 5}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 2, :talk => 5}
         %tr
           %td 11:20 - 11:30
           %td{:class => "paus", :colspan => "2"} Paus
         %tr
           %td 11:30 - 12:30
-          %td Hur har vi fått Scrum att funka - Peter Antman
-          %td Tvärfunktionella team, släpp in oss i sprinten - Sara Manding
+          %td 
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 3, :talk => 1}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 3, :talk => 1}
         %tr
           %td
-          %td Retrospektiv på riktigt - Chris Hedgate
-          %td Medvetet systemtänkande och tillämpning på lagarbete - Lennart Floreby
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 3, :talk => 2}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 3, :talk => 2}
         %tr
           %td
-          %td Sofistikerade verktyg, hjälpa eller stjälpa? - Andreas Ekström
-          %td SOA och agility - Peter Tallungs
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 3, :talk => 3}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 3, :talk => 3}
         %tr
           %td
-          %td I vattenfallets land - Jimmy Larsson
-          %td Overcoming Meeting Scepticism - Marcus Widerberg
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 3, :talk => 4}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 3, :talk => 4}
         %tr
           %td
-          %td Kan man undvika den tekniska skuldfällan? - Petter Wigle
-          %td Using agile practices in a crisis - Mats Wahlberg
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 1, :slot => 3, :talk => 5}
+          %td
+            = partial :talkinfo, :with => {:day => 2, :track => 2, :slot => 3, :talk => 5}
     .yui-u
       #sponsors
         = partial 'shared/sponsors'
