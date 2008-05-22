@@ -34,5 +34,9 @@ class Attendant < DataMapper::Base
       return true if proposal.accepted?
     end
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
   
 end

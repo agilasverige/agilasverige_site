@@ -63,6 +63,11 @@ describe "An regular attendant", Attendant do
     @attendant.wants_to_speak.should == true
   end
 
+  it "should have a full name" do
+    @attendant.first_name = "hej"
+    @attendant.last_name = "då"
+    @attendant.full_name.should == "hej då"
+  end
 
   it "has no speaking proposals" do
     @attendant.speaking_proposals.size.should == 0

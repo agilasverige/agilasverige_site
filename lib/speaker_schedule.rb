@@ -6,7 +6,7 @@ class SpeakerSchedule
 
   def speaker(args)
     proposal = speaking_proposal(args)
-    proposal ? proposal.attendant : ""
+    proposal ? proposal.attendant.full_name : ""
   end
 
   def title(args)
