@@ -41,6 +41,7 @@ require 'merb_has_flash'
 require "merb-mailer"
 
 require 'lib/sponsor_list'
+require 'lib/speaker_schedule'
 
 require 'digest/sha1'
 
