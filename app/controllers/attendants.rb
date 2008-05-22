@@ -1,7 +1,7 @@
 class Attendants < Application
   provides :html
   
-  before :authenticate, :exclude => :create
+  before :authenticate, :exclude => [:new, :create]
 
   def index
     @attendants = Attendant.all

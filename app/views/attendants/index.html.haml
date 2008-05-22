@@ -12,7 +12,7 @@
     %th Talarförslag
   - @attendants.each do |attendant|
     %tr 
-      %td= link_to(attendant.id, url(:show_attendant, attendant))
+      %td= link_to(attendant.id, url(:attendant, attendant))
       %td= link_to(attendant.last_name, url(:edit_attendant, attendant))
       %td= attendant.first_name
       %td= attendant.organization
