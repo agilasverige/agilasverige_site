@@ -15,14 +15,20 @@ describe "SpeakerSchedule" do
 
   it "should have Marcus Ahnve on day 1, track 1, slot 1, talk 1" do
     speaking_proposal = mock("speaking_proposal")
-    speaking_proposal.should_receive(:attendant).and_return("Marcus Ahnve")
+    speaking_proposal.should_receive(:attendant_full_name).and_return("Marcus Ahnve")
     SpeakingProposal.should_receive(:first).with(:id => 49).and_return(speaking_proposal)
     @schedule.speaker(:day => 1, :track => 1, :slot => 1, :talk  => 1).should == "Marcus Ahnve"
   end
   
+  it "should have a description on day 1, track 1, slot 1, talk 1" do
+    speaking_proposal = mock("speaking_proposal")
+    speaking_proposal.should_receive(:description).and_return("Description")
+    SpeakingProposal.should_receive(:first).with(:id => 49).and_return(speaking_proposal)
+    @schedule.description(:day => 1, :track => 1, :slot => 1, :talk  => 1).should == "Description"
+  end
   it "should find something in the middle" do
     speaking_proposal = mock("speaking_proposal")
-    speaking_proposal.should_receive(:attendant).and_return("Marcus Ahnve")
+    speaking_proposal.should_receive(:attendant_full_name).and_return("Marcus Ahnve")
     SpeakingProposal.should_receive(:first).with(:id => 26).and_return(speaking_proposal)
     @schedule.speaker(:day => 2, :track => 2, :slot => 1, :talk  => 3).should == "Marcus Ahnve"
   end

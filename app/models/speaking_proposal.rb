@@ -7,5 +7,9 @@ class SpeakingProposal < DataMapper::Base
   property :description, :text
   property :level, :string
   property :created_at, :datetime
+
+  def attendant_full_name
+    attendant.full_name
+  end
 end
 

@@ -1,4 +1,8 @@
+- my_id = "#{talkinfo[:day]}_#{talkinfo[:track]}_#{talkinfo[:slot]}_#{talkinfo[:talk]}"
 %p.title
-  =@schedule.title(talkinfo)
+  %a{:href => "##{my_id}", :rel => "facebox"}= @schedule.title(talkinfo)
 %p.speaker
   =@schedule.speaker(talkinfo)
+- if(@schedule.description(talkinfo))
+  %div{:id => my_id, :style => "display: none;"}
+    %p= @schedule.description(talkinfo)

@@ -5,10 +5,21 @@
     %title
       Agila Sverige 2008
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type"}/
-    %script{:type => 'text/javascript', :src => '/scripts/jquery-1.2.3.min.js'}
-    %script{:type => 'text/javascript', :src => '/scripts/signup.js'}
+    %script{:type => 'text/javascript', :src => '/scripts/jquery-1.2.5.min.js'}
+    %link{ :href => "/stylesheets/facebox.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"}/
+    %script{:type => 'text/javascript', :src => '/scripts/facebox.js'}
     %link{ :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"}/
     %link{ :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"}/
+    :plain
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('a[rel*=facebox]').facebox({
+              loading_image : '/images/facebox/loading.gif',
+              close_image   : '/images/facebox/closelabel.gif'
+            })
+        })
+      </script>
+
   %body{:id => "#{@controller_name}"}
     #doc4.yui-t7 
       #hd
