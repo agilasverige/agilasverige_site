@@ -2,7 +2,7 @@
 %p.title
   %a{:href => "##{my_id}", :rel => "facebox"}= @schedule.title(talkinfo)
 %p.speaker
-  =@schedule.speaker(talkinfo)
+  ="#{@schedule.speaker(talkinfo)} - #{@schedule.organization(talkinfo)}"
 - if(@schedule.description(talkinfo))
   %div{:id => my_id, :style => "display: none;"}
     %p= @schedule.description(talkinfo)

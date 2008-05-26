@@ -26,6 +26,12 @@ describe "SpeakerSchedule" do
     SpeakingProposal.should_receive(:first).with(:id => 49).and_return(speaking_proposal)
     @schedule.description(:day => 1, :track => 1, :slot => 1, :talk  => 1).should == "Description"
   end
+  it "should have a organization on day 1, track 1, slot 1, talk 1" do
+    speaking_proposal = mock("speaking_proposal")
+    speaking_proposal.should_receive(:organization).and_return("organization")
+    SpeakingProposal.should_receive(:first).with(:id => 49).and_return(speaking_proposal)
+    @schedule.organnization(:day => 1, :track => 1, :slot => 1, :talk  => 1).should == "organization"
+  end
   it "should find something in the middle" do
     speaking_proposal = mock("speaking_proposal")
     speaking_proposal.should_receive(:attendant_full_name).and_return("Marcus Ahnve")

@@ -19,6 +19,11 @@ class SpeakerSchedule
     proposal ? proposal.description : ""
   end
 
+  def organization(args)
+    proposal = speaking_proposal(args)
+    proposal ? proposal.attendant_organization : ""
+  end
+
 
   private
 

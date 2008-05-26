@@ -11,5 +11,9 @@ class SpeakingProposal < DataMapper::Base
   def attendant_full_name
     attendant.full_name
   end
+
+  def attendant_organization
+    attendant.organization
+  end
 end
 
