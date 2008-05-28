@@ -8,6 +8,9 @@
           - if flash[:error_message_email_taken]
             %p.error_message= flash[:error_message_email_taken]
           %p
+            = checkbox_control :wants_to_speak, :label => "Talare"
+            %span.error_message= flash["error_message_first_name"]
+          %p
             = text_control :first_name, :label => "Förnamn"
             %span.error_message= flash["error_message_first_name"]
           %p

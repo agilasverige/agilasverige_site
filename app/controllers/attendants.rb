@@ -1,5 +1,5 @@
 class Attendants < Application
-  provides :html
+  provides :html, :text
   
   before :authenticate, :exclude => [:new, :create]
 
@@ -86,6 +86,23 @@ class Attendants < Application
     #       raise BadRequest
     #     end
       end
+
+  def all_emails
+    only_provides :text
+    emails = ""
+    Attendant.each do |attendant|
+      emails << "#{attendant.email} ,"
+    end
+    emails.chop
+  end
+
+  def speaker_emails
+    emails = ""
+    Attendant.each(:wants_to_speak => true) do |attendant|
+      emails << "#{attendant.email} ,"
+    end
+    emails.chop
+  end
   private
   
   def flashify_error_messages_for_attendant

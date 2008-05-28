@@ -10,6 +10,7 @@
     %th Email
     %th Anmäld
     %th Talarförslag
+    %th Talare
   - @attendants.each do |attendant|
     %tr 
       %td= link_to(attendant.id, url(:attendant, attendant))
@@ -23,3 +24,5 @@
       %td 
         %a{:href => url(:attendant_speaking_proposals, :attendant_id => attendant)} 
           = attendant.speaking_proposals.size
+      %td
+        = attendant.wants_to_speak
