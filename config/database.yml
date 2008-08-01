@@ -1,6 +1,7 @@
 ---
 :development: &defaults
-  :adapter: postgresql
+  :adapter: postgres
+  :host: localhost
   :database: as2008_development
   :username: mahnve
 

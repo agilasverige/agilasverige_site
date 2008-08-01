@@ -18,6 +18,7 @@ end
 
 ### Uncomment for DataMapper ORM
 use_orm :datamapper
+# dependency "merb_datamapper", "=0.9.2"
 
 ### Uncomment for ActiveRecord ORM
 # use_orm :activerecord
