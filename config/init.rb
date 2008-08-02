@@ -46,6 +46,7 @@ require 'lib/sponsor_list'
 require 'lib/speaker_schedule'
 
 require 'digest/sha1'
+require 'dm-validations'
 
 #Merb::Config[:path_prefix] = "/2008"
 

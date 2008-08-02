@@ -3,6 +3,7 @@ class SpeakingProposal
 
   belongs_to :attendant
 
+  property :id, Integer, :serial => true
   property :accepted, Boolean
   property :title, String
   property :description, Text
