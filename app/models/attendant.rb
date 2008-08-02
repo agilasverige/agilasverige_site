@@ -1,4 +1,5 @@
-class Attendant < DataMapper::Base
+class Attendant 
+  include DataMapper::Resource
 
   has_many :speaking_proposals
 
@@ -10,18 +11,18 @@ class Attendant < DataMapper::Base
   
 
   
-  property :first_name, :string
-  property :last_name, :string
-  property :email, :string
-  property :co_address, :string
-  property :street_address, :string
-  property :zip_code, :string
-  property :postal_address, :string
-  property :country, :string
-  property :organization, :string
-  property :telephone_number, :string
-  property :wants_to_speak, :boolean
-  property :created_at, :datetime
+  property :first_name, String
+  property :last_name, String
+  property :email, String
+  property :co_address, String
+  property :street_address, String
+  property :zip_code, String
+  property :postal_address, String
+  property :country, String
+  property :organization, String
+  property :telephone_number, String
+  property :wants_to_speak, Boolean
+  property :created_at, Datetime
   
   
   
