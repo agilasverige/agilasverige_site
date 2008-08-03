@@ -35,7 +35,7 @@ use_test :rspec
 ### Add your other dependencies here
 dependencies "haml", "merb-haml" 
 dependency "merb_helpers"
-dependency "merb_stories"
+#dependency "merb_stories" if Merb.environment == 'test'
 dependency "merb-assets"
 #dependency "merb-cache" , "=0.9.2"
 

@@ -76,30 +76,47 @@ end
 
 describe "An attendant with two speaking proposals" do
 
-  before(:each) do
-    @attendant = Attendant.new
-    @attendant.speaking_proposals.create :title => "hej"
-    @attendant.speaking_proposals.create :title  => "hej"
-  end
 
   it "should be a prospective speaker" do
+    create_attendant_with_two_speaking_proposals('email1@for.two')
     @attendant.prospective_speaker?.should == true
   end
   
 
   it "should have two speaking proposals" do
+    create_attendant_with_two_speaking_proposals('email2@for.two')
     @attendant.speaking_proposals.size.should == 2
+  end
+
+  def create_attendant_with_two_speaking_proposals(email_address)
+    @attendant = Attendant.new(:first_name => 'first',
+                               :last_name => 'last',
+                               :email => email_address,
+                               :street_address => 'street',
+                               :zip_code => '13434',
+                               :postal_address => 'poaddress')
+    @attendant.save
+    @attendant.speaking_proposals.create :title => "hej"
+    @attendant.speaking_proposals.create :title  => "hej"
   end
 end
 
 describe "An attendant with accepted proposals" do
-  before(:each) do
-    @attendant = Attendant.new
-    @attendant.speaking_proposals.create :title => "hej", :accepted => true
-  end
     
   it "should be a speaker" do
+    create_attendant_with_accepted_proposal
     @attendant.speaker?.should == true
+  end
+
+  def create_attendant_with_accepted_proposal
+    @attendant = Attendant.new(:first_name => 'first',
+                               :last_name => 'last',
+                               :email => 'm@hej.ghf',
+                               :street_address => 'street',
+                               :zip_code => '13434',
+                               :postal_address => 'poaddress')
+    @attendant.save
+    @attendant.speaking_proposals.create :title => "hej", :accepted => true
   end
 end
 
@@ -112,25 +129,22 @@ end
 
 describe "an attendant registering with the the same email address as already registered" do
   
-  before(:each) do
-    Attendant.create(:first_name => "first", 
-                     :last_name => 'last', 
-                     :email => "em@il.com", 
-                     :street_address => "address",
-                     :zip_code => "16876",
-                     :postal_code => "86876",
-                     :postal_address => "hhh")
-  end
   
   it "should receive error message saying it is already registered" do
-    attendant = Attendant.new(:first_name => "first", 
-                  :last_name => 'last', 
-                  :email => "em@il.com", 
-                  :street_address => "address",
-                  :zip_code => "16876",
-                  :postal_code => "86876",
-                  :postal_address => "hhh")
-    attendant.valid?.should be_false
-    attendant.errors.on(:email).should include("redan registrerad")
+    attendant = create_attendant('same@email.address')
+    attendant2 = create_attendant('same@email.address')
+    attendant2.valid?.should be_false
+    attendant2.errors.on(:email).should include("redan registrerad")
+  end
+
+  def create_attendant(email_address)
+    Attendant.create(:first_name => "first", 
+                     :last_name => 'last', 
+                     :email => email_address,
+                     :street_address => "address",
+                     :zip_code => "16876",
+                     :postal_address => "hhh")
+
   end
 end
+
