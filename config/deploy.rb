@@ -12,7 +12,7 @@ role :app, "svr.stjernstrom.se"
 role :web, "svr.stjernstrom.se"
 role :db, "svr.stjernstrom.se", :primary => true
 
-default_run_options[:pty] = true
+#default_run_options[:pty] = true
 
 ssh_options[:port] = 22666
 
