@@ -4,7 +4,7 @@ set :domain, "agilasverige.se"
 set :repository, "git://github.com/mahnve/agilasverige.git" 
 set :deploy_to, "/home/agilesweden/apps/#{application}" 
 
-set :scm, "git"
+set :scm, :git
 set :deploy_via, :remote_cache
 set :branch, "origin/master"
 
