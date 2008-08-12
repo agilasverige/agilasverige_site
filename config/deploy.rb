@@ -6,7 +6,7 @@ set :deploy_to, "/home/agilesweden/apps/#{application}"
 
 set :scm, :git
 set :deploy_via, :remote_cache
-set :branch, "origin/master"
+set :branch, "master"
 
 role :app, "svr.stjernstrom.se"
 role :web, "svr.stjernstrom.se"
