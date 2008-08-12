@@ -5,6 +5,7 @@ set :repository, "git://github.com/mahnve/agilasverige.git"
 set :deploy_to, "/home/agilesweden/apps/#{application}" 
 
 set :scm, :git
+set :scm_verbose, :true
 set :deploy_via, :remote_cache
 set :branch, "master"
 
