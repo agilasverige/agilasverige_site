@@ -1,7 +1,5 @@
-class Attendants < Application
-  provides :html, :text
+class AttendantsController < Ramaze::Controller
   
-  before :authenticate
 
   def index
     @attendants = Attendant.all

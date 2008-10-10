@@ -1,4 +1,4 @@
-class Program < Application
+class ProgramController < Ramaze::Controller
 
   #cache_page :index
   

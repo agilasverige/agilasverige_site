@@ -1,7 +1,7 @@
-class SpeakingProposals < Application
+class SpeakingProposals < Ramaze::Controller
   
-  before :get_attendant
-  before :authenticate
+  # before :get_attendant
+  # before :authenticate
   def index
     @speaking_proposals = @attendant ? @attendant.speaking_proposals : SpeakingProposal.all
     render 
