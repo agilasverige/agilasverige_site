@@ -1,0 +1,138 @@
+require 'erector'
+
+class BaseView < Erector::Widget
+  DOCTYPE = <<-TEXT 
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  TEXT
+
+  def render
+    instruct
+    rawtext DOCTYPE.strip
+    html do
+      head_content
+      body :id => 'controller' do
+        div :id => 'doc4', :class  => 'yui-t7' do
+          header
+          menu
+          main
+          footer
+        end
+      end
+      #         &copy; Agila Sverige 2008
+      #         |
+      #         %a{:href => "mailto:info@agilasverige.se"} Kontakta oss
+      #   :plain
+      #     <script type="text/javascript">
+      #       jQuery(document).ready(function($) {
+      #           $('a[rel*=facebox]').facebox({
+      #             loading_image : '/images/facebox/loading.gif',
+      #             close_image   : '/images/facebox/closelabel.gif'
+      #           })
+      #       })
+      #     </script>
+      #
+      #       :plain
+      #         <script type="text/javascript">
+      #         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      #         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      #         </script>
+      #         <script type="text/javascript">
+      #         var pageTracker = _gat._getTracker("UA-160245-3");
+      #         pageTracker._initData();
+      #         pageTracker._trackPageview();
+      #         </script>
+    end
+  end
+
+  def content
+    p 'implement me!'
+  end
+
+  private
+
+  def header
+    div :id => 'hd' do
+      a :href => '/'
+      img :src => '/images/as_logo.png'
+      h1 do
+        span 'Agila Sverige 2008'
+      end
+      h2 do
+        span 'Stockholm 2-3 juni 2008'
+      end
+      img :id => 'date', :src => '/images/postit_dates.png'
+    end
+  end
+
+  def menu
+    div :class => 'yui-g' do
+      div :id => 'menu' do
+        ul do
+          li do
+            a 'Hem', :id => "homelink", :href => '/'
+          end
+        end
+      end
+    end
+  end
+
+  def head_content
+    head do
+      title 'Agila Sverige 2008'
+      meta :content => "text/html; charset=utf-8", "http-equiv" => "content-type"
+      script :type => 'text/javascript', :src => '/scripts/jquery-1.2.5.min.js'
+      link :href => "/stylesheets/facebox.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
+      script :type => 'text/javascript', :src => '/scripts/facebox.js'
+      link :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"
+      link :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
+    end
+  end
+
+  def main
+    div :id => 'bd' do
+      div :class => 'yui-g' do
+        div :class => 'yui-u first' do
+          div :id => 'maintext' do
+            content
+          end
+        end
+        div :class => 'yui-g' do
+          info
+          sponsors
+        end
+      end
+    end
+  end
+
+  def footer
+    div :id => 'ft' do
+      p do
+        rawtext '&copy; Agila Sverige 2008 | '
+        a 'Kontakta oss', :href => 'mailto:info@agilasverige.se'
+      end
+    end
+  end
+
+  def info
+    div :class => 'yui-u first' do
+      div :id => 'info' do
+      end
+    end
+  end
+
+  def sponsors
+    div :class => 'yui-u' do
+      div :id => 'sponsors' do
+        h2 'Sponsorer'
+        SponsorList.new.random_order.each do |sponsor|
+          p do
+            a :href => "#{sponsor.url}"
+            img :src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"
+          end
+        end
+      end
+    end
+  end
+end
+
+
