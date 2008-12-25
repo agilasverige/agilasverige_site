@@ -1,4 +1,3 @@
-#!/usr/bin/env ruby
 require 'rubygems'
 require 'ramaze'
 
@@ -28,4 +27,4 @@ acquire __DIR__/:view/'*.rb'
 # r.match("/").to(:controller => 'articles', :action => 'index')
  
   
-Ramaze.start :adapter => :mongrel, :port => 7000
+#Ramaze.start :adapter => :mongrel, :port => 7000

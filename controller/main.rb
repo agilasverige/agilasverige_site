@@ -14,6 +14,7 @@ class MainController < Ramaze::Controller
   
   def program
     @schedule = SpeakerSchedule.new
+    ProgramView.new.to_s
   end
 
   def sponsors
