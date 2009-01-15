@@ -18,29 +18,6 @@ class BaseView < Erector::Widget
           footer
         end
       end
-      #         &copy; Agila Sverige 2008
-      #         |
-      #         %a{:href => "mailto:info@agilasverige.se"} Kontakta oss
-      #   :plain
-      #     <script type="text/javascript">
-      #       jQuery(document).ready(function($) {
-      #           $('a[rel*=facebox]').facebox({
-      #             loading_image : '/images/facebox/loading.gif',
-      #             close_image   : '/images/facebox/closelabel.gif'
-      #           })
-      #       })
-      #     </script>
-      #
-      #       :plain
-      #         <script type="text/javascript">
-      #         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      #         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-      #         </script>
-      #         <script type="text/javascript">
-      #         var pageTracker = _gat._getTracker("UA-160245-3");
-      #         pageTracker._initData();
-      #         pageTracker._trackPageview();
-      #         </script>
     end
   end
 
@@ -80,9 +57,6 @@ class BaseView < Erector::Widget
     head do
       title 'Agila Sverige 2008'
       meta :content => "text/html; charset=utf-8", "http-equiv" => "content-type"
-      script :type => 'text/javascript', :src => '/scripts/jquery-1.2.5.min.js'
-      link :href => "/stylesheets/facebox.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
-      script :type => 'text/javascript', :src => '/scripts/facebox.js'
       link :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"
       link :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
     end
