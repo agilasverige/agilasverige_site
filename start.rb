@@ -6,8 +6,11 @@ require 'ramaze'
 Ramaze::Log.ignored_tags = [:debug, :info]
 Ramaze::Global.sourcereload = false
 
+pid_dir = File.join(__DIR__,'log')
+FileUtils.mkdir_p(pid_dir)
+
 unless Ramaze::Log.loggers.size == 2
-  logdir = File.join(__DIR__,'logs')
+  logdir = File.join(__DIR__,'log')
   logfile = File.join(logdir,"ramaze_#{Time.now.strftime('%Y%m%d%H%M%S')}.log")
 
   FileUtils.mkdir_p(logdir)
