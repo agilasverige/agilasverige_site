@@ -1,0 +1,69 @@
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/controller/init.rb:7"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/model/init.rb:4"
+[2009-02-21 22:59:54] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:54] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:55] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:55] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:55] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:55] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:55] WARN   String#/ is deprecated, use File::join instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 22:59:55] WARN   Object#acquire is deprecated, use Ramaze::acquire instead - from: "/Users/mahnve/src/agilasverige/view/init.rb:1"
+[2009-02-21 23:01:50] ERROR  #<SignalException: SIGTERM>
+[2009-02-21 23:01:50] ERROR  #<SignalException: SIGTERM>
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter/base.rb:79:in `join'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter/base.rb:79:in `join'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter.rb:34:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:95:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:94:in `each'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter/base.rb:79:in `join'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:94:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter/base.rb:79:in `join'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:112:in `start!'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter.rb:34:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/ramaze:75
+[2009-02-21 23:01:50] ERROR  #<SignalException: SIGTERM>
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:95:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/bin/ramaze:19:in `load'
+[2009-02-21 23:01:50] ERROR  /opt/local/bin/ramaze:19
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:94:in `each'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:94:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:112:in `start!'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/ramaze:75
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter/base.rb:79:in `join'
+[2009-02-21 23:01:50] ERROR  /opt/local/bin/ramaze:19:in `load'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter/base.rb:79:in `join'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/lib/ramaze/adapter.rb:34:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:95:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:94:in `each'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:94:in `startup'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/../lib/ramaze.rb:112:in `start!'
+[2009-02-21 23:01:50] ERROR  /opt/local/lib/ruby/gems/1.8/gems/ramaze-2009.02/bin/ramaze:75
+[2009-02-21 23:01:50] ERROR  /opt/local/bin/ramaze:19:in `load'
+[2009-02-21 23:01:50] ERROR  /opt/local/bin/ramaze:19
+[2009-02-21 23:01:50] ERROR  /opt/local/bin/ramaze:19

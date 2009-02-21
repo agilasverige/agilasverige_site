@@ -1,30 +1,29 @@
+#!/usr/bin/env ruby
 require 'rubygems'
 require 'ramaze'
 
 # require all controllers and models
-acquire __DIR__/:controller/'*'
-acquire __DIR__/:lib/'*'
-acquire __DIR__/:view/'*.rb'
-# acquire __DIR__/:model/'*'
+Ramaze::Log.ignored_tags = [:debug, :info]
+Ramaze::Global.sourcereload = false
 
-# Ramaze::Route[/(\/2008)\/(.*)/] = "Vjjjjjjj1
+unless Ramaze::Log.loggers.size == 2
+  logdir = File.join(__DIR__,'logs')
+  logfile = File.join(logdir,"ramaze_#{Time.now.strftime('%Y%m%d%H%M%S')}.log")
 
-  
-# r.match("/2008") do |year| 
-#   year.match('').to(:controller => 'articles', :action => 'index').name(:home)
-#   year.match('/tack').to(:controller => 'articles', :action => 'thanks').name(:thanks_for_signing_up)
-#   year.match('/program').to(:controller => 'program', :action => 'index').name(:program)
-#   year.match('/all_emails').to(:controller => 'attendants', :action => 'all_emails').name(:all_emails)
-#   year.match('/speaker_emails').to(:controller => 'attendants', :action => 'speaker_emails').name(:speaker_emails)
-# 
-#   year.resources :attendants do |a|
-#     a.resources :speaking_proposals
-#   end
+  FileUtils.mkdir_p(logdir)
+  logger = Ramaze::Logger::Informer.new(logfile)
+  Ramaze::Log.loggers << logger
+end
 #
-#   year.resources :speaking_proposals
-# end
-# 
-# r.match("/").to(:controller => 'articles', :action => 'index')
- 
+# Add directory start.rb is in to the load path, so you can run the app from
+# any other working path
+$LOAD_PATH.unshift(__DIR__)
+
+# Initialize controllers and models
+require 'controller/init'
+require 'model/init'
+require 'view/init'
+
   
 #Ramaze.start :adapter => :mongrel, :port => 7000
+
