@@ -81,10 +81,21 @@ class BaseView < Erector::Widget
   def footer
     div :id => 'ft' do
       p do
-        rawtext '&copy; Agila Sverige 2008 | '
+        text '&copy; Agila Sverige 2008 | '
         a 'Kontakta oss', :href => 'mailto:info@agilasverige.se'
       end
     end
+    rawtext <<-END 
+      <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+      var pageTracker = _gat._getTracker("UA-160245-3");
+      pageTracker._initData();
+      pageTracker._trackPageview();
+      </script>
+    END
   end
 
   def info
