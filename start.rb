@@ -6,7 +6,7 @@ require 'ramaze'
 Ramaze::Log.ignored_tags = [:debug, :info]
 Ramaze::Global.sourcereload = false
 
-pid_dir = File.join(__DIR__,'log')
+pid_dir = File.join(__DIR__,'pid')
 FileUtils.mkdir_p(pid_dir)
 
 unless Ramaze::Log.loggers.size == 2
