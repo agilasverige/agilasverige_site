@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTANCES=3
-STARTING_PORT=3000
+STARTING_PORT=12000
 
 for((i=0; i < INSTANCES; i++)) do
   let port=$STARTING_PORT+$i
