@@ -37,7 +37,7 @@ class BaseView < Erector::Widget
       h2 do
         span 'Stockholm 2-3 juni 2008'
       end
-      img :id => 'date', :src => '/images/postit_dates.png'
+      img :id => 'date', :src => '/images/postit_note.jpg'
     end
   end
 
@@ -81,7 +81,7 @@ class BaseView < Erector::Widget
   def footer
     div :id => 'ft' do
       p do
-        text '&copy; Agila Sverige 2008 | '
+        rawtext '&copy; Agila Sverige 2009 | '
         a 'Kontakta oss', :href => 'mailto:info@agilasverige.se'
       end
     end
