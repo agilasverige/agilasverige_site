@@ -2,7 +2,7 @@
 
 for file in ./pid/*; do
   PID=`cat $file` 
-  kill -1 $PID
+  kill $PID
   echo Killed Ramaze with pid $PID
 done
 
