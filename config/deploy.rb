@@ -19,7 +19,7 @@ namespace :vlad do
   set :ramaze_address,       "127.0.0.1"
   set :ramaze_clean,         false
   set :ramaze_command,       'ramaze'
-  set(:ramaze_conf)          nil
+  set :ramaze_conf,          nil
   set :ramaze_config_script, nil
   set :ramaze_environment,   "live"
   set :ramaze_group,         nil
