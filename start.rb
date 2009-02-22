@@ -26,7 +26,7 @@ $LOAD_PATH.unshift(__DIR__)
 require 'controller/init'
 require 'model/init'
 require 'view/init'
-
+require 'lib/init'
   
 #Ramaze.start :adapter => :mongrel, :port => 7000
 
