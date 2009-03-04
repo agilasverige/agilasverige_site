@@ -1,4 +1,5 @@
 require File.join( File.dirname(__FILE__), "..", "..","lib", "presentations08" )
+require File.join( File.dirname(__FILE__), "..", "..","lib", "presentation" )
 require 'spec'
 
 describe "Presentations08" do
@@ -12,7 +13,7 @@ describe "Presentations08" do
   end
   
   it 'should have ABC-programmering first in list' do
-    @presentations08.first.title.should == "ABC programmering"
+    @presentations08.first.title.should == "ABC-programmering"
     @presentations08.first.author.should == "Thomas Nilsson"
     @presentations08.first.files.first.should == "abc-programmering_-_thomas_nilsson.pdf"
   end

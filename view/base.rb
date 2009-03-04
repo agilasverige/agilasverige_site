@@ -47,6 +47,7 @@ class BaseView < Erector::Widget
         ul do
           li do
             a 'Hem', :id => "homelink", :href => '/'
+            a '2008', :id => "zeroeight", :href => '/as2008'
           end
         end
       end

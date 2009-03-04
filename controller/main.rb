@@ -9,6 +9,13 @@ class MainController < Ramaze::Controller
     MainView.new.to_s
   end
   
+  def as2008
+    presentations08 = Presentations08.new.presentations
+    view = AS2008View.new
+    view.presentations = presentations08
+    view.to_s
+  end
+
   def thanks
   end
   

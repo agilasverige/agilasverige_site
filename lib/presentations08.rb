@@ -1,7 +1,8 @@
 class Presentations08
 
-  @@presentation_data = [
-    ["ABC-programmering","Thomas Nilsson",["abc-programmering_-_thomas nilsson.pdf"]],
+  attr_reader :presentations
+
+  @@presentation_data=[["ABC-programmering","Thomas Nilsson",["abc-programmering_-_thomas_nilsson.pdf"]],
     ["Agil Biztalkutveckling","Joshua Anthony",["agil_biztalkutveckling_-_joshua_anthony.pdf","agil_biztalkutveckling_-_joshua_anthony.ppt"]],
     ["Agil Data","Niklas Lindström",["agil_data_-_niklas_lindstrom.zip"]],
     ["Agil dokumentation med bumblebee","Daniel Brolund",["agil_dokumentation_med_bumblebee_-_daniel_brolund.pdf","agil_dokumentation_med_bumblebee_-_daniel_brolund.ppt"]],
@@ -46,17 +47,13 @@ class Presentations08
     ["Tester ar inte poängen","Joakim Ohlrogge",["tester_ar_inte_poangen_-_joakim_ohlrogge.pdf","tester_ar_inte_poangen_-_joakim_ohlrogge.ppt"]],
     ["Trafikstockning","Måns Sandström",["trafikstockning_-_mans_sandstrom.pdf","trafikstockning_-_mans_sandstrom.zip"]],
     ["Tvärfunktionella team","Sara Manding",["tvarfunktionella_team_-_sara_manding.pdf","tvarfunktionella_team_-_sara_manding.ppt"]],
-    ["User guide driven development","Daniel Brolund",["user_guide_driven_development_-_daniel_brolund.pdf"],"user_guide_driven_development_-_daniel_brolund.ppt"]],
+    ["User guide driven development","Daniel Brolund",["user_guide_driven_development_-_daniel_brolund.pdf","user_guide_driven_development_-_daniel_brolund.ppt"]],
     ["Using agile practices in a crisis","Mats Wahlberg",["using_agile_practices_in_a_crisis_-_mats_wahlberg.pdf"]],
     ["Value stream mapping","Henrik Kniberg",["value_stream_mapping_-_henrik_kniberg.pdf","value_stream_mapping_-_henrik_kniberg.ppt"]],
-    ["Varför utbilda sina konkurrenter","Mattias Karlsson",["varfor_utbilda_sina_konkurrenter_-_mattias_karlsson.pdf"],"varfor_utbilda_sina_konkurrenter_-_mattias_karlsson.ppt"]]
-  ]
+    ["Varför utbilda sina konkurrenter","Mattias Karlsson",["varfor_utbilda_sina_konkurrenter_-_mattias_karlsson.pdf","varfor_utbilda_sina_konkurrenter_-_mattias_karlsson.ppt"]]]
 
   def initialize
     @presentations = []
-
-    Dir.foreach(Dir.dirname(__FILE__) + '../shared/presentations08/') do
-    end
     @@presentation_data.each do |data|
       presentation = Presentation.new
       presentation.title = data[0]
@@ -70,11 +67,9 @@ class Presentations08
 
   def size
     50
-  End
+  end
 
   def first
     @presentations.first
   end
-
-
 end

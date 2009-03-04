@@ -4,7 +4,7 @@ require 'ramaze'
 
 # require all controllers and models
 Ramaze::Log.ignored_tags = [:debug, :info]
-Ramaze::Global.sourcereload = false
+#Ramaze::Global.sourcereload = true
 
 pid_dir = File.join(__DIR__,'pid')
 FileUtils.mkdir_p(pid_dir)
