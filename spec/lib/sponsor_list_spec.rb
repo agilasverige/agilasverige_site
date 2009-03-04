@@ -1,5 +1,5 @@
 require File.join( File.dirname(__FILE__), "..", "..","lib", "sponsor_list" )
-require 'bacon'
+require 'spec'
 
 describe "SponsorList" do
   
