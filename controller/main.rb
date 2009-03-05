@@ -11,8 +11,7 @@ class MainController < Ramaze::Controller
   
   def as2008
     presentations08 = Presentations08.new.presentations
-    view = AS2008View.new
-    view.presentations = presentations08
+    view = AS2008View.new(presentations08)
     view.to_s
   end
 
