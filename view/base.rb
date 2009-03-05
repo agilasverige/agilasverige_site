@@ -59,7 +59,7 @@ class BaseView < Erector::Widget
       title 'Agila Sverige 2008'
       meta :content => "text/html; charset=utf-8", "http-equiv" => "content-type"
       link :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"
-      link :href => "/stylesheets/master.css", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
+      link :href => "/css/master", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
     end
   end
 

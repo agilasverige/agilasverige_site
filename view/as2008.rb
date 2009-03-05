@@ -8,12 +8,22 @@ class AS2008View < BaseView
   end
 
   def content
-    ul(:id => 'presentations') do
+    table(:id => 'presentations') do
+      tr do
+        th "Titel"
+        th 'Talare'
+        th 'Filer'
+      end
       @presentations.each do |presentation|
-        li "#{presentation.title}, #{presentation.author}" 
-        presentation.files.each do |file|
-          a :href => "/files/presentations_08/#{file}", :id => file.sub(/\./, '_') do
-            img :src => "/images/#{file_icon(file)}"
+        tr do 
+          td "#{presentation.title}"
+          td "#{presentation.author}" 
+          td do
+            presentation.files.each do |file|
+              a :href => "/files/presentations_08/#{file}", :id => file.sub(/\./, '_') do
+                img :src => "/images/#{file_icon(file)}"
+              end
+            end
           end
         end
       end
