@@ -7,7 +7,7 @@ class AS2008View < BaseView
       @presentations.each do |presentation|
         li "#{presentation.title}, #{presentation.author}" 
         presentation.files.each do |file|
-          a file, :href => "#{file}"
+          a file, :href => "/files/presentations_08/#{file}"
         end
       end
     end
