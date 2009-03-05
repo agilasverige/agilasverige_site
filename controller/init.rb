@@ -10,3 +10,4 @@ end
 # Here go your requires for subclasses of Controller:
 require 'controller/main'
 require 'controller/css'
+require 'controller/as2008'
