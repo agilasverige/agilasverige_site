@@ -6,6 +6,7 @@ class Presentations08
     ["Agil Biztalkutveckling","Joshua Anthony",["agil_biztalkutveckling_-_joshua_anthony.pdf","agil_biztalkutveckling_-_joshua_anthony.ppt"]],
     ["Agil Data","Niklas Lindström",["agil_data_-_niklas_lindstrom.zip"]],
     ["Agil dokumentation med bumblebee","Daniel Brolund",["agil_dokumentation_med_bumblebee_-_daniel_brolund.pdf","agil_dokumentation_med_bumblebee_-_daniel_brolund.ppt"]],
+    ["Agil metoder i inbyggda system","Johan Hernefeldt",["agila_metoder_i_inbyggda_system_-_johan_hernefeldt.pdf","agila_metoder_i_inbyggda_system_-_johan_hernefeldt.ppt"]],
     ["Agil systemförvaltning","Henrik Lilienberg",["agil_systemforvaltning_-_henrik_lilienberg.pdf","agil_systemforvaltning_-_henrik_lilienberg.ppt"]],
     ["Agila som fiskar","Johan Lind",["agila_som_fiskar_-_johan_lind.pdf"]],
     ["Agila tester av inköpta system","Jonas Hermansson",["agila_tester_av_inkopta_system_-_jonas_hermansson.pdf","agila_tester_av_inkopta_system_-_jonas_hermansson.ppt"]],
