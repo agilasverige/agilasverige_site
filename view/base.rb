@@ -109,7 +109,7 @@ class BaseView < Erector::Widget
   def sponsors
     div :class => 'yui-u' do
       div :id => 'sponsors' do
-        h2 'Sponsorer'
+        h2 'Sponsorer 2009'
         SponsorList.new.random_order.each do |sponsor|
           p do
             a :href => "#{sponsor.url}"

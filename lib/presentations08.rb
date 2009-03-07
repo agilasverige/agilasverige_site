@@ -54,6 +54,10 @@ class Presentations08
     ["Varför utbilda sina konkurrenter","Mattias Karlsson",["varfor_utbilda_sina_konkurrenter_-_mattias_karlsson.pdf","varfor_utbilda_sina_konkurrenter_-_mattias_karlsson.ppt"]]]
 
   def initialize
+    load_presentations
+  end
+
+  def load_presentations
     @presentations = []
     @@presentation_data.each do |data|
       presentation = Presentation.new
@@ -65,6 +69,7 @@ class Presentations08
       @presentations.push(presentation)
     end
   end
+
 
   def size
     50
