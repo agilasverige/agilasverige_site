@@ -21,4 +21,6 @@ namespace :spec do
   end 
 end 
 
+require 'cucumber/rake/task'
 
+Cucumber::Rake::Task.new
