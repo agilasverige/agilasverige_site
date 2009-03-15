@@ -6,5 +6,8 @@ rescue LoadError
 end
 
 require 'spec/rake/spectask' 
-Spec::Rake::SpecTask.new 
+Spec::Rake::SpecTask.new do |t|
+  t.spec_opts = ["--color"] 
+end 
+  
 
