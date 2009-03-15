@@ -7,7 +7,7 @@ end
 
 require 'spec/rake/spectask' 
 Spec::Rake::SpecTask.new do |t|
-  t.spec_opts = ["--color"] 
+  t.spec_opts = ["--color", '--format', "specdoc"] 
 end 
   
 
