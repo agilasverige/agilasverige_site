@@ -1,5 +1,9 @@
 class Attendant 
   
+  def initialize(args)
+    raise ArgumentError.new('Förnamn, efternamn, adress, postnummer och postadress är obligatoriska fält')
+  end
+
   def first_name
     'First Name'
   end
