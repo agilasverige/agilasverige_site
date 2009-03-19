@@ -1,4 +1,5 @@
 require File.join(File.dirname(__FILE__), '..', 'env.rb')
+
 Given /^I am a visitor$/ do
 end  
 

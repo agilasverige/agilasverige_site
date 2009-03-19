@@ -27,6 +27,7 @@ require 'controller/init'
 require 'model/init'
 require 'view/init'
 require 'lib/init'
+require 'infrastructure/attendant_repository'
   
 #Ramaze.start :adapter => :mongrel, :port => 7000
 

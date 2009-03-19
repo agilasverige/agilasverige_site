@@ -1,10 +1,5 @@
 class MainController < Ramaze::Controller
 
-  # engine :Haml
-  # layout '/layout'
-  
-  # deny_layout :sponsors
-
   def index
     MainView.new.to_s
   end

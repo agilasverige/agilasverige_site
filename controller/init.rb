@@ -11,3 +11,4 @@ end
 require 'controller/main'
 require 'controller/css'
 require 'controller/as2008'
+require 'controller/attendant'
