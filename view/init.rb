@@ -1,5 +1,5 @@
-require 'view/base'
-require 'view/index'
-require 'view/program'
-require 'view/as2008'
-require 'view/attendant_new'
+require File.join(File.dirname(__FILE__),'base')
+require File.join(File.dirname(__FILE__),'index')
+require File.join(File.dirname(__FILE__),'program')
+require File.join(File.dirname(__FILE__),'as2008')
+require File.join(File.dirname(__FILE__),'attendant_new')

@@ -1,1 +1,1 @@
-require 'model/attendant'
+require File.join(File.dirname(__FILE__), 'attendant')

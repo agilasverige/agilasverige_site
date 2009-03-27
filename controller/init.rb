@@ -8,7 +8,7 @@ class Controller < Ramaze::Controller
 end
 
 # Here go your requires for subclasses of Controller:
-require 'controller/main'
-require 'controller/css'
-require 'controller/as2008'
-require 'controller/attendant'
+require File.join(File.dirname(__FILE__),'main')
+require File.join(File.dirname(__FILE__),'css')
+require File.join(File.dirname(__FILE__),'as2008')
+require File.join(File.dirname(__FILE__),'attendant')
