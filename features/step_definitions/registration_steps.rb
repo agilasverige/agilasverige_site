@@ -22,10 +22,11 @@ end
 Then /^my personal information is stored$/ do
   attendant = Attendant.by_last_name(:key => 'Last Name').first
   attendant.first_name.should == 'First Name'
+  @id = attendant.id
 end
 
 Then /^I see a confirmation page$/ do
-  pending
+  response.url.should == "/attendant/#{@id}"
 end
 
 Then /^I get a confirmation email$/ do
