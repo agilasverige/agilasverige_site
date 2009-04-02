@@ -20,7 +20,7 @@ When /^I register for the conference with correct data$/ do
 end
 
 Then /^my personal information is stored$/ do
-  attendant = Attendant.new(Attendant.by_last_name(:key => 'Last Name').first)
+  attendant = Attendant.by_last_name(:key => 'Last Name').first
   attendant.first_name.should == 'First Name'
 end
 
