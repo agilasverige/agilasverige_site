@@ -1,9 +1,9 @@
 class AttendantNew < BaseView 
 
   def content
-    form do
+    form(:action => '/attendant/new', :method => 'post') do
       text_field('Förnamn', 'first_name')
-      text_field('Efternamn', 'last_name')
+      text_field('Efternamn', :last_name)
       text_field('Organisation', 'organization')
       text_field('Adress', 'address')
       text_field('Postnummer', 'zip_code')
@@ -12,6 +12,7 @@ class AttendantNew < BaseView
       checkbox('Kommer på middagen', 'attending_dinner')
       text_field('Matpreferenser', 'food_preferences')
       text_area_field('Kommentarer', 'comments')
+      input(:value => 'Anmäl',:type => 'submit')
     end
   end
 

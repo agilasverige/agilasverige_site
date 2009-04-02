@@ -16,10 +16,11 @@ When /^I register for the conference with correct data$/ do
   check 'attending_dinner'
   fill_in 'food_preferences', :with => 'vegetarian'
   fill_in 'comments', :with => 'comments'
+  click_button 'Anmäl'
 end
 
 Then /^my personal information is stored$/ do
-  attendant = AttendantRepository.find_by_last_name('Last Name')
+  attendant = Attendant.new(Attendant.by_last_name(:key => 'Last Name').first)
   attendant.first_name.should == 'First Name'
 end
 

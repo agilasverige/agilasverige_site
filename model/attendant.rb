@@ -1,22 +1,20 @@
-class Attendant 
+require 'couchrest'
+
+class Attendant < CouchRest::ExtendedDocument
+
+
+  use_database CouchRest.database!('http://localhost:5984/agilasverige')
+  timestamps!
   
-  attr_accessor :first_name
-  attr_accessor :last_name
-  attr_accessor :organization
-  attr_accessor :address
-  attr_accessor :zip_code
-  attr_accessor :postal_address
-
-  def initialize(args)
-
-
-    #raise ArgumentError.new('Förnamn, efternamn, adress, postnummer och postadress är obligatoriska fält')
-  end
-
+  property :first_name
+  property :last_name
+  property :organization
+  property :address
+  property :zip_code
+  property :postal_address
+  property :attending_dinner
   
-  def first_name
-    'First Name'
-  end
+  view_by :last_name
 
   # def speaker?
   #   speaking_proposals.each do |proposal|
