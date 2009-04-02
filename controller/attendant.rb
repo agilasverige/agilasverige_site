@@ -1,13 +1,17 @@
 class AttendantController < Ramaze::Controller
 
+  def index(id)
+    Attendant.get(id)
+  end
+
   def new
     if request.get?
       AttendantNew.new.to_s
     elsif request.post?
       sanitize_request
-      puts request
       attendant = Attendant.new(request.params)
       attendant.save
+      redirect("/attendant/#{attendant.id}")
     end
   end
 

@@ -1,6 +1,9 @@
 require File.join(File.dirname(__FILE__), '..', 'env.rb')
 
 Given /^I have previously not signed up$/ do
+  Attendant.by_last_name(:key => "Last Name").each do |entry|
+    entry.destroy
+  end
 
 end
 
@@ -26,7 +29,7 @@ Then /^my personal information is stored$/ do
 end
 
 Then /^I see a confirmation page$/ do
-  response.url.should == "/attendant/#{@id}"
+  current_page.url.should == "/attendant/#{@id}"
 end
 
 Then /^I get a confirmation email$/ do
