@@ -8,6 +8,7 @@ class Attendant < CouchRest::ExtendedDocument
   
   property :first_name
   property :last_name
+  property :email
   property :organization
   property :address
   property :zip_code

@@ -11,6 +11,7 @@ When /^I register for the conference with correct data$/ do
   visit '/attendant/new'
   fill_in 'first_name', :with => 'First Name' 
   fill_in 'last_name', :with => 'Last Name' 
+  fill_in 'email', :with => 'email@localhost.com'
   fill_in 'organization', :with => 'organization' 
   fill_in 'address', :with => 'address'
   fill_in 'zip_code', :with => '12345'
@@ -29,7 +30,7 @@ Then /^my personal information is stored$/ do
 end
 
 Then /^I see a confirmation page$/ do
-  current_page.url.should == "/attendant/#{@id}"
+  current_page.url.should == "/attendant/#{@id}/thanks"
 end
 
 Then /^I get a confirmation email$/ do
