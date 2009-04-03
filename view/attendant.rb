@@ -21,18 +21,24 @@ module AttendantView
     private
 
     def text_field(label_text, id)
-      label(label_text, :for => id, :id => "#{id}_label")
-      input(:type => 'text', :name => id, :id => id)
+      div(:class => 'field') do
+        label(label_text, :for => id, :id => "#{id}_label")
+        input(:type => 'text', :name => id, :id => id)
+      end
     end
 
     def text_area_field(label_text, id)
-      label(label_text, :for => id, :id => "#{id}_label")
-      textarea(:name => id, :id => id)
+      div(:class => 'field') do
+        label(label_text, :for => id, :id => "#{id}_label")
+        textarea(:name => id, :id => id)
+      end
     end
 
     def checkbox(label_text, id)
-      label(label_text, :for => id, :id => "#{id}_label")
-      input(:type => 'checkbox', :name => id, :id => id)
+      div(:class => 'field') do
+        input(:type => 'checkbox', :name => id, :id => id)
+        label(label_text, :for => id, :id => "#{id}_label")
+      end
     end
   end
 
