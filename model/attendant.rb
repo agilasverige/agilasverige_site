@@ -13,9 +13,14 @@ class Attendant < CouchRest::ExtendedDocument
   property :address
   property :zip_code
   property :postal_address
+  property :country
   property :attending_dinner
+  property :food_preferences
+  property :comments
+  property :speaking_proposal, :cast_as => 'SpeakingProposal'
   
   view_by :last_name
+  view_by :email
 
   # def speaker?
   #   speaking_proposals.each do |proposal|

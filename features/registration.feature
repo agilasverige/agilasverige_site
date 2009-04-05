@@ -1,4 +1,4 @@
-Feature: Signup
+Feature: Attendant Signup
   
   In order to register for the conference
   As a visitor
@@ -6,7 +6,15 @@ Feature: Signup
 
   Scenario:
     Given I have previously not signed up
-    When I register for the conference with correct data
-    Then my personal information is stored
+    When I register as an attendant with correct data
+    Then my attendant information is stored
+    And I see a confirmation page
+    And I get a confirmation email
+
+
+  Scenario:
+    Given I have previously not signed up
+    When I register as a speaker with correct data
+    Then my speaker information is stored
     And I see a confirmation page
     And I get a confirmation email

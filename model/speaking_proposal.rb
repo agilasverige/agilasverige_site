@@ -1,21 +1,11 @@
-class SpeakingProposal 
-# include DataMapper::Resource
+require 'couchrest'
 
-# belongs_to :attendant
+class SpeakingProposal < CouchRest::ExtendedDocument
 
-# property :id, Integer, :serial => true
-# property :accepted, Boolean
-# property :title, String
-# property :description, Text
-# property :level, String
-# property :created_at, DateTime
+  use_database CouchRest.database!('http://localhost:5984/agilasverige')
 
-  def attendant_full_name
-    attendant.full_name
-  end
+  property :title
+  property :abstract
 
-  def attendant_organization
-    attendant.organization
-  end
 end
 

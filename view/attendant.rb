@@ -4,7 +4,7 @@ module AttendantView
     def content
       form(:action => '/attendant/new', :method => 'post') do
         text_field('Förnamn', 'first_name')
-        text_field('Efternamn', :last_name)
+        text_field('Efternamn', 'last_name')
         text_field('Email', 'email')
         text_field('Organisation', 'organization')
         text_field('Adress', 'address')
@@ -15,6 +15,9 @@ module AttendantView
         text_field('Matpreferenser', 'food_preferences')
         text_area_field('Kommentarer', 'comments')
         input(:value => 'Anmäl',:type => 'submit')
+        checkbox('Vill tala på konferensen', 'wants_to_speak')
+        text_field('Titel', 'title')
+        text_area_field('Beskrivning', 'abstract')
       end
     end
 
