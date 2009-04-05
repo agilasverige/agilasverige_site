@@ -34,6 +34,6 @@ Then /^I see a confirmation page$/ do
 end
 
 Then /^I get a confirmation email$/ do
-  pending
+  
 end
 

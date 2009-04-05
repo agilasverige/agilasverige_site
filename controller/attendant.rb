@@ -31,7 +31,7 @@ class AttendantController < Ramaze::Controller
   end
 
   def send_confirmation_email(attendant)
-    ConfirmationMailer.send_message(attendant)
+    ConfirmationMailer.send_message_to(attendant)
   end
 
   
