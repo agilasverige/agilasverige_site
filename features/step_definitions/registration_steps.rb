@@ -8,7 +8,8 @@ Given /^I have previously not signed up$/ do
 end
 
 When /^I register for the conference with correct data$/ do
-  visit '/attendant/new'
+  visit '/'
+  click_link 'Anmäl dig här'
   fill_in 'first_name', :with => 'First Name' 
   fill_in 'last_name', :with => 'Last Name' 
   fill_in 'email', :with => 'email@localhost.com'

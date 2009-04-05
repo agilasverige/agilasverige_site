@@ -102,6 +102,7 @@ class BaseView < Erector::Widget
   def info
     div :class => 'yui-u first' do
       div :id => 'info' do
+        a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
       end
     end
   end

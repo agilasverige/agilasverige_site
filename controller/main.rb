@@ -1,7 +1,7 @@
 class MainController < Ramaze::Controller
 
   def index
-    MainView.new.to_s
+    MainView::Index.new.to_s
   end
   
   def as2008
