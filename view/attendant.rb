@@ -47,8 +47,8 @@ module AttendantView
 
     def checkbox(label_text, id)
       div(:class => 'field') do
-        input(:type => 'checkbox', :name => id, :id => id)
         label(label_text, :for => id, :id => "#{id}_label")
+        input(:type => 'checkbox', :name => id, :id => id)
       end
     end
 
