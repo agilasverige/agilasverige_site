@@ -15,8 +15,11 @@ describe Attendant do
     end
 
     it 'should require a unique email address' do
-      create_attendant
-      lambda{create_attendant}.should raise_error(ArgumentError)
+      att1 = create_attendant
+      lambda{att1.save}.should_not raise_error(ArgumentError)
+      att2 = create_attendant
+      lambda{att2.save}.should raise_error(ArgumentError)
+      lambda{att1.save}.should_not raise_error(ArgumentError)
     end
 
   end
@@ -31,7 +34,7 @@ describe Attendant do
     attendant.zip_code = '12345'
     attendant.postal_address = 'Postal Address'
     attendant.country = 'Country'
-    attendant.save
+    attendant
   end
       
 end
