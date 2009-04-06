@@ -14,13 +14,13 @@ describe Attendant do
       end
     end
 
-    it 'should require a unique email address' do
-      att1 = create_attendant
-      lambda{att1.save}.should_not raise_error(ArgumentError)
-      att2 = create_attendant
-      lambda{att2.save}.should raise_error(ArgumentError)
-      lambda{att1.save}.should_not raise_error(ArgumentError)
-    end
+    # it 'should require a unique email address' do
+    #   att1 = create_attendant
+    #   lambda{att1.save}.should_not raise_error(ArgumentError)
+    #   att2 = create_attendant
+    #   lambda{att2.save}.should raise_error(ArgumentError)
+    #   lambda{att1.save}.should_not raise_error(ArgumentError)
+    # end
 
   end
 

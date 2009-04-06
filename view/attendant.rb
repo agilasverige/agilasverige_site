@@ -15,10 +15,18 @@ module AttendantView
         text_field('Matpreferenser', 'food_preferences')
         text_area_field('Kommentarer', 'comments')
         checkbox('Vill tala på konferensen', 'wants_to_speak')
-        text_field('Titel', 'title')
-        text_area_field('Beskrivning', 'abstract')
+        div(:id => 'speakingproposal') do
+          text_field('Titel', 'title')
+          text_area_field('Beskrivning', 'abstract')
+        end
         input(:value => 'Anmäl',:type => 'submit')
       end
+    end
+
+    def javascript
+      rawtext <<-END
+        <script type="text/javascript" src="/scripts/signup.js"></script>
+      END
     end
 
     private
@@ -43,6 +51,7 @@ module AttendantView
         label(label_text, :for => id, :id => "#{id}_label")
       end
     end
+
   end
 
   class Show < BaseView
