@@ -97,7 +97,7 @@ class BaseView < Erector::Widget
       pageTracker._initData();
       pageTracker._trackPageview();
       </script>
-      <script type="text/javascript" src="/scripts/jquery-1.2.5.min.js"></script>
+      <script type="text/javascript" src="/scripts/jquery-1.3.2.min.js"></script>
     END
   end
 
