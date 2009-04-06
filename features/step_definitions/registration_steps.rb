@@ -1,16 +1,11 @@
 require File.join(File.dirname(__FILE__), '..', 'env.rb')
 
 Given /^I have previously not signed up$/ do
-  Attendant.by_email(:key => "attendant@localhost.com").each do |entry|
-    entry.destroy
-  end
-  Attendant.by_email(:key => "speaker@localhost.com").each do |entry|
-    entry.destroy
-  end
-
+  clean_test_data
 end
 
 Given /^I have previously signed up as an attendant$/ do
+  clean_test_data
   attendant = Attendant.new
   attendant.first_name = 'Attendant'
   attendant.last_name = 'Attendantsson'
@@ -71,3 +66,11 @@ Then /^I get a confirmation email$/ do
   
 end
 
+def clean_test_data
+  Attendant.by_email(:key => "attendant@localhost.com").each do |entry|
+    entry.destroy
+  end
+  Attendant.by_email(:key => "speaker@localhost.com").each do |entry|
+    entry.destroy
+  end
+end

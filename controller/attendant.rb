@@ -13,6 +13,7 @@ class AttendantController < Ramaze::Controller
       AttendantView::New.new.to_s
     elsif request.post?
       sanitize_request
+
       attendant = Attendant.new
       attendant.first_name = request.params['first_name'] 
       attendant.last_name = request.params['last_name'] 

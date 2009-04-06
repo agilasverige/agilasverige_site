@@ -19,8 +19,4 @@ Feature: Attendant Signup
     And I see a confirmation page
     And I get a confirmation email
 
-  Scenario:
-    Given I have previously signed up as an attendant
-    When I register as an attendant with correct data
-    Then I get an error message
 

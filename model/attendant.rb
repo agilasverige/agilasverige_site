@@ -31,12 +31,12 @@ class Attendant < CouchRest::ExtendedDocument
   # def full_name
   #   "#{first_name} #{last_name}"
   # end
-  def save
-    saved_with_same_email = Attendant.by_email(:key => self.email).first
-    unless(saved_with_same_email.nil? || saved_with_same_email.id == id)
-      raise ArgumentError.new("A user with email #{email} already exists")
-    end
-    super
-  end
+  # def save
+  #   saved_with_same_email = Attendant.by_email(:key => self.email).first
+  #   unless(saved_with_same_email.nil? || saved_with_same_email.id == id)
+  #     raise ArgumentError.new("A user with email #{email} already exists")
+  #   end
+  #   super
+  # end
   
 end
