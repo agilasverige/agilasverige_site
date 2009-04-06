@@ -1,6 +1,6 @@
 require 'haml'
 
-class CSSController < Ramaze::Controller
+class CSSController < Controller
   map '/css'
   engine :Sass
 

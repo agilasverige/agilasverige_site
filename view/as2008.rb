@@ -2,9 +2,10 @@ class AS2008View < BaseView
 
   attr_writer :presentations
 
-  def initialize(presentations)
+
+  def initialize(controller, presentations)
     @presentations = presentations
-    super
+    super(controller)
   end
 
   def content

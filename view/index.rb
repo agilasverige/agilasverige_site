@@ -1,6 +1,10 @@
 module MainView
   class Index < BaseView
 
+    def initialize(controller)
+      super(controller)
+    end
+
     def content
       h2 'Datumen för Agila Sverige 2009 är klara'
       p do

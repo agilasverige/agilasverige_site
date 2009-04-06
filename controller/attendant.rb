@@ -1,8 +1,8 @@
-class AttendantController < Ramaze::Controller
+class AttendantController < Controller
 
   def index(id, message = '')
     attendant = Attendant.get(id)
-    view = AttendantView::Show.new
+    view = AttendantView::Show.new(self)
     view.message = message
     view.attendant = attendant
     view.to_s
@@ -10,7 +10,7 @@ class AttendantController < Ramaze::Controller
 
   def new
     if request.get?
-      AttendantView::New.new.to_s
+      AttendantView::New.new(self).to_s
     elsif request.post?
       sanitize_request
 

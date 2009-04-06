@@ -2,9 +2,10 @@
 # controllers
 
 class Controller < Ramaze::Controller
-  layout '/page'
-  helper :xhtml
-  engine :Ezamar
+
+  def name
+    self.class.to_s.gsub(/Controller/, '').downcase
+  end
 end
 
 # Here go your requires for subclasses of Controller:

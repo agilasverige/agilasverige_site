@@ -1,6 +1,10 @@
 module AttendantView
   class New < BaseView 
 
+    def initialize(controller)
+      super(controller)
+    end
+
     def content
       form(:action => '/attendant/new', :method => 'post') do
         text_field('Förnamn', 'first_name')
@@ -57,6 +61,10 @@ module AttendantView
   class Show < BaseView
 
     attr_writer :attendant, :message
+
+    def initialize(controller)
+      super(controller)
+    end
 
     def content
       if @message == 'thanks'

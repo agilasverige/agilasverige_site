@@ -5,12 +5,17 @@ class BaseView < Erector::Widget
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
   TEXT
 
+  def initialize(controller)
+    @controller = controller
+    super
+  end
+
   def render
     instruct
     rawtext DOCTYPE.strip
     html do
       head_content
-      body :id => 'controller' do
+      body :id => @controller.name do
         div :id => 'doc4', :class  => 'yui-t7' do
           header
           menu
@@ -26,7 +31,8 @@ class BaseView < Erector::Widget
     p 'implement me!'
   end
 
-  private
+  protected
+
 
   def header
     div :id => 'hd' do
@@ -47,8 +53,9 @@ class BaseView < Erector::Widget
       div :id => 'menu' do
         ul do
           li do
-            a 'Hem', :id => "homelink", :href => '/'
-            a '2008', :id => "zeroeight", :href => '/as2008'
+            a 'Hem', :id => "main_link", :href => '/'
+            a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+            a '2008', :id => "zeroeight_link", :href => '/2008'
           end
         end
       end
