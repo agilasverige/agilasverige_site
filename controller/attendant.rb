@@ -41,6 +41,7 @@ class AttendantController < Ramaze::Controller
     checkbox("attending_dinner")
   end
 
+
   protected
 
   def checkbox( param )

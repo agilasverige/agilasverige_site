@@ -7,16 +7,31 @@ describe Attendant do
      end
   end
   describe 'Created with all mandatory argument' do
-    it 'should return a new Attendant' do
-      mandatory_args = {:first_name => 'name',
-                        :last_name => 'last_name',
-                        :organization => 'last_name',
-                        :address => 'address',
-                        :zip_code => 12345,
-                        :postal_address => 'postal_address'}
 
-      lambda{Attendant.new(mandatory_args)}.should_not raise_error(ArgumentError)
+    before(:each) do
+      Attendant.by_email(:key => 'attendant@localhost.com').each do |attendant|
+        attendant.destroy
+      end
     end
+
+    it 'should require a unique email address' do
+      create_attendant
+      lambda{create_attendant}.should raise_error(ArgumentError)
+    end
+
+  end
+
+  def create_attendant
+    attendant = Attendant.new
+    attendant.first_name = 'Attendant'
+    attendant.last_name = 'Attendantsson'
+    attendant.organization = 'Organization'
+    attendant.email = 'attendant@localhost.com'
+    attendant.address = 'address'
+    attendant.zip_code = '12345'
+    attendant.postal_address = 'Postal Address'
+    attendant.country = 'Country'
+    attendant.save
   end
       
 end

@@ -10,6 +10,20 @@ Given /^I have previously not signed up$/ do
 
 end
 
+Given /^I have previously signed up as an attendant$/ do
+  attendant = Attendant.new
+  attendant.first_name = 'Attendant'
+  attendant.last_name = 'Attendantsson'
+  attendant.organization = 'Organization'
+  attendant.email = 'attendant@localhost.com'
+  attendant.address = 'address'
+  attendant.zip_code = '12345'
+  attendant.postal_address = 'Postal Address'
+  attendant.country = 'Country'
+  attendant.save
+end
+
+
 When /^I register as an? (.*) with correct data$/ do |attendant_type|
   visit '/'
   click_link 'Anmäl dig här'
@@ -37,6 +51,11 @@ Then /^my attendant information is stored$/ do
   attendant.first_name.should == 'First Name'
   @id = attendant.id
 end
+
+Then /^I get an error message$/ do
+  response_body.should have_selector('#message')
+end
+
 Then /^my speaker information is stored$/ do
   speaker = Attendant.by_email(:key => 'speaker@localhost.com').first
   speaker.speaking_proposal.title.should == 'title'
