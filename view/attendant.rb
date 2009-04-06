@@ -14,10 +14,10 @@ module AttendantView
         checkbox('Kommer på middagen', 'attending_dinner')
         text_field('Matpreferenser', 'food_preferences')
         text_area_field('Kommentarer', 'comments')
-        input(:value => 'Anmäl',:type => 'submit')
         checkbox('Vill tala på konferensen', 'wants_to_speak')
         text_field('Titel', 'title')
         text_area_field('Beskrivning', 'abstract')
+        input(:value => 'Anmäl',:type => 'submit')
       end
     end
 
