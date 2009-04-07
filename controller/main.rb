@@ -4,6 +4,5 @@ class MainController < Controller
     MainView::Index.new(self).to_s
   end
   
-  
 
 end

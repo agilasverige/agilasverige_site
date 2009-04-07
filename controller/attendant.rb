@@ -1,7 +1,12 @@
 class AttendantController < Controller
 
   def index(id, message = '')
-    attendant = Attendant.get(id)
+    attendant = ''
+    begin
+      attendant = Attendant.get(id)
+    rescue
+      show404
+    end
     view = AttendantView::Show.new(self)
     view.message = message
     view.attendant = attendant
