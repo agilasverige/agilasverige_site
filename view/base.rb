@@ -115,14 +115,34 @@ class BaseView < Erector::Widget
   def info
     div :class => 'yui-u first' do
       div :id => 'info' do
-        a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
-      end
+        div :class => "register" do
+          a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
+          p(:class => "reminder") {text "Sista anmälningsdag:"}
+          p(:class => "reminder") {text "25 maj 2008"}
+        end
 
-      h4 "Kommentarer på frågan 'Vad tar du med dig hem', från förra året:"
-      blockquote "\"Lyckan av att umgås med så många engagerade människor\""
-      blockquote "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
-      blockquote "\"Att det är de som är intresserade av något som kan bidra, dvs
-        openspace-formatet\""
+        h4 "Kommentarer på frågan 'Vad tar du med dig hem', från förra året:"
+        blockquote "\"Lyckan av att umgås med så många engagerade människor\""
+        blockquote "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
+        blockquote "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
+
+        h2 "Vad kostar det?"
+        h2 "Vad ingår?"
+        ul do
+          li "Två dagars konferens"
+          li "Konferensmiddag den 8 juni"
+        end
+        h2 "Var?"
+        p do
+          a(:href => "http://www.citykonferensen.se/") do
+            img(:src => "/images/citykonferens.png")
+          end
+          p do
+            iframe(:width => "200", :height => "200", :frameborder => "0", :scrolling => "no", :marginheight => "0", :marginwidth => "0", :src => "http://maps.google.se/maps?f=l&amp;hl=en&amp;geocode=&amp;q=ingenj%C3%B6rshuset&amp;near=&amp;sll=59.334833,18.065559&amp;sspn=0.007234,0.021544&amp;ie=UTF8&amp;s=AARTsJqyg06EF0-Q0I0NOIVpXFTEhDBU-Q&amp;ll=59.334984,18.066587&amp;spn=0.008755,0.017166&amp;z=14&amp;output=embed&amp;iwloc=A")
+            a('Större karta', :href => "http://maps.google.se/maps?f=l&amp;hl=en&amp;geocode=&amp;q=ingenj%C3%B6rshuset&amp;near=&amp;sll=59.334833,18.065559&amp;sspn=0.007234,0.021544&amp;ie=UTF8&amp;ll=59.334984,18.066587&amp;spn=0.015321,0.036478&amp;z=14&amp;source=embed") 
+          end
+        end
+      end
 
     end
   end
