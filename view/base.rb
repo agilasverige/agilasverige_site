@@ -117,6 +117,13 @@ class BaseView < Erector::Widget
       div :id => 'info' do
         a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
       end
+
+      h4 "Kommentarer på frågan 'Vad tar du med dig hem', från förra året:"
+      blockquote "\"Lyckan av att umgås med så många engagerade människor\""
+      blockquote "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
+      blockquote "\"Att det är de som är intresserade av något som kan bidra, dvs
+        openspace-formatet\""
+
     end
   end
 

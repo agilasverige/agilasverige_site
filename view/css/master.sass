@@ -19,12 +19,18 @@ a
   :text-decoration none
   &:hover
     :text-decoration underline
-p, table, tr, td, th, ul
+p, table, tr, td, th, ul, blockquote
   :font-size 100%
   :margin-left 10px
   :margin-bottom 20px
   :margin-top 10px
   
+blockquote
+  :font-size 100%
+  :margin-left 20px
+  :margin-bottom 20px
+  :margin-top 10px
+  :font-style italic
 li
   :margin-left 20px
   :list-style disc
@@ -43,13 +49,17 @@ h1
   :font-size 197%
   span
     :display none
-h2, h3
-  :font-size 182%
+h2, h3, h4
   :margin-top 20px
   :margin-left 10px
+h2
+  :font-size 182%
+h3, h4
+  :color = !pink
 h3
   :font-size 153.9%
-  :color = !pink
+h4
+  :font-size 108%
 em
   :background-color = !yellow
   :padding 5px

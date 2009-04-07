@@ -6,17 +6,67 @@ module MainView
     end
 
     def content
-      h2 'Datumen för Agila Sverige 2009 är klara'
+      h2 "Välkommen till en agil konferens om agila metoder!"
+      p <<-END 
+            Hur många gånger har du kommit hem från en konferens och
+            konstaterat att de roligaste och mest intressanta samtalen förts i
+            fikapauserna? Att det mest inspirerande och lärorika erfarenheterna
+            kommer i de möten och diskussioner som inte är styrda av
+            programpunkter? Har du inte ofta tänkt att det vore spännande att ta
+            de här spontant uppkomna idéerna tillvara och låta fler ta del av dem?
+      END
+      p <<-END
+        Fler har tänkt som du, och därför är det fantastiskt
+        glädjande att återigen kunna bjuda in till Agila Sverige!
+      END
+      p <<-END
+         Det speciella med den här konferensen är dess format, som optimerar
+         engagemang, utbyte av erfarenheter och, inte minst, nätverkande.
+         Individer och interaktion, med andra ord. Precis som förra året kommer
+         förmiddagarna att bestå av blixttal (jfr. Lightning talks) och
+         eftermiddagarna av Öppet forum (jfr. Open space) för diskussioner av
+         blixttalen  eller andra ämnen. Formatet angavs av många som en stor
+         orsak till första årets succé.
+      END
+      h3 do
+        text "Du kan "
+        a("delta som talare.", :href => "/attendants/new") 
+      end
+      p <<-END
+         Lättrörlig metodik värdesätter högst av allt medarbetaren och
+         samtalet, och alla besökare ges i enlighet med det möjlighet att bidra
+         med sina erfarenheter och idéer. Experter och studenter, chefer eller
+         juniorkonsulter, beställare eller leverantörer – alla infallsvinklar
+         välkomnas så länge de har en koppling till den lättrörliga metodiken.
+      END
       p do
-        text 'Förra årets mest uppskattade konferens om agil systemutveckling är tillbaka! I år går den av stapeln 8-9 juni på Ingenjörshuset i Stockholm.' 
+        text "På förmiddagarna hålls så kallade "
+        a("blixttal ", :href => "http://en.wikipedia.org/wiki/Lightning_Talks")
+        text <<-END
+          som inte får överskrida 10 minuter. Talaren ger sin korta och
+          kärnfulla syn på agil metodik eller något relaterat – kanske ett
+          verktyg, en erfarenhet eller ett problem. På eftermiddagarna anordnas
+          sedan ett så kallat
+        END
+        a("Open Space", :href => "http://en.wikipedia.org/wiki/Open_Space_Technology")
+        text <<-END
+          , där ambitionen är att haka på några av de tankar som väcks under
+          förmiddagens blixttal. På så vis växer konferensens tema fram
+          efterhand.
+        END
       end
-      p 'Precis som förra året kommer konferensen att bestå av tio-minuters blixttal på förmiddagarna med uppföljande Open Space på eftermiddagarna.'
-      p 'Det kommer snart att vara möjligt att anmäla sig både som talare och deltagare. Precis som förra året kommer talare att gå gratis samtidigt som avgiften för deltagare är högst överkomlig.'
-      p do 
-        text 'Under tiden kan man - äntligen - ta del av '
-        a 'förra årets konferens', :href => '/2008'
-        text '.'
-      end
+      p <<-END
+         Agila, eller lättrörliga, metoder vinner alltmer insteg i olika
+         utvecklingsprojekt. Vi ser att intresset ökar explosionsartat, såväl
+         bland systemutvecklare som beställare.
+      END
+      p <<-END 
+        Den agila konferensformen har etablerat sig ordentligt i Norden i och
+        med Smidig 2007/2008. Samt förra årets succékonferens Agila Sverige
+        2008. Vi ser fram emot två lika inspirerandedagar i Stockholm i år
+        igen.
+      END
+      
     end
   end
 end
