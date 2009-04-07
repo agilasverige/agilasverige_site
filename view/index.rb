@@ -30,7 +30,7 @@ module MainView
       END
       h3 do
         text "Du kan "
-        a("delta som talare.", :href => "/attendants/new") 
+        a("delta som talare.", :href => "/attendant/new") 
       end
       p <<-END
          Lättrörlig metodik värdesätter högst av allt medarbetaren och
@@ -39,6 +39,7 @@ module MainView
          juniorkonsulter, beställare eller leverantörer – alla infallsvinklar
          välkomnas så länge de har en koppling till den lättrörliga metodiken.
       END
+      p "Vi tar emot talaranmälningar fram till 18 maj"
       p do
         text "På förmiddagarna hålls så kallade "
         a("blixttal ", :href => "http://en.wikipedia.org/wiki/Lightning_Talks")

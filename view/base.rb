@@ -127,6 +127,21 @@ class BaseView < Erector::Widget
         blockquote "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
 
         h2 "Vad kostar det?"
+        table(:id => "prices") do
+          tr(:class => "evenrow") do
+            td "Till och med 1 maj:"
+            td "500 kronor"
+          end
+          tr(:class => "oddrow") do
+            td "Efter 1 maj:"
+            td "1000 kronor"
+          end
+          tr(:class => "evenrow") do
+            td "Talare:"
+            td "0 kronor"
+          end
+        end
+        
         h2 "Vad ingår?"
         ul do
           li "Två dagars konferens"
@@ -136,10 +151,6 @@ class BaseView < Erector::Widget
         p do
           a(:href => "http://www.citykonferensen.se/") do
             img(:src => "/images/citykonferens.png")
-          end
-          p do
-            iframe(:width => "200", :height => "200", :frameborder => "0", :scrolling => "no", :marginheight => "0", :marginwidth => "0", :src => "http://maps.google.se/maps?f=l&amp;hl=en&amp;geocode=&amp;q=ingenj%C3%B6rshuset&amp;near=&amp;sll=59.334833,18.065559&amp;sspn=0.007234,0.021544&amp;ie=UTF8&amp;s=AARTsJqyg06EF0-Q0I0NOIVpXFTEhDBU-Q&amp;ll=59.334984,18.066587&amp;spn=0.008755,0.017166&amp;z=14&amp;output=embed&amp;iwloc=A")
-            a('Större karta', :href => "http://maps.google.se/maps?f=l&amp;hl=en&amp;geocode=&amp;q=ingenj%C3%B6rshuset&amp;near=&amp;sll=59.334833,18.065559&amp;sspn=0.007234,0.021544&amp;ie=UTF8&amp;ll=59.334984,18.066587&amp;spn=0.015321,0.036478&amp;z=14&amp;source=embed") 
           end
         end
       end
