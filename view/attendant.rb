@@ -17,6 +17,7 @@ module AttendantView
           text_field('Postnummer', 'zip_code')
           text_field('Postadress', 'postal_address')
           text_field('Land', 'country')
+          text_field('Telefonnummer', 'telephone_number')
           checkbox('Kommer på middagen', 'attending_dinner')
           text_field('Matpreferenser', 'food_preferences')
           text_area_field('Kommentarer', 'comments')

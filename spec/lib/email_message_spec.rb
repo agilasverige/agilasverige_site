@@ -34,15 +34,4 @@ describe EmailMessage do
   
   end
 
-  describe 'a new message to an attendant' do
-    before :each do
-      attendant = Attendant.new
-      attendant.email = "attendant@localhost"
-      @mail = EmailMessage.new(attendant)
-    end
-
-    it 'should send it to the attendants email' do
-      @mail.to.should == 'attendant@localhost'
-    end
-  end
 end

@@ -30,6 +30,7 @@ When /^I register as an? (.*) with correct data$/ do |attendant_type|
   fill_in 'zip_code', :with => '12345'
   fill_in 'postal_address', :with => 'postal address'
   fill_in 'country', :with => 'country'
+  fill_in 'telephone_number', :with => '000-000-000'
   check 'attending_dinner'
   fill_in 'food_preferences', :with => 'vegetarian'
   fill_in 'comments', :with => 'comments'

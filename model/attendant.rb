@@ -2,6 +2,7 @@ require 'couchrest'
 
 class Attendant < CouchRest::ExtendedDocument
 
+  START_INVOICE_NO = 100
 
   use_database CouchRest.database!('http://localhost:5984/agilasverige')
   timestamps!
@@ -14,13 +15,74 @@ class Attendant < CouchRest::ExtendedDocument
   property :zip_code
   property :postal_address
   property :country
+  property :telephone_number
   property :attending_dinner
   property :food_preferences
   property :comments
+  property :invoice_date
+  property :invoice_no
   property :speaking_proposal, :cast_as => 'SpeakingProposal'
-  
+
   view_by :last_name
   view_by :email
+
+  begin
+    database.save_doc({
+      "_id" => "_design/invoice_no", 
+      :views => {
+        :highest => {
+          :map => "function(doc) {
+                    emit('invoice_no', doc['invoice_no']);
+                  }",
+          :reduce => "function(key, invoice_no) {
+                        var highest = 0;
+                        for(var i=0; i < invoice_no.length; i++) {
+                          if(invoice_no[i]>highest) {
+                            highest = invoice_no[i];
+                          }
+                        }
+                        return highest;
+                      }"
+        }
+      }
+    })
+  rescue 
+   #TODO log 
+  end
+  
+  save_callback :before, :set_save_data
+
+  def speaker?
+    !speaking_proposal.nil?
+  end
+
+  protected
+
+  def set_save_data
+    set_invoice_no
+    set_date
+  end
+
+  def set_date
+    date = Date.today.to_s
+  end
+
+  def set_invoice_no
+    if new_document?
+      begin
+        current_invoice_no = database.view('invoice_no/highest')['rows'].first["value"] 
+      rescue
+        if current_invoice_no.nil? ||  current_invoice_no == 0
+          current_invoice_no = START_INVOICE_NO
+        end
+      end
+      invoice_no = current_invoice_no + 1
+    end
+  end
+
+  def new_document?
+    invoice_no.nil? || invoice_no == 0
+  end
 
   # def speaker?
   #   speaking_proposals.each do |proposal|

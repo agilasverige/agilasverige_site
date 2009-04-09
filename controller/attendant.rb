@@ -55,7 +55,8 @@ class AttendantController < Controller
   end
 
   def send_confirmation_email(attendant)
-    ConfirmationMailer.send_message_to(attendant)
+    email = ConfirmationEmail.new(attendant)
+    email.send
   end
 
   

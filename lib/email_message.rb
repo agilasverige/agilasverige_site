@@ -7,9 +7,9 @@ class EmailMessage
   attr_accessor :from, :to, :body, :subject, :port
 
 
-  def initialize(attendant=nil)
-    setup_defaults
-    @to = attendant.email if attendant
+  def initialize
+    @port = 25
+    @message = TMail::Mail.new
   end
 
   def send
@@ -28,12 +28,6 @@ class EmailMessage
     end
   end
 
-  private 
-
-  def setup_defaults
-    @port = 25
-    @message = TMail::Mail.new
-  end
   
 
 end
