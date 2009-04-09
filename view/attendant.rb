@@ -6,6 +6,9 @@ module AttendantView
     end
 
     def content
+      errors
+        
+
       fieldset do
         legend 'Anmälan'
         form(:action => '/attendant/new', :method => 'post') do
@@ -59,7 +62,19 @@ module AttendantView
         input(:type => 'checkbox', :name => id, :id => id)
       end
     end
+    def errors
+      if has_errors
+        div(:id => 'errors', :class => 'attention') do
+          self.controller.flash[:error].each do |error|
+            p error
+          end
+        end
+      end
+    end
 
+    def has_errors
+      !self.controller.flash[:error].nil?
+    end
   end
 
   class Show < BaseView

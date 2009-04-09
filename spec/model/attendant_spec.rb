@@ -1,10 +1,17 @@
 require File.join(File.dirname(__FILE__),'..','..','model','attendant')
 
 describe Attendant do
-  describe 'Created without mandatory arguments' do
-     it 'should raise argument error' do
-       #lambda{Attendant.new({})}.should raise_error(ArgumentError, "Förnamn, efternamn, adress, postnummer och postadress är obligatoriska fält")
-     end
+  describe 'Without mandatory arguments' do
+    before(:each) do
+      @attendant = Attendant.new
+    end
+
+    it 'should not be saveable' do
+
+      saveable = @attendant.save
+      saveable.should == false
+
+    end
   end
   describe 'Created with all mandatory argument' do
 
@@ -12,15 +19,14 @@ describe Attendant do
       Attendant.by_email(:key => 'attendant@localhost.com').each do |attendant|
         attendant.destroy
       end
+      @attendant = create_attendant
     end
 
-    # it 'should require a unique email address' do
-    #   att1 = create_attendant
-    #   lambda{att1.save}.should_not raise_error(ArgumentError)
-    #   att2 = create_attendant
-    #   lambda{att2.save}.should raise_error(ArgumentError)
-    #   lambda{att1.save}.should_not raise_error(ArgumentError)
-    # end
+    it 'should be saveable' do
+      @attendant.save.should == true
+    end
+
+
 
   end
 

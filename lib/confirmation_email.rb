@@ -8,15 +8,18 @@ class ConfirmationEmail < EmailMessage
     self.to = @attendant.email
     self.from = FROM 
     self.subject = SUBJECT
-    self.body = salutation + info 
-    if(@attendant.speaker?)
-      self.body << speaker
-    else
-      self.body << invoice
-    end
     super()
   end
 
+  def body
+    temp_body = salutation + info 
+    if(@attendant.speaker?)
+      temp_body << speaker
+    else
+      temp_body << invoice
+    end
+    temp_body
+  end
 
   def salutation
     " Hej #{@attendant.first_name}

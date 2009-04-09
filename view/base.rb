@@ -1,6 +1,9 @@
 require 'erector'
 
 class BaseView < Erector::Widget
+
+  attr_accessor :controller
+
   DOCTYPE = <<-TEXT 
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
   TEXT
@@ -109,6 +112,7 @@ class BaseView < Erector::Widget
   end
 
   def javascript
+    # overridden in subclass views that has javascript
   end
 
 
@@ -141,6 +145,7 @@ class BaseView < Erector::Widget
             td "0 kronor"
           end
         end
+        p 'Alla priser exklusive moms'
         
         h2 "Vad ingår?"
         ul do

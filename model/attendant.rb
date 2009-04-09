@@ -2,6 +2,8 @@ require 'couchrest'
 
 class Attendant < CouchRest::ExtendedDocument
 
+  include CouchRest::Validation
+
   START_INVOICE_NO = 100
 
   use_database CouchRest.database!('http://localhost:5984/agilasverige')
@@ -56,6 +58,10 @@ class Attendant < CouchRest::ExtendedDocument
   def speaker?
     speaker
   end
+
+  validates_format :email, :as => :email_address
+  validates_present :first_name, :last_name, :address
+  validates_present :zip_code, :postal_address
 
   protected
 

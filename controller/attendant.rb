@@ -38,9 +38,13 @@ class AttendantController < Controller
         speaking_proposal.abstract = request.params['abstract']
         attendant.speaking_proposal = speaking_proposal
       end
-      attendant.save
-      send_confirmation_email(attendant)
-      redirect("/attendant/#{attendant.id}/thanks")
+      if attendant.save
+        send_confirmation_email(attendant)
+        redirect("/attendant/#{attendant.id}/thanks")
+      else
+        flash[:error] = attendant.errors
+        redirect('/attendant/new')
+      end
     end
   end
 
