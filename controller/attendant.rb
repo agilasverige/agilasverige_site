@@ -31,6 +31,7 @@ class AttendantController < Controller
       attendant.food_preferences = request.params['food_preferences']
       attendant.comments = request.params['comments']
       attendant.email = request.params['email'] 
+      attendant.speaker = request.params['wants_to_speak']
       if request.params['wants_to_speak']
         speaking_proposal = SpeakingProposal.new
         speaking_proposal.title = request.params['title']

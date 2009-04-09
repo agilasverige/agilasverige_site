@@ -21,6 +21,7 @@ class Attendant < CouchRest::ExtendedDocument
   property :comments
   property :invoice_date
   property :invoice_no
+  property :speaker
   property :speaking_proposal, :cast_as => 'SpeakingProposal'
 
   view_by :last_name
@@ -53,7 +54,7 @@ class Attendant < CouchRest::ExtendedDocument
   save_callback :before, :set_save_data
 
   def speaker?
-    !speaking_proposal.nil?
+    speaker
   end
 
   protected

@@ -5,6 +5,7 @@ class ConfirmationEmail < EmailMessage
 
   def initialize(attendant)
     @attendant = attendant
+    self.to = @attendant.email
     self.from = FROM 
     self.subject = SUBJECT
     self.body = salutation + info 
@@ -13,6 +14,7 @@ class ConfirmationEmail < EmailMessage
     else
       self.body << invoice
     end
+    super()
   end
 
 
@@ -55,22 +57,27 @@ Detta meddelande fungerar även som underlag för faktura.  Vill du ha en
 pdf-version, kontakta oss via: faktura@agilasverige.se
 
 Fakturainformation nedan:
---
+-------------------------
+
 Agila Sverige
 c/o Joakim Holm 
 Sandelsgatan 40 
 115 33 Stockholm (Innehar 
 F-skattesedel) 
 http://agilasverige.se 
-Betalningsinformation: 
-Bankgiro: 280-9267 
-Orgnr: 802404 7879
 
-Datum : #{@attendant.invoice_date}
-Fakturanr : #{@attendant.invoice_no}
-Tjänst : Agila Sverige 2009 (early bird)
-Moms 25% : SEK 125
-Summa : SEK 625
+Betalningsinformation: 
+----------------------
+
+Bankgiro: 280-9267 
+Orgnr: 802404-7879
+
+Datum: #{@attendant.invoice_date}
+Fakturanr: #{@attendant.invoice_no}
+Tjänst: Agila Sverige 2009 (early bird)
+Pris: SEK 500
+Moms 25%: SEK 125
+Summa: SEK 625
 
 OBS:
 För att du skall kunna deltaga på konferensen måste vi ha pengarna på
