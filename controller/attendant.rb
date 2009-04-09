@@ -38,11 +38,16 @@ class AttendantController < Controller
         speaking_proposal.abstract = request.params['abstract']
         attendant.speaking_proposal = speaking_proposal
       end
-      if attendant.save
-        send_confirmation_email(attendant)
-        redirect("/attendant/#{attendant.id}/thanks")
-      else
-        flash[:error] = attendant.errors
+      begin
+        if attendant.save
+          send_confirmation_email(attendant)
+          redirect("/attendant/#{attendant.id}/thanks")
+        else
+          flash[:error] = attendant.errors 
+          redirect('/attendant/new')
+        end
+      rescue
+        flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare"]
         redirect('/attendant/new')
       end
     end
