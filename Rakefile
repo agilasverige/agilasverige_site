@@ -1,3 +1,4 @@
+require 'rake' 
 begin
   require 'vlad'
   Vlad.load :scm => 'git', :app => 'thin'
@@ -10,8 +11,6 @@ Spec::Rake::SpecTask.new do |t|
   t.spec_opts = ["--color", '--format', "specdoc"] 
 end 
   
-require 'rake' 
-
 namespace :spec do 
   desc "Run specs with RCov" 
   Spec::Rake::SpecTask.new('rcov') do |t| 
