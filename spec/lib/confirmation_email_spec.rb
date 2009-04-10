@@ -70,6 +70,13 @@ describe ConfirmationEmail do
       @speaker.invoice_date = '2008-12-01'
       @speaker.invoice_no = 1212
       @speaker.speaker = true
+
+      @speaking_proposal = SpeakingProposal.new
+      @speaking_proposal.title = 'En titel'
+      @speaking_proposal.abstract = 'An abstract'
+
+      @speaker.speaking_proposal = @speaking_proposal
+
       @email = ConfirmationEmail.new(@speaker)
     end
 
@@ -99,6 +106,14 @@ describe ConfirmationEmail do
 
     it 'should have any speaker information' do
       @email.body.should match(/Förslag till blixttal:/)
+    end
+
+    it 'should show title' do
+      @email.body.should match(/En titel/)
+    end
+
+    it 'should show abstract' do
+      @email.body.should match(/An abstract/)
     end
   end
 end

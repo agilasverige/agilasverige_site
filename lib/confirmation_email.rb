@@ -48,9 +48,8 @@ Telefonnummer: #{@attendant.telephone_number}
 Förslag till blixttal:
 ----------------------
 
-Titel: speaking_proposal.title
-Beskrivning: speaking_proposal.description
-Nivå: speaking_proposal.level
+Titel: #{@attendant.speaking_proposal.title}
+Beskrivning: #{@attendant.speaking_proposal.abstract}
       "
   end
 
