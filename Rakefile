@@ -38,3 +38,20 @@ namespace :couchdb do
     sh 'couchdb -C config/couchdb.ini -p couchdb/pid -s'
   end
 end
+
+namespace :vlad do
+  namespace :couchdb do
+    desc 'starts couchdb on server'
+    remote_task :start do
+      run "couchdb -C config/couchdb.ini -p couchdb/pid -b"
+    end
+  end
+  desc 'stops couchdb'
+  remote_task :stop do
+    run 'couchdb -C config/couchdb.ini -p couchdb/pid -d'
+  end
+  desc 'checks status couchdb'
+  remote_task :status do
+    run 'couchdb -C config/couchdb.ini -p couchdb/pid -s'
+  end
+end
