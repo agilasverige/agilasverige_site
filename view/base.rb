@@ -40,14 +40,14 @@ class BaseView < Erector::Widget
   def header
     div :id => 'hd' do
       a :href => '/'
-      img :src => '/images/as_logo.png'
+      img :src => '/images/as_logo.png', :alt => 'Agila Sverige 2009 Logo'
       h1 do
         span 'Agila Sverige 2008'
       end
       h2 do
         span 'Stockholm 2-3 juni 2008'
       end
-      img :id => 'date', :src => '/images/postit_note.jpg'
+      img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm 2-3 juni 2008'
     end
   end
 
@@ -126,9 +126,15 @@ class BaseView < Erector::Widget
         end
 
         h4 "Kommentarer på frågan 'Vad tar du med dig hem', från förra året:"
-        blockquote "\"Lyckan av att umgås med så många engagerade människor\""
-        blockquote "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
-        blockquote "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
+        blockquote do
+          p "\"Lyckan av att umgås med så många engagerade människor\""
+        end
+        blockquote do
+          p "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
+        end
+        blockquote do
+          p "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
+        end
 
         h2 "Vad kostar det?"
         table(:id => "prices") do
@@ -155,7 +161,7 @@ class BaseView < Erector::Widget
         h2 "Var?"
         p do
           a(:href => "http://www.citykonferensen.se/") do
-            img(:src => "/images/citykonferens.png")
+            img(:src => "/images/citykonferens.png", :alt => 'Citykonferensen logo')
           end
         end
       end
