@@ -16,7 +16,7 @@ class BaseView < Erector::Widget
   def render
     instruct
     rawtext DOCTYPE.strip
-    html do
+    html :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv" do
       head_content
       body :id => @controller.name do
         div :id => 'doc4', :class  => 'yui-t7' do
