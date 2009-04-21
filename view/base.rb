@@ -175,8 +175,9 @@ class BaseView < Erector::Widget
         h2 'Sponsorer 2009'
         SponsorList.new.random_order.each do |sponsor|
           p do
-            a :href => "#{sponsor.url}"
-            img :src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"
+            a :href => sponsor.url do
+              img :src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"
+            end
           end
         end
       end
