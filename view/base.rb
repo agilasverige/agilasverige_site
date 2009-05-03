@@ -138,12 +138,8 @@ class BaseView < Erector::Widget
 
         h2 "Vad kostar det?"
         table(:id => "prices") do
-          tr(:class => "evenrow") do
-            td "Till och med 1 maj:"
-            td "500 kronor"
-          end
           tr(:class => "oddrow") do
-            td "Efter 1 maj:"
+            td "Deltagare:"
             td "1000 kronor"
           end
           tr(:class => "evenrow") do
