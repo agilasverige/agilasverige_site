@@ -122,7 +122,7 @@ class BaseView < Erector::Widget
         div :class => "register" do
           a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
           p(:class => "reminder") {text "Sista anmälningsdag:"}
-          p(:class => "reminder") {text "25 maj 2008"}
+          p(:class => "reminder") {text "25 maj 2009"}
         end
 
         h4 "Kommentarer på frågan 'Vad tar du med dig hem', från förra året:"
