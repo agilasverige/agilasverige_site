@@ -8,22 +8,18 @@ describe Attendant do
 
     it 'should not be saveable' do
 
-      saveable = @attendant.save
-      saveable.should == false
+      @attendant.valid?.should == false
 
     end
   end
   describe 'Created with all mandatory argument' do
 
     before(:each) do
-      Attendant.by_email(:key => 'attendant@localhost.com').each do |attendant|
-        attendant.destroy
-      end
       @attendant = create_attendant
     end
 
-    it 'should be saveable' do
-      @attendant.save.should == true
+    it 'should be valid' do
+      @attendant.valid?.should == true
     end
 
 
