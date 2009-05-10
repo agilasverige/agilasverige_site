@@ -24,6 +24,8 @@ require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new
 
+task :default => [:spec, :features]
+
 namespace :couchdb do
   desc 'starts couchdb'
   task :start do
