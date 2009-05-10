@@ -27,7 +27,7 @@ class SponsorList
       #Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
       #Sponsor.new("Contactor", "contactor_logo.png", "http://www.contactor.se"),
-      #Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se"),
+      Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se"),
       #Sponsor.new("Informator", "informator_logo.png", "http://www.informator.se")
     ]
   end

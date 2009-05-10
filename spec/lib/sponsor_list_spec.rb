@@ -7,8 +7,8 @@ describe "SponsorList" do
     @sponsor_list = SponsorList.new
   end
   
-  it "should have 7 sponsors" do
-    @sponsor_list.sponsors.size.should == 7
+  it "should have 8 sponsors" do
+    @sponsor_list.sponsors.size.should == 8
   end
   
   
@@ -53,6 +53,12 @@ describe "SponsorList" do
     citerus = @sponsor_list.sponsor("Citerus")
     citerus.url.should == "http://www.citerus.se"
     citerus.logo_file.should == "citerus_logo.png"
+  end
+  
+  it "should have Responsive" do
+    responsive = @sponsor_list.sponsor("Responsive")
+    responsive.url.should == "http://www.responsive.se"
+    responsive.logo_file.should == "responsive_logo.png"
   end
   
 end
