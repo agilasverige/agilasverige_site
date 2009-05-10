@@ -1,8 +1,9 @@
 require File.join(File.dirname(__FILE__), '..', 'start')
-require 'webrat/ramaze'
-require 'webrat/core/matchers'
 require 'spec/expectations'
 require 'cucumber/formatters/unicode'
+ARGV={}
+require 'webrat/ramaze'
+require 'webrat/core/matchers'
 
 Webrat.configure do |config|
   config.mode = :ramaze
