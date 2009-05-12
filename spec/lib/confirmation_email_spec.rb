@@ -28,15 +28,15 @@ describe ConfirmationEmail do
     end
 
     it 'should have price' do
-      @email.body.should match(/SEK 500/)
+      @email.body.should match(/SEK 1000/)
     end
 
     it 'should have VAT price' do
-      @email.body.should match(/SEK 125/)
+      @email.body.should match(/SEK 250/)
     end
 
     it 'should have total price' do
-      @email.body.should match(/SEK 625/)
+      @email.body.should match(/SEK 750/)
     end
 
     it 'should have organizational number' do

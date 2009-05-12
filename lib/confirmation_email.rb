@@ -77,9 +77,9 @@ Orgnr: 802404-7879
 Datum: #{@attendant.invoice_date}
 Fakturanr: #{@attendant.invoice_no}
 Tjänst: Agila Sverige 2009 (early bird)
-Pris: SEK 500
-Moms 25%: SEK 125
-Summa: SEK 625
+Pris: SEK 1000
+Moms 25%: SEK 250
+Summa: SEK 750
 
 OBS:
 För att du skall kunna deltaga på konferensen måste vi ha pengarna på
