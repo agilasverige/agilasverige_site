@@ -4,7 +4,7 @@ class AdminController < Controller
   helper :aspect
 
   before_all do
-    @username = httpdigest('secret area', 'AS|09')
+    @username = httpdigest('secret area', 'AS09')
   end
   
   def index
@@ -21,7 +21,7 @@ class AdminController < Controller
   protected
 
   def httpdigest_lookup_password(username)
-    return "fa7cf5745856dd69cd7f1b508e2a759f" if username == "as09admin"
+    return "496d8108d4610f62c6cd8a27627e042a" if username == "as09admin"
   end
   
 end
