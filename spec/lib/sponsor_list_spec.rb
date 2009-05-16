@@ -7,8 +7,8 @@ describe "SponsorList" do
     @sponsor_list = SponsorList.new
   end
   
-  it "should have 8 sponsors" do
-    @sponsor_list.sponsors.size.should == 8
+  it "should have 9 sponsors" do
+    @sponsor_list.sponsors.size.should == 9
   end
   
   
@@ -61,6 +61,11 @@ describe "SponsorList" do
     responsive.logo_file.should == "responsive_logo.png"
   end
   
+  it "should have Informator" do
+    informator = @sponsor_list.sponsor("Informator")
+    informator.url.should == "http://www.informator.se"
+    informator.logo_file.should == "informator_logo.png"
+  end
 end
 
 # describe "a random sponsorlist" do
