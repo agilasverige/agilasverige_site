@@ -49,7 +49,30 @@ class Attendant < CouchRest::ExtendedDocument
         }
       }
     })
+
+    database.save_doc({
+      "_id" => "_design/speakers", 
+      :views => {
+        :all => {
+          :map => "
+              function(doc) {
+                if(doc.speaking_proposal.title != ''){
+                  emit(doc.speaking_proposal.title,
+                       { 
+                         'speaking_proposal.title': doc.speaking_proposal.title,
+                         'speaking_proposal.abstract': doc.speaking_proposal.abstract,
+                         'first_name': doc.first_name,
+                         'last_name': doc.last_name
+                       });
+                }
+              }"
+        }
+      }
+    })
+
+          
   rescue 
+    puts 'fel!' + $!
    #TODO log 
   end
   
@@ -57,6 +80,10 @@ class Attendant < CouchRest::ExtendedDocument
 
   def speaker?
     speaker
+  end
+
+  def self.speakers
+    database.view('speakers/all')['rows']
   end
 
   validates_format :email, :as => :email_address
