@@ -25,12 +25,12 @@ class AdminController < Controller
     csv = ""
     all.each do |attendant|
       csv << attendant.last_name
-      csv << ','
+      csv << ';'
       csv << attendant.first_name
-      csv << ','
+      csv << ';'
       csv << attendant.speaking_proposal.title
-      csv << ','
-      csv << attendant.speaking_proposal.abstract
+      csv << ';'
+      csv << "\"" + attendant.speaking_proposal.abstract + "\""
       csv << "\n"
     end
     csv
