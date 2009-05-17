@@ -24,11 +24,11 @@ module AttendantView
           checkbox('Kommer på middagen', 'attending_dinner')
           text_field('Matpreferenser', 'food_preferences')
           text_area_field('Kommentarer', 'comments')
-          checkbox('Vill tala på konferensen', 'wants_to_speak')
-          div(:id => 'speakingproposal') do
-            text_field('Titel', 'title')
-            text_area_field('Beskrivning', 'abstract')
-          end
+          # checkbox('Vill tala på konferensen', 'wants_to_speak')
+          # div(:id => 'speakingproposal') do
+          #   text_field('Titel', 'title')
+          #   text_area_field('Beskrivning', 'abstract')
+          # end
           input(:value => 'Anmäl',:type => 'submit')
         end
       end

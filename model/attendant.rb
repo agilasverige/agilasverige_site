@@ -72,7 +72,6 @@ class Attendant < CouchRest::ExtendedDocument
 
           
   rescue 
-    puts 'fel!' + $!
    #TODO log 
   end
   

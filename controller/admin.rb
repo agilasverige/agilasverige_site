@@ -3,9 +3,9 @@ class AdminController < Controller
   helper :httpdigest
   helper :aspect
 
-  before_all do
-    @username = httpdigest('secret area', 'AS09')
-  end
+  # before_all do
+  #   @username = httpdigest('secret area', 'AS09')
+  # end
   
   def index
   end

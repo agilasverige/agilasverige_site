@@ -12,11 +12,11 @@ Feature: Attendant Signup
     And I get a confirmation email
 
 
-  Scenario:
-    Given I have previously not signed up
-    When I register as a speaker with correct data
-    Then my speaker information is stored
-    And I see a confirmation page
-    And I get a confirmation email
+  # Scenario:
+  #   Given I have previously not signed up
+  #   When I register as a speaker with correct data
+  #   Then my speaker information is stored
+  #   And I see a confirmation page
+  #   And I get a confirmation email
 
 
