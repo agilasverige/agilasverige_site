@@ -16,10 +16,25 @@ class AdminController < Controller
   end
 
   def speaking_proposals
-    all = Attendant.speaking_proposals 
-    AdminView::SpeakingProposals.new(self, all).to_s
+      all = Attendant.speaking_proposals 
+      AdminView::SpeakingProposals.new(self, all).to_s
   end
 
+  def speaking_proposals_csv
+    all = Attendant.speaking_proposals
+    csv = ""
+    all.each do |attendant|
+      csv << attendant.last_name
+      csv << ','
+      csv << attendant.first_name
+      csv << ','
+      csv << attendant.speaking_proposal.title
+      csv << ','
+      csv << attendant.speaking_proposal.abstract
+      csv << "\n"
+    end
+    csv
+  end
   protected
 
   def httpdigest_lookup_password(username)
