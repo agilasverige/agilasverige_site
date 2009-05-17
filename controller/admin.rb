@@ -16,6 +16,8 @@ class AdminController < Controller
   end
 
   def speaking_proposals
+    all = Attendant.speaking_proposals 
+    AdminView::SpeakingProposals.new(self, all).to_s
   end
 
   protected

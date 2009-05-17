@@ -51,7 +51,7 @@ class Attendant < CouchRest::ExtendedDocument
     })
 
     database.save_doc({
-      "_id" => "_design/speakers", 
+      "_id" => "_design/speaking_proposals", 
       :views => {
         :all => {
           :map => "
@@ -59,8 +59,8 @@ class Attendant < CouchRest::ExtendedDocument
                 if(doc.speaking_proposal.title != ''){
                   emit(doc.speaking_proposal.title,
                        { 
-                         'speaking_proposal.title': doc.speaking_proposal.title,
-                         'speaking_proposal.abstract': doc.speaking_proposal.abstract,
+                         'title': doc.speaking_proposal.title,
+                         'abstract': doc.speaking_proposal.abstract,
                          'first_name': doc.first_name,
                          'last_name': doc.last_name
                        });
@@ -82,8 +82,19 @@ class Attendant < CouchRest::ExtendedDocument
     speaker
   end
 
-  def self.speakers
-    database.view('speakers/all')['rows']
+  def self.speaking_proposals
+    result = database.view('speaking_proposals/all')['rows']
+    
+    puts result.inspect
+    set = []
+    result.each do |proposal|
+      values = proposal['value']
+      attendant = Attendant.new(values) 
+      speaking_proposal = SpeakingProposal.new(values)
+      attendant.speaking_proposal = speaking_proposal
+      set.push(attendant)
+    end
+    set
   end
 
   validates_format :email, :as => :email_address
