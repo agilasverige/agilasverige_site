@@ -11,7 +11,13 @@ class AdminController < Controller
   end
 
   def attendants
-    all = Attendant.by_email
+    all = Attendant.by_last_name
+    AdminView::Attendants.new(self, all).to_s
+  end
+
+  def speakers 
+    all = Attendant.by_last_name
+    all.collect{|attendant| attendant if attendant.speaker}
     AdminView::Attendants.new(self, all).to_s
   end
 
