@@ -1,4 +1,3 @@
-require 'haml'
 
 class CSSController < Controller
   map '/css'
