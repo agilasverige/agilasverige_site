@@ -9,3 +9,4 @@ logs/*.*
 spec/log/*.*
 coverage/*.*
 couchdb.*
+cache
