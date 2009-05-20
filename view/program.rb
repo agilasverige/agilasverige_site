@@ -1,6 +1,6 @@
 module ProgramView
-  class Index < MainView::Index
-    def render
+  class Index < BaseView
+    def content
       h1 'Måndag'
       div(:id => 'test', :style => 'display: none;')  do
         p 'hej'
@@ -36,37 +36,37 @@ module ProgramView
         end
         tr do
           td  do
-            talkinfo('1', '1', 'slot' => '1', 'talk' => '1')
+            talkinfo
           end
           td  do
-            talkinfo('1', '2', 'slot' => '1', 'talk' => '1')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('1', '1', 'slot' => '1', 'talk' => '2')
+            talkinfo
           end
           td  do
-            talkinfo('1', '2', 'slot' => '1', 'talk' => '2')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('1', '1', 'slot' => '1', 'talk' => '3')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '1', 'talk' => '3')
+            talkinfo
           end
         end
         tr do
           td do end
           td do
-            talkinfo('1', '1', 'slot' => '1', 'talk' => '4')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '1', 'talk' => '4')
+            talkinfo
           end
         end
         tr do
@@ -78,46 +78,46 @@ module ProgramView
             '10:20 - 11:20'
           end
           td do
-            talkinfo('1', '1', 'slot' => '2', 'talk' => '1')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '2', 'talk' => '1')
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo('1', '1', 'slot' => '2', 'talk' => '2')
-          end
-          td do
-            talkinfo('1', '2', 'slot' => '2', 'talk' => '2')
+            talkinfo
           end
         end
         tr do
           td do end
           td do
-            talkinfo('1', '1', 'slot' => '2', 'talk' => '3')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '2', 'talk' => '3')
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo('1', '1', 'slot' => '2', 'talk' => '4')
-          end
-          td do
-            talkinfo('1', '2', 'slot' => '2', 'talk' => '4')
+            talkinfo
           end
         end
         tr do
           td do end
           td do
-            talkinfo('1', '1', 'slot' => '2', 'talk' => '5')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '2', 'talk' => '5')
+            talkinfo
+          end
+        end
+        tr do
+          td do end
+          td do
+            talkinfo
+          end
+          td do
+            talkinfo
+          end
+        end
+        tr do
+          td do end
+          td do
+            talkinfo
+          end
+          td do
+            talkinfo
           end
         end
         tr do
@@ -127,46 +127,46 @@ module ProgramView
         tr do
           td do '11:30 - 12:30' end
           td do
-            talkinfo('1', '1', 'slot' => '3', 'talk' => '1')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '3', 'talk' => '1')
+            talkinfo
           end
         end
         tr do
           td do end
           td do
-            talkinfo('1', '1', 'slot' => '3', 'talk' => '2')
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '3', 'talk' => '2')
+            talkinfo
           end
         end
         tr do
           td do end
           td do
-            talkinfo('1', '1', 'slot' => '3', 'talk' => '3')
+            talkinfo
           end
           td  do
-            talkinfo('1', '2', 'slot' => '3', 'talk' => '3')
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo('1', '1', 'slot' => '3', 'talk' => '4')
-          end
-          td  do
-            talkinfo('1', '2', 'slot' => '3', 'talk' => '4')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('1', '1', 'slot' => '3', 'talk' => '5')
+            talkinfo
+          end
+          td  do
+            talkinfo
+          end
+        end
+        tr do
+          td do end
+          td  do
+            talkinfo
           end
           td do
-            talkinfo('1', '2', 'slot' => '3', 'talk' => '5')
+            talkinfo
           end
         end
         tr do
@@ -200,46 +200,46 @@ module ProgramView
         tr do
           td do '09:00 - 10:00' end
           td  do
-            talkinfo('2', '1', 'slot' => '1', 'talk' => '1')
+            talkinfo
           end
           td  do
-            talkinfo('2', '2', 'slot' => '1', 'talk' => '1')
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo('2', '1', 'slot' => '1', 'talk' => '2')
-          end
-          td do
-            talkinfo('2', '2', 'slot' => '1', 'talk' => '2')
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo('2', '1', 'slot' => '1', 'talk' => '3')
-          end
-          td do
-            talkinfo('2', '2', 'slot' => '1', 'talk' => '3')
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo('2', '1', 'slot' => '1', 'talk' => '4')
-          end
-          td do
-            talkinfo('2', '2', 'slot' => '1', 'talk' => '4')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('2', '1', 'slot' => '1', 'talk' => '5')
+            talkinfo
           end
           td do
-            talkinfo('2', '2', 'slot' => '1', 'talk' => '5')
+            talkinfo
+          end
+        end
+        tr do
+          td do end
+          td do
+            talkinfo
+          end
+          td do
+            talkinfo
+          end
+        end
+        tr do
+          td do end
+          td do
+            talkinfo
+          end
+          td do
+            talkinfo
+          end
+        end
+        tr do
+          td do end
+          td  do
+            talkinfo
+          end
+          td do
+            talkinfo
           end
         end
         tr do
@@ -249,46 +249,46 @@ module ProgramView
         tr do
           td do '10:20 - 11:20' end
           td  do
-            talkinfo('2', '1', 'slot' => '2', 'talk' => '1')
+            talkinfo
           end
           td do
-            talkinfo('2', '2', 'slot' => '2', 'talk' => '1')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('2', '1', 'slot' => '2', 'talk' => '2')
+            talkinfo
           end
           td do
-            talkinfo('2', '2', 'slot' => '2', 'talk' => '2')
+            talkinfo
           end
         end
         tr do
           td do end
           td do
-            talkinfo('2', '1', 'slot' => '2', 'talk' => '3')
+            talkinfo
           end
           td do
-            talkinfo('2', '2', 'slot' => '2', 'talk' => '3')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('2', '1', 'slot' => '2', 'talk' => '4')
+            talkinfo
           end
           td  do
-            talkinfo('2', '2', 'slot' => '2', 'talk' => '4')
+            talkinfo
           end
         end
         tr do
           td do end
           td  do
-            talkinfo('2', '1', 'slot' => '2', 'talk' => '5')
+            talkinfo
           end
           td do
-            talkinfo('2', '2', 'slot' => '2', 'talk' => '5')
+            talkinfo
           end
         end
         tr do
@@ -298,46 +298,46 @@ module ProgramView
         tr do
           td do '11:30 - 12:30' end
           td  do
-            talkinfo('2', '1', 'slot' => '3', 'talk' => '1')
+            talkinfo
           end
           td do
-            talkinfo('2', '2', 'slot' => '3', 'talk' => '1')
-          end end
+            talkinfo
+          end 
       end
       tr do
         td do end
         td do
-          talkinfo('2', '1', 'slot' => '3', 'talk' => '2')
+          talkinfo
         end
         td do
-          talkinfo('2', '2', 'slot' => '3', 'talk' => '2')
-        end
-      end
-      tr do
-        td do end
-        td do
-          talkinfo('2', '1', 'slot' => '3', 'talk' => '3')
-        end
-        td do
-          talkinfo('2', '2', 'slot' => '3', 'talk' => '3')
+          talkinfo
         end
       end
       tr do
         td do end
         td do
-          talkinfo('2', '1', 'slot' => '3', 'talk' => '4')
+          talkinfo
         end
         td do
-          talkinfo('2', '2', 'slot' => '3', 'talk' => '4')
+          talkinfo
         end
       end
       tr do
         td do end
         td do
-          talkinfo('2', '1', 'slot' => '3', 'talk' => '5')
+          talkinfo
         end
         td do
-          talkinfo('2', '2', 'slot' => '3', 'talk' => '5')
+          talkinfo
+        end
+      end
+      tr do
+        td do end
+        td do
+          talkinfo
+        end
+        td do
+          talkinfo
         end
       end
       tr do
@@ -361,22 +361,20 @@ module ProgramView
         td(:class => 'paus', :colspan => '2') do 'Avslutning' end
       end
     end
+    end
 
-    def talkinfo(day, track, slot, talk) 
+    def talkinfo
 
-      my_id = '#{day}_#{track}_#{slot}_#{talk}'
 
       p(:class => 'title') do
-        a(@schedule.title(@talkinfo), :href => '#{my_id}', :rel => 'facebox') 
+        text 'title'
       end
       p(:class => 'speaker') do 
-        '#{@schedule.speaker(@talkinfo)} - #{@schedule.organization(@talkinfo)}'
-        if(@schedule.description(@talkinfo))
-          div(:id => my_id, :style => 'display: none;')
+        text 'speaker - organization'
+          div(:id => 'idd', :style => 'display: none;')
           p do
-            @schedule.description(@talkinfo)
+            text 'info'
           end
-        end
       end
     end
   end
