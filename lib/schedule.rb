@@ -47,10 +47,12 @@ class Schedule
                   '15:00 - 15:45',
                   '16:00 - 16:45']
 
+  ROOMS =['Polhem', 'Celsius', 'All'] 
+
   attr_reader :rooms, :days
 
   def initialize
-    @rooms = ['Polhem', 'Celsius']
+    @rooms = ROOMS
     @days = [monday, tuesday]
   end
 
