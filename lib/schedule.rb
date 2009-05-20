@@ -57,11 +57,11 @@ class Schedule
   protected
 
   def monday 
-    Day.new('Måndag', MONDAY_SLOTS)
+    Day.new('Måndag')
   end
 
   def tuesday 
-    Day.new('Tisdag', TUESDAY_SLOTS)
+    Day.new('Tisdag')
   end
 
 end

@@ -1,10 +1,9 @@
 class Day
 
-  attr_reader :name, :slots
+  attr_reader :name 
 
-  def initialize(name, slots)
+  def initialize(name)
     @name = name
-    @slots = slots
   end
 
 end
