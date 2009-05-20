@@ -8,7 +8,7 @@ describe "SponsorList" do
   end
   
   it "should have 9 sponsors" do
-    @sponsor_list.sponsors.size.should == 9
+    @sponsor_list.sponsors.size.should == 10
   end
   
   
@@ -65,6 +65,12 @@ describe "SponsorList" do
     informator = @sponsor_list.sponsor("Informator")
     informator.url.should == "http://www.informator.se"
     informator.logo_file.should == "informator_logo.png"
+  end
+
+  it "should have Crisp" do
+    crisp = @sponsor_list.sponsor("Crisp")
+    crisp.url.should == "http://www.crisp.se"
+    crisp.logo_file.should == "crisp_logo.png"
   end
 end
 
