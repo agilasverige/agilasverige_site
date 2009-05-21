@@ -16,20 +16,23 @@ class AdminController < Controller
   end
 
   def speakers 
-    all = Attendant.by_last_name
-    all.collect{|attendant| attendant if attendant.speaker}
-    AdminView::Attendants.new(self, all).to_s
+    AdminView::Attendants.new(self, only_speakers).to_s
   end
 
+  def dinner_guests 
+    AdminView::Attendants.new(self, only_dinner).to_s
+  end
   def speaking_proposals
-      all = Attendant.speaking_proposals 
+      all = only_speakers 
       AdminView::SpeakingProposals.new(self, all).to_s
   end
 
   def speaking_proposals_csv
-    all = Attendant.speaking_proposals
+    all = only_speakers
     csv = ""
     all.each do |attendant|
+      csv << attendant.id
+      csv << ';'
       csv << attendant.last_name
       csv << ';'
       csv << attendant.first_name
@@ -42,6 +45,16 @@ class AdminController < Controller
     csv
   end
   protected
+
+  def only_speakers
+    all = Attendant.by_last_name
+    all.delete_if{|attendant| !attendant.speaker}
+  end
+
+  def only_dinner
+    all = Attendant.by_last_name
+    all.delete_if{|attendant| !attendant.attending_dinner}
+  end
 
   def httpdigest_lookup_password(username)
     return "496d8108d4610f62c6cd8a27627e042a" if username == "as09admin"
