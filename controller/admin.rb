@@ -28,22 +28,9 @@ class AdminController < Controller
   end
 
   def speaking_proposals_csv
-    all = only_speakers
-    csv = ""
-    all.each do |attendant|
-      csv << attendant.id
-      csv << ';'
-      csv << attendant.last_name
-      csv << ';'
-      csv << attendant.first_name
-      csv << ';'
-      csv << attendant.speaking_proposal.title
-      csv << ';'
-      csv << "\"" + attendant.speaking_proposal.abstract + "\""
-      csv << "\n"
-    end
-    csv
+    to_csv(only_speakers)
   end
+
   protected
 
   def only_speakers
@@ -58,6 +45,18 @@ class AdminController < Controller
 
   def httpdigest_lookup_password(username)
     return "496d8108d4610f62c6cd8a27627e042a" if username == "as09admin"
+  end
+
+  def to_csv(list)
+    csv = ""
+    list.each do |attendant|
+      attendant.keys.each do |key|
+        csv << "\"" + attendant[key].to_s + "\""
+        csv << ';'
+      end
+      csv << "\n"
+    end
+    csv
   end
   
 end
