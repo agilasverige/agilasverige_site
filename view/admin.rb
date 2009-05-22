@@ -18,7 +18,9 @@ module AdminView
         end
         @attendants.each do |attendant|
           tr do
-            td attendant.last_name
+            td do
+              a(attendant.last_name, :href => "/attendant/edit/#{attendant.id}")
+            end
             td attendant.first_name
             td attendant.organization
             td attendant.speaker
