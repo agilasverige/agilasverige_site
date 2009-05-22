@@ -1,11 +1,7 @@
 class AdminController < Controller
 
-  helper :httpdigest
   helper :aspect
 
-  # before_all do
-  #   @username = httpdigest('secret area', 'AS09')
-  # end
   
   def index
   end
@@ -43,9 +39,6 @@ class AdminController < Controller
     all.delete_if{|attendant| !attendant.attending_dinner}
   end
 
-  def httpdigest_lookup_password(username)
-    return "496d8108d4610f62c6cd8a27627e042a" if username == "as09admin"
-  end
 
   def to_csv(list)
     csv = ""

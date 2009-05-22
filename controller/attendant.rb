@@ -18,7 +18,7 @@ class AttendantController < Controller
       AttendantView::New.new(self).to_s
     elsif request.post?
       sanitize_request
-      set_fields(Attendant.new)
+      attendant = set_fields(Attendant.new)
       begin
         if attendant.save
           send_confirmation_email(attendant)
@@ -35,12 +35,14 @@ class AttendantController < Controller
   end
 
   def edit(id)
+    require_login
     attendant = Attendant.get(id)
     AttendantView::Edit.new(self, attendant)
   end
 
 
   def update
+    require_login
     puts 'hej'
     if request.post?
       attendant = Attendant.get(request.params['id'])
@@ -78,6 +80,7 @@ class AttendantController < Controller
     attendant.zip_code = request.params['zip_code']
     attendant.postal_address = request.params['postal_address']
     attendant.country = request.params['country']
+    attendant.telephone_number = request.params['telephone_number']
     attendant.attending_dinner = request.params['attending_dinner']
     attendant.food_preferences = request.params['food_preferences']
     attendant.comments = request.params['comments']

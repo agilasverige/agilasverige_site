@@ -1,5 +1,7 @@
 class Controller < Ramaze::Controller
 
+  helper :httpdigest
+
   def name
     self.class.to_s.gsub(/Controller/, '').downcase
   end
@@ -9,6 +11,14 @@ class Controller < Ramaze::Controller
   end
 
   protected
+
+  def require_login
+    @username = httpdigest('secret area', 'AS09')
+  end
+
+  def httpdigest_lookup_password(username)
+    return "496d8108d4610f62c6cd8a27627e042a" if username == "as09admin"
+  end
 
   def show404
     respond 'Page not found', 404
