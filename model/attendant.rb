@@ -81,6 +81,16 @@ class Attendant < CouchRest::ExtendedDocument
     speaker
   end
 
+  def self.only_speakers
+    all = Attendant.by_last_name
+    all.delete_if{|attendant| !attendant.speaker}
+  end
+
+  def self.only_dinner
+    all = Attendant.by_last_name
+    all.delete_if{|attendant| !attendant.attending_dinner}
+  end
+
   def self.speaking_proposals
     result = database.view('speaking_proposals/all')['rows']
     

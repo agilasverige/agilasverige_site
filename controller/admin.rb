@@ -11,15 +11,15 @@ class AdminController < Controller
   end
 
   def speakers 
-    AdminView::Attendants.new(self, only_speakers).to_s
+    AdminView::Attendants.new(self, Attendant.only_speakers).to_s
   end
 
   def dinner_guests 
-    AdminView::Attendants.new(self, only_dinner).to_s
+    AdminView::Attendants.new(self, Attendant.only_dinner).to_s
   end
 
   def speaking_proposals
-    AdminView::SpeakingProposals.new(self, only_speakers).to_s
+    AdminView::SpeakingProposals.new(self, Attendant.only_speakers).to_s
   end
 
   # CSV views
@@ -29,24 +29,15 @@ class AdminController < Controller
   end
 
   def dinner_guests_csv
-    to_csv(only_dinner)
+    to_csv(Attendant.only_dinner)
   end
 
   def speaking_proposals_csv
-    to_csv(only_speakers)
+    to_csv(Attendant.only_speakers)
   end
 
   protected
 
-  def only_speakers
-    all = Attendant.by_last_name
-    all.delete_if{|attendant| !attendant.speaker}
-  end
-
-  def only_dinner
-    all = Attendant.by_last_name
-    all.delete_if{|attendant| !attendant.attending_dinner}
-  end
 
 
   def to_csv(list)
