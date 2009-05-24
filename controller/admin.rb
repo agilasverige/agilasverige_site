@@ -3,8 +3,7 @@ class AdminController < Controller
   helper :aspect
 
   
-  def index
-  end
+  #HTML views
 
   def attendants
     all = Attendant.by_last_name
@@ -18,9 +17,19 @@ class AdminController < Controller
   def dinner_guests 
     AdminView::Attendants.new(self, only_dinner).to_s
   end
+
   def speaking_proposals
-      all = only_speakers 
-      AdminView::SpeakingProposals.new(self, all).to_s
+    AdminView::SpeakingProposals.new(self, only_speakers).to_s
+  end
+
+  # CSV views
+  #
+  def attendants_csv
+    to_csv(Attendant.by_last_name)
+  end
+
+  def dinner_guests_csv
+    to_csv(only_dinner)
   end
 
   def speaking_proposals_csv
