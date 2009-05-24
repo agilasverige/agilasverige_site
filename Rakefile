@@ -56,4 +56,6 @@ namespace :vlad do
   remote_task :status do
     run 'couchdb -C config/couchdb.ini -p couchdb/pid -s'
   end
+
+  task :deploy => ['vlad:update','vlad:start']
 end

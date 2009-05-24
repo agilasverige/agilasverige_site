@@ -43,13 +43,27 @@ class AdminController < Controller
   def to_csv(list)
     csv = ""
     list.each do |attendant|
-      attendant.keys.each do |key|
-        csv << "\"" + attendant[key].to_s + "\""
-        csv << ';'
-      end
+      add_value_to_csv(attendant.id, csv)
+      add_value_to_csv(attendant.last_name, csv)
+      add_value_to_csv(attendant.first_name, csv)
+      add_value_to_csv(attendant.organization, csv)
+      add_value_to_csv(attendant.email, csv)
+      add_value_to_csv(attendant.address, csv)
+      add_value_to_csv(attendant.zip_code, csv)
+      add_value_to_csv(attendant.postal_address, csv)
+      add_value_to_csv(attendant.attending_dinner, csv)
+      add_value_to_csv(attendant.food_preferences, csv)
+      add_value_to_csv(attendant.comments, csv)
+      add_value_to_csv(attendant.speaking_proposal.title, csv)
+      add_value_to_csv(attendant.speaking_proposal.abstract, csv)
       csv << "\n"
     end
     csv
+  end
+
+  def add_value_to_csv(value, csv)
+    csv << "\"" + value.to_s + "\""
+    csv << ';'
   end
   
 end
