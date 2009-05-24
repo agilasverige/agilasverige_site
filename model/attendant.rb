@@ -28,6 +28,8 @@ class Attendant < CouchRest::ExtendedDocument
 
   view_by :last_name
   view_by :email
+  view_by :id
+
 
   begin
     database.save_doc({
@@ -81,12 +83,21 @@ class Attendant < CouchRest::ExtendedDocument
     speaker
   end
 
-  def self.only_speakers
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def self.speakers_by_lastname
     all = Attendant.by_last_name
     all.delete_if{|attendant| !attendant.speaker}
   end
 
-  def self.only_dinner
+  def self.speakers_by_lastname
+    all = Attendant.by_last_name
+    all.delete_if{|attendant| !attendant.speaker}
+  end
+
+  def self.dinner_guests_by_lastname
     all = Attendant.by_last_name
     all.delete_if{|attendant| !attendant.attending_dinner}
   end

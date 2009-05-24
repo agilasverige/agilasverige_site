@@ -1,7 +1,9 @@
 class ProgramController < Controller
 
   def index
-    ProgramView::Index.new(self).to_s
+    speakers = Attendant.speakers_by_lastname
+    schedule = Schedule.new
+    ProgramView::Index.new(self, schedule, speakers).to_s
   end
 end
 

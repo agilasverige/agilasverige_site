@@ -14,13 +14,10 @@ describe Schedule do
     @schedule.rooms.should include 'Celsius'
   end
 
-  it "should have 'all' room" do
-    @schedule.rooms.should include 'All'
-  end
 
   it 'should have Monday and Tuesday' do 
-    @schedule.days[0].name.should == 'Måndag'
-    @schedule.days[1].name.should == 'Tisdag'
+    @schedule.monday.name.should == 'Måndag'
+    @schedule.tuesday.name.should == 'Tisdag'
   end
 end
 

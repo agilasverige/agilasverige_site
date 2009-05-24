@@ -1,5 +1,12 @@
 module ProgramView
   class Index < BaseView
+
+    def initialize(controller, schedule, speakers)
+      @schedule = schedule
+      @speakers = speakers
+      super(controller)
+    end
+
     def content
       h1 'Måndag'
       div(:id => 'test', :style => 'display: none;')  do
@@ -8,8 +15,8 @@ module ProgramView
       table do
         tr do
           th 'Tid'
-          th 'Celsiussalen'
           th 'Polhemsalen'
+          th 'Celsiussalen'
         end
         tr do
           td do
@@ -34,140 +41,45 @@ module ProgramView
             end
           end
         end
-        tr do
-          td
-          td  do
-            talkinfo
-          end
-          td  do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td  do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
+        Schedule::MONDAY_SLOTS[0..3].each do |slot|
+          tr do
+            td slot
+            td  do
+              talkinfo(@schedule.monday.slot_at(slot)[0])
+            end
+            td  do
+              talkinfo(@schedule.monday.slot_at(slot)[1])
+            end
           end
         end
         tr do
           td '10:00 - 10:20'
           td(:class => 'paus', :colspan => '2') do text 'Kaffepaus' end
         end
-        tr do
-          td do
-            text '10:20 - 11:20'
-          end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
+        Schedule::MONDAY_SLOTS[4..8].each do |slot|
+          tr do
+            td slot
+            td  do
+              talkinfo(@schedule.monday.slot_at(slot)[0])
+            end
+            td  do
+              talkinfo(@schedule.monday.slot_at(slot)[1])
+            end
           end
         end
         tr do
           td do text '11:20 - 11:30' end
           td(:class => 'paus', :colspan => '2') do text 'Paus' end
         end
-        tr do
-          td do text '11:30 - 12:30' end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td  do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td  do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
+        Schedule::MONDAY_SLOTS[9..13].each do |slot|
+          tr do
+            td slot
+            td  do
+              talkinfo(@schedule.monday.slot_at(slot)[0])
+            end
+            td  do
+              talkinfo(@schedule.monday.slot_at(slot)[1])
+            end
           end
         end
         tr do
@@ -195,187 +107,91 @@ module ProgramView
       table do
         tr do
           th 'Tid'
-          th 'Celsiussalen'
           th 'Polhemssalen'
+          th 'Celsiussalen'
         end
-        tr do
-          td do text '09:00 - 10:00' end
-          td  do
-            talkinfo
-          end
-          td  do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
+        Schedule::TUESDAY_SLOTS[0..4].each do |slot|
+          tr do
+            td slot
+            td  do
+              talkinfo(@schedule.tuesday.slot_at(slot)[0])
+            end
+            td  do
+              talkinfo(@schedule.tuesday.slot_at(slot)[1])
+            end
           end
         end
         tr do
           td do text '10:00 - 10:20' end
           td(:class => 'paus', :colspan => '2') do text 'Kaffepaus' end
         end
-        tr do
-          td do text '10:20 - 11:20' end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td do
-            talkinfo
-          end
-          td do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td  do
-            talkinfo
-          end
-        end
-        tr do
-          td do end
-          td  do
-            talkinfo
-          end
-          td do
-            talkinfo
+        Schedule::TUESDAY_SLOTS[5..9].each do |slot|
+          tr do
+            td slot
+            td  do
+              talkinfo(@schedule.tuesday.slot_at(slot)[0])
+            end
+            td  do
+              talkinfo(@schedule.tuesday.slot_at(slot)[1])
+            end
           end
         end
         tr do
           td do text '11:20 - 11:30' end
           td(:class => 'paus', :colspan => '2') do text 'Paus' end
         end
-        tr do
-          td do text '11:30 - 12:30' end
-          td  do
-            talkinfo
+        Schedule::TUESDAY_SLOTS[10..14].each do |slot|
+          tr do
+            td slot
+            td  do
+              talkinfo(@schedule.tuesday.slot_at(slot)[0])
+            end
+            td  do
+              talkinfo(@schedule.tuesday.slot_at(slot)[1])
+            end
           end
-          td do
-            talkinfo
-          end 
-      end
-      tr do
-        td do end
-        td do
-          talkinfo
         end
-        td do
-          talkinfo
+        tr do
+          td '12:30 - 13:30'
+          td(:class => 'paus', :colspan => '2') do text 'Lunch' end
         end
-      end
-      tr do
-        td do end
-        td do
-          talkinfo
+        tr do
+          td '13:30 - 14:00'
+          td(:class => 'paus', :colspan => '2') do text 'Open Space inledning' end
         end
-        td do
-          talkinfo
+        tr do
+          td '14:00 - 14:45'
+          td(:class => 'paus', :colspan => '2') do text 'Open Space' end
         end
-      end
-      tr do
-        td do end
-        td do
-          talkinfo
+        tr do
+          td '15:00 - 15:45'
+          td(:class => 'paus', :colspan => '2') do text 'Open Space' end
         end
-        td do
-          talkinfo
+        tr do
+          td '16:00 - 16:45'
+          td(:class => 'paus', :colspan => '2') do text 'Avslutning' end
         end
-      end
-      tr do
-        td do end
-        td do
-          talkinfo
-        end
-        td do
-          talkinfo
-        end
-      end
-      tr do
-        td '12:30 - 13:30'
-        td(:class => 'paus', :colspan => '2') do text 'Lunch' end
-      end
-      tr do
-        td '13:30 - 14:00'
-        td(:class => 'paus', :colspan => '2') do text 'Open Space inledning' end
-      end
-      tr do
-        td '14:00 - 14:45'
-        td(:class => 'paus', :colspan => '2') do text 'Open Space' end
-      end
-      tr do
-        td '15:00 - 15:45'
-        td(:class => 'paus', :colspan => '2') do text 'Open Space' end
-      end
-      tr do
-        td '16:00 - 16:45'
-        td(:class => 'paus', :colspan => '2') do text 'Avslutning' end
       end
     end
-    end
 
-    def talkinfo
-
-
+    def talkinfo(id = '')
+      speaker = find_speaker(id)
       p(:class => 'title') do
-        text 'title'
+        text !speaker.nil? ? speaker.speaking_proposal.title : 'unknown'
       end
       p(:class => 'speaker') do 
-        text 'speaker - organization'
-          div(:id => 'idd', :style => 'display: none;')
+        text "#{!speaker.nil? ? speaker.full_name : 'unknown'} - #{!speaker.nil? ? speaker.organization : 'unknown'}"
+        div(:id => 'idd', :style => 'display: none;') do
           p do
             text 'info'
           end
+        end
+      end
+    end
+
+    def find_speaker(id)
+      @speakers.find do |candidate|
+        candidate.id == id
       end
     end
   end

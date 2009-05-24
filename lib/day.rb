@@ -7,12 +7,12 @@ class Day
     @name = name
   end
 
-  def add_slot(time, room, slot)
-    @slots[[time, room]] = slot
+  def add_slot(time, room_1_slot, room_2_slot)
+    @slots[time] = [room_1_slot, room_2_slot]
   end
 
-  def slot_at(time, room)
-    @slots[[time, room]]
+  def slot_at(time)
+    @slots[time]
   end
 end
 

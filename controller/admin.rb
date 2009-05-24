@@ -11,29 +11,29 @@ class AdminController < Controller
   end
 
   def speakers 
-    AdminView::Attendants.new(self, Attendant.only_speakers).to_s
+    AdminView::Attendants.new(self, Attendant.speakers_by_lastname).to_s
   end
 
   def dinner_guests 
-    AdminView::Attendants.new(self, Attendant.only_dinner).to_s
+    AdminView::Attendants.new(self, Attendant.dinner_guests_by_lastname).to_s
   end
 
   def speaking_proposals
-    AdminView::SpeakingProposals.new(self, Attendant.only_speakers).to_s
+    AdminView::SpeakingProposals.new(self, Attendant.speakers_by_lastname).to_s
   end
 
   # CSV views
-  #
+  
   def attendants_csv
     to_csv(Attendant.by_last_name)
   end
 
   def dinner_guests_csv
-    to_csv(Attendant.only_dinner)
+    to_csv(Attendant.dinner_guests_by_lastname)
   end
 
   def speaking_proposals_csv
-    to_csv(Attendant.only_speakers)
+    to_csv(Attendant.speakers_guests_by_lastname)
   end
 
   protected
