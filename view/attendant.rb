@@ -1,5 +1,5 @@
 module AttendantView
-  class AttendantBaseView < BaseView
+  class AttendantBaseView < ThreeColumnView
 
     protected
 
@@ -112,7 +112,7 @@ module AttendantView
     end
   end
 
-  class Show < BaseView
+  class Show < ThreeColumnView
 
     attr_writer :attendant, :message
 

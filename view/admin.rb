@@ -1,5 +1,5 @@
 module AdminView
-  class Attendants < BaseView 
+  class Attendants < ThreeColumnView 
 
     def initialize(controller, attendants)
       @attendants = attendants
@@ -31,7 +31,7 @@ module AdminView
     end
   end
 
-  class SpeakingProposals < BaseView 
+  class SpeakingProposals < ThreeColumnView 
 
     def initialize(controller, speakers)
       @speakers = speakers

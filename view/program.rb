@@ -1,5 +1,5 @@
 module ProgramView
-  class Index < BaseView
+  class Index < ThreeColumnView
 
     def initialize(controller, schedule, speakers)
       @schedule = schedule

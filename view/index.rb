@@ -1,5 +1,5 @@
 module MainView
-  class Index < BaseView
+  class Index < ThreeColumnView
 
     def initialize(controller)
       super(controller)

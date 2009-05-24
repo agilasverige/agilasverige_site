@@ -1,6 +1,6 @@
 require 'erector'
 
-class BaseView < Erector::Widget
+class ThreeColumnView < Erector::Widget
 
   attr_accessor :controller
 
@@ -58,6 +58,7 @@ class BaseView < Erector::Widget
           li do
             a 'Hem', :id => "main_link", :href => '/'
             a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+            a 'Program', :id => "program_link", :href => '/program'
             a '2008', :id => "zeroeight_link", :href => '/2008'
           end
         end

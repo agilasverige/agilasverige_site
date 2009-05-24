@@ -1,4 +1,4 @@
-class AS2008View < BaseView
+class AS2008View < ThreeColumnView
 
   attr_writer :presentations
 
