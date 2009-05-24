@@ -1,6 +1,6 @@
 require 'erector'
 
-class ThreeColumnView < Erector::Widget
+class BaseView < Erector::Widget
 
   attr_accessor :controller
 

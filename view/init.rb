@@ -1,4 +1,6 @@
 require File.join(File.dirname(__FILE__),'base')
+require File.join(File.dirname(__FILE__),'three_column')
+require File.join(File.dirname(__FILE__),'two_column')
 require File.join(File.dirname(__FILE__),'index')
 require File.join(File.dirname(__FILE__),'program')
 require File.join(File.dirname(__FILE__),'as2008')
