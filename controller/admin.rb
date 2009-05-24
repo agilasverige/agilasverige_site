@@ -33,9 +33,16 @@ class AdminController < Controller
   end
 
   def speaking_proposals_csv
-    to_csv(Attendant.speakers_guests_by_lastname)
+    to_csv(Attendant.speakers_by_lastname)
   end
 
+  def speaker_emails
+    to_email(Attendant.speakers_by_lastname)
+  end
+
+  def attendant_emails
+    to_email(Attendant.by_last_name)
+  end
   protected
 
 
@@ -64,6 +71,12 @@ class AdminController < Controller
   def add_value_to_csv(value, csv)
     csv << "\"" + value.to_s + "\""
     csv << ';'
+  end
+
+  def to_email(list)
+    list.collect! { |attendant| attendant.email }
+    list.uniq!
+    list.join ','
   end
   
 end
