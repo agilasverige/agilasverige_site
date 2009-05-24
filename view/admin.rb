@@ -1,5 +1,5 @@
 module AdminView
-  class Attendants < ThreeColumnView 
+  class Attendants < TwoColumnView 
 
     def initialize(controller, attendants)
       @attendants = attendants
@@ -15,6 +15,7 @@ module AdminView
           th 'Organisation'
           th 'Talare'
           th 'Middag'
+          th 'Anmälningsdatum'
         end
         @attendants.each do |attendant|
           tr do
@@ -25,13 +26,14 @@ module AdminView
             td attendant.organization
             td attendant.speaker
             td attendant.attending_dinner
+            td attendant.created_at
           end
         end
       end
     end
   end
 
-  class SpeakingProposals < ThreeColumnView 
+  class SpeakingProposals < TwoColumnView 
 
     def initialize(controller, speakers)
       @speakers = speakers
