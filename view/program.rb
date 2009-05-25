@@ -28,7 +28,7 @@ module ProgramView
         end
         tr do
           td do 
-            text '09:00 - 10:00'
+            text '09:00 - 09:10'
           end
           td  do
             p(:class => 'title') do
