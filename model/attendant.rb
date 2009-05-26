@@ -92,6 +92,11 @@ class Attendant < CouchRest::ExtendedDocument
     all.delete_if{|attendant| !attendant.speaker}
   end
 
+  def self.non_speakers_by_lastname
+    all = Attendant.by_last_name
+    all.delete_if{|attendant| attendant.speaker}
+  end
+
   def self.speakers_by_lastname
     all = Attendant.by_last_name
     all.delete_if{|attendant| !attendant.speaker}

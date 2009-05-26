@@ -40,9 +40,14 @@ class AdminController < Controller
     to_email(Attendant.speakers_by_lastname)
   end
 
-  def attendant_emails
+  def all_emails
     to_email(Attendant.by_last_name)
   end
+
+  def non_speaker_emails
+    to_email(Attendant.non_speakers_by_lastname)
+  end
+
   protected
 
 
@@ -76,7 +81,7 @@ class AdminController < Controller
   def to_email(list)
     list.collect! { |attendant| attendant.email }
     list.uniq!
-    list.join ','
+    list.join ' ,'
   end
   
 end
