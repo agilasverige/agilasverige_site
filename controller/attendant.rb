@@ -14,6 +14,7 @@ class AttendantController < Controller
   end
 
   def new
+    require_login
     if request.get?
       AttendantView::New.new(self).to_s
     elsif request.post?
