@@ -28,17 +28,17 @@ module MainView
          blixttalen  eller andra ämnen. Formatet angavs av många som en stor
          orsak till första årets succé.
       END
-      h3 do
-        text "Du kan "
-        a("delta som talare.", :href => "/attendant/new") 
-      end
-      p <<-END
-         Lättrörlig metodik värdesätter högst av allt medarbetaren och
-         samtalet, och alla besökare ges i enlighet med det möjlighet att bidra
-         med sina erfarenheter och idéer. Experter och studenter, chefer eller
-         juniorkonsulter, beställare eller leverantörer – alla infallsvinklar
-         välkomnas så länge de har en koppling till den lättrörliga metodiken.
-      END
+      # h3 do
+      #   text "Du kan "
+      #   a("delta som talare.", :href => "/attendant/new") 
+      # end
+      # p <<-END
+      #    Lättrörlig metodik värdesätter högst av allt medarbetaren och
+      #    samtalet, och alla besökare ges i enlighet med det möjlighet att bidra
+      #    med sina erfarenheter och idéer. Experter och studenter, chefer eller
+      #    juniorkonsulter, beställare eller leverantörer – alla infallsvinklar
+      #    välkomnas så länge de har en koppling till den lättrörliga metodiken.
+      # END
       # p do
       #   text "Vi tar emot talaranmälningar fram till "
       #   span("fredagen den 15 maj", :class => 'emphasized') 
