@@ -27,33 +27,33 @@ describe ConfirmationEmail do
       @email.body.should match(/Attendant Attendantsson/) 
     end
 
-    it 'should have price' do
-      @email.body.should match(/SEK 1000/)
-    end
+    # it 'should have price' do
+    #   @email.body.should match(/SEK 1000/)
+    # end
 
-    it 'should have VAT price' do
-      @email.body.should match(/SEK 250/)
-    end
+    # it 'should have VAT price' do
+    #   @email.body.should match(/SEK 250/)
+    # end
 
-    it 'should have total price' do
-      @email.body.should match(/SEK 750/)
-    end
+    # it 'should have total price' do
+    #   @email.body.should match(/SEK 750/)
+    # end
 
-    it 'should have organizational number' do
-      @email.body.should match(/802404-7879/)
-    end
+    # it 'should have organizational number' do
+    #   @email.body.should match(/802404-7879/)
+    # end
 
-    it 'should have bank giro info' do
-      @email.body.should match(/280-9267/)
-    end
+    # it 'should have bank giro info' do
+    #   @email.body.should match(/280-9267/)
+    # end
 
-    it 'should have invoice date' do
-      @email.body.should match(/2008-12-01/)
-    end
+    # it 'should have invoice date' do
+    #   @email.body.should match(/2008-12-01/)
+    # end
 
-    it 'should have invoice number' do
-      @email.body.should match(/1212/)
-    end
+    # it 'should have invoice number' do
+    #   @email.body.should match(/1212/)
+    # end
 
     it 'should not have any speaker information' do
       @email.body.should_not match(/Förslag till blixttal:/)

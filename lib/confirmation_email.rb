@@ -15,8 +15,6 @@ class ConfirmationEmail < EmailMessage
     temp_body = salutation + info 
     if(@attendant.speaker?)
       temp_body << speaker
-    else
-      temp_body << invoice
     end
     temp_body
   end
