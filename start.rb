@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require 'rubygems'
+gem 'ramaze', '= 2009.03'
 require 'ramaze'
 
 # require all controllers and models

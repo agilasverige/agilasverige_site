@@ -1,3 +1,5 @@
+require 'rubygems'
+gem 'erector', '<= 0.5.1'
 require 'erector'
 
 class BaseView < Erector::Widget
@@ -10,7 +12,7 @@ class BaseView < Erector::Widget
 
   def initialize(controller)
     @controller = controller
-    super
+    super()
   end
 
   def render
