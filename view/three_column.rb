@@ -10,7 +10,7 @@ class ThreeColumnView < BaseView
       div :class => 'yui-g' do
         div :class => 'yui-u first' do
           div :id => 'maintext' do
-            content
+            main_content
           end
         end
         div :class => 'yui-g' do

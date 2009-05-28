@@ -6,7 +6,7 @@ module AdminView
       super(controller)
     end
 
-    def content
+    def main_content
       h2 'Deltagare'
       table do
         tr do
@@ -40,7 +40,7 @@ module AdminView
       super(controller)
     end
 
-    def content
+    def main_content
       h2 'Talare'
       table do
         tr do

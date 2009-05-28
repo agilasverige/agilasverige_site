@@ -7,7 +7,7 @@ module ProgramView
       super(controller)
     end
 
-    def content
+    def main_content
       h1 'Måndag'
       div(:id => 'test', :style => 'display: none;')  do
         p 'hej'

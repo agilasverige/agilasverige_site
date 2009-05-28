@@ -5,7 +5,7 @@ module MainView
       super(controller)
     end
 
-    def content
+    def main_content
       h2 "Välkommen till en agil konferens om agila metoder!"
       p <<-END 
             Hur många gånger har du kommit hem från en konferens och

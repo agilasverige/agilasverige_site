@@ -1,5 +1,5 @@
 require 'rubygems'
-gem 'erector', '<= 0.5.1'
+gem 'erector', '<= 0.6.6'
 require 'erector'
 
 class BaseView < Erector::Widget
@@ -15,7 +15,7 @@ class BaseView < Erector::Widget
     super()
   end
 
-  def render
+  def content
     instruct
     rawtext DOCTYPE.strip
     html :xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv" do
@@ -32,7 +32,7 @@ class BaseView < Erector::Widget
     end
   end
 
-  def content
+  def main_content
     p 'implement me!'
   end
 
@@ -83,7 +83,7 @@ class BaseView < Erector::Widget
       div :class => 'yui-g' do
         div :class => 'yui-u first' do
           div :id => 'maintext' do
-            content
+            main_content
           end
         end
         div :class => 'yui-g' do

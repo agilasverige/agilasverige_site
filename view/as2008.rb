@@ -8,7 +8,7 @@ class AS2008View < ThreeColumnView
     super(controller)
   end
 
-  def content
+  def main_content
     table(:id => 'presentations') do
       tr do
         th "Titel"
