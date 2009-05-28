@@ -11,5 +11,3 @@ set :thin_port, 12000
 set :thin_servers, 3
 
 set :ssh_flags,             '-p 22666'
-
-
