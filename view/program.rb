@@ -177,16 +177,24 @@ module ProgramView
     def talkinfo(id = '')
       speaker = find_speaker(id)
       p(:class => 'title') do
-        text !speaker.nil? ? speaker.speaking_proposal.title : 'unknown'
+        a(:class => 'fancybox', :title => proposal_title(speaker), :href => "\##{id}") do
+          text !speaker.nil? ? speaker.speaking_proposal.title : 'unknown'
+        end
       end
       p(:class => 'speaker') do 
         text "#{!speaker.nil? ? speaker.full_name : 'unknown'} - #{!speaker.nil? ? speaker.organization : 'unknown'}"
-        div(:id => 'idd', :style => 'display: none;') do
-          p do
-            text 'info'
-          end
+      end
+      div(:id => id, :class => 'hidden') do
+        p !speaker.nil? ? speaker.speaking_proposal.abstract : 'unknown'
+        p(:class => 'speaker') do
+          text 'Talare är '
+          text "#{!speaker.nil? ? speaker.full_name : 'unknown'} från #{!speaker.nil? ? speaker.organization : 'unknown'}"
         end
       end
+    end
+
+    def proposal_title(speaker)
+      !speaker.nil? ? speaker.speaking_proposal.title : 'unknown'
     end
 
     def find_speaker(id)
@@ -194,5 +202,15 @@ module ProgramView
         candidate.id == id
       end
     end
+
+    def javascript
+      script(:type => "text/javascript", :src => "/scripts/jquery-1.3.2.min.js"){}
+      script(:type => "text/javascript", :src => "/fancybox/jquery.fancybox-1.2.1.pack.js"){}
+      script(:type => "text/javascript", :src => "/scripts/program.js"){}
+    end
+
+    def css
+      link :rel => "stylesheet", :href => "/fancybox/jquery.fancybox.css", :type => "text/css", :media => "screen"
+    end      
   end
 end

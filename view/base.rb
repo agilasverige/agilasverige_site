@@ -72,6 +72,7 @@ class BaseView < Erector::Widget
       meta :content => "text/html; charset=utf-8", "http-equiv" => "content-type"
       link :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"
       link :href => "/css/master", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
+      css
     end
   end
 
@@ -116,6 +117,9 @@ class BaseView < Erector::Widget
     # overridden in subclass views that has javascript
   end
 
+  def css
+    # overridden in subclass views that has extra css
+  end
 
   def info
     div :class => 'yui-u first' do
