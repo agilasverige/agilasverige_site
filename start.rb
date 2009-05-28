@@ -1,37 +1,8 @@
-#!/usr/bin/env ruby
-require 'rubygems'
-gem 'ramaze', '= 2009.03'
-require 'ramaze'
+# Use this file directly like `ruby start.rb` if you don't want to use the
+# `ramaze start` command.
+# All application related things should go into `app.rb`, this file is simply
+# for options related to running the application locally.
 
-# require all controllers and models
-Ramaze::Log.ignored_tags = [:debug, :info]
-#Ramaze::Global.sourcereload = true
+require File.expand_path('app', File.dirname(__FILE__))
 
-pid_dir = File.join(__DIR__,'pid')
-FileUtils.mkdir_p(pid_dir)
-
-unless Ramaze::Log.loggers.size == 2
-  logdir = File.join(__DIR__,'log')
-  logfile = File.join(logdir,"ramaze_#{Time.now.strftime('%Y%m%d%H%M%S')}.log")
-
-  FileUtils.mkdir_p(logdir)
-  logger = Ramaze::Logger::Informer.new(logfile)
-  Ramaze::Log.loggers << logger
-end
-
-# Ramaze.options.cache.session = Ramaze::Cache::Marshal
-#
-# Add directory start.rb is in to the load path, so you can run the app from
-# any other working path
-$LOAD_PATH.unshift(__DIR__)
-Ramaze::Global.root = File.dirname(__FILE__)
-Ramaze::Global.cache = Ramaze::FileCache
-
-# Initialize controllers and models
-require 'controller/init'
-require 'model/init'
-require 'view/init'
-require 'lib/init'
-  
-#Ramaze.start :adapter => :mongrel, :port => 7000
-
+Ramaze.start(:adapter => :webrick, :port => 7000, :file => __FILE__)
