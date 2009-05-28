@@ -1,7 +1,7 @@
 class MainController < Controller
 
   def index
-    MainView::Index.new(self).to_s
+    MainView::Index.new(:controller => self).to_s
   end
   
 

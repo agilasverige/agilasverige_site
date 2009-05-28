@@ -7,7 +7,7 @@ class AttendantController < Controller
     rescue
       show404
     end
-    view = AttendantView::Show.new(self)
+    view = AttendantView::Show.new(:controller => self)
     view.message = message
     view.attendant = attendant
     view.to_s
@@ -38,7 +38,7 @@ class AttendantController < Controller
   def edit(id)
     require_login
     attendant = Attendant.get(id)
-    AttendantView::Edit.new(self, attendant)
+    AttendantView::Edit.new(:controller => self, :attendant => attendant)
   end
 
 

@@ -1,10 +1,7 @@
 module AdminView
   class Attendants < TwoColumnView 
 
-    def initialize(controller, attendants)
-      @attendants = attendants
-      super(controller)
-    end
+    needs :attendants
 
     def main_content
       h2 'Deltagare'
@@ -35,10 +32,7 @@ module AdminView
 
   class SpeakingProposals < TwoColumnView 
 
-    def initialize(controller, speakers)
-      @speakers = speakers
-      super(controller)
-    end
+    needs :speakers
 
     def main_content
       h2 'Talare'

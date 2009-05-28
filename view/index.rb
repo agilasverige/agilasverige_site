@@ -1,9 +1,6 @@
 module MainView
-  class Index < ThreeColumnView
 
-    def initialize(controller)
-      super(controller)
-    end
+  class Index < ThreeColumnView
 
     def main_content
       h2 "Välkommen till en agil konferens om agila metoder!"

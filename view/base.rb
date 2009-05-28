@@ -4,16 +4,13 @@ require 'erector'
 
 class BaseView < Erector::Widget
 
-  attr_accessor :controller
+  needs :controller
+
 
   DOCTYPE = <<-TEXT 
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
   TEXT
 
-  def initialize(controller)
-    @controller = controller
-    super()
-  end
 
   def content
     instruct

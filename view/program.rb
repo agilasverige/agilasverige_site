@@ -1,11 +1,7 @@
 module ProgramView
   class Index < TwoColumnView
 
-    def initialize(controller, schedule, speakers)
-      @schedule = schedule
-      @speakers = speakers
-      super(controller)
-    end
+    needs :schedule, :speakers
 
     def main_content
       h1 'Måndag'

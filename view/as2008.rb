@@ -2,11 +2,7 @@ class AS2008View < ThreeColumnView
 
   attr_writer :presentations
 
-
-  def initialize(controller, presentations)
-    @presentations = presentations
-    super(controller)
-  end
+  needs :presentations
 
   def main_content
     table(:id => 'presentations') do
