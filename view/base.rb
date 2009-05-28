@@ -25,7 +25,7 @@ class BaseView < Erector::Widget
           main
           footer
         end
-        javascript
+        local_javascript
       end
     end
   end
@@ -99,21 +99,18 @@ class BaseView < Erector::Widget
         a 'Kontakta oss', :href => 'mailto:info@agilasverige.se'
       end
     end
-    rawtext <<-END 
-      <script type="text/javascript">
+    javascript <<-END 
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-      </script>
-      <script type="text/javascript">
+    END
+    javascript <<-END
       var pageTracker = _gat._getTracker("UA-160245-3");
       pageTracker._initData();
       pageTracker._trackPageview();
-      </script>
-      <script type="text/javascript" src="/scripts/jquery-1.3.2.min.js"></script>
     END
   end
 
-  def javascript
+  def local_javascript
     # overridden in subclass views that has javascript
   end
 

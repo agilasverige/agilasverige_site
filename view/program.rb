@@ -203,7 +203,7 @@ module ProgramView
       end
     end
 
-    def javascript
+    def local_javascript
       script(:type => "text/javascript", :src => "/scripts/jquery-1.3.2.min.js"){}
       script(:type => "text/javascript", :src => "/fancybox/jquery.fancybox-1.2.1.pack.js"){}
       script(:type => "text/javascript", :src => "/scripts/program.js"){}
