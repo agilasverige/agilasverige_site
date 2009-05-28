@@ -1,6 +1,5 @@
 *.swp
 *.pid
-*.css
 *.tmproj
 .DS_Store
 tags
