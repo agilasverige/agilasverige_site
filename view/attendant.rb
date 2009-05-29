@@ -84,10 +84,8 @@ module AttendantView
       end
     end
 
-    def javascript
-      rawtext <<-END
-        <script type="text/javascript" src="/scripts/signup.js"></script>
-      END
+    def local_javascript
+      script :type => "text/javascript", :src => "/scripts/signup.js"
     end
   end
 
