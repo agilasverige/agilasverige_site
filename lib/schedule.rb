@@ -75,7 +75,7 @@ class Schedule
   def setup_tuesday
     tuesday.add_slot(TUESDAY_SLOTS[0], 'e8564dc38404a1f86087a6a1917108aa', 'be3e15f9b24deacaa80bfe65d1fe027b')
     tuesday.add_slot(TUESDAY_SLOTS[1], '062dd82c34369208f3a6cda909786aa8', '9ee92dbbe4f2c34fe4f9b361392dd324')
-    tuesday.add_slot(TUESDAY_SLOTS[2], '71499ac8ad181b1669714ab4ce2b5c72', 'a71266f84b445806b9595177b07a7403')
+    tuesday.add_slot(TUESDAY_SLOTS[2], '71499ac8ad181b1669714ab4ce2b5c72', 'd15c1b3c333db832a6aefd96770901f8')
     tuesday.add_slot(TUESDAY_SLOTS[3], '879f6591284cce3bcd857d892bd76d64', '7505500af345d4c5de448f69ed9af2de')
     tuesday.add_slot(TUESDAY_SLOTS[4], '0698f8dd56663f6882f0f8e2f31b7a47', 'c9a6b6a8c0c75a3cc5226db3b9011cda')
 
