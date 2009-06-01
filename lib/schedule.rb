@@ -56,7 +56,7 @@ class Schedule
   def setup_monday
     monday.add_slot(MONDAY_SLOTS[0], '49f3145368398b7c1f6ad46efbd950ff', '60164966329af99258739c60ac10123a')
     monday.add_slot(MONDAY_SLOTS[1], '0686eaa4ea9784800c8202420aa5f577', 'a0c860b04d0e3388ef198a5eca483aa3')
-    monday.add_slot(MONDAY_SLOTS[2], '8c98fe235c2800b620c89a9bc4f69afc', 'd1b81518d3b66bb095de29c3faf51893')
+    monday.add_slot(MONDAY_SLOTS[2], '8c98fe235c2800b620c89a9bc4f69afc', '9ee6a63dccc531c436975e978cb48748')
     monday.add_slot(MONDAY_SLOTS[3], 'b332e8fc8e1faf8ec4413e0653719fb3', 'dd7774b5277530416037b9e972ff1883')
 
     monday.add_slot(MONDAY_SLOTS[4], 'daf2793559acf601b1fbcc99b6b3cd9b', 'e8cc57326ab9112a116be93a22fa0ec0')
@@ -69,7 +69,7 @@ class Schedule
     monday.add_slot(MONDAY_SLOTS[10], '10431a87a0ca04ad49b5fcf70a70f7d5', '4caa9d77e7fdb28712f7f3adb4581309')
     monday.add_slot(MONDAY_SLOTS[11], '13474ae67c3af9210cf34d808aebf980', '5e0229ff9bde2a965dcf68a68d3c74bd')
     monday.add_slot(MONDAY_SLOTS[12], '821c1cdbd4e5ecba855e3b06106b13a7', 'cc4b42773a21f832cc3762725fb74810')
-    monday.add_slot(MONDAY_SLOTS[13], '9ee6a63dccc531c436975e978cb48748', 'f635e6765e9761408a43ae3c8ed40c60')
+    monday.add_slot(MONDAY_SLOTS[13], 'd1b81518d3b66bb095de29c3faf51893', 'f635e6765e9761408a43ae3c8ed40c60')
   end
 
   def setup_tuesday
