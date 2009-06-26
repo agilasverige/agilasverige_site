@@ -17,7 +17,7 @@ describe 'AS2008' do
     presentation1.files.push 'file1.ppt'
     presentation1.files.push 'file2.pdf'
     presentation1.files.push 'file3.zip'
-    view = AS2008View.new(DummyController.new, [presentation1])
+    view = AS2008View.new(:controller => DummyController.new, :presentations => [presentation1])
 
     @doc = Nokogiri::HTML(view.to_s)
   end

@@ -9,7 +9,7 @@ describe BaseView do
         "DummyController"
       end
     end
-    @page = BaseView.new(DummyController.new).to_s
+    @page = BaseView.new(:controller => DummyController.new).to_s
   end
 
   it 'should have xmlns tag' do
