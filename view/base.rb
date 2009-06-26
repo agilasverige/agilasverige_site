@@ -1,5 +1,5 @@
 require 'rubygems'
-gem 'erector', '<= 0.6.6'
+gem 'erector', '<= 0.6.7'
 require 'erector'
 
 class BaseView < Erector::Widget
