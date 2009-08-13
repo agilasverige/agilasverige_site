@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'rake' 
 begin
   require 'vlad'
