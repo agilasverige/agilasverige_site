@@ -67,7 +67,7 @@ class BaseView < Erector::Widget
 
   def head_content
     head do
-      title 'Agila Sverige 2009'
+      title 'Agila Sverige 2010'
       meta :content => "text/html; charset=utf-8", "http-equiv" => "content-type"
       link :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"
       link :href => "/css/master", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
