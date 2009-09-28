@@ -7,9 +7,9 @@ class BaseView < Erector::Widget
   needs :controller
 
 
-  DOCTYPE = <<-TEXT 
+  DOCTYPE = '''
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-  TEXT
+  '''
 
 
   def content
@@ -39,14 +39,14 @@ class BaseView < Erector::Widget
   def header
     div :id => 'hd' do
       a :href => '/'
-      img :src => '/images/as_logo.png', :alt => 'Agila Sverige 2009 Logo'
+      #img :src => '/images/as_logo.png', :alt => 'Agila Sverige 2010 Logo'
       h1 do
-        span 'Agila Sverige 2008'
+        span 'Agila Sverige 2010'
       end
       h2 do
-        span 'Stockholm 2-3 juni 2008'
+        span 'Stockholm juni 2010'
       end
-      img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm 2-3 juni 2008'
+      #img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
     end
   end
 
@@ -56,8 +56,12 @@ class BaseView < Erector::Widget
         ul do
           li do
             a 'Hem', :id => "main_link", :href => '/'
+          end
             # a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+          li do
             a 'Program', :id => "program_link", :href => '/program'
+          end
+          li do
             a '2008', :id => "zeroeight_link", :href => '/2008'
           end
         end
@@ -67,7 +71,7 @@ class BaseView < Erector::Widget
 
   def head_content
     head do
-      title 'Agila Sverige 2009'
+      title 'Agila Sverige 2010'
       meta :content => "text/html; charset=utf-8", "http-equiv" => "content-type"
       link :rel => "stylesheet", :href => "http://yui.yahooapis.com/2.4.1/build/reset-fonts-grids/reset-fonts-grids.css", :type => "text/css"
       link :href => "/css/master", :rel => "stylesheet", :media => "screen", :type => "text/css", :charset => "utf-8"
@@ -94,7 +98,7 @@ class BaseView < Erector::Widget
   def footer
     div :id => 'ft' do
       p do
-        rawtext '&copy; Agila Sverige 2009 | '
+        rawtext '&copy; Agila Sverige 2010 | '
         a 'Kontakta oss', :href => 'mailto:info@agilasverige.se'
       end
     end
@@ -126,7 +130,7 @@ class BaseView < Erector::Widget
         #   p(:class => "reminder") {text "25 maj 2009"}
         # end
 
-        h4 "Kommentarer på frågan 'Vad tar du med dig hem', från förra året:"
+        h4 "Kommentarer på frågan 'Vad tar du med dig hem', från 2008:"
         blockquote do
           p "\"Lyckan av att umgås med så många engagerade människor\""
         end
@@ -153,7 +157,7 @@ class BaseView < Erector::Widget
         h2 "Vad ingår?"
         ul do
           li "Två dagars konferens"
-          li "Konferensmiddag den 8 juni"
+          li "Konferensmiddag"
         end
         h2 "Var?"
         p do
