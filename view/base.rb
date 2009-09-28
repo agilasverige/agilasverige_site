@@ -39,14 +39,14 @@ class BaseView < Erector::Widget
   def header
     div :id => 'hd' do
       a :href => '/'
-      img :src => '/images/as_logo.png', :alt => 'Agila Sverige 2010 Logo'
+      #img :src => '/images/as_logo.png', :alt => 'Agila Sverige 2010 Logo'
       h1 do
         span 'Agila Sverige 2010'
       end
       h2 do
         span 'Stockholm juni 2010'
       end
-      img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
+      #img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
     end
   end
 
@@ -56,8 +56,12 @@ class BaseView < Erector::Widget
         ul do
           li do
             a 'Hem', :id => "main_link", :href => '/'
+          end
             # a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+          li do
             a 'Program', :id => "program_link", :href => '/program'
+          end
+          li do
             a '2008', :id => "zeroeight_link", :href => '/2008'
           end
         end
