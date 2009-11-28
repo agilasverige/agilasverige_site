@@ -5,6 +5,7 @@ module MainView
     def main_content
       h2 "Välkommen till en agil konferens om agila metoder!"
       p ''' 
+
             Hur många gånger har du kommit hem från en konferens och
             konstaterat att de roligaste och mest intressanta samtalen förts i
             fikapauserna? Att det mest inspirerande och lärorika erfarenheterna
