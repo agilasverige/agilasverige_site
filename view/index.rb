@@ -4,13 +4,19 @@ module MainView
 
     def main_content
       h2 "Välkommen till en agil konferens om agila metoder!"
-      p ''' 
-        Årets upplaga av Agila Sverige lämnade oss återigen med en positiv bild
-        av hur agil systemutveckling har tagit plats i Sverige.Vi arrangörer
-        vill tacka dig som var med och gjorde konferensen till en succé, Ett
-        Net Promoter Score <http://en.wikipedia.org/wiki/Net_Promoter> på 84%
-        talar sitt tydliga språk tycker vi
-      '''
+      p do 
+        text ''' 
+          2009 års upplaga av Agila Sverige lämnade oss återigen med en positiv
+          bild av hur agil systemutveckling har tagit plats i Sverige.Vi
+          arrangörer vill tacka dig som var med och gjorde konferensen till en
+          succé, Ett 
+        '''
+        a "Net Promoter Score", :href => "http://en.wikipedia.org/wiki/Net_Promoter" 
+        text '''
+          på 84% talar sitt tydliga
+          språk tycker vi
+        '''
+      end
       p '''
         Inom kort kommer både filmer från talen och presentationer kommer att
         dyka upp.

@@ -44,7 +44,7 @@ class BaseView < Erector::Widget
         span 'Agila Sverige 2010'
       end
       h2 do
-        span 'Stockholm juni 2010'
+        span 'Stockholm 10-11 maj  2010'
       end
       #img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
     end
@@ -173,7 +173,7 @@ class BaseView < Erector::Widget
   def sponsors
     div :class => 'yui-u' do
       div :id => 'sponsors' do
-        h2 'Sponsorer 2009'
+        h2 'Sponsorer 2010'
         SponsorList.new.random_order.each do |sponsor|
           p do
             a :href => sponsor.url do
