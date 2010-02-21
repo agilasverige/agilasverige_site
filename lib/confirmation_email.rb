@@ -46,8 +46,8 @@ Telefonnummer: #{@attendant.telephone_number}
 Förslag till blixttal:
 ----------------------
 
-Titel: #{@attendant.speaking_proposal.title}
-Beskrivning: #{@attendant.speaking_proposal.abstract}
+Titel: @attendant.speaking_proposal.title
+Beskrivning: @attendant.speaking_proposal.abstract
       "
   end
 
@@ -72,8 +72,8 @@ Betalningsinformation:
 Bankgiro: 280-9267 
 Orgnr: 802404-7879
 
-Datum: #{@attendant.invoice_date}
-Fakturanr: #{@attendant.invoice_no}
+Datum: @attendant.invoice_date
+Fakturanr: @attendant.invoice_no
 Tjänst: Agila Sverige 2009 (early bird)
 Pris: SEK 1000
 Moms 25%: SEK 250

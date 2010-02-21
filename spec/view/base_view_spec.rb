@@ -1,4 +1,3 @@
-require 'spec'
 require File.join(File.dirname(__FILE__),'..','spec_helper')
 
 describe BaseView do
@@ -16,4 +15,3 @@ describe BaseView do
     @page.should match(/lang=\"sv\" xml:lang="sv" xmlns="http:\/\/www.w3.org\/1999\/xhtml"/)
   end
 end
-

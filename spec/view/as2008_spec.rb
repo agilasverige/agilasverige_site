@@ -1,6 +1,5 @@
-require File.join(File.dirname(__FILE__),'..','..','view','init')
+require File.join(File.dirname(__FILE__),'..','spec_helper')
 require 'nokogiri'
-require 'spec'
 
 describe 'AS2008' do
 

@@ -11,8 +11,9 @@ end
 
 
 require 'spec/rake/spectask' 
-Spec::Rake::SpecTask.new do |t|
+Spec::Rake::SpecTask.new("spec") do |t|
   t.spec_opts = ["--color", '--format', "specdoc"] 
+  t.spec_files = FileList["spec/**/*_spec.rb"]
 end 
   
 namespace :spec do 

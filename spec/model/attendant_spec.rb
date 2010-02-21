@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__),'..','..','model','attendant')
+require File.join(File.dirname(__FILE__),'..','spec_helper')
 
 describe Attendant do
   describe 'Without mandatory arguments' do
@@ -7,9 +7,7 @@ describe Attendant do
     end
 
     it 'should not be saveable' do
-
       @attendant.valid?.should == false
-
     end
   end
   describe 'Created with all mandatory argument' do

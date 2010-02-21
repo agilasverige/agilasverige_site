@@ -1,5 +1,4 @@
-require File.join( File.dirname(__FILE__), "..", "..","lib", "sponsor_list" )
-require 'spec'
+require File.join(File.dirname(__FILE__),'..','spec_helper')
 
 describe "SponsorList" do
   

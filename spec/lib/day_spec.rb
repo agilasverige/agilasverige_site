@@ -1,9 +1,10 @@
+require File.join(File.dirname(__FILE__), '..', 'spec_helper')
+
 describe Day do
 
   before(:each) do
     @day = Day.new('name')
   end
-
 
   it 'should have a name' do
     @day.name.should == 'name'

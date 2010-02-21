@@ -1,13 +1,9 @@
-require 'couchrest'
+class SpeakingProposal 
 
-class SpeakingProposal < CouchRest::ExtendedDocument
+  include MongoMapper::Document
 
-  use_database CouchRest.database!('http://localhost:5984/agilasverige')
-
-  property :title
-  property :abstract
-
-
+  key :title
+  key :abstract
 
 end
 
