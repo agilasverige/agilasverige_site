@@ -2,7 +2,6 @@ require 'erector'
 
 class ThreeColumnView < BaseView
 
-
   protected
 
   def main

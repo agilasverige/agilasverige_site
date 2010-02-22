@@ -6,8 +6,8 @@ class AdminController < Controller
   #HTML views
 
   def attendants
-    all = Attendant.by_last_name
-    AdminView::Attendants.new(self, all).to_s
+    all = Attendant.all
+    AdminView::Attendants.new(:controller => self, :attendants => all).to_s
   end
 
   def speakers 

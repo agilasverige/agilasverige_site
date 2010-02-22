@@ -6,7 +6,6 @@ class BaseView < Erector::Widget
 
   needs :controller
 
-
   DOCTYPE = '''
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
   '''
@@ -57,7 +56,7 @@ class BaseView < Erector::Widget
           li do
             a 'Hem', :id => "main_link", :href => '/'
           end
-            # a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+            a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
           li do
             a 'Program', :id => "program_link", :href => '/program'
           end

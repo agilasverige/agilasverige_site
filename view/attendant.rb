@@ -55,7 +55,7 @@ module AttendantView
     def errors
       if has_errors
         div(:id => 'errors', :class => 'attention') do
-          self.controller.flash[:error].each do |error|
+          @controller.flash[:error].each do |error|
             p error
           end
         end
@@ -63,7 +63,7 @@ module AttendantView
     end
 
     def has_errors
-      !self.controller.flash[:error].nil?
+      !@controller.flash[:error].nil?
     end
   end
 

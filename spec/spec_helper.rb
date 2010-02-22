@@ -1,5 +1,8 @@
 require 'rubygems'
 
+
+puts "LOADING SPEC HELPER"
+
 require 'spec'
 require 'ramaze'
 

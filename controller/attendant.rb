@@ -14,24 +14,23 @@ class AttendantController < Controller
   end
 
   def new
-    require_login
     if request.get?
-      AttendantView::New.new(self).to_s
+      AttendantView::New.new(:controller => self).to_s
     elsif request.post?
       sanitize_request
       attendant = set_fields(Attendant.new)
-      begin
+      # begin
         if attendant.save
-          send_confirmation_email(attendant)
+          # send_confirmation_email(attendant)
           redirect("/attendant/#{attendant.id}/thanks")
         else
           flash[:error] = attendant.errors 
           redirect('/attendant/new')
         end
-      rescue
-        flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare"]
-        redirect('/attendant/new')
-      end
+      # rescue Exception => e
+      #   flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare #{e}"]
+      #   redirect('/attendant/new')
+      # end
     end
   end
 
@@ -86,7 +85,6 @@ class AttendantController < Controller
     attendant.food_preferences = request.params['food_preferences']
     attendant.comments = request.params['comments']
     attendant.email = request.params['email'] 
-    attendant.speaker = request.params['wants_to_speak']
     if request.params['wants_to_speak']
       speaking_proposal = SpeakingProposal.new
       speaking_proposal.title = request.params['title']
