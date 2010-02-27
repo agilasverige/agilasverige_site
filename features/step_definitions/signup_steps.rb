@@ -1,5 +1,3 @@
-require File.join(File.dirname(__FILE__), '..', 'env.rb')
-
 Given /^I have previously not signed up$/ do
   clean_test_data
 end

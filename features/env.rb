@@ -1,14 +1,15 @@
-require File.join(File.dirname(__FILE__), '..', 'start')
+require 'ramaze'
+Ramaze.options.started = true
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'app'))
+
 require 'spec/expectations'
-require 'cucumber/formatters/unicode'
-ARGV={}
-require 'webrat/ramaze'
-require 'webrat/core/matchers'
+require 'rack/test'
 
-Webrat.configure do |config|
-  config.mode = :ramaze
-end
+Ramaze.setup_dependencies 
+extend Rack::Test::Methods
+def app; Ramaze.middleware; end
 
-include Webrat::Methods
-include Webrat::Matchers
+require 'capybara'
+require 'capybara/cucumber'
 
+Capybara.app=Ramaze

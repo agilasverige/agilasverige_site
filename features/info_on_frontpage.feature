@@ -10,7 +10,7 @@ Feature: Front Page
 
   Scenarios:
     | text            |
-    | 8-9 juni        |
+    | 10-11 maj       |
     | Ingenjörshuset  |
     | Stockholm       |
     | Agila Sverige   |
