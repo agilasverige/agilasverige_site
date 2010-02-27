@@ -2,8 +2,6 @@ class Attendant
 
   include MongoMapper::Document
 
-  puts "LOADING ATTENDANT"
-
   key :first_name, String, :required => true
   key :last_name, String
   key :email, String
