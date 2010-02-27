@@ -43,7 +43,6 @@ class AttendantController < Controller
 
   def update
     require_login
-    puts 'hej'
     if request.post?
       attendant = Attendant.get(request.params['id'])
       set_fields(attendant)
