@@ -34,7 +34,6 @@ describe 'AS2008' do
   end
 
   it 'should have link to file1.pdf' do
-    puts @doc.css('a#file1_pdf').inner_html
     @doc.css('a#file2_pdf').inner_html.should =~ /pdficon.gif/ 
   end
 

@@ -42,7 +42,6 @@ module AdminView
           th 'Abstract'
         end
         @speakers.each do |speaker|
-          puts speaker.inspect
           tr do
             td speaker.last_name
             td speaker.first_name
