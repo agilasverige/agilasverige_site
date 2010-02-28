@@ -2,9 +2,10 @@ module MainView
 
   class Index < ThreeColumnView
 
-    def main_content
+    def main_text
       h2 "Välkommen till en agil konferens om agila metoder!"
-      p ''' 
+      p '''Det är med stor glädje vi återigen kan bjuda in till Agila Sverige. 
+           
 
             Hur många gånger har du kommit hem från en konferens och
             konstaterat att de roligaste och mest intressanta samtalen förts i
@@ -26,21 +27,21 @@ module MainView
          blixttalen  eller andra ämnen. Formatet angavs av många som en stor
          orsak till första årets succé.
       '''
-      # h3 do
-      #   text "Du kan "
-      #   a("delta som talare.", :href => "/attendant/new") 
-      # end
-      # p '''
-      #    Lättrörlig metodik värdesätter högst av allt medarbetaren och
-      #    samtalet, och alla besökare ges i enlighet med det möjlighet att bidra
-      #    med sina erfarenheter och idéer. Experter och studenter, chefer eller
-      #    juniorkonsulter, beställare eller leverantörer – alla infallsvinklar
-      #    välkomnas så länge de har en koppling till den lättrörliga metodiken.
-      # '''
-      # p do
-      #   text "Vi tar emot talaranmälningar fram till "
-      #   span("fredagen den 15 maj", :class => 'emphasized') 
-      # end
+       h3 do
+         text "Du kan "
+         a("delta som talare.", :href => "/attendant/new") 
+       end
+       p '''
+          Lättrörlig metodik värdesätter högst av allt medarbetaren och
+          samtalet, och alla besökare ges i enlighet med det möjlighet att bidra
+          med sina erfarenheter och idéer. Experter och studenter, chefer eller
+          juniorkonsulter, beställare eller leverantörer – alla infallsvinklar
+          välkomnas så länge de har en koppling till den lättrörliga metodiken.
+       '''
+       p do
+         text "Vi tar emot talaranmälningar fram till "
+         span("söndagen den 11 april", :class => 'emphasized') 
+       end
       p do
         text "På förmiddagarna hålls så kallade "
         a("blixttal ", :href => "http://en.wikipedia.org/wiki/Lightning_Talks")
@@ -57,15 +58,9 @@ module MainView
           efterhand.
         '''
       end
-      p '''
-         Agila, eller lättrörliga, metoder vinner alltmer insteg i olika
-         utvecklingsprojekt. Vi ser att intresset ökar explosionsartat, såväl
-         bland systemutvecklare som beställare.
-      '''
       p ''' 
-        Den agila konferensformen har etablerat sig ordentligt i Norden i och
-        med Smidig 2007/2008. Samt förra årets succékonferens Agila Sverige
-        2008. Vi ser fram emot två lika inspirerandedagar i Stockholm i år
+        De tidigare årens Agila Sverige-konferenser har varit stora succeer.
+        Vi ser fram emot två lika inspirerandedagar i Stockholm i år
         igen.
       '''
       
