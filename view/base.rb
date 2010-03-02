@@ -80,9 +80,17 @@ class BaseView < Erector::Widget
   end
 
   def subnavigation
-    div :role => "navigation", :class => "yui-b" do
-      p 'navigation'
-    end
+      ul :id => 'submenu' do
+        li do
+          a "Om konferensen", :href => '#'
+        end
+        li do
+          a "Blixttal", :href => '#'
+        end
+        li do
+          a "Open Space", :href => '#'
+        end
+      end
   end
 
   def main_content
