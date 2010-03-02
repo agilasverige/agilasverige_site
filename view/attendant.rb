@@ -73,7 +73,7 @@ module AttendantView
       super(controller)
     end
 
-    def content
+    def main_text
       errors
       fieldset do
         legend 'Anmälan'
