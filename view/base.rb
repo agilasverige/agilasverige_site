@@ -49,7 +49,9 @@ class BaseView < Erector::Widget
           li do
             a 'Hem', :id => "main_link", :href => '/'
           end
+          li do
             a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+          end
           li do
             a 'Program', :id => "program_link", :href => '/program'
           end
