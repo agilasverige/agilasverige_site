@@ -1,6 +1,25 @@
+module Submenu
+    def subnavigation
+      ul :id => 'submenu' do
+        li do
+          a "Om konferensen", :href => '#'
+        end
+        li do
+          a "Blixttal", :href => '#'
+        end
+        li do
+          a "Open Space", :href => '#'
+        end
+      end
+    end
+end
+      
+
 module MainView
 
   class Index < ThreeColumnView
+
+    include Submenu
 
     def main_text
       h2 "Välkommen till en agil konferens om agila metoder!"
