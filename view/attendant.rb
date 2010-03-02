@@ -1,5 +1,5 @@
 module AttendantView
-  class AttendantBaseView < ThreeColumnView
+  class AttendantBaseView < TwoColumnView
 
     protected
 
