@@ -10,6 +10,7 @@ extend Rack::Test::Methods
 def app; Ramaze.middleware; end
 
 require 'capybara'
+require 'capybara/dsl'
 require 'capybara/cucumber'
 
 Capybara.app=Ramaze

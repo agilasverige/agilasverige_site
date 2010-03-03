@@ -3,7 +3,7 @@ module AdminView
 
     needs :attendants
 
-    def main_content
+    def main_text
       h2 'Deltagare'
       table do
         tr do
@@ -32,7 +32,7 @@ module AdminView
 
     needs :speakers
 
-    def main_content
+    def main_text
       h2 'Talare'
       table do
         tr do

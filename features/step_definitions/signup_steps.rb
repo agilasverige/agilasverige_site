@@ -1,5 +1,31 @@
-Given /^I have previously not signed up$/ do
-  clean_test_data
+Given /^I am a previously unregistered visitor$/ do
+  Attendant.all(:email => 'demo@real.com').each {|a| a.destroy}
+end
+
+When /^I register as an attendant$/ do
+  visit '/attendant/new'
+  fill_in 'first_name', :with => 'Demo'
+  fill_in 'last_name', :with => 'Demosson'
+  fill_in 'email', :with => 'demo@real.com'
+  fill_in 'address', :with => 'Demoaddress 19'
+  fill_in 'organization', :with => 'Superorganization'
+  fill_in 'zip_code', :with => '12122'
+  fill_in 'postal_address', :with => 'Demoland'
+  click 'Anmäl'
+end
+
+Then /^my information is saved$/ do
+  attendant = Attendant.first(:email => 'demo@real.com')
+  attendant.first_name.should == 'Demo'
+end
+
+Then /^a uid is generated$/ do
+  attendant = Attendant.first(:email => 'demo@real.com')
+  attendant.uid.should_not == nil
+end
+
+Then /^I receive an email with an unique link$/ do
+  pending # express the regexp above with the code you wish you had
 end
 
 Given /^I have previously signed up as an attendant$/ do

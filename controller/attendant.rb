@@ -19,7 +19,7 @@ class AttendantController < Controller
     elsif request.post?
       sanitize_request
       attendant = set_fields(Attendant.new)
-      # begin
+      begin
         if attendant.save
           # send_confirmation_email(attendant)
           redirect("/attendant/#{attendant.id}/thanks")
@@ -27,10 +27,10 @@ class AttendantController < Controller
           flash[:error] = attendant.errors 
           redirect('/attendant/new')
         end
-      # rescue Exception => e
-      #   flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare #{e}"]
-      #   redirect('/attendant/new')
-      # end
+      rescue Exception => e
+         flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare #{e}"]
+         redirect('/attendant/new')
+       end
     end
   end
 

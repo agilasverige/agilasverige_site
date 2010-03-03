@@ -6,14 +6,19 @@ Feature: Front Page
   Scenario Outline:
     Given I am a visitor
     When I surf to the front page
-    Then I should see <text>
+    Then I should see <text> in the text
 
   Scenarios:
     | text            |
     | 10-11 maj       |
-    | Ingenjörshuset  |
     | Stockholm       |
     | Agila Sverige   |
-    | Blixttal        |
+    | blixttal        |
     | Open Space      |
+
+  Scenario:
+    Given I am a visitor
+    When I surf to the front page
+    Then I should see a submenu 
+
     
