@@ -9,4 +9,5 @@ Feature: Signup
     When I register as an attendant
     Then my information is saved
     And a uid is generated
+    And I see a confirmation page
     And I receive an email with an unique link

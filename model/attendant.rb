@@ -2,7 +2,6 @@ class Attendant
 
   include MongoMapper::Document
 
-
   key :first_name, String, :required => true
   key :last_name, String, :required => true
   key :email, String, :required => true
@@ -17,7 +16,9 @@ class Attendant
   key :comments, String
   key :uid, String
 
-  before_save :set_uid
+  timestamps!
+
+  before_create :set_uid
 
   def full_name
     "#{first_name} #{last_name}"

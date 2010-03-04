@@ -1,9 +1,9 @@
 class AttendantController < Controller
 
-  def index(id, message = '')
+  def index(uid, message = '')
     attendant = ''
     begin
-      attendant = Attendant.get(id)
+      attendant = Attendant.find_by_uid(uid)
     rescue
       show404
     end
@@ -22,7 +22,7 @@ class AttendantController < Controller
       begin
         if attendant.save
           # send_confirmation_email(attendant)
-          redirect("/attendant/#{attendant.id}/thanks")
+          redirect("/attendant/#{attendant.uid}/thanks")
         else
           flash[:error] = attendant.errors 
           redirect('/attendant/new')
