@@ -8,7 +8,7 @@ When /^I register as an attendant$/ do
   visit '/attendant/new'
   fill_in 'first_name', :with => 'Demo'
   fill_in 'last_name', :with => 'Demosson'
-  fill_in 'email', :with => 'mahnve+test@gmail.com'
+  fill_in 'email', :with => TEST_EMAIL_ADDRESS
   fill_in 'address', :with => 'Demoaddress 19'
   fill_in 'organization', :with => 'Superorganization'
   fill_in 'zip_code', :with => '12122'
