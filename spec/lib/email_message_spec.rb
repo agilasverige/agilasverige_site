@@ -27,10 +27,6 @@ describe EmailMessage do
       @mail.subject.should == 'subject'
     end
 
-    it 'should have a default port = 25' do
-      @mail.port.should == 25
-    end
-  
   end
 
 end

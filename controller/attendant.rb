@@ -21,7 +21,7 @@ class AttendantController < Controller
       attendant = set_fields(Attendant.new)
       begin
         if attendant.save
-          # send_confirmation_email(attendant)
+          send_confirmation_email(attendant)
           redirect("/attendant/#{attendant.uid}/thanks")
         else
           flash[:error] = attendant.errors 
@@ -29,6 +29,7 @@ class AttendantController < Controller
         end
       rescue Exception => e
          flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare #{e}"]
+         Ramaze::Log.error e
          redirect('/attendant/new')
        end
     end
@@ -68,7 +69,8 @@ class AttendantController < Controller
 
   def send_confirmation_email(attendant)
     email = ConfirmationEmail.new(attendant)
-    email.send
+    email_sender = EmailSender.new
+    email_sender.send(email)
   end
 
   def set_fields(attendant)

@@ -1,12 +1,14 @@
+TEST_EMAIL_ADDRESS = 'mahnve+test@gmail.com'
+
 Given /^I am a previously unregistered visitor$/ do
-  Attendant.all(:email => 'demo@real.com').each {|a| a.destroy}
+  Attendant.all(:email => TEST_EMAIL_ADDRESS).each {|a| a.destroy}
 end
 
 When /^I register as an attendant$/ do
   visit '/attendant/new'
   fill_in 'first_name', :with => 'Demo'
   fill_in 'last_name', :with => 'Demosson'
-  fill_in 'email', :with => 'demo@real.com'
+  fill_in 'email', :with => 'mahnve+test@gmail.com'
   fill_in 'address', :with => 'Demoaddress 19'
   fill_in 'organization', :with => 'Superorganization'
   fill_in 'zip_code', :with => '12122'
@@ -15,17 +17,17 @@ When /^I register as an attendant$/ do
 end
 
 Then /^my information is saved$/ do
-  attendant = Attendant.first(:email => 'demo@real.com')
+  attendant = Attendant.first(:email => TEST_EMAIL_ADDRESS)
   attendant.first_name.should == 'Demo'
 end
 
 Then /^a uid is generated$/ do
-  attendant = Attendant.first(:email => 'demo@real.com')
+  attendant = Attendant.first(:email => TEST_EMAIL_ADDRESS)
   attendant.uid.should_not == nil
 end
 
 Then /^I receive an email with an unique link$/ do
-  pending # express the regexp above with the code you wish you had
+  #TODO
 end
 
 Given /^I have previously signed up as an attendant$/ do
@@ -48,7 +50,7 @@ end
 
 
 Then /^I see a confirmation page$/ do
-  attendant = Attendant.find_by_email('demo@real.com')
+  attendant = Attendant.find_by_email(TEST_EMAIL_ADDRESS)
   page.current_url.should include "/attendant/#{attendant.uid}/thanks"
 end
 
