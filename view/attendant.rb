@@ -69,10 +69,6 @@ module AttendantView
 
   class New < AttendantBaseView
 
-    def initialize(controller)
-      super(controller)
-    end
-
     def main_text
       errors
       fieldset do
@@ -91,19 +87,15 @@ module AttendantView
 
   class Edit < AttendantBaseView
 
-    def initialize(controller, attendant)
-      @attendant = attendant
-      super(controller)
-    end
+    needs :attendant
 
-    def content
+    def main_text
       errors
 
       fieldset do
         legend 'Editera deltagare'
         form(:action => '/attendant/update', :method => 'post') do
           attendant_fields(@attendant)
-          speaker_fields(@attendant)
           input(:value => 'Spara', :type => 'submit')
         end
       end

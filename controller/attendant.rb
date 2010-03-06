@@ -1,15 +1,13 @@
 class AttendantController < Controller
 
-  def index(uid, message = '')
+  def index(uid)
     attendant = ''
-    begin
-      attendant = Attendant.find_by_uid(uid)
-    rescue
+    attendant = Attendant.find_by_uid(uid)
+    Ramaze::Log.debug("Attendant: #{attendant.inspect}")
+    unless(attendant)
       show404
     end
-    view = AttendantView::Show.new(:controller => self)
-    view.message = message
-    view.attendant = attendant
+    view = AttendantView::Edit.new(:controller => self, :attendant => attendant)
     view.to_s
   end
 
