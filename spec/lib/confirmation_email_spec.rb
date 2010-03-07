@@ -22,7 +22,7 @@ describe ConfirmationEmail do
     end
 
     it 'should have name info' do
-      @email.body.should match(/Attendant Attendantsson/) 
+      @email.body.should match(/Attendant/) 
     end
 
     # it 'should have price' do

@@ -1,6 +1,8 @@
 module AttendantView
   class AttendantBaseView < TwoColumnView
 
+    include FormFields
+
     protected
 
     def speaker_fields(attendant=Attendant.new)
@@ -27,44 +29,6 @@ module AttendantView
       text_area_field(attendant.comments, 'Kommentarer', 'comments')
     end
 
-    def hidden_field(value, id)
-      input(:type => 'hidden', :id => id, :name => id, :value => value)
-    end
-
-    def text_field(text, label_text, id)
-      div(:class => 'field') do
-        label(label_text, :for => id, :id => "#{id}_label")
-        input(:value => text, :type => 'text', :name => id, :id => id)
-      end
-    end
-
-    def text_area_field(the_text, label_text, id)
-      div(:class => 'field') do
-        label(label_text, :for => id, :id => "#{id}_label")
-        textarea(:name => id, :id => id) {text the_text}
-      end
-    end
-
-    def checkbox(checked, label_text, id)
-      div(:class => 'field') do
-        label(label_text, :for => id, :id => "#{id}_label")
-        input(:checked => checked, :type => 'checkbox', :name => id, :id => id)
-      end
-    end
-
-    def errors
-      if has_errors
-        div(:id => 'errors', :class => 'attention') do
-          @controller.flash[:error].each do |error|
-            p error
-          end
-        end
-      end
-    end
-
-    def has_errors
-      !@controller.flash[:error].nil?
-    end
   end
 
   class New < AttendantBaseView
@@ -91,6 +55,12 @@ module AttendantView
 
     def main_text
       errors
+
+      p do
+        a "Anmäl blixttal", 
+          :id => 'submit_lightning_talk', 
+          :href => "/speaking_proposal/new?uid=#{@attendant.uid}"
+      end
 
       fieldset do
         legend 'Editera deltagare'
