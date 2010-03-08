@@ -12,7 +12,8 @@ describe SpeakingProposalView::New do
         {:errors => []}
       end
     end
-    @page = Nokogiri::HTML(SpeakingProposalView::New.new(:controller => DummyController.new).to_s)
+    @page = Nokogiri::HTML(SpeakingProposalView::New.new(:controller => DummyController.new,
+                                                        :attendant_uid => 'hejomfejom').to_s)
   end
 
   it "Should have a title text field" do

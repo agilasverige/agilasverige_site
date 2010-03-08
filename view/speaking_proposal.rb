@@ -4,20 +4,19 @@ module SpeakingProposalView
 
     include FormFields
 
+    needs :controller, :attendant_uid, :speaking_proposal => SpeakingProposal.new
+
     protected
 
-    def speaking_proposal_fields(speaking_proposal=SpeakingProposal.new, attendant_uid='')
-      legend
-      text_field(speaking_proposal.title, 'Titel', 'title')
-      text_area_field(speaking_proposal.abstract, 'Beskrivning', 'abstract')
-      hidden_field(attendant_uid, 'attendant_uid')
+    def speaking_proposal_fields
+      text_field(@speaking_proposal.title, 'Titel', 'title')
+      text_area_field(@speaking_proposal.abstract, 'Beskrivning', 'abstract')
+      hidden_field(@attendant_uid, 'attendant_uid')
     end
   end
 
 
   class New < SpeakingProposalBaseView
-
-    needs :attendant_uid => ''
 
     def main_text
       errors

@@ -56,11 +56,19 @@ module AttendantView
     def main_text
       errors
 
+      h2 'Blixtal'
+
+      @attendant.speaking_proposals.each do |speaking_proposal|
+        p speaking_proposal.title
+      end
+
       p do
         a "Anmäl blixttal", 
           :id => 'submit_lightning_talk', 
           :href => "/speaking_proposal/new?uid=#{@attendant.uid}"
       end
+
+      
 
       fieldset do
         legend 'Editera deltagare'

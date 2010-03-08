@@ -16,6 +16,8 @@ class Attendant
   key :comments, String
   key :uid, String
 
+  many :speaking_proposals
+
   timestamps!
 
   before_create :set_uid

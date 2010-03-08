@@ -22,6 +22,7 @@ Then /^my lightning is stored$/ do
 end
 
 Then /^it is shown on my page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit "/attendant/#{@attendant.uid}"
+  page.should have_content('test')  
 end
 

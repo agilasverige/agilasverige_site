@@ -13,11 +13,15 @@ class SpeakingProposalController < Controller
 
   def new
     if request.get?
-      SpeakingProposalView::New.new(:controller => self).to_s
+      uid = request['uid'] || show_cannot_find_user
+      view = SpeakingProposalView::New.new(:controller => self, :attendant_uid => uid)
+      view.to_s
     elsif request.post?
       begin
-        speaking_proposal = SpeakingProposal.new(request.params)
-        if speaking_proposal.save
+        attendant_uid = request.params.delete('attendant_uid') || show_cannot_find_user
+        attendant = Attendant.find_by_uid(attendant_uid)
+        speaking_proposal = attendant.speaking_proposals.create(request.params)
+        if attendant.save
           # send_confirmation_email(speaking_proposal)
           redirect("/speaking_proposal/#{speaking_proposal.snake_title}/thanks")
         else
@@ -61,27 +65,11 @@ class SpeakingProposalController < Controller
     email_sender.send(email)
   end
 
-  def set_fields(speaking_proposal)
-    speaking_proposal.first_name = request.params['first_name'] 
-    speaking_proposal.last_name = request.params['last_name'] 
-    speaking_proposal.organization = request.params['organization']
-    speaking_proposal.address = request.params['address']
-    speaking_proposal.zip_code = request.params['zip_code']
-    speaking_proposal.postal_address = request.params['postal_address']
-    speaking_proposal.country = request.params['country']
-    speaking_proposal.telephone_number = request.params['telephone_number']
-    speaking_proposal.attending_dinner = request.params['attending_dinner']
-    speaking_proposal.food_preferences = request.params['food_preferences']
-    speaking_proposal.comments = request.params['comments']
-    speaking_proposal.email = request.params['email'] 
-    if request.params['wants_to_speak']
-      speaking_proposal = SpeakingProposal.new
-      speaking_proposal.title = request.params['title']
-      speaking_proposal.abstract = request.params['abstract']
-      speaking_proposal.speaking_proposal = speaking_proposal
-    end
-    speaking_proposal
-  end
 
+  def show_cannot_find_user
+    flash[:error] = 'Kan inte hitta den deltagaren'
+    show404
+  end
+  
   
 end
