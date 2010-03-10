@@ -1,3 +1,5 @@
+require 'rdiscount'
+
 require File.expand_path(File.join(File.dirname(__FILE__),'form_fields'))
 require File.expand_path(File.join(File.dirname(__FILE__),'base'))
 require File.expand_path(File.join(File.dirname(__FILE__),'three_column'))

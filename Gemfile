@@ -9,4 +9,5 @@ gem "mongo_mapper", "0.7.0"
 gem "erector"
 gem "pony"
 gem "haml"
+gem "rdiscount"
 

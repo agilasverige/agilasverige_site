@@ -88,7 +88,7 @@ module AttendantView
       super(controller)
     end
 
-    def content
+    def main_text
       if @message == :thanks
         thanks
       end
@@ -99,13 +99,18 @@ module AttendantView
     private
 
     def show_attendant
-      
+      @attendant  
     end
 
     def thanks
-      h2 "Tack för din anmälan!"
+      h2 "Tack för din anmälan till Agila Sverige 2010!"
       p do
+        text "Nedan ser du uppgifterna vi registrerat för dig."
         text "Ett bekräftelsemail har skickats till #{@attendant.email}"
+      end
+      p do
+        text "Du kan editera dina uppgifter och anmäla dig som talare på "
+        a "http://agilasverige.se/attendant/#{@attendant.uid}"
       end
     end
   end
