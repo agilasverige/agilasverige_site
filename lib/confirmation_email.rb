@@ -1,4 +1,6 @@
-class ConfirmationEmail < EmailMessage
+class ConfirmationEmail 
+
+  attr_accessor :from, :to, :body, :subject
 
   FROM = 'registrar@agilasverige.se'
   SUBJECT = 'Tack för din anmälan till Agila Sverige 2009'
@@ -8,12 +10,10 @@ class ConfirmationEmail < EmailMessage
     self.to = @attendant.email
     self.from = FROM 
     self.subject = SUBJECT
-    super()
   end
 
   def body
-    temp_body = salutation + info 
-    temp_body
+    salutation + info 
   end
 
   def salutation
@@ -26,5 +26,20 @@ class ConfirmationEmail < EmailMessage
     http://agilasverige.se/attendants/#{@attendant.uid}"
   end
 
+end
 
+class SpeakerConfirmationEmail < ConfirmationEmail
+
+  def initialize(attendant, speaking_proposal)
+    @speaking_proposal = speaking_proposal
+    super(attendant)
+  end
+
+  def salutation
+    "Hej #{@attendant.first_name},  tack för din förslag på blixttal \"#{@speaking_proposal}\""
+  end
+
+  def info
+    "Vi kommer att sätta schemat ungefär tre veckor innan konferensen och återkommer då med information om ditt förslag kommit med."
+  end
 end

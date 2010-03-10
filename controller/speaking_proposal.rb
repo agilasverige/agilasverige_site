@@ -60,7 +60,7 @@ class SpeakingProposalController < Controller
   protected
 
   def send_confirmation_email(speaking_proposal)
-    email = ConfirmationEmail.new(speaking_proposal)
+    email = SpeakerConfirmationEmail.new(speaking_proposal)
     email_sender = EmailSender.new
     email_sender.send(email)
   end
