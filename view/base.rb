@@ -52,9 +52,9 @@ class BaseView < Erector::Widget
           li do
             a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
           end
-          li do
-            a 'Program', :id => "program_link", :href => '/program'
-          end
+          # li do
+          #   a 'Program', :id => "program_link", :href => '/program'
+          # end
           li do
             a '2008', :id => "zeroeight_link", :href => '/2008'
           end
@@ -149,7 +149,7 @@ class BaseView < Erector::Widget
         table(:id => "prices") do
           tr(:class => "oddrow") do
             td "Deltagare:"
-            td "2000 kronor"
+            td "1000 kronor"
           end
           tr(:class => "evenrow") do
             td "Talare:"
