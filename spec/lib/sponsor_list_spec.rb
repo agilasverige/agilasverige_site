@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__),'..','spec_helper')
+require 'spec_helper'
 
 describe "SponsorList" do
   
@@ -7,7 +7,7 @@ describe "SponsorList" do
   end
   
   it "should have 1 sponsors" do
-    @sponsor_list.sponsors.size.should == 1
+    @sponsor_list.sponsors.size.should == 6
   end
   
   
@@ -24,42 +24,42 @@ describe "SponsorList" do
   # end
   # 
   # 
-  # it "should have Agical" do
-  #   agical = @sponsor_list.sponsor("Agical")
-  #   agical.url.should == "http://www.agical.se"
-  #   agical.logo_file.should == "agical_logo.png"
-  # end
-  # 
-  # it "should have Dynabyte" do
-  #   dynabyte = @sponsor_list.sponsor("Dynabyte")
-  #   dynabyte.url.should == "http://www.dynabyte.se"
-  #   dynabyte.logo_file.should == "dynabyte_logo.png"
-  # end
-  # 
-  # it "should have Valtech" do
-  #   valtech = @sponsor_list.sponsor("Valtech")
-  #   valtech.url.should == "http://www.valtech.se"
-  #   valtech.logo_file.should == "valtech_logo.png"
-  # end
-  # 
-  # it "should have Avega" do
-  #   avega = @sponsor_list.sponsor("Avega")
-  #   avega.url.should == "http://www.avegagroup.se"
-  #   avega.logo_file.should == "avega_logo.png"
-  # end
-  # 
+  it "should have Agical" do
+    agical = @sponsor_list.sponsor("Agical")
+    agical.url.should == "http://www.agical.se"
+    agical.logo_file.should == "agical_logo.png"
+  end
+  
+  it "should have Dynabyte" do
+    dynabyte = @sponsor_list.sponsor("Dynabyte")
+    dynabyte.url.should == "http://www.dynabyte.se"
+    dynabyte.logo_file.should == "dynabyte_logo.png"
+  end
+  
+  it "should have Valtech" do
+    valtech = @sponsor_list.sponsor("Valtech")
+    valtech.url.should == "http://www.valtech.se"
+    valtech.logo_file.should == "valtech_logo.png"
+  end
+  
+  it "should have Avega" do
+    avega = @sponsor_list.sponsor("Avega")
+    avega.url.should == "http://www.avegagroup.se"
+    avega.logo_file.should == "avega_logo.png"
+  end
+  
   # it "should have Citerus" do
   #   citerus = @sponsor_list.sponsor("Citerus")
   #   citerus.url.should == "http://www.citerus.se"
   #   citerus.logo_file.should == "citerus_logo.png"
   # end
-  # 
-  # it "should have Responsive" do
-  #   responsive = @sponsor_list.sponsor("Responsive")
-  #   responsive.url.should == "http://www.responsive.se"
-  #   responsive.logo_file.should == "responsive_logo.png"
-  # end
-  # 
+  
+  it "should have Responsive" do
+    responsive = @sponsor_list.sponsor("Responsive")
+    responsive.url.should == "http://www.responsive.se"
+    responsive.logo_file.should == "responsive_logo.png"
+  end
+  
   # it "should have Informator" do
   #   informator = @sponsor_list.sponsor("Informator")
   #   informator.url.should == "http://www.informator.se"
@@ -73,20 +73,19 @@ describe "SponsorList" do
   # end
 end
 
-# describe "a random sponso0rlist" do
-# n
-# 
-#   before do
-#     @sponsor_list = SponsorList.new
-#     @random_ordered_sponsors = @sponsor_list.random_order
-#   end
-# 
-#   it "should have 1 elements" do
-#     @random_ordered_sponsors.length.should == 1
-#   end
-#   
-#   it "should not provide the list ordered the same way twice" do
-#     @sponsor_list.random_order.should_not == @random_ordered_sponsors
-#   end
-#   
-# end
+describe "a random sponso0rlist" do
+
+  before do
+    @sponsor_list = SponsorList.new
+    @random_ordered_sponsors = @sponsor_list.random_order
+  end
+
+  it "should have 6 elements" do
+    @random_ordered_sponsors.length.should == 6
+  end
+  
+  it "should not provide the list ordered the same way twice" do
+    @sponsor_list.random_order.should_not == @random_ordered_sponsors
+  end
+  
+end

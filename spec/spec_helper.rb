@@ -1,7 +1,5 @@
 require 'rubygems'
 
-
-
 require 'spec'
 require 'ramaze'
 
