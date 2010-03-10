@@ -7,9 +7,6 @@ rescue LoadError
   # do nothing
 end
 
-
-
-
 require 'spec/rake/spectask' 
 Spec::Rake::SpecTask.new("spec") do |t|
   t.spec_opts = ["--color", '--format', "specdoc"] 

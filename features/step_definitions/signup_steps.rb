@@ -51,18 +51,10 @@ end
 
 Then /^I see a confirmation page$/ do
   attendant = Attendant.find_by_email(TEST_EMAIL_ADDRESS)
-  page.current_url.should include "/attendant/#{attendant.uid}/thanks"
+  page.should have_content('Tack för din anmälan')
 end
 
 Then /^I get a confirmation email$/ do
   
 end
 
-def clean_test_data
-  Attendant.by_email(:key => "attendant@localhost.com").each do |entry|
-    entry.destroy
-  end
-  Attendant.by_email(:key => "speaker@localhost.com").each do |entry|
-    entry.destroy
-  end
-end

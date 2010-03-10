@@ -20,7 +20,7 @@ class AttendantController < Controller
       begin
         if attendant.save
           send_confirmation_email(attendant)
-          redirect("/attendant/#{attendant.uid}/thanks")
+          redirect("/attendant/thankyou/#{attendant.uid}")
         else
           flash[:error] = attendant.errors 
           redirect('/attendant/new')
@@ -52,6 +52,11 @@ class AttendantController < Controller
         redirect("/attendant/edit/#{attendant.id}")
       end
     end
+  end
+
+  def thankyou(uid)
+    attendant = Attendant.find_by_uid(uid)
+    AttendantView::Show.new(:controller => self, :attendant => attendant, :message => :thanks).to_s
   end
 
 

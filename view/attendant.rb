@@ -82,14 +82,14 @@ module AttendantView
 
   class Show < ThreeColumnView
 
-    attr_writer :attendant, :message
+    needs :attendant, :message => ''
 
     def initialize(controller)
       super(controller)
     end
 
     def content
-      if @message == 'thanks'
+      if @message == :thanks
         thanks
       end
 
@@ -109,4 +109,6 @@ module AttendantView
       end
     end
   end
+
+
 end
