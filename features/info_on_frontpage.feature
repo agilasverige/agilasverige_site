@@ -14,7 +14,7 @@ Feature: Front Page
     | Stockholm       |
     | Agila Sverige   |
     | blixttal        |
-    | Open Space      |
+    | öppet forum     |
 
   Scenario:
     Given I am a visitor
