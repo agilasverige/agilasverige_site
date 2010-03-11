@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1024px"
+   height="768px"
+   id="svg2816"
+   version="1.1"
+   inkscape:version="0.46+devel r22636 custom"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs2818">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 384 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1024 : 384 : 1"
+       inkscape:persp3d-origin="512 : 256 : 1"
+       id="perspective2824" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="303.46547"
+     inkscape:cy="385.86746"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:window-width="1436"
+     inkscape:window-height="880"
+     inkscape:window-x="0"
+     inkscape:window-y="16"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2826"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata2821">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
+       x="69"
+       y="362"
+       id="text2813"><tspan
+         sodipodi:role="line"
+         id="tspan2815"
+         x="69"
+         y="362">agila sverige</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
+       x="200"
+       y="404"
+       id="text2817"><tspan
+         sodipodi:role="line"
+         id="tspan2819"
+         x="200"
+         y="404"
+         style="fill:#ff00ff">2010</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:50.45756912px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
+       x="336.74286"
+       y="333.63568"
+       id="text2821"
+       transform="scale(0.82389052,1.2137535)"><tspan
+         sodipodi:role="line"
+         id="tspan2823"
+         x="336.74286"
+         y="333.63568"
+         style="font-size:90.82363892px">/</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
+       x="293"
+       y="399.5625"
+       id="text2825"><tspan
+         sodipodi:role="line"
+         id="tspan2827"
+         x="293"
+         y="399.5625">stockholm</tspan></text>
+  </g>
+</svg>
