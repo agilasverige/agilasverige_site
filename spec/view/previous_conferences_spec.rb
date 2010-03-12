@@ -1,7 +1,7 @@
 require File.join(File.dirname(__FILE__),'..','spec_helper')
 require 'nokogiri'
 
-describe 'AS2008' do
+describe PreviousConferences::ZeroEight do
 
   before :each do
 
@@ -16,7 +16,7 @@ describe 'AS2008' do
     presentation1.files.push 'file1.ppt'
     presentation1.files.push 'file2.pdf'
     presentation1.files.push 'file3.zip'
-    view = AS2008View.new(:controller => DummyController.new, :presentations => [presentation1])
+    view = PreviousConferences::ZeroEight.new(:controller => DummyController.new, :presentations => [presentation1])
 
     @doc = Nokogiri::HTML(view.to_s)
   end

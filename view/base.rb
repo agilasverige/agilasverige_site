@@ -56,7 +56,7 @@ class BaseView < Erector::Widget
           #   a 'Program', :id => "program_link", :href => '/program'
           # end
           li do
-            a '2008', :id => "zeroeight_link", :href => '/2008'
+            a 'Tidigare konferenser', :id => "prev_conf_link", :href => '/previous_conferences'
           end
         end
       end

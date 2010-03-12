@@ -29,7 +29,7 @@ end
 # Here go your requires for subclasses of Controller:
 require File.join(File.dirname(__FILE__),'main')
 require File.join(File.dirname(__FILE__),'css')
-require File.join(File.dirname(__FILE__),'as2008')
+require File.join(File.dirname(__FILE__),'previous_conferences')
 require File.join(File.dirname(__FILE__),'attendant')
 require File.join(File.dirname(__FILE__),'admin')
 require File.join(File.dirname(__FILE__),'program')
