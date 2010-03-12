@@ -14,9 +14,7 @@ module MainView
 
     def submenu_items
       Ramaze::Log.debug 'hej'
-      [['Om konferensen', '/'],
-        ['Blixttal', '/lightning_talks'],
-        ['Open Space', '/open_space']]
+      [['Om konferensen', '/']]
     end
   end
 end
