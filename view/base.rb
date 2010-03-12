@@ -36,6 +36,12 @@ class BaseView < Erector::Widget
         a :href => '/' do
           img :id => 'logo_image',:src => '/images/as_logo.png', :alt => 'Agila Sverige 2010 Logo'
         end
+        h1 do
+          span 'Agila Sverige 2010'
+        end
+        h2 do
+          span 'Stockholm 10-11 maj  2010'
+        end
         img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
       end
       div :id => 'menu' do
