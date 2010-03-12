@@ -7,7 +7,7 @@ class SpeakingProposalController < Controller
     unless(speaking_proposal)
       show404
     end
-    view = SpeakingProposalView::Edit.new(:controller => self, :speaking_proposal => speaking_proposal)
+    view = SpeakingProposalView::Show.new(:controller => self, :speaking_proposal => speaking_proposal)
     view.to_s
   end
 
@@ -22,8 +22,8 @@ class SpeakingProposalController < Controller
         attendant = Attendant.find_by_uid(attendant_uid)
         speaking_proposal = attendant.speaking_proposals.create(request.params)
         if attendant.save
-          # send_confirmation_email(speaking_proposal)
-          redirect("/speaking_proposal/#{speaking_proposal.snake_title}/thanks")
+          send_confirmation_email(attendant, speaking_proposal)
+          redirect("/speaking_proposal/thankyou/#{speaking_proposal.snake_title}")
         else
           flash[:error] = speaking_proposal.errors 
           redirect('/speaking_proposal/new')
@@ -56,11 +56,17 @@ class SpeakingProposalController < Controller
     end
   end
 
+  def thankyou(title)
+    speaking_proposal = SpeakingProposal.find_by_snake_title(title)
+    SpeakingProposalView::Show.new(:controller => self, :speaking_proposal => speaking_proposal, :message => :thanks).to_s
+  end
+
+
 
   protected
 
-  def send_confirmation_email(speaking_proposal)
-    email = SpeakerConfirmationEmail.new(speaking_proposal)
+  def send_confirmation_email(attendant, speaking_proposal)
+    email = SpeakerConfirmationEmail.new(attendant, speaking_proposal)
     email_sender = EmailSender.new
     email_sender.send(email)
   end
