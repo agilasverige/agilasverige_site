@@ -29,6 +29,21 @@ module AttendantView
       text_area_field(attendant.comments, 'Kommentarer', 'comments')
     end
 
+    def lightning_talk_info
+
+      h2 'Blixtal'
+
+      @attendant.speaking_proposals.each do |speaking_proposal|
+        p speaking_proposal.title
+      end
+
+      p do
+        a "Anmäl blixttal", 
+          :id => 'submit_lightning_talk', 
+          :href => "/speaking_proposal/new?uid=#{@attendant.uid}"
+      end
+    end
+
   end
 
   class New < AttendantBaseView
@@ -54,21 +69,10 @@ module AttendantView
     needs :attendant
 
     def main_text
+
       errors
 
-      h2 'Blixtal'
-
-      @attendant.speaking_proposals.each do |speaking_proposal|
-        p speaking_proposal.title
-      end
-
-      p do
-        a "Anmäl blixttal", 
-          :id => 'submit_lightning_talk', 
-          :href => "/speaking_proposal/new?uid=#{@attendant.uid}"
-      end
-
-      
+      lightning_talk_info
 
       fieldset do
         legend 'Editera deltagare'
@@ -80,18 +84,22 @@ module AttendantView
     end
   end
 
-  class Show < ThreeColumnView
+  class Show < AttendantBaseView
 
     needs :attendant, :message => ''
 
-    def initialize(controller)
-      super(controller)
-    end
-
     def main_text
+
       if @message == :thanks
         thanks
       end
+
+      p do
+        text "Du kan editera dina uppgifter på "
+        a "http://agilasverige.se/attendant/#{@attendant.uid}"
+      end
+
+      lightning_talk_info
 
       show_attendant
     end
@@ -99,7 +107,42 @@ module AttendantView
     private
 
     def show_attendant
-      @attendant  
+      p do
+        table do
+          tr do
+            td "Förnamn"
+            td @attendant.first_name
+          end
+          tr do
+            td "Efteramn"
+            td @attendant.last_name
+          end
+          tr do
+            td "Adress"
+            td @attendant.organization
+          end
+          tr do
+            td "Postnummer"
+            td @attendant.zip_code
+          end
+          tr do
+            td "Postadress"
+            td @attendant.postal_address
+          end
+          tr do
+            td "Organisation"
+            td {@attendant.organization}
+          end
+          tr do
+            td "Kommer på middag"
+            td @attendant.attending_dinner
+          end
+          tr do
+            td "Kommentarer"
+            td @attendant.comments
+          end
+        end
+      end
     end
 
     def thanks
@@ -107,10 +150,6 @@ module AttendantView
       p do
         text "Nedan ser du uppgifterna vi registrerat för dig."
         text "Ett bekräftelsemail har skickats till #{@attendant.email}"
-      end
-      p do
-        text "Du kan editera dina uppgifter och anmäla dig som talare på "
-        a "http://agilasverige.se/attendant/#{@attendant.uid}"
       end
     end
   end

@@ -1,5 +1,3 @@
-require 'erector'
-
 class ThreeColumnView < BaseView
 
   protected
@@ -9,18 +7,21 @@ class ThreeColumnView < BaseView
       div :class => 'yui-b' do
         div :class => 'yui-g' do
           div :class => 'yui-u first' do
-            div :id => 'maintext' do
-              main_text
-            end
+            main_text
           end
-          div :class => 'yui-u' do
-            info
-            sponsors
+          div :class => 'yui-g' do
+            div :class => 'yui-u first' do
+              info
+            end
+            div :class => 'yui-u' do
+              sponsors
+            end
           end
         end
       end
     end
   end
+
 end
 
 

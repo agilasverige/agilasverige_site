@@ -32,17 +32,11 @@ class BaseView < Erector::Widget
 
   def header
     div :id => 'hd', :role => 'banner' do
-      div :id => 'logo' do
-        a :href => '/'
-        #img :src => '/images/as_logo.png', :alt => 'Agila Sverige 2010 Logo'
-        h1 do
-          span 'Agila Sverige 2010'
-          h1 'agila sverige'
+      div :id => 'logo_row' do
+        a :href => '/' do
+          img :id => 'logo_image',:src => '/images/as_logo.png', :alt => 'Agila Sverige 2010 Logo'
         end
-        h2 do
-          span 'Stockholm 10-11 maj  2010'
-        end
-        #img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
+        img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
       end
       div :id => 'menu' do
         ul do
@@ -81,18 +75,17 @@ class BaseView < Erector::Widget
     end
   end
 
+
   def subnavigation
+    div :class => 'yui-b' do
       ul :id => 'submenu' do
-        li do
-          a "Om konferensen", :href => '#'
-        end
-        li do
-          a "Blixttal", :href => '#'
-        end
-        li do
-          a "Open Space", :href => '#'
+        submenu_items.each do |menu_item|
+          li do
+            a menu_item[0], :href => menu_item[1]
+          end
         end
       end
+    end
   end
 
   def main_content
@@ -126,13 +119,12 @@ class BaseView < Erector::Widget
   end
 
   def info
-    div :class => 'yui-u first' do
-      div :id => 'info' do
-        # div :class => "register" do
-        #   a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
-        #   p(:class => "reminder") {text "Sista anmälningsdag:"}
-        #   p(:class => "reminder") {text "25 maj 2009"}
-        # end
+    div :id => 'info' do
+      # div :class => "register" do
+      #   a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
+      #   p(:class => "reminder") {text "Sista anmälningsdag:"}
+      #   p(:class => "reminder") {text "25 maj 2009"}
+      # end
 
         h4 "Kommentarer på frågan 'Vad tar du med dig hem', från 2008:"
         blockquote do
@@ -169,24 +161,26 @@ class BaseView < Erector::Widget
             img(:src => "/images/citykonferens.png", :alt => 'Citykonferensen logo')
           end
         end
-      end
 
     end
   end
 
   def sponsors
-    div :class => 'yui-u' do
-      div :id => 'sponsors' do
-        h2 'Sponsorer 2010'
-        SponsorList.new.random_order.each do |sponsor|
-          p do
-            a :href => sponsor.url do
-              img :src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"
-            end
+    div :id => 'sponsors' do
+      h2 'Sponsorer 2010'
+      SponsorList.new.random_order.each do |sponsor|
+        p do
+          a :href => sponsor.url do
+            img :src => "/images/#{sponsor.logo_file}", :alt => "#{sponsor.name}"
           end
         end
       end
     end
+  end
+
+
+  def submenu_items
+    [[]]
   end
 end
 

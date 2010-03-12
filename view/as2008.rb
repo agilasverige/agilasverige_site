@@ -4,7 +4,7 @@ class AS2008View < ThreeColumnView
 
   needs :presentations
 
-  def main_content
+  def main_text
     table(:id => 'presentations') do
       tr do
         th "Titel"

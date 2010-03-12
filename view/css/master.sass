@@ -114,38 +114,35 @@ form
   :background-color = !background
 #hd
   :padding-top 10px
-  :height 120px
-  img
-    :float left
+  :height 150px
+  :img
     :margin-left 20px
     :margin-right 20px
-  #date
-    :float right
-  h2
+  h1, h2
+    :display inline
     :padding 0
     :margin 0
     span
       :display none
-#menu
-  :border-bottom-width thin 
-  :border-bottom-style solid  
-  :border-bottom-color = !pink
-  ul
-    :margin-bottom 5px
-    li
-      :padding 5px
-      :display inline
-      :margin-left 5px
-      a
-        :padding 6px
-        :text-decoration none 
-        &:link, &:visited
-          :color #333
-        &:hover
-          :background-image url("/images/triangle.png")
-          :background-repeat no-repeat
-          :background-position bottom center
-
+  #menu
+    :border-bottom-width thin 
+    :border-bottom-style solid  
+    :border-bottom-color = !pink
+    ul
+      :margin-bottom 5px
+      li
+        :padding 5px
+        :display inline
+        :margin-left 5px
+        a
+          :padding 6px
+          :text-decoration none 
+          &:link, &:visited
+            :color #333
+          &:hover
+            :background-image url("/images/triangle.png")
+            :background-repeat no-repeat
+            :background-position bottom center
 #main #main_link, 
 #attendant #attendant_link, 
 #program #program_link,

@@ -4,7 +4,7 @@ module SpeakingProposalView
 
     include FormFields
 
-    needs :controller, :attendant_uid, :speaking_proposal => SpeakingProposal.new
+    needs :controller, :attendant_uid => '', :speaking_proposal => SpeakingProposal.new
 
     protected
 
@@ -30,7 +30,6 @@ module SpeakingProposalView
     end
 
   end
-end
 
   # class Edit < AttendantBaseView
 
@@ -55,33 +54,42 @@ end
   #   end
   # end
 
-  # class Show < ThreeColumnView
+  class Show < SpeakingProposalBaseView
 
-  #   attr_writer :attendant, :message
+    needs :speaking_proposal, :message => ''
 
-  #   def initialize(controller)
-  #     super(controller)
-  #   end
 
-  #   def content
-  #     if @message == 'thanks'
-  #       thanks
-  #     end
+    def main_text
+      if @message == 'thanks'
+        thanks
+      end
 
-  #     show_attendant
-  #   end
+      show_speaking_proposal
+    end
 
-  #   private
+    private
 
-  #   def show_attendant
-  #     
-  #   end
+    def show_speaking_proposal
+      p do
+        table do
+          tr do
+            td "Titel"
+            td @speaking_proposal.title
+          end
+          tr do
+            td "Beskrivning"
+            td @speaking_proposal.abstract
+          end
+        end
+      end
+      
+    end
 
-  #   def thanks
-  #     h2 "Tack för din anmälan!"
-  #     p do
-  #       text "Ett bekräftelsemail har skickats till #{@attendant.email}"
-  #     end
-  #   end
-  # end
-
+    def thanks
+      h2 "Tack för din anmälan!"
+      p do
+        text "Ett bekräftelsemail har skickats till #{@attendant.email}"
+      end
+    end
+  end
+end
