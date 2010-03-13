@@ -21,7 +21,7 @@ module FormFields
   def checkbox(checked, label_text, id)
     div(:class => 'field') do
       label(label_text, :for => id, :id => "#{id}_label")
-      input(:checked => checked, :type => 'checkbox', :name => id, :id => id)
+      input(:checked => checked, :type => 'checkbox', :value => id, :name => id, :id => id)
     end
   end
 

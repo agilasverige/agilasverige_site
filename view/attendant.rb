@@ -50,6 +50,9 @@ module AttendantView
 
     def main_text
       errors
+      h2 'Anmälan som deltagare till Agila Sverige 2010'
+      p '''Det kostar SEK 1000 att deltaga i konferensen. När du registrerat
+      dig som deltagare har du möjlighet att skicka in talarförslag.'''
       fieldset do
         legend 'Anmälan'
         form(:action => '/attendant/new', :method => 'post') do
@@ -76,7 +79,7 @@ module AttendantView
 
       fieldset do
         legend 'Editera deltagare'
-        form(:action => '/attendant/update', :method => 'post') do
+        form(:action => "/attendant/#{@attendant.uid}", :method => 'post') do
           attendant_fields(@attendant)
           input(:value => 'Spara', :type => 'submit')
         end
@@ -95,8 +98,8 @@ module AttendantView
       end
 
       p do
-        text "Du kan editera dina uppgifter på "
-        a "http://agilasverige.se/attendant/#{@attendant.uid}"
+        text "Du kan editera dina uppgifter " 
+        a "här", :href => "/attendant/#{@attendant.uid}/edit"
       end
 
       lightning_talk_info
@@ -119,7 +122,7 @@ module AttendantView
           end
           tr do
             td "Adress"
-            td @attendant.organization
+            td @attendant.address
           end
           tr do
             td "Postnummer"
@@ -131,11 +134,15 @@ module AttendantView
           end
           tr do
             td "Organisation"
-            td {@attendant.organization}
+            td @attendant.organization
           end
           tr do
             td "Kommer på middag"
             td @attendant.attending_dinner
+          end
+          tr do
+            td "Matpreferenser"
+            td @attendant.food_preferences
           end
           tr do
             td "Kommentarer"

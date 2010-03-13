@@ -20,6 +20,14 @@ module SpeakingProposalView
 
     def main_text
       errors
+      h2 'Skicka in förslag på blixttal'
+      p '''Anmälan av blixttal är personlig, man kan med andra ord inte
+      byta ut talaren efter att ett blixttal blivit antaget.'''
+      p do
+       text 'Allt presentationsmaterial som används måste licensieras under'
+       a 'Creative Commons Attribution Share Alike licens', :href => 'http://creativecommons.org/licenses/by-sa/2.5/se/'
+       text '. Alla talare kommer att filmas för distribution på nätet.'
+      end
       fieldset do
         legend 'Registrera blixttal'
         form(:action => '/speaking_proposal/new', :method => 'post') do
