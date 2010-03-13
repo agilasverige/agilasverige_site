@@ -2,6 +2,7 @@ class AdminController < Controller
 
   helper :aspect
 
+  before_all{require_login}
   
   #HTML views
 

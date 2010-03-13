@@ -21,7 +21,9 @@ module AdminView
             end
             td attendant.first_name
             td attendant.organization
+            td attendant.speaking_proposals.size > 0
             td attendant.attending_dinner
+            td attendant.created_at
           end
         end
       end

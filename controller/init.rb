@@ -13,11 +13,11 @@ class Controller < Ramaze::Controller
   protected
 
   def require_login
-    @username = httpdigest('secret area', 'AS09')
+    @username = httpdigest('secret area', 'AS10')
   end
 
   def httpdigest_lookup_password(username)
-    return "496d8108d4610f62c6cd8a27627e042a" if username == "as09admin"
+    return "10cd1e56a6310fbaeca29f3d64f4b1f5" if username == "thedude"
   end
 
   def show404
