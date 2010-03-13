@@ -19,6 +19,7 @@ module AttendantView
       text_field(attendant.last_name, 'Efternamn', 'last_name')
       text_field(attendant.email, 'Email', 'email')
       text_field(attendant.organization, 'Organisation', 'organization')
+      text_field(attendant.invoice_reference, "Fakturareferens", 'invoice_reference')
       text_field(attendant.address, 'Adress', 'address')
       text_field(attendant.zip_code, 'Postnummer', 'zip_code')
       text_field(attendant.postal_address, 'Postadress', 'postal_address')
@@ -135,6 +136,10 @@ module AttendantView
           tr do
             td "Organisation"
             td @attendant.organization
+          end
+          tr do
+            td "Fakturareferens"
+            td @attendant.invoice_reference
           end
           tr do
             td "Kommer på middag"

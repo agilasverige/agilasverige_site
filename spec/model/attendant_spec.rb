@@ -31,6 +31,7 @@ describe Attendant do
     attendant.organization = 'Organization'
     attendant.email = 'attendant@localhost.com'
     attendant.address = 'address'
+    attendant.invoice_reference = 'invoice reference'
     attendant.zip_code = '12345'
     attendant.postal_address = 'Postal Address'
     attendant.country = 'Country'

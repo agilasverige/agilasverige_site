@@ -9,6 +9,7 @@ class Attendant
   key :address, String, :required => true
   key :zip_code, String, :required => true
   key :postal_address, String, :required => true
+  key :invoice_reference, String
   key :country, String
   key :telephone_number, String
   key :attending_dinner, Boolean
