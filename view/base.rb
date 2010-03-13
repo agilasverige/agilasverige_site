@@ -147,7 +147,7 @@ class BaseView < Erector::Widget
         table(:id => "prices") do
           tr(:class => "oddrow") do
             td "Deltagare:"
-            td "1000 kronor"
+            td "1000 kronor exkl.moms"
           end
           tr(:class => "evenrow") do
             td "Talare:"

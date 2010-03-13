@@ -51,7 +51,7 @@ module AttendantView
     def main_text
       errors
       h2 'Anmälan som deltagare till Agila Sverige 2010'
-      p '''Det kostar SEK 1000 att deltaga i konferensen. När du registrerat
+      p '''Det kostar SEK 1000 exklusive moms att deltaga i konferensen. När du registrerat
       dig som deltagare har du möjlighet att skicka in talarförslag.'''
       fieldset do
         legend 'Anmälan'
