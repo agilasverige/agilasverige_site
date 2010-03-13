@@ -34,7 +34,7 @@ class Attendant
   private
 
   def set_uid
-    self.uid  = Digest::SHA1.hexdigest(email + 'blutt')
+    self.uid  = rand(2**256).to_s(36)[0..16]
   end
 
 
