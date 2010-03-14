@@ -221,7 +221,7 @@ class BaseView < Erector::Widget
 
 
   def submenu_items
-    [[]]
+    []
   end
 end
 
