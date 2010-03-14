@@ -91,6 +91,41 @@ class BaseView < Erector::Widget
           end
         end
       end
+      div :id => 'tweets' do
+        script :src => "http://widgets.twimg.com/j/2/widget.js"
+        javascript <<-END
+          new TWTR.Widget({
+            version: 2,
+            type: 'search',
+            search: '#agilasverige',
+            interval: 20000,
+            title: 'Twitter',
+            subject: '',
+            width: 'auto',
+            height: 300,
+            theme: {
+              shell: {
+                background: '#8ec1da',
+                color: '#ffffff'
+              },
+              tweets: {
+                background: '#ffffff',
+                color: '#444444',
+                links: '#1985b5'
+              }
+            },
+            features: {
+              scrollbar: true,
+              loop: true,
+              live: true,
+              hashtags: true,
+              timestamp: true,
+              avatars: true,
+              behavior: 'default'
+            }
+          }).render().start();
+        END
+      end
     end
   end
 
