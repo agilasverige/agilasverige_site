@@ -41,3 +41,20 @@ describe PreviousConferences::ZeroEight do
     @doc.css('a#file3_zip').inner_html.should =~ /zipicon.gif/ 
   end
 end
+
+describe PreviousConferences::ZeroNine do
+
+  before :each do
+    class DummyController
+      def name 
+        "DummyController"
+      end
+    end
+    @view = Nokogiri.HTML(PreviousConferences::ZeroNine.new(:controller => DummyController.new).to_s)
+  end
+
+  it 'should have a link to vimeo archive' 
+
+  it 'should have a link to slideshare'
+
+end

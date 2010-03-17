@@ -1,20 +1,19 @@
 module PreviousConferences
   class PreviousConferencesView < ThreeColumnView
   
-    needs :presentations
 
     protected
 
     def submenu_items
-      [['2008', '/previous_conferences/zeroeight']]
+      [['2008', '/previous_conferences/zeroeight'],
+      ['2009', '/previous_conferences/zeronine']]
     end
     
   end
 
   class ZeroEight < PreviousConferencesView
 
-    attr_writer :presentations
-
+    needs :presentations
 
     def main_text
       table(:id => 'presentations') do
@@ -46,5 +45,17 @@ module PreviousConferences
       return "#{suffix}icon.gif"
     end
 
+  end
+
+  class ZeroNine < PreviousConferencesView
+
+    def main_text
+      p do
+        a 'Videoupptagningar från Agila Sverige 2009', :href => 'http://www.vimeo.com/user2794604'
+      end
+      p do
+        a 'Presentationerna', :href => 'http://www.slideshare.net/event/agila-sverige-2009'
+      end
+    end
   end
 end
