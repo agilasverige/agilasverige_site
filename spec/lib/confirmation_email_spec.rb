@@ -24,39 +24,6 @@ describe ConfirmationEmail do
     it 'should have name info' do
       @email.body.should match(/Attendant/) 
     end
-
-    # it 'should have price' do
-    #   @email.body.should match(/SEK 1000/)
-    # end
-
-    # it 'should have VAT price' do
-    #   @email.body.should match(/SEK 250/)
-    # end
-
-    # it 'should have total price' do
-    #   @email.body.should match(/SEK 750/)
-    # end
-
-    # it 'should have organizational number' do
-    #   @email.body.should match(/802404-7879/)
-    # end
-
-    # it 'should have bank giro info' do
-    #   @email.body.should match(/280-9267/)
-    # end
-
-    # it 'should have invoice date' do
-    #   @email.body.should match(/2008-12-01/)
-    # end
-
-    # it 'should have invoice number' do
-    #   @email.body.should match(/1212/)
-    # end
-
-    it 'should not have any speaker information' do
-      pending
-      # @email.body.should_not match(/Förslag till blixttal:/)
-    end
   end
 
   describe 'an email to an speaker' do
@@ -72,52 +39,30 @@ describe ConfirmationEmail do
       @speaking_proposal.abstract = 'An abstract'
 
 
-      @email = ConfirmationEmail.new(@speaker)
+      @email = SpeakerConfirmationEmail.new(@speaker, @speaking_proposal)
     end
 
     it 'should be sent to speaker' do
-      pending
-      # @email.to.should == 'speaker@localhost.com'
+      @email.to.should == 'speaker@localhost.com'
     end
 
     it 'should be sent from registrar' do
-      pending
-      # @email.from.should == 'registrar@agilasverige.se'
+      @email.from.should == 'registrar@agilasverige.se'
     end
     
     it 'should have name info' do
-      pending
-      # @email.body.should match(/Speaker Speakersson/) 
+      @email.body.should match(/Speaker/) 
     end
 
-    it 'should not have price' do
-      pending
-      # @email.body.should_not match(/SEK 500/)
-    end
-
-    it 'should not have invoice date' do
-      pending
-      # @email.body.should_not match(/2008-12-01/)
-    end
-
-    it 'should not have invoice number' do
-      pending
-      # @email.body.should_not match(/1212/)
-    end
 
     it 'should have any speaker information' do
-      pending
-      # @email.body.should match(/Förslag till blixttal:/)
+      
+      @email.body.should match(/förslag på blixttal/)
     end
 
     it 'should show title' do
-      pending
-      # @email.body.should match(/En titel/)
+      @email.body.should match(/En titel/)
     end
 
-    it 'should show abstract' do
-      pending
-      # @email.body.should match(/An abstract/)
-    end
   end
 end

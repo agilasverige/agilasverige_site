@@ -36,7 +36,7 @@ class SpeakerConfirmationEmail < ConfirmationEmail
   end
 
   def salutation
-    "Hej #{@attendant.first_name},  tack för din förslag på blixttal \"#{@speaking_proposal}\""
+    "Hej #{@attendant.first_name},  tack för din förslag på blixttal \"#{@speaking_proposal.title}\""
   end
 
   def info
