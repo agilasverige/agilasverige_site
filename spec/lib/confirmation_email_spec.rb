@@ -10,6 +10,7 @@ describe ConfirmationEmail do
       @attendant.first_name = 'Attendant'
       @attendant.last_name = 'Attendantsson'
       @attendant.email = 'attendant@localhost.com'
+      @attendant.uid = '234324'
       @email = ConfirmationEmail.new(@attendant)
     end
 
@@ -23,6 +24,10 @@ describe ConfirmationEmail do
 
     it 'should have name info' do
       @email.body.should match(/Attendant/) 
+    end
+
+    it 'should have correct url' do
+      @email.body.should match(@attendant.unique_url)
     end
   end
 

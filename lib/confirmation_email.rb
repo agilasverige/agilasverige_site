@@ -23,7 +23,7 @@ class ConfirmationEmail
   def info
     "Du kan editera dina uppgifter samt anmäla blixttal via din personliga url:
 
-    http://agilasverige.se/attendants/#{@attendant.uid}"
+    http://www.agilasverige.se/attendant/#{@attendant.uid}"
   end
 
 end

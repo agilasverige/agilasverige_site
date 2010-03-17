@@ -20,7 +20,13 @@ describe Attendant do
       @attendant.valid?.should == true
     end
 
+    it 'should have a uid' do
+      @attendant.uid.should_not be_nil
+    end
 
+    it 'should have a unique url' do
+      @attendant.unique_url.should == "http://www.agilasverige.se/attendant/#{@attendant.uid}"
+    end
 
   end
 
@@ -35,6 +41,7 @@ describe Attendant do
     attendant.zip_code = '12345'
     attendant.postal_address = 'Postal Address'
     attendant.country = 'Country'
+    attendant.save
     attendant
   end
       

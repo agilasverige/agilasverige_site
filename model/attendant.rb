@@ -31,6 +31,10 @@ class Attendant
     true
   end
 
+  def unique_url
+    "http://www.agilasverige.se/attendant/#{@uid}"
+  end
+
   private
 
   def set_uid
