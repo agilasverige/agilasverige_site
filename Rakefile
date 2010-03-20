@@ -7,9 +7,11 @@ rescue LoadError
   # do nothing
 end
 
-task :spec do
-  `bacon -a`
-end
+require 'spec/rake/spectask' 
+Spec::Rake::SpecTask.new("spec") do |t|
+  t.spec_opts = ["--color", '--format', "specdoc"] 
+  t.spec_files = FileList["spec/**/*_spec.rb"]
+end 
 
 require 'cucumber/rake/task'
 

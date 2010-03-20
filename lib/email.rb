@@ -1,6 +1,34 @@
-class ConfirmationEmail 
+require 'pony'
+
+
+class BaseEmail
 
   attr_accessor :from, :to, :body, :subject
+
+  def self.testing
+    @@testing = true
+    @@sent_emails = []
+  end
+
+  def self.sent_emails
+    @@sent_emails
+  end
+
+  def send
+    unless @@testing 
+      
+      Pony.mail(@to, 
+                @from,
+                @subject, 
+                @body)
+    else
+      @@sent_emails << self
+    end
+  end
+
+end
+
+class ConfirmationEmail < BaseEmail
 
   FROM = 'registrar@agilasverige.se'
   SUBJECT = 'Tack för din anmälan till Agila Sverige 2009'
@@ -43,3 +71,5 @@ class SpeakerConfirmationEmail < ConfirmationEmail
     "Vi kommer att sätta schemat ungefär tre veckor innan konferensen och återkommer då med information om ditt förslag kommit med."
   end
 end
+
+

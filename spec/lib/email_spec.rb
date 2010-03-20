@@ -1,5 +1,55 @@
-require 'spec'
 require File.join(File.dirname(__FILE__),'..','spec_helper')
+
+describe BaseEmail do
+
+  it 'should have a testing mode' do
+    BaseEmail.testing
+    BaseEmail.sent_emails.should be_empty
+  end
+
+  describe 'in testing mode' do
+
+    it 'should have sent emails in a sent box' do
+      BaseEmail.testing
+      
+      message = BaseEmail.new
+      message.from = 'test@test.com'
+      message.to = 'to@test.com'
+      message.subject = 'Test Subject'
+      message.body = 'body'
+      message.send
+      BaseEmail.sent_emails.should include message
+    end
+  end
+
+  describe 'a new mail message' do
+    before :each do
+      @mail = BaseEmail.new
+    end
+
+    it 'should have a from address' do
+      @mail.from = "from@localhost"
+      @mail.from.should == "from@localhost"
+    end
+
+    it 'should have a to address' do
+      @mail.to = 'to@localhost'
+      @mail.to.should == 'to@localhost'
+    end
+
+    it 'should have a body' do
+      @mail.body = 'this is a body'
+      @mail.body.should == 'this is a body'
+    end
+
+    it 'should have a subject' do
+      @mail.subject = 'subject'
+      @mail.subject.should == 'subject'
+    end
+
+  end
+
+end
 
 describe ConfirmationEmail do
 
@@ -71,3 +121,4 @@ describe ConfirmationEmail do
 
   end
 end
+
