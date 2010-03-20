@@ -7,20 +7,9 @@ rescue LoadError
   # do nothing
 end
 
-require 'spec/rake/spectask' 
-Spec::Rake::SpecTask.new("spec") do |t|
-  t.spec_opts = ["--color", '--format', "specdoc"] 
-  t.spec_files = FileList["spec/**/*_spec.rb"]
-end 
-  
-namespace :spec do 
-  desc "Run specs with RCov" 
-  Spec::Rake::SpecTask.new('rcov') do |t| 
-    t.spec_files = FileList['spec/**/*_spec.rb'] 
-    t.rcov = true 
-    t.rcov_opts = ['--exclude', '\/Library\/Ruby'] 
-  end 
-end 
+task :spec do
+  `bacon -a`
+end
 
 require 'cucumber/rake/task'
 
@@ -39,3 +28,6 @@ namespace :vlad do
   end
 
 end
+
+require "metric_fu"
+
