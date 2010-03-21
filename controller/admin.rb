@@ -27,12 +27,7 @@ class AdminController < Controller
     if request.get?
       AdminView::Email.new(:controller => self).to_s
     elsif request.post?
-      Ramaze::Log.debug 'In admin controller, about to send email'
-      email = BaseEmail.new
-      email.body = request[:email_body]
-      email.from = 'info@agilasverige.se'
-      email.to =  Attendant.all.inject('') { |emails, attendant| emails + attendant.email + ', ' }
-      Ramaze::Log.debug email.inspect
+      email = MassEmail.new(request[:email_body])
       email.send
       flash['info'] = 'Email skickat'
       redirect '/admin/email/new'

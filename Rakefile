@@ -17,7 +17,7 @@ require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new
 
-task :default => [:spec, :features]
+task :default => [:spec, :cucumber]
 
 namespace :vlad do
 

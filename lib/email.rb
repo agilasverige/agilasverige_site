@@ -7,7 +7,6 @@ class BaseEmail
   @@testing = false
 
   def self.testing
-    Ramaze::Log.debug "setting email to testing"
     @@testing = true
     @@sent_emails = []
   end
@@ -17,14 +16,26 @@ class BaseEmail
   end
 
   def send
-    Ramaze::Log.debug "About to send email"
     unless @@testing 
       Pony.mail(:to => @to, :from => @from, :subject => @subject, :body => @body)
     else
-      Ramaze::Log.debug "test sending email"
-      Ramaze::Log.debug "adding self #{self} to sent emails}"
       @@sent_emails << self
     end
+  end
+
+end
+
+class MassEmail < BaseEmail
+    
+  def initialize(body)
+    @body = body
+    self.from = 'info@agilasverige.se'
+    self.to = all_attendants
+  end
+
+  def all_attendants
+    addresses = Attendant.all.inject('') { |emails, attendant| emails + attendant.email + ', ' }
+    addresses << 'as-xx@googlegroups.com'
   end
 
 end
@@ -54,7 +65,6 @@ class ConfirmationEmail < BaseEmail
 
     http://www.agilasverige.se/attendant/#{@attendant.uid}"
   end
-
 end
 
 class SpeakerConfirmationEmail < ConfirmationEmail

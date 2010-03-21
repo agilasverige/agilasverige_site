@@ -22,12 +22,12 @@ When /^I click send button$/ do
 end
 
 Then /^an email is sent to all attendants$/ do
-  sent_email = BaseEmail.sent_emails.first
-  sent_email.to.should include @attendant.email
-  sent_email.to.should include @lars.email
+  @sent_email = BaseEmail.sent_emails.first
+  @sent_email.to.should include @attendant.email
+  @sent_email.to.should include @lars.email
 end
 
 Then /^a copy is sent to as\-xx list$/ do
-  pending # express the regexp above with the code you wish you had
+  @sent_email.to.should include 'as-xx@googlegroups.com'
 end
 
