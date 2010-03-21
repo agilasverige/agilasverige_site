@@ -27,7 +27,7 @@ class AdminController < Controller
     if request.get?
       AdminView::Email.new(:controller => self).to_s
     elsif request.post?
-      email = MassEmail.new(request[:email_body])
+      email = MassEmail.new(request[:subject], request[:email_body])
       email.send
       flash['info'] = 'Email skickat'
       redirect '/admin/email/new'

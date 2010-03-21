@@ -17,6 +17,10 @@ When /^I enter a text body$/ do
   fill_in 'email_body', 'This is an email text'
 end
 
+When /^I enter a email subject$/ do
+  fill_in 'subject', 'This is an email subject'
+end
+
 When /^I click send button$/ do
   click_button 'Skicka'
 end

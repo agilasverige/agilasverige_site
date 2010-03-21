@@ -27,7 +27,8 @@ end
 
 class MassEmail < BaseEmail
     
-  def initialize(body)
+  def initialize(subject, body)
+    @subject = subject
     @body = body
     self.from = 'info@agilasverige.se'
     self.to = all_attendants

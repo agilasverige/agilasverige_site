@@ -7,6 +7,7 @@ Feature: Send email to attendants
     Given I am a logged in administrator
     When I select to send an email
     And I select all attendants as recipients
+    And I enter a email subject
     And I enter a text body
     And I click send button
     Then an email is sent to all attendants

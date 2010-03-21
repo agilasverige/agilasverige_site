@@ -17,7 +17,7 @@ module AdminView
         @attendants.each do |attendant|
           tr do
             td do
-              a(attendant.last_name, :href => "/attendant/edit/#{attendant.id}")
+              a(attendant.last_name, :href => "/attendant/#{attendant.id}")
             end
             td attendant.first_name
             td attendant.organization
@@ -63,6 +63,7 @@ module AdminView
       fieldset do
         legend 'Nytt email till alla deltagare'
         form(:action => '/admin/email/new', :method => 'post') do
+          text_field('', 'Ämne', 'subject')
           text_area_field('', 'Emailtext', 'email_body')
           input(:value => 'Skicka', :type => 'submit')
         end
