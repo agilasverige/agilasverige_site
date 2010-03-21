@@ -54,4 +54,20 @@ module AdminView
       end
     end
   end
+
+  class Email < TwoColumnView
+
+    include FormFields
+
+    def main_text
+      fieldset do
+        legend 'Nytt email till alla deltagare'
+        form(:action => '/admin/email/new', :method => 'post') do
+          text_area_field('', 'Emailtext', 'email_body')
+          input(:value => 'Skicka', :type => 'submit')
+        end
+      end
+    end
+  end
+
 end

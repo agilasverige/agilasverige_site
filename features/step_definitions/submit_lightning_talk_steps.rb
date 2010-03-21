@@ -1,12 +1,6 @@
 Given /^I am a registered attendant$/ do
   SpeakingProposal.delete_all(:title => 'test')
-  @attendant = Attendant.create(:first_name => 'test',
-                                :last_name => 'testsson',
-                                :email => 'mahnve+test@gmail.com',
-                                :organization => 'organization',
-                                :address => 'address',
-                                :zip_code => '12121',
-                                :postal_address => 'postal address')
+  @attendant = Factory(:attendant)
 end
 
 When /^I submit a lightning talk$/ do

@@ -1,5 +1,8 @@
 Given /^I am a logged in administrator$/ do
-  EmailSender.testing
+  BaseEmail.testing
+  Attendant.delete_all
+  @attendant = Factory(:attendant)
+  @lars = Factory(:lars)
 end
 
 When /^I select to send an email$/ do
@@ -15,11 +18,13 @@ When /^I enter a text body$/ do
 end
 
 When /^I click send button$/ do
-  click_button 'send'
+  click_button 'Skicka'
 end
 
 Then /^an email is sent to all attendants$/ do
-  # ???
+  sent_email = BaseEmail.sent_emails.first
+  sent_email.to.should include @attendant.email
+  sent_email.to.should include @lars.email
 end
 
 Then /^a copy is sent to as\-xx list$/ do

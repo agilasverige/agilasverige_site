@@ -2,7 +2,7 @@ class AdminController < Controller
 
   helper :aspect
 
-  before_all{require_login}
+  # before_all{require_login}
   
   #HTML views
 
@@ -21,6 +21,22 @@ class AdminController < Controller
 
   def speaking_proposals
     AdminView::SpeakingProposals.new(self, Attendant.speakers_by_lastname).to_s
+  end
+
+  def email(action)
+    if request.get?
+      AdminView::Email.new(:controller => self).to_s
+    elsif request.post?
+      Ramaze::Log.debug 'In admin controller, about to send email'
+      email = BaseEmail.new
+      email.body = request[:email_body]
+      email.from = 'info@agilasverige.se'
+      email.to =  Attendant.all.inject('') { |emails, attendant| emails + attendant.email + ', ' }
+      Ramaze::Log.debug email.inspect
+      email.send
+      flash['info'] = 'Email skickat'
+      redirect '/admin/email/new'
+    end
   end
 
   # CSV views

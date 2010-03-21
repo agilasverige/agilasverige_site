@@ -2,6 +2,7 @@ TEST_EMAIL_ADDRESS = 'mahnve+test@gmail.com'
 
 Given /^I am a previously unregistered visitor$/ do
   Attendant.all(:email => TEST_EMAIL_ADDRESS).each {|a| a.destroy}
+   BaseEmail.testing
 end
 
 When /^I register as an attendant$/ do
@@ -32,16 +33,7 @@ end
 
 Given /^I have previously signed up as an attendant$/ do
   clean_test_data
-  attendant = Attendant.new
-  attendant.first_name = 'Attendant'
-  attendant.last_name = 'Attendantsson'
-  attendant.organization = 'Organization'
-  attendant.email = 'attendant@localhost.com'
-  attendant.address = 'address'
-  attendant.zip_code = '12345'
-  attendant.postal_address = 'Postal Address'
-  attendant.country = 'Country'
-  attendant.save
+  Factory(:attendant)
 end
 
 Then /^I get an error message$/ do
@@ -55,6 +47,6 @@ Then /^I see a confirmation page$/ do
 end
 
 Then /^I get a confirmation email$/ do
-  
+  BaseEmail.sent_emails.first.to.should == TEST_EMAIL_ADDRESS  
 end
 
