@@ -1,4 +1,4 @@
-require 'pony'
+require 'mail'
 
 class BaseEmail
 
@@ -17,7 +17,13 @@ class BaseEmail
 
   def send
     unless @@testing 
-      Pony.mail(:to => @to, :from => @from, :subject => @subject, :body => @body)
+      email = Email.new do
+        to @to 
+        from @from 
+        subject @subject 
+        body @body
+      end
+      email.deliver
     else
       @@sent_emails << self
     end
@@ -45,7 +51,7 @@ end
 class ConfirmationEmail < BaseEmail
 
   FROM = 'registrar@agilasverige.se'
-  SUBJECT = 'Tack för din anmälan till Agila Sverige 2009'
+  SUBJECT = 'Tack för din anmälan till Agila Sverige 2010'
 
   def initialize(attendant)
     @attendant = attendant
