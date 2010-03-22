@@ -15,3 +15,7 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 
 Capybara.app=Ramaze
+
+class AdminController
+  before_all 
+end
