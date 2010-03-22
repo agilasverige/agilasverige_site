@@ -17,17 +17,29 @@ class BaseEmail
 
   def send
     unless @@testing 
-      email = Email.new do
-        to @to 
-        from @from 
-        subject @subject 
-        body @body
-      end
+      email = Mail.new
+      email.to @to 
+      email.from @from 
+      email.subject @subject 
+      email.body @body
+      set_delivery_method(email)
       email.deliver
     else
       @@sent_emails << self
     end
   end
+
+  private
+
+  def set_delivery_method(email)
+    sendmail_binary = `which sendmail`.chomp
+    if File.executable? sendmail_binary
+      email.delivery_method :sendmail, :location => sendmail_binary
+    else
+      email.delivery_method :smtp
+    end
+  end 
+      
 
 end
 
