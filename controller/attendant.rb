@@ -28,8 +28,7 @@ class AttendantController < Controller
       AttendantView::New.new(:controller => self).to_s
     elsif request.post?
       Ramaze::Log.debug(request.params.inspect)
-      sanitized_request
-      attendant = Attendant.create(request.params)
+      attendant = Attendant.create(sanitized_request)
       Ramaze::Log.debug(attendant)
       begin
         if attendant.save
