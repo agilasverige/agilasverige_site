@@ -2,6 +2,7 @@ require 'rubygems'
 
 require 'spec'
 require 'ramaze'
+require "factory_girl"
 
 require File.join(File.dirname(__FILE__), '..','model', 'init') 
 require File.join(File.dirname(__FILE__), '..','view', 'init') 

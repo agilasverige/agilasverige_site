@@ -2,7 +2,7 @@ require 'pony'
 
 class BaseEmail
 
-  attr_accessor :from, :to, :body, :subject
+  attr_accessor :from, :to, :bcc, :body, :subject
 
   @@testing = false
 
@@ -31,11 +31,12 @@ class MassEmail < BaseEmail
     @subject = subject
     @body = body
     self.from = 'info@agilasverige.se'
-    self.to = all_attendants
+    self.to = 'info@agilasverige.se'
+    self.bcc = all_attendants
   end
 
   def all_attendants
-    addresses = Attendant.all.inject('') { |emails, attendant| emails + attendant.email + ', ' }
+    addresses = Attendant.all.inject([]) { |emails, attendant| emails << attendant.email}
     addresses << 'as-xx@googlegroups.com'
   end
 
