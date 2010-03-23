@@ -18,10 +18,10 @@ class BaseEmail
   def send
     unless @@testing 
       email = Mail.new
-      email.to @to 
-      email.from @from 
-      email.subject @subject 
-      email.body @body
+      email.to to 
+      email.from from 
+      email.subject subject 
+      email.body body
       set_delivery_method(email)
       email.deliver
     else
