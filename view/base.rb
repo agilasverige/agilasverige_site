@@ -161,47 +161,47 @@ class BaseView < Erector::Widget
 
   def info
     div :id => 'info' do
-      # div :class => "register" do
-      #   a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
-      #   p(:class => "reminder") {text "Sista anmälningsdag:"}
-      #   p(:class => "reminder") {text "25 maj 2009"}
-      # end
+      div :class => "register" do
+        a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
+        p(:class => "reminder") {text "Sista anmälningsdag:"}
+        p(:class => "reminder") {text "25 april 2010"}
+      end
 
-        h4 "Kommentarer på frågan 'Vad tar du med dig hem', från 2008:"
-        blockquote do
-          p "\"Lyckan av att umgås med så många engagerade människor\""
-        end
-        blockquote do
-          p "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
-        end
-        blockquote do
-          p "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
-        end
+      h4 "Kommentarer på frågan 'Vad tar du med dig hem', från 2008:"
+      blockquote do
+        p "\"Lyckan av att umgås med så många engagerade människor\""
+      end
+      blockquote do
+        p "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
+      end
+      blockquote do
+        p "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
+      end
 
-        h2 "Vad kostar det?"
-        table(:id => "prices") do
-          tr(:class => "oddrow") do
-            td "Deltagare:"
-            td "1000 kronor exkl.moms"
-          end
-          tr(:class => "evenrow") do
-            td "Talare:"
-            td "0 kronor"
-          end
+      h2 "Vad kostar det?"
+      table(:id => "prices") do
+        tr(:class => "oddrow") do
+          td "Deltagare:"
+          td "1000 kronor exkl.moms"
         end
-        p 'Alla priser exklusive moms'
-        
-        h2 "Vad ingår?"
-        ul do
-          li "Två dagars konferens"
-          li "Konferensmiddag"
+        tr(:class => "evenrow") do
+          td "Talare:"
+          td "0 kronor"
         end
-        h2 "Var?"
-        p do
-          a(:href => "http://www.citykonferensen.se/") do
-            img(:src => "/images/citykonferens.png", :alt => 'Citykonferensen logo')
-          end
+      end
+      p 'Alla priser exklusive moms'
+
+      h2 "Vad ingår?"
+      ul do
+        li "Två dagars konferens"
+        li "Konferensmiddag"
+      end
+      h2 "Var?"
+      p do
+        a(:href => "http://www.citykonferensen.se/") do
+          img(:src => "/images/citykonferens.png", :alt => 'Citykonferensen logo')
         end
+      end
 
     end
   end
