@@ -19,6 +19,7 @@ class BaseEmail
     unless @@testing 
       email = Mail.new
       email.to to 
+      email.bcc bcc
       email.from from 
       email.subject subject 
       email.body body
