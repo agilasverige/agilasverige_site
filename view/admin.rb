@@ -4,7 +4,7 @@ module AdminView
     needs :attendants
 
     def main_text
-      h2 'Deltagare'
+      h2 "Deltagare: #{@attendants.size}"
       table do
         tr do
           th 'Efternamn'
