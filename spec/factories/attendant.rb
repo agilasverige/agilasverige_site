@@ -1,20 +1,11 @@
 Factory.define :attendant do |a|
-  a.first_name 'Firstname'
-  a.last_name 'Lastname'
-  a.organization 'An Organization AB'
-  a.email 'email@test.com'
-  a.address 'A Road 100'
-  a.zip_code '12345'
-  a.postal_address 'Postaladdress'
+  a.first_name Faker::Name.first_name
+  a.last_name Faker::Name.last_name
+  a.organization Faker::Company.name
+  a.email Faker::Internet.email
+  a.address Faker::Address.street_address
+  a.zip_code Faker::Address.zip_code
+  a.postal_address Faker::Address.city
 end
 
-Factory.define :lars, :parent => 'attendant' do |a|
-  a.first_name 'Lars'
-  a.last_name 'Larsson'
-  a.organization 'Larsson AB'
-  a.email 'lars@larsson.se'
-  a.address 'Larssongatan 1'
-  a.zip_code '12121'
-  a.postal_address 'Larsboda'
-end
 

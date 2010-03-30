@@ -2,6 +2,7 @@ require 'ramaze'
 Ramaze.options.started = true
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'app'))
 
+require 'ffaker'
 require "factory_girl"
 require 'spec/expectations'
 require 'rack/test'
