@@ -28,7 +28,7 @@ class Attendant
   end
 
   def speaker?
-    true
+    speaking_proposals.size > 0
   end
 
   def unique_url

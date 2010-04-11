@@ -35,20 +35,21 @@ module AdminView
     needs :speakers
 
     def main_text
-      h2 'Talare'
+      h2 'Talarförslag'
       table do
         tr do
-          th 'Efternamn'
-          th 'Förnamn'
+          th 'Talare'
           th 'Titel'
           th 'Abstract'
         end
+    Ramaze::Log.debug @speakers.inspect
         @speakers.each do |speaker|
-          tr do
-            td speaker.last_name
-            td speaker.first_name
-            td speaker.speaking_proposal.title
-            td speaker.speaking_proposal.abstract
+          speaker.speaking_proposals.each do |speaking_proposal|
+            tr do
+              td speaker.full_name
+              td speaking_proposal.title
+              td speaking_proposal.abstract
+            end
           end
         end
       end

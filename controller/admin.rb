@@ -11,16 +11,11 @@ class AdminController < Controller
     AdminView::Attendants.new(:controller => self, :attendants => all).to_s
   end
 
-  def speakers 
-    AdminView::Attendants.new(self, Attendant.speakers_by_lastname).to_s
-  end
-
-  def dinner_guests 
-    AdminView::Attendants.new(self, Attendant.dinner_guests_by_lastname).to_s
-  end
-
   def speaking_proposals
-    AdminView::SpeakingProposals.new(self, Attendant.speakers_by_lastname).to_s
+    speakers =Attendant.all
+    Ramaze::Log.debug speakers.inspect
+    AdminView::SpeakingProposals.new(:controller => self, 
+                                     :speakers => speakers).to_s
   end
 
   def email(action)
