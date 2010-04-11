@@ -4,6 +4,7 @@
 .DS_Store
 tags
 log/*.*
+tmp
 logs/*.*
 spec/log/*.*
 coverage/*.*
