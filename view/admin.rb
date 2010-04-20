@@ -38,6 +38,7 @@ module AdminView
       h2 'Talarförslag'
       table do
         tr do
+          th 'Id'
           th 'Talare'
           th 'Titel'
           th 'Abstract'
@@ -46,6 +47,7 @@ module AdminView
         @speakers.each do |speaker|
           speaker.speaking_proposals.each do |speaking_proposal|
             tr do
+              td speaking_proposal.id
               td speaker.full_name
               td speaking_proposal.title
               td speaking_proposal.abstract
