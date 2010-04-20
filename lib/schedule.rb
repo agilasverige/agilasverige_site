@@ -73,22 +73,22 @@ class Schedule
   end
 
   def setup_tuesday
-    tuesday.add_slot(TUESDAY_SLOTS[0], 'e8564dc38404a1f86087a6a1917108aa', 'be3e15f9b24deacaa80bfe65d1fe027b')
-    tuesday.add_slot(TUESDAY_SLOTS[1], '062dd82c34369208f3a6cda909786aa8', '9ee92dbbe4f2c34fe4f9b361392dd324')
-    tuesday.add_slot(TUESDAY_SLOTS[2], '71499ac8ad181b1669714ab4ce2b5c72', 'd15c1b3c333db832a6aefd96770901f8')
-    tuesday.add_slot(TUESDAY_SLOTS[3], '879f6591284cce3bcd857d892bd76d64', '7505500af345d4c5de448f69ed9af2de')
-    tuesday.add_slot(TUESDAY_SLOTS[4], '0698f8dd56663f6882f0f8e2f31b7a47', 'c9a6b6a8c0c75a3cc5226db3b9011cda')
+    tuesday.add_slot(TUESDAY_SLOTS[0], '4bc2d415e5ce30506b000009', '4bbf10c7e5ce3005f0000003')
+    tuesday.add_slot(TUESDAY_SLOTS[1], '4bbc62dae5ce301848000002', '4bbac4dae5ce3007e5000002')
+    tuesday.add_slot(TUESDAY_SLOTS[2], '4bc300bbe5ce306328000004', '4bc21deee5ce301491000002')
+    tuesday.add_slot(TUESDAY_SLOTS[3], '4bbd9ca9e5ce300534000002', '4bc2c117e5ce304d77000002')
+    tuesday.add_slot(TUESDAY_SLOTS[4], '4bc21916e5ce300faf000010', '4bbc32cce5ce3006ff000003')
 
-    tuesday.add_slot(TUESDAY_SLOTS[5], '18a35f6b62488f0d0a4e86bcb8cdfc2f', '7d6b62f18f852d2b3775b4992255a02d')
-    tuesday.add_slot(TUESDAY_SLOTS[6], '121d8199104d45a8688ee07233b6b499', '192de1197d47658b49c818ea2b0c92f5')
-    tuesday.add_slot(TUESDAY_SLOTS[7], 'd983352b62664a69f9edda897108b4ab', '2ccad8aa15cf46909221fd089431fe4a')
-    tuesday.add_slot(TUESDAY_SLOTS[8], 'fdec95e03cafedc2ea571354a4cb3286', 'ba7a1fb5c2e513b96e4a61a3162e11e5')
-    tuesday.add_slot(TUESDAY_SLOTS[9], 'f9eb28c16fcd36d453ca433f7c9e469d', 'e1fe10068ece3b6f33bc3a608eeb5562')
+    tuesday.add_slot(TUESDAY_SLOTS[5], '4bc24230e5ce301bcd000005', '4bc225ece5ce30160c000006')
+    tuesday.add_slot(TUESDAY_SLOTS[6], '4bc03e64e5ce306c3f000004', '4bcbffdee5ce300395000004')
+    tuesday.add_slot(TUESDAY_SLOTS[7], '4bc20853e5ce300d26000002', '4bac7668e5ce301386000002')
+    tuesday.add_slot(TUESDAY_SLOTS[8], '4bb1e557e5ce307444000002', '4babebb0e5ce305eb1000007')
+    tuesday.add_slot(TUESDAY_SLOTS[9], '4bc0b646e5ce3015f6000004', '4bbe41dce5ce303d4a000002')
 
-    tuesday.add_slot(TUESDAY_SLOTS[10], '7384ec11da0d9c152c918c9278f74f61', 'dfcd8940077aa50a2ffa197693826d7a')
-    tuesday.add_slot(TUESDAY_SLOTS[11], '0aa645dd565a45cc01536b52a25d8f44', '8fb8e89e94dcd442fabaf8ad3d23b1cb')
-    tuesday.add_slot(TUESDAY_SLOTS[12], '4692442200d6916f72d3f2ff5d4c2d02', 'bee4a1d5b02f45d8145b1611d2b771de')
-    tuesday.add_slot(TUESDAY_SLOTS[13], '62e9a8d9b37b0b2390c9df7ff9df1435', 'dd75f307bb47675134beb29589fc6543')
-    tuesday.add_slot(TUESDAY_SLOTS[14], 'df906f780c3397c7a2804688f9d9f18d', '6798bb916dd465b0b53ece3c65a7cfe0')
+    tuesday.add_slot(TUESDAY_SLOTS[10], '4bc22220e5ce30160c000002', '4bb1049ee5ce302636000002')
+    tuesday.add_slot(TUESDAY_SLOTS[11], '4b9f53b2e5ce306fc600001b', '4bc77124e5ce306e66000002')
+    tuesday.add_slot(TUESDAY_SLOTS[12], '4bc30069e5ce306328000002', '4bcbe10fe5ce3077f600000a')
+    tuesday.add_slot(TUESDAY_SLOTS[13], '4bc4e009e5ce300aa0000002', '4bce0bf6e5ce3037c8000002')
+    tuesday.add_slot(TUESDAY_SLOTS[14], '', '')
   end
 end
