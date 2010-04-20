@@ -54,22 +54,22 @@ class Schedule
 
 
   def setup_monday
-    monday.add_slot(MONDAY_SLOTS[0], '49f3145368398b7c1f6ad46efbd950ff', '60164966329af99258739c60ac10123a')
-    monday.add_slot(MONDAY_SLOTS[1], '0686eaa4ea9784800c8202420aa5f577', 'a0c860b04d0e3388ef198a5eca483aa3')
-    monday.add_slot(MONDAY_SLOTS[2], '8c98fe235c2800b620c89a9bc4f69afc', '9ee6a63dccc531c436975e978cb48748')
-    monday.add_slot(MONDAY_SLOTS[3], 'b332e8fc8e1faf8ec4413e0653719fb3', 'dd7774b5277530416037b9e972ff1883')
+    monday.add_slot(MONDAY_SLOTS[0], '4bc224a0e5ce30160c000005', '4bc30093e5ce306328000003')
+    monday.add_slot(MONDAY_SLOTS[1], '4bc0ecf6e5ce302964000004', '4bc23de5e5ce301bcd000002')
+    monday.add_slot(MONDAY_SLOTS[2], '4bb22b95e5ce300de2000002', '4bb1b0bbe5ce30622f000003')
+    monday.add_slot(MONDAY_SLOTS[3], '4bc22ae6e5ce30160c00000c', '4bb3b895e5ce301793000002')
 
-    monday.add_slot(MONDAY_SLOTS[4], 'daf2793559acf601b1fbcc99b6b3cd9b', 'e8cc57326ab9112a116be93a22fa0ec0')
-    monday.add_slot(MONDAY_SLOTS[5], 'dd701b51fbb88ef55132342a1e6aa320', '361db5fb16b6580205d7224990827d9f')
-    monday.add_slot(MONDAY_SLOTS[6], 'e447ef84faec5ab672d0a2b23106674c', '3e6d5b0a38d99e3d2e738228e6b416b8')
-    monday.add_slot(MONDAY_SLOTS[7], 'c2e4d9ff67e581a6d4cd54e5af5d2199', '69580c30faab03bffb1dd24c4ab18927')
-    monday.add_slot(MONDAY_SLOTS[8], '00425080e53daafc4aebc1cedad01f64', '6fac4bcc3725ce27a0f79e02a31c4d6d')
+    monday.add_slot(MONDAY_SLOTS[4], '4bc2243ce5ce30160c000003', '4bc1ce3ee5ce307771000002')
+    monday.add_slot(MONDAY_SLOTS[5], '4babbb80e5ce30512a000002', '4bbf08afe5ce300254000002')
+    monday.add_slot(MONDAY_SLOTS[6], '4bbc52d3e5ce301238000003', '4bb1b7efe5ce3064fd000003')
+    monday.add_slot(MONDAY_SLOTS[7], '4bbf1179e5ce3005f0000004', '4bbf3be0e5ce3014a6000002')
+    monday.add_slot(MONDAY_SLOTS[8], '4bc03c05e5ce306c3f000002', '4bc24213e5ce301bcd000004')
 
-    monday.add_slot(MONDAY_SLOTS[9], '8e57f5c2ebbd082056eaa880e6880ef1', '6c370fece4006877a3c528cfed5cab28')
-    monday.add_slot(MONDAY_SLOTS[10], '10431a87a0ca04ad49b5fcf70a70f7d5', '4caa9d77e7fdb28712f7f3adb4581309')
-    monday.add_slot(MONDAY_SLOTS[11], '13474ae67c3af9210cf34d808aebf980', '5e0229ff9bde2a965dcf68a68d3c74bd')
-    monday.add_slot(MONDAY_SLOTS[12], '821c1cdbd4e5ecba855e3b06106b13a7', 'cc4b42773a21f832cc3762725fb74810')
-    monday.add_slot(MONDAY_SLOTS[13], 'd1b81518d3b66bb095de29c3faf51893', 'f635e6765e9761408a43ae3c8ed40c60')
+    monday.add_slot(MONDAY_SLOTS[9], '4bc47a42e5ce306540000005', '4bc22e08e5ce30160c00000e')
+    monday.add_slot(MONDAY_SLOTS[10], '4bc20fcae5ce300faf000002', '4babee4ae5ce306295000002')
+    monday.add_slot(MONDAY_SLOTS[11], '4bc84158e5ce3037b3000002', '4bc45f51e5ce305d40000002')
+    monday.add_slot(MONDAY_SLOTS[12], '4bc20533e5ce300bb5000003', '4bc21675e5ce300faf000009')
+    monday.add_slot(MONDAY_SLOTS[13], '4bc0c6bee5ce301d40000003', '4bc0c81ce5ce301d40000006')
   end
 
   def setup_tuesday
