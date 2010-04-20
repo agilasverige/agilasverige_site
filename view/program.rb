@@ -1,7 +1,7 @@
 module ProgramView
   class Index < TwoColumnView
 
-    needs :schedule, :speakers
+    needs :schedule, :sessions
 
     def main_content
       h1 'Måndag'
@@ -171,30 +171,30 @@ module ProgramView
     end
 
     def talkinfo(id = '')
-      speaker = find_speaker(id)
+      session = find_session(id)
       p(:class => 'title') do
-        a(:class => 'fancybox', :title => proposal_title(speaker), :href => "\##{id}") do
-          text !speaker.nil? ? speaker.speaking_proposal.title : 'unknown'
+        a(:class => 'fancybox', :title => proposal_title(session), :href => "\##{id}") do
+          text !session.nil? ? session.title : 'unknown'
         end
       end
       p(:class => 'speaker') do 
-        text "#{!speaker.nil? ? speaker.full_name : 'unknown'} - #{!speaker.nil? ? speaker.organization : 'unknown'}"
+        text "#{!session.nil? ? session.full_name : 'unknown'} - #{!session.nil? ? session.organization : 'unknown'}"
       end
       div(:id => id, :class => 'hidden') do
-        p !speaker.nil? ? speaker.speaking_proposal.abstract : 'unknown'
+        p !session.nil? ? session.speaking_proposal.abstract : 'unknown'
         p(:class => 'speaker') do
           text 'Talare är '
-          text "#{!speaker.nil? ? speaker.full_name : 'unknown'} från #{!speaker.nil? ? speaker.organization : 'unknown'}"
+          text "#{!session.nil? ? session.full_name : 'unknown'} från #{!session.nil? ? session.organization : 'unknown'}"
         end
       end
     end
 
-    def proposal_title(speaker)
-      !speaker.nil? ? speaker.speaking_proposal.title : 'unknown'
+    def proposal_title(session)
+      !session.nil? ? session.speaking_proposal.title : 'unknown'
     end
 
-    def find_speaker(id)
-      @speakers.find do |candidate|
+    def find_session(id)
+      @sessions.find do |candidate|
         candidate.id == id
       end
     end
