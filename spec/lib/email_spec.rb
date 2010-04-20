@@ -127,15 +127,15 @@ describe ConfirmationEmail do
   end
 end
 
-describe 'a mass email' do
+#describe 'a mass email' do
 
-  it 'should have addresses as an array' do
-    Attendant.delete_all
-    attendant = Factory(:attendant)
-    lars = Factory(:lars)
-    email = MassEmail.new('subject', 'bodybodybody')
-    email.all_attendants.sort.should == [lars.email, attendant.email, 'as-xx@googlegroups.com'].sort
-  end
-end
+#  it 'should have addresses as an array' do
+#    Attendant.delete_all
+#    attendant = Factory(:attendant)
+#    lars = Factory(:lars)
+#    email = MassEmail.new('subject', 'bodybodybody')
+#    email.all_attendants.sort.should == [lars.email, attendant.email, 'as-xx@googlegroups.com'].sort
+#  end
+#end
     
 
