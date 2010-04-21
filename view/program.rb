@@ -182,13 +182,13 @@ module ProgramView
         end
       end
       p(:class => 'speaker') do 
-        text "#{!session.nil? ? session.full_name : 'unknown'} - #{!session.nil? ? session.organization : 'unknown'}"
+        text "#{!session.nil? ? session.speaker.full_name : 'unknown'} - #{!session.nil? ? session.speaker.organization : 'unknown'}"
       end
       div(:id => id, :class => 'hidden') do
         p !session.nil? ? session.abstract : 'unknown'
         p(:class => 'speaker') do
           text 'Talare är '
-          text "#{!session.nil? ? session.full_name : 'unknown'} från #{!session.nil? ? session.organization : 'unknown'}"
+          text "#{!session.nil? ? session.speaker.full_name : 'unknown'} från #{!session.nil? ? session.speaker.organization : 'unknown'}"
         end
       end
     end
@@ -198,15 +198,10 @@ module ProgramView
     end
 
     def find_session(id)
-      Ramaze::Log.debug "id: #{@id}"
+      Ramaze::Log.debug "id: #{id}"
 
       @sessions.find do |candidate|
-        if (candidate.id == id)
-          Ramaze::Log.debug "candidate #{candidate.inspect}"
-          Ramaze::Log.debug "candidate id #{candidate.id}"
-          Ramaze::Log.debug "id #{id}"
-        end
-        candidate.id == id
+        candidate.id.to_s == id
       end
     end
 
