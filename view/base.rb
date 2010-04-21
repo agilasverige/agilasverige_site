@@ -52,9 +52,9 @@ class BaseView < Erector::Widget
           li do
             a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
           end
-          # li do
-          #   a 'Program', :id => "program_link", :href => '/program'
-          # end
+          li do
+            a 'Program', :id => "program_link", :href => '/program'
+          end
           li do
             a 'Tidigare konferenser', :id => "prev_conf_link", :href => '/previous_conferences'
           end
