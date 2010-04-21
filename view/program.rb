@@ -3,7 +3,7 @@ module ProgramView
 
     needs :schedule, :sessions
 
-    def main_content
+    def main_text
       @sessions.each do |session|
         Ramaze::Log.debug session.id
       end
