@@ -4,6 +4,10 @@ module ProgramView
     needs :schedule, :sessions
 
     def main_content
+      @sessions.each do |session|
+        Ramaze::Log.debug session.id
+      end
+      Ramaze::Log.debug @schedule.inspect
       h1 'Måndag'
       div(:id => 'test', :style => 'display: none;')  do
         p 'hej'
@@ -181,7 +185,7 @@ module ProgramView
         text "#{!session.nil? ? session.full_name : 'unknown'} - #{!session.nil? ? session.organization : 'unknown'}"
       end
       div(:id => id, :class => 'hidden') do
-        p !session.nil? ? session.speaking_proposal.abstract : 'unknown'
+        p !session.nil? ? session.abstract : 'unknown'
         p(:class => 'speaker') do
           text 'Talare är '
           text "#{!session.nil? ? session.full_name : 'unknown'} från #{!session.nil? ? session.organization : 'unknown'}"
@@ -190,11 +194,18 @@ module ProgramView
     end
 
     def proposal_title(session)
-      !session.nil? ? session.speaking_proposal.title : 'unknown'
+      !session.nil? ? session.title : 'unknown'
     end
 
     def find_session(id)
+      Ramaze::Log.debug "id: #{@id}"
+
       @sessions.find do |candidate|
+        if (candidate.id == id)
+          Ramaze::Log.debug "candidate #{candidate.inspect}"
+          Ramaze::Log.debug "candidate id #{candidate.id}"
+          Ramaze::Log.debug "id #{id}"
+        end
         candidate.id == id
       end
     end
