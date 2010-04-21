@@ -82,13 +82,13 @@ class Schedule
     tuesday.add_slot(TUESDAY_SLOTS[5], '4bc24230e5ce301bcd000005', '4bc225ece5ce30160c000006')
     tuesday.add_slot(TUESDAY_SLOTS[6], '4bc03e64e5ce306c3f000004', '4bcbffdee5ce300395000004')
     tuesday.add_slot(TUESDAY_SLOTS[7], '4bc20853e5ce300d26000002', '4bac7668e5ce301386000002')
-    tuesday.add_slot(TUESDAY_SLOTS[8], '4bb1e557e5ce307444000002', '4babebb0e5ce305eb1000007')
+    tuesday.add_slot(TUESDAY_SLOTS[8], '4bb1e557e5ce307444000002', '4bcdf1cfe5ce302fa2000002')
     tuesday.add_slot(TUESDAY_SLOTS[9], '4bc0b646e5ce3015f6000004', '4bbe41dce5ce303d4a000002')
 
     tuesday.add_slot(TUESDAY_SLOTS[10], '4bc22220e5ce30160c000002', '4bb1049ee5ce302636000002')
     tuesday.add_slot(TUESDAY_SLOTS[11], '4b9f53b2e5ce306fc600001b', '4bc77124e5ce306e66000002')
-    tuesday.add_slot(TUESDAY_SLOTS[12], '4bc30069e5ce306328000002', '4bcbe10fe5ce3077f600000a')
+    tuesday.add_slot(TUESDAY_SLOTS[12], '4bc30069e5ce306328000002', '4bcebaa8e5ce307570000005')
     tuesday.add_slot(TUESDAY_SLOTS[13], '4bc4e009e5ce300aa0000002', '4bce0bf6e5ce3037c8000002')
-    tuesday.add_slot(TUESDAY_SLOTS[14], '', '4bcebaa8e5ce307570000005')
+    tuesday.add_slot(TUESDAY_SLOTS[14], '4bcf7d5ce5ce3039a4000002', '4bcbe10fe5ce3077f600000a')
   end
 end
