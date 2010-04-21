@@ -89,6 +89,6 @@ class Schedule
     tuesday.add_slot(TUESDAY_SLOTS[11], '4b9f53b2e5ce306fc600001b', '4bc77124e5ce306e66000002')
     tuesday.add_slot(TUESDAY_SLOTS[12], '4bc30069e5ce306328000002', '4bcbe10fe5ce3077f600000a')
     tuesday.add_slot(TUESDAY_SLOTS[13], '4bc4e009e5ce300aa0000002', '4bce0bf6e5ce3037c8000002')
-    tuesday.add_slot(TUESDAY_SLOTS[14], '', '')
+    tuesday.add_slot(TUESDAY_SLOTS[14], '', '4bcebaa8e5ce307570000005')
   end
 end
