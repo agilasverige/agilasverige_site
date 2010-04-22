@@ -42,7 +42,7 @@ class BaseView < Erector::Widget
         h2 do
           span 'Stockholm 10-11 maj  2010'
         end
-        img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm juni 2010'
+        img :id => 'date', :src => '/images/postit_note.jpg', :alt => 'Stockholm maj 2010'
       end
       div :id => 'menu' do
         ul do
