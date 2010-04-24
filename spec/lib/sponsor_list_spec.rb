@@ -6,8 +6,8 @@ describe "SponsorList" do
     @sponsor_list = SponsorList.new
   end
   
-  it "should have 12 sponsors" do
-    @sponsor_list.sponsors.size.should == 12
+  it "should have 13 sponsors" do
+    @sponsor_list.sponsors.size.should == 13
   end
   
   it 'should have all paying sponsors' do
@@ -22,7 +22,8 @@ describe "SponsorList" do
                 ['Responsive', 'responsive.se'],
                 ['Jaybis', 'jaybis.se'],
                 ['Adaptiv', 'adaptiv.se'],
-                ['Omegapoint', 'omegapoint.se']]
+                ['Omegapoint', 'omegapoint.se'],
+                ['Abiliteam', 'abiliteam.se']]
 
     sponsors.each do |sponsor|
       current_name = sponsor.first
@@ -45,8 +46,8 @@ describe "a random sponsorlist" do
     @random_ordered_sponsors = @sponsor_list.random_order
   end
 
-  it "should have 12 elements" do
-    @random_ordered_sponsors.length.should == 12
+  it "should have 13 elements" do
+    @random_ordered_sponsors.length.should == 13
   end
   
   it "should not provide the list ordered the same way twice" do
