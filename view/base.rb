@@ -49,9 +49,9 @@ class BaseView < Erector::Widget
           li do
             a 'Hem', :id => "main_link", :href => '/'
           end
-          li do
-            a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
-          end
+          # li do
+          #   a 'Anmälan', :id => "attendant_link", :href => '/attendant/new'
+          # end
           li do
             a 'Program', :id => "program_link", :href => '/program'
           end
@@ -161,11 +161,11 @@ class BaseView < Erector::Widget
 
   def info
     div :id => 'info' do
-      div :class => "register" do
-        a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
-        p(:class => "reminder") {text "Sista anmälningsdag:"}
-        p(:class => "reminder") {text "25 april 2010"}
-      end
+      # div :class => "register" do
+      #   a 'Anmäl dig här!', :id => 'sign_up_link', :href => '/attendant/new'
+      #   p(:class => "reminder") {text "Sista anmälningsdag:"}
+      #   p(:class => "reminder") {text "25 april 2010"}
+      # end
 
       h4 "Kommentarer på frågan 'Vad tar du med dig hem', från 2008:"
       blockquote do
