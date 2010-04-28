@@ -1,13 +1,24 @@
 class SpeakingProposalController < Controller
 
-  def index(title)
+  def index(id, action='')
+    if request.post?
+      if SpeakingProposal.update(id, request.params)
+        redirect("/speaking_proposal/#{id}")
+      else
+        flash[:error] = speaking_proposal.errors 
+        redirect("/speaking_proposal/edit/#{speaking_proposal.id}")
+      end
+    end
     speaking_proposal = ''
-    speaking_proposal = SpeakingProposal.find_by_snake_title
-    Ramaze::Log.debug("SpeakingProposal: #{speaking_proposal.inspect}")
+    speaking_proposal = SpeakingProposal.find(id)
     unless(speaking_proposal)
       show404
     end
-    view = SpeakingProposalView::Show.new(:controller => self, :speaking_proposal => speaking_proposal)
+    if(action == 'edit')
+      view = SpeakingProposalView::Edit.new(:controller => self, :speaking_proposal => speaking_proposal)
+    else
+      view = SpeakingProposalView::Show.new(:controller => self, :speaking_proposal => speaking_proposal)
+    end
     view.to_s
   end
 
@@ -23,7 +34,7 @@ class SpeakingProposalController < Controller
         speaking_proposal = attendant.speaking_proposals.create(request.params)
         if attendant.save
           send_confirmation_email(attendant, speaking_proposal)
-          redirect("/speaking_proposal/thankyou/#{speaking_proposal.snake_title}")
+          redirect("/speaking_proposal/thankyou/#{speaking_proposal.id}")
         else
           flash[:error] = speaking_proposal.errors 
           redirect('/speaking_proposal/new')
@@ -57,7 +68,7 @@ class SpeakingProposalController < Controller
   end
 
   def thankyou(title)
-    speaking_proposal = SpeakingProposal.find_by_snake_title(title)
+    speaking_proposal = SpeakingProposal.find(title)
     SpeakingProposalView::Show.new(:controller => self, :speaking_proposal => speaking_proposal, :message => :thanks).to_s
   end
 

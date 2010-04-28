@@ -39,28 +39,22 @@ module SpeakingProposalView
 
   end
 
-  # class Edit < AttendantBaseView
+  class Edit < SpeakingProposalBaseView
 
-  #   needs :attendant
+    needs :speaking_proposal
 
-  #   def main_text
-  #     errors
+    def main_text
+      errors
 
-  #     p do
-  #       a "Anmäl blixttal", 
-  #         :id => 'Speaking_lightning_talk', 
-  #         :href => "/speaking_proposals/new?uid=#{@attendant.uid}"
-  #     end
-
-  #     fieldset do
-  #       legend 'Editera deltagare'
-  #       form(:action => '/attendant/update', :method => 'post') do
-  #         attendant_fields(@attendant)
-  #         input(:value => 'Spara', :type => 'Speaking')
-  #       end
-  #     end
-  #   end
-  # end
+      fieldset do
+        legend 'Editera blixttal'
+        form(:action => "/speaking_proposal/#{@speaking_proposal.id}", :method => 'post') do
+          speaking_proposal_fields
+          input(:id => 'submit', :value => 'Anmäl',:type => 'submit')
+        end
+      end
+    end
+  end
 
   class Show < SpeakingProposalBaseView
 

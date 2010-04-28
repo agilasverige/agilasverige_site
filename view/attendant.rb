@@ -35,7 +35,7 @@ module AttendantView
       h2 'Blixtal'
 
       @attendant.speaking_proposals.each do |speaking_proposal|
-        p speaking_proposal.title
+        a speaking_proposal.title, :href => "/speaking_proposal/#{speaking_proposal.id}/edit"
       end
 
       p do
