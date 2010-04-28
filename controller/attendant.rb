@@ -15,7 +15,7 @@ class AttendantController < Controller
         redirect("/attendant/#{attendant.uid}/edit")
       end
     elsif action == 'edit'
-      view = AttendantView::Edit.new(:controller => self, :attendant => attendant)
+      view = AttendantView::Edit.new(:controller => self, :attendant => attendant, :admin => (require_login == 'thedude'))
     else
       Ramaze::Log.debug("not edit: #{action.inspect}")
       view = AttendantView::Show.new(:controller => self, :attendant => attendant)

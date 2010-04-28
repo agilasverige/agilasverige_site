@@ -1,6 +1,8 @@
 module AttendantView
   class AttendantBaseView < TwoColumnView
 
+    needs :admin => ''
+
     include FormFields
 
     protected
@@ -28,7 +30,10 @@ module AttendantView
       checkbox(attendant.attending_dinner, 'Kommer på middagen', 'attending_dinner')
       text_field(attendant.food_preferences, 'Matpreferenser', 'food_preferences')
       text_area_field(attendant.comments, 'Kommentarer', 'comments')
-      checkbox(attendant.unregistered, 'Avbokad', 'unregistered')
+      Ramaze::Log.debug @admin
+      if(@admin)
+        checkbox(attendant.unregistered, 'Avbokad', 'unregistered')
+      end
     end
 
     def lightning_talk_info
