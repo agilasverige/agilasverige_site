@@ -12,6 +12,7 @@ module AdminView
           th 'Organisation'
           th 'Talare'
           th 'Middag'
+          th 'Matprefs'
           th 'Anmälningsdatum'
         end
         @attendants.each do |attendant|
@@ -23,6 +24,7 @@ module AdminView
             td attendant.organization
             td attendant.speaking_proposals.size > 0
             td attendant.attending_dinner
+            td attendant.food_preferences
             td attendant.created_at
           end
         end
