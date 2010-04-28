@@ -16,6 +16,7 @@ class Attendant
   key :food_preferences, String
   key :comments, String
   key :uid, String
+  key :unregistered, Boolean
 
   many :speaking_proposals
 

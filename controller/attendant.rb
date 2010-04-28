@@ -58,6 +58,7 @@ class AttendantController < Controller
     tmp_req = request.params.clone
     Ramaze::Log.debug('tmp ' + tmp_req.inspect)
     tmp_req['attending_dinner'] = checkbox("attending_dinner")
+    tmp_req['unregistered'] = checkbox("unregistered")
     Ramaze::Log.debug('sanitized_requesttmp ' + tmp_req.inspect)
     tmp_req
   end

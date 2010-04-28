@@ -16,16 +16,19 @@ module AdminView
           th 'Anmälningsdatum'
         end
         @attendants.each do |attendant|
+          status = (attendant.unregistered? ? 'unregistered' : '')
           tr do
-            td do
+            td :class  => status do
               a(attendant.last_name, :href => "/attendant/#{attendant.uid}")
             end
-            td attendant.first_name
-            td attendant.organization
-            td attendant.speaking_proposals.size > 0
-            td attendant.attending_dinner
-            td attendant.food_preferences
-            td attendant.created_at
+            td :class => status do
+              text attendant.first_name
+            end
+            td attendant.organization, :class  => status
+            td attendant.speaking_proposals.size > 0, :class => status
+            td attendant.attending_dinner, :class => status
+            td attendant.food_preferences, :class => status
+            td attendant.created_at, :class => status
           end
         end
       end

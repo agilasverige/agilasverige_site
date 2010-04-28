@@ -28,14 +28,19 @@ module AttendantView
       checkbox(attendant.attending_dinner, 'Kommer på middagen', 'attending_dinner')
       text_field(attendant.food_preferences, 'Matpreferenser', 'food_preferences')
       text_area_field(attendant.comments, 'Kommentarer', 'comments')
+      checkbox(attendant.unregistered, 'Avbokad', 'unregistered')
     end
 
     def lightning_talk_info
 
       h2 'Blixtal'
 
-      @attendant.speaking_proposals.each do |speaking_proposal|
-        a speaking_proposal.title, :href => "/speaking_proposal/#{speaking_proposal.id}/edit"
+      ol do
+        @attendant.speaking_proposals.each do |speaking_proposal|
+          li do
+            a speaking_proposal.title, :href => "/speaking_proposal/#{speaking_proposal.id}/edit"
+          end
+        end
       end
 
       p do
