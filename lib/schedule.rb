@@ -54,7 +54,7 @@ class Schedule
 
 
   def setup_monday
-    monday.add_slot(MONDAY_SLOTS[0], '4bc224a0e5ce30160c000005', '4bc30093e5ce306328000003')
+    monday.add_slot(MONDAY_SLOTS[0], '4bc224a0e5ce30160c000005', '4bc064ffe5ce307986000005')
     monday.add_slot(MONDAY_SLOTS[1], '4bc0ecf6e5ce302964000004', '4bc23de5e5ce301bcd000002')
     monday.add_slot(MONDAY_SLOTS[2], '4bb22b95e5ce300de2000002', '4bb1b0bbe5ce30622f000003')
     monday.add_slot(MONDAY_SLOTS[3], '4bc22ae6e5ce30160c00000c', '4bb3b895e5ce301793000002')
