@@ -1,11 +1,11 @@
 class SpeakingProposalController < Controller
 
   def index(id, action='')
+    speaking_proposal = SpeakingProposal.find(id)
     if request.post?
-      speaking_proposal = SpeakingProposal.find(id)
-      tempfile = request[:file].delete(:tempfile)
-      filename = request[:file].delete(:filename)
-      if tempfile
+      if request[:file]
+        tempfile = request[:file].delete(:tempfile)
+        filename = request[:file].delete(:filename)
         extension = File.extname filename
         filename = speaking_proposal.snake_title + extension
         FileUtils.cp(tempfile.path, "shared/files/presentations10/#{filename}")
@@ -18,8 +18,6 @@ class SpeakingProposalController < Controller
         redirect("/speaking_proposal/edit/#{speaking_proposal.id}")
       end
     end
-    speaking_proposal = ''
-    speaking_proposal = SpeakingProposal.find(id)
     unless(speaking_proposal)
       show404
     end

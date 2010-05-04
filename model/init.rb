@@ -1,7 +1,6 @@
 require 'activesupport'
 
 require 'mongo_mapper'
-require 'joint'
 
 MongoMapper.database = 'agilesweden'
 
