@@ -11,6 +11,11 @@ class AdminController < Controller
     AdminView::Attendants.new(:controller => self, :attendants => all).to_s
   end
 
+  def speakers
+    speakers = Attendant.speakers
+    AdminView::Speakers.new(:controller => self, :speakers => speakers).to_s
+  end
+
   def speaking_proposals
     speakers =Attendant.all
     Ramaze::Log.debug speakers.inspect

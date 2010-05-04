@@ -63,6 +63,30 @@ module AdminView
     end
   end
 
+  class Speakers < TwoColumnView 
+
+    needs :speakers
+
+    def main_text
+      h2 'Talare'
+      table do
+        tr do
+          th 'Id'
+          th 'Talare'
+          th 'Email'
+        end
+    Ramaze::Log.debug @speakers.inspect
+        @speakers.each do |speaker|
+          tr do
+            td speaker.id
+            td speaker.full_name
+            td speaker.email
+          end
+        end
+      end
+    end
+  end
+
   class Email < TwoColumnView
 
     include FormFields

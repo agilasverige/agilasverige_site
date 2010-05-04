@@ -24,6 +24,10 @@ class Attendant
 
   before_create :set_uid
 
+  def self.speakers
+    Attendant.all.select {|attendant| attendant.speaking_proposals.size > 0}
+  end
+    
   def full_name
     "#{first_name} #{last_name}"
   end
