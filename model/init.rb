@@ -1,7 +1,7 @@
 require 'activesupport'
-gem 'activesupport', :version => '2.3.5'
 
 require 'mongo_mapper'
+require 'joint'
 
 MongoMapper.database = 'agilesweden'
 

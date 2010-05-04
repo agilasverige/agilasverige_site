@@ -48,8 +48,9 @@ module SpeakingProposalView
 
       fieldset do
         legend 'Editera blixttal'
-        form(:action => "/speaking_proposal/#{@speaking_proposal.id}", :method => 'post') do
+        form(:action => "/speaking_proposal/#{@speaking_proposal.id}", :method => 'post', :enctype => 'multipart/formdata') do
           speaking_proposal_fields
+          file_field('Presentationsfil', 'file')
           input(:id => 'submit', :value => 'Anmäl',:type => 'submit')
         end
       end
@@ -81,6 +82,12 @@ module SpeakingProposalView
           tr do
             td "Beskrivning"
             td @speaking_proposal.abstract
+          end
+          tr do
+            td 'File'
+            td do 
+              a @speaking_proposal.filename, :href => "/files/presentations10/#{@speaking_proposal.filename}"
+            end
           end
         end
       end

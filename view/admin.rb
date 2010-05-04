@@ -47,6 +47,7 @@ module AdminView
           th 'Talare'
           th 'Titel'
           th 'Abstract'
+          th 'Fil'
         end
     Ramaze::Log.debug @speakers.inspect
         @speakers.each do |speaker|
@@ -56,6 +57,9 @@ module AdminView
               td speaker.full_name
               td speaking_proposal.title
               td speaking_proposal.abstract
+              td do
+                a speaking_proposal.filename, :href => "/files/presentations10/#{speaking_proposal.filename}"
+              end
             end
           end
         end
@@ -71,14 +75,12 @@ module AdminView
       h2 'Talare'
       table do
         tr do
-          th 'Id'
           th 'Talare'
           th 'Email'
         end
     Ramaze::Log.debug @speakers.inspect
         @speakers.each do |speaker|
           tr do
-            td speaker.id
             td speaker.full_name
             td speaker.email
           end

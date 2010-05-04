@@ -18,6 +18,13 @@ module FormFields
     end
   end
 
+  def file_field(label_text, id)
+    div(:class => 'field') do
+      label(label_text, :for => id, :id => "#{id}_label")
+      input(:name => id, :id => id, :type => 'file') 
+    end
+  end
+
   def checkbox(checked, label_text, id)
     div(:class => 'field') do
       label(label_text, :for => id, :id => "#{id}_label")

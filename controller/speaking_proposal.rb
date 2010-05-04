@@ -2,7 +2,16 @@ class SpeakingProposalController < Controller
 
   def index(id, action='')
     if request.post?
-      if SpeakingProposal.update(id, request.params)
+      speaking_proposal = SpeakingProposal.find(id)
+      tempfile = request[:file].delete(:tempfile)
+      filename = request[:file].delete(:filename)
+      if tempfile
+        extension = File.extname filename
+        filename = speaking_proposal.snake_title + extension
+        FileUtils.cp(tempfile.path, "shared/files/presentations10/#{filename}")
+        speaking_proposal.filename = filename
+      end
+      if speaking_proposal.update_attributes(request.params)
         redirect("/speaking_proposal/#{id}")
       else
         flash[:error] = speaking_proposal.errors 

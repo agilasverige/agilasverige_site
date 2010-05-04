@@ -21,7 +21,7 @@ describe SpeakingProposal do
     end
 
     it 'should have snake_title' do
-      @speaking_proposal.set_snake_title.should == 'test_title'
+      @speaking_proposal.snake_title.should == 'test_title'
     end
 
   end
