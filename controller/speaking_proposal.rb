@@ -9,6 +9,7 @@ class SpeakingProposalController < Controller
         extension = File.extname filename
         filename = speaking_proposal.snake_title + extension
         FileUtils.cp(tempfile.path, "public/files/presentations10/#{filename}")
+        FileUtils.chmod(0644, "public/files/presentations10/#{filename}")
         speaking_proposal.filename = filename
       end
       if speaking_proposal.update_attributes(request.params)
