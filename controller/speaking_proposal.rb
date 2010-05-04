@@ -8,7 +8,7 @@ class SpeakingProposalController < Controller
         filename = request[:file].delete(:filename)
         extension = File.extname filename
         filename = speaking_proposal.snake_title + extension
-        FileUtils.cp(tempfile.path, "shared/files/presentations10/#{filename}")
+        FileUtils.cp(tempfile.path, "public/files/presentations10/#{filename}")
         speaking_proposal.filename = filename
       end
       if speaking_proposal.update_attributes(request.params)
