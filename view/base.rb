@@ -105,13 +105,13 @@ class BaseView < Erector::Widget
             height: 300,
             theme: {
               shell: {
-                background: '#8ec1da',
+                background: '#e20d82',
                 color: '#ffffff'
               },
               tweets: {
                 background: '#ffffff',
                 color: '#444444',
-                links: '#1985b5'
+                links: '#e20d82'
               }
             },
             features: {
