@@ -1,13 +1,61 @@
 module ProgramView
-  class Index < TwoColumnView
+  class ProgramBaseView < TwoColumnView
 
     needs :schedule, :sessions
 
-    def main_text
-      @sessions.each do |session|
-        Ramaze::Log.debug session.id
+    def talkinfo(id = '')
+      session = find_session(id)
+      p(:class => 'title') do
+        a(:class => 'fancybox', :title => proposal_title(session), :href => "\##{id}") do
+          text !session.nil? ? session.title : 'unknown'
+        end
       end
-      Ramaze::Log.debug @schedule.inspect
+      p(:class => 'speaker') do 
+        text "#{!session.nil? ? session.speaker.full_name : 'unknown'} - #{!session.nil? ? session.speaker.organization : 'unknown'}"
+      end
+      div(:id => id, :class => 'hidden') do
+        p !session.nil? ? session.abstract : 'unknown'
+        p(:class => 'speaker') do
+          text 'Talare är '
+          text "#{!session.nil? ? session.speaker.full_name : 'unknown'} från #{!session.nil? ? session.speaker.organization : 'unknown'}"
+        end
+      end
+    end
+    def proposal_title(session)
+      !session.nil? ? session.title : 'unknown'
+    end
+
+    def find_session(id)
+      Ramaze::Log.debug "id: #{id}"
+
+      @sessions.find do |candidate|
+        candidate.id.to_s == id
+      end
+    end
+
+    def submenu_items
+      [['Måndag', '/program/monday'], ['Tisdag', '/program/tuesday']]
+    end
+
+    def local_javascript
+      script(:type => "text/javascript", :src => "/scripts/jquery-1.3.2.min.js"){}
+      script(:type => "text/javascript", :src => "/fancybox/jquery.fancybox-1.2.1.pack.js"){}
+      script(:type => "text/javascript", :src => "/scripts/program.js"){}
+    end
+
+    def css
+      link :rel => "stylesheet", :href => "/fancybox/jquery.fancybox.css", :type => "text/css", :media => "screen"
+    end      
+  end
+
+  class Monday < ProgramBaseView
+
+
+    def main_text
+      show_monday
+    end
+
+    def show_monday
       h1 'Måndag'
       div(:id => 'test', :style => 'display: none;')  do
         p 'hej'
@@ -103,6 +151,16 @@ module ProgramView
           td(:class => 'paus', :colspan => '2') do text 'Open Space' end
         end
       end
+    end
+  end
+  class Tuesday < ProgramBaseView
+
+
+    def main_text
+      show_tuesday
+    end
+
+    def show_tuesday
       h1 'Tisdag'
       table do
         tr do
@@ -173,46 +231,5 @@ module ProgramView
         end
       end
     end
-
-    def talkinfo(id = '')
-      session = find_session(id)
-      p(:class => 'title') do
-        a(:class => 'fancybox', :title => proposal_title(session), :href => "\##{id}") do
-          text !session.nil? ? session.title : 'unknown'
-        end
-      end
-      p(:class => 'speaker') do 
-        text "#{!session.nil? ? session.speaker.full_name : 'unknown'} - #{!session.nil? ? session.speaker.organization : 'unknown'}"
-      end
-      div(:id => id, :class => 'hidden') do
-        p !session.nil? ? session.abstract : 'unknown'
-        p(:class => 'speaker') do
-          text 'Talare är '
-          text "#{!session.nil? ? session.speaker.full_name : 'unknown'} från #{!session.nil? ? session.speaker.organization : 'unknown'}"
-        end
-      end
-    end
-
-    def proposal_title(session)
-      !session.nil? ? session.title : 'unknown'
-    end
-
-    def find_session(id)
-      Ramaze::Log.debug "id: #{id}"
-
-      @sessions.find do |candidate|
-        candidate.id.to_s == id
-      end
-    end
-
-    def local_javascript
-      script(:type => "text/javascript", :src => "/scripts/jquery-1.3.2.min.js"){}
-      script(:type => "text/javascript", :src => "/fancybox/jquery.fancybox-1.2.1.pack.js"){}
-      script(:type => "text/javascript", :src => "/scripts/program.js"){}
-    end
-
-    def css
-      link :rel => "stylesheet", :href => "/fancybox/jquery.fancybox.css", :type => "text/css", :media => "screen"
-    end      
   end
 end

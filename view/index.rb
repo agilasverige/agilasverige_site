@@ -13,7 +13,6 @@ module MainView
 
 
     def submenu_items
-      Ramaze::Log.debug 'hej'
       [['Om konferensen', '/']]
     end
   end
