@@ -26,7 +26,6 @@ module ProgramView
     end
 
     def find_session(id)
-      Ramaze::Log.debug "id: #{id}"
 
       @sessions.find do |candidate|
         candidate.id.to_s == id

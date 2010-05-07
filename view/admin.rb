@@ -49,7 +49,6 @@ module AdminView
           th 'Abstract'
           th 'Fil'
         end
-    Ramaze::Log.debug @speakers.inspect
         @speakers.each do |speaker|
           speaker.speaking_proposals.each do |speaking_proposal|
             tr do
@@ -78,7 +77,6 @@ module AdminView
           th 'Talare'
           th 'Email'
         end
-    Ramaze::Log.debug @speakers.inspect
         @speakers.each do |speaker|
           tr do
             td speaker.full_name

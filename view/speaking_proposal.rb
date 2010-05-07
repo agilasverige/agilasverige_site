@@ -48,7 +48,7 @@ module SpeakingProposalView
 
       fieldset do
         legend 'Editera blixttal'
-        form(:action => "/speaking_proposal/#{@speaking_proposal.id}", :method => 'post', :enctype => 'multipart/formdata') do
+        form(:action => "/speaking_proposal/#{@speaking_proposal.id}", :method => 'post', :enctype => 'multipart/form-data') do
           speaking_proposal_fields
           file_field('Presentationsfil', 'file')
           input(:id => 'submit', :value => 'Anmäl',:type => 'submit')
