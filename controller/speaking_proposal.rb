@@ -7,7 +7,7 @@ class SpeakingProposalController < Controller
         tempfile = request[:file].delete(:tempfile)
         filename = request[:file].delete(:filename)
         extension = File.extname filename
-        filename = speaking_proposal.snake_title + extension
+        filename = speaking_proposal.base_file_name + extension
         FileUtils.cp(tempfile.path, "public/files/presentations10/#{filename}")
         FileUtils.chmod(0644, "public/files/presentations10/#{filename}")
         speaking_proposal.filename = filename
