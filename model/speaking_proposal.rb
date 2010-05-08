@@ -9,9 +9,9 @@ class SpeakingProposal
   key :filename, String
 
 
-  def snake_title
-    title.gsub!(/\s/, "_")
-    title.gsub(/[^\x20-\x7E]/,"")
+  def base_file_name
+    title.gsub!(/\s/,'_')
+    title.gsub!(/[^a-zA-Z0-9_]/, "")
   end
 
 
