@@ -50,6 +50,11 @@ describe SpeakingProposal do
       @speaking_proposal.base_file_name.should == 'heja_alla_brd'
     end
 
+    it 'should handle personlig kanban' do
+      @speaking_proposal.title = 'Personlig kanban'
+      @speaking_proposal.base_file_name.should == 'Personlig_kanban'
+    end
+
   end
       
 end

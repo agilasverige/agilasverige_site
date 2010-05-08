@@ -10,8 +10,7 @@ class SpeakingProposal
 
 
   def base_file_name
-    title.gsub!(/\s/,'_')
-    title.gsub!(/[^a-zA-Z0-9_]/, "")
+    title.gsub(/\s/,'_').gsub(/[^a-zA-Z0-9_]/, "")
   end
 
 
