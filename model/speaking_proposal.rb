@@ -10,8 +10,7 @@ class SpeakingProposal
 
 
   def snake_title
-    title.gsub!(/\s/, "_")
-    title.gsub(/[^\x20-\x7E]/,"")
+    title.gsub(/[^A-Za-z0-9]/,"")
   end
 
 
