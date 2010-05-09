@@ -25,16 +25,11 @@ module AdminView
               text attendant.first_name
             end
             td :class  => status do 
-              br
-              attendant.organization 
-              br
-              attendant.address
-              br
-              attendant.zip_code
-              br
-              attendant.postal_address
-              br
-              attendant.invoice_reference
+              p attendant.organization 
+              p attendant.address
+              p attendant.zip_code
+              p attendant.postal_address
+              p attendant.invoice_reference
             end
             td attendant.speaking_proposals.size > 0, :class => status
             td attendant.attending_dinner, :class => status
