@@ -9,7 +9,7 @@ module AdminView
         tr do
           th 'Efternamn'
           th 'Förnamn'
-          th 'Organisation'
+          th 'Fakturaadress'
           th 'Talare'
           th 'Middag'
           th 'Matprefs'
@@ -24,7 +24,13 @@ module AdminView
             td :class => status do
               text attendant.first_name
             end
-            td attendant.organization, :class  => status
+            td :class  => status do 
+              br attendant.organization 
+              br attendant.address
+              br attendant.zip_code
+              br attendant.postal_address
+              br @attendant.invoice_reference
+            end
             td attendant.speaking_proposals.size > 0, :class => status
             td attendant.attending_dinner, :class => status
             td attendant.food_preferences, :class => status
