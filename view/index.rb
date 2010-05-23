@@ -5,7 +5,7 @@ module MainView
   protected
 
     def main_text
-      filename = File.join(File.dirname(__FILE__), 'introtext.mkd')
+      filename = File.join(File.dirname(__FILE__), 'thankyou.mkd')
       text = File.read(filename)
       html = RDiscount.new(text).to_html
       rawtext html
