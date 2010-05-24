@@ -93,7 +93,7 @@ class BaseView < Erector::Widget
       end
       p :id => 'follow_on_twitter' do
         a :href => "http://www.twitter.com/agilasverige" do
-          img :src => "http://twitter-badges.s3.amazonaws.com/follow_me-b.png", :alt => "Follow mahnve on Twitter"
+          img :src => "/images/twitter-follow-us-button.png", :alt => "Follow mahnve on Twitter"
         end
       end
       div :id => 'tweets' do
@@ -172,41 +172,40 @@ class BaseView < Erector::Widget
       #   p(:class => "reminder") {text "25 april 2010"}
       # end
 
-      h4 "Kommentarer på frågan 'Vad tar du med dig hem', från 2008:"
+      h4 "Kommentarer från 2010:"
       blockquote do
-        p "\"Lyckan av att umgås med så många engagerade människor\""
+        p "\"Varför kan man inte ha så här kul varje dag?\" --Sofia Cirverius, Bink"
       end
       blockquote do
-        p "\"En massa inspiration från duktiga människor som jag har lyssnat på\""
+        p "\"Agila Sverige 2010 - vilka dagar!\" --David Vujic, Know IT"
       end
       blockquote do
-        p "\"Att det är de som är intresserade av något som kan bidra, dvs openspace-formatet\""
+        p "\"Agilasverige över. Fascinerande med en bransch där (åtminstonde konsulterna) strävar så intensivt och metodiskt för att förbättra sitt arbete.\" --Peter Antman, Atex"
       end
+      # h2 "Vad kostar det?"
+      # table(:id => "prices") do
+      #   tr(:class => "oddrow") do
+      #     td "Deltagare:"
+      #     td "1000 kronor exkl.moms"
+      #   end
+      #   tr(:class => "evenrow") do
+      #     td "Talare:"
+      #     td "0 kronor"
+      #   end
+      # end
+      # p 'Alla priser exklusive moms'
 
-      h2 "Vad kostar det?"
-      table(:id => "prices") do
-        tr(:class => "oddrow") do
-          td "Deltagare:"
-          td "1000 kronor exkl.moms"
-        end
-        tr(:class => "evenrow") do
-          td "Talare:"
-          td "0 kronor"
-        end
-      end
-      p 'Alla priser exklusive moms'
-
-      h2 "Vad ingår?"
-      ul do
-        li "Två dagars konferens"
-        li "Konferensmiddag"
-      end
-      h2 "Var?"
-      p do
-        a(:href => "http://www.citykonferensen.se/") do
-          img(:src => "/images/citykonferens.png", :alt => 'Citykonferensen logo')
-        end
-      end
+      # h2 "Vad ingår?"
+      # ul do
+      #   li "Två dagars konferens"
+      #   li "Konferensmiddag"
+      # end
+      # h2 "Var?"
+      # p do
+      #   a(:href => "http://www.citykonferensen.se/") do
+      #     img(:src => "/images/citykonferens.png", :alt => 'Citykonferensen logo')
+      #   end
+      # end
 
     end
   end
