@@ -91,6 +91,11 @@ class BaseView < Erector::Widget
           end
         end
       end
+      p :id => 'follow_on_twitter' do
+        a :href => "http://www.twitter.com/agilasverige" do
+          img :src => "http://twitter-badges.s3.amazonaws.com/follow_me-b.png", :alt => "Follow mahnve on Twitter"
+        end
+      end
       div :id => 'tweets' do
         script :src => "http://widgets.twimg.com/j/2/widget.js"
         javascript <<-END
