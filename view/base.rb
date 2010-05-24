@@ -180,7 +180,7 @@ class BaseView < Erector::Widget
         p "\"Agila Sverige 2010 - vilka dagar!\" --David Vujic, Know IT"
       end
       blockquote do
-        p "\"Agilasverige är över. Fascinerande med en bransch där (åtminstonde konsulterna) strävar så intensivt och metodiskt för att förbättra sitt arbete.\" --Peter Antman, Atex"
+        p "\"Agila Sverige är över. Fascinerande med en bransch där (åtminstonde konsulterna) strävar så intensivt och metodiskt för att förbättra sitt arbete.\" --Peter Antman, Atex"
       end
       # h2 "Vad kostar det?"
       # table(:id => "prices") do
