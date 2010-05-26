@@ -28,7 +28,7 @@ module PreviousConferences
     def main_text
       h1 'Agila Sverige 2009'
       p do
-        a 'Videoupptagningar', :href => 'http://www.vimeo.com/user2794604'
+        a 'Videoupptagningar', :href => 'http://www.vimeo.com/user2794604/videos'
         text ' och '
         a 'presentationsmaterial', :href => 'http://www.slideshare.net/event/agila-sverige-2009/slideshows'
         text ' från Agila Sverige 2009'
