@@ -53,8 +53,29 @@ describe PreviousConferences::ZeroNine do
     @view = Nokogiri.HTML(PreviousConferences::ZeroNine.new(:controller => DummyController.new).to_s)
   end
 
-  it 'should have a link to vimeo archive' 
+  it 'should have a link to vimeo archive' do
+    @view.inner_html.should =~ /http:\/\/www.vimeo.com\/user2794604/
+  end
 
-  it 'should have a link to slideshare'
+  it 'should have a link to slideshare' do
+    @view.inner_html.should =~ /http:\/\/www.slideshare.net\/event\/agila-sverige-2009\/slideshows/
+  end
+
+end
+
+describe PreviousConferences::OneZero do
+
+  before :each do
+    class DummyController
+      def name 
+        "DummyController"
+      end
+    end
+    @view = Nokogiri.HTML(PreviousConferences::OneZero.new(:controller => DummyController.new).to_s)
+  end
+
+  it 'should have a link to slideshare' do
+    @view.inner_html.should =~ /http:\/\/www.slideshare.net\/event\/agila-sverige-2010\/slideshows/
+  end
 
 end
