@@ -1,7 +1,7 @@
 class PreviousConferencesController < Controller
 
   def index
-    redirect '/previous_conferences/zeroeight'
+    redirect '/previous_conferences/onezero'
   end
 
   def zeroeight
