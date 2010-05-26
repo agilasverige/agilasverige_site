@@ -1,14 +1,15 @@
 module PreviousConferences
   class PreviousConferencesView < ThreeColumnView
-  
+
 
     protected
 
     def submenu_items
       [['2008', '/previous_conferences/zeroeight'],
-      ['2009', '/previous_conferences/zeronine']]
+      ['2009', '/previous_conferences/zeronine'],
+      ['2010', '/previous_conferences/onezero']]
     end
-    
+
   end
 
   class ZeroEight < PreviousConferencesView
@@ -54,7 +55,16 @@ module PreviousConferences
         a 'Videoupptagningar från Agila Sverige 2009', :href => 'http://www.vimeo.com/user2794604'
       end
       p do
-        a 'Presentationerna', :href => 'http://www.slideshare.net/event/agila-sverige-2009'
+        a 'Presentationerna', :href => 'http://www.slideshare.net/event/agila-sverige-2009/slideshows'
+      end
+    end
+  end
+
+  class OneZero < PreviousConferencesView
+
+    def main_text
+      p do
+        a 'Presentationerna', :href => 'http://www.slideshare.net/event/agila-sverige-2010/slideshows'
       end
     end
   end
