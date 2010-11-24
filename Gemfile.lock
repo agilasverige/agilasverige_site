@@ -1,0 +1,49 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.1)
+    erector (0.8.1)
+      hoe (>= 1.5.0)
+    haml (3.0.23)
+    hoe (2.6.2)
+      rake (>= 0.8.7)
+      rubyforge (>= 2.0.4)
+    i18n (0.4.2)
+    innate (2010.03)
+      rack (= 1.1.0)
+    jnunemaker-validatable (1.8.1)
+    json_pure (1.4.6)
+    mail (2.2.9)
+      activesupport (>= 2.3.6)
+      i18n (~> 0.4.1)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    mime-types (1.16)
+    mongo (0.18.3)
+    mongo_mapper (0.7.0)
+      activesupport (>= 2.3)
+      jnunemaker-validatable (= 1.8.1)
+      mongo (= 0.18.3)
+    polyglot (0.3.1)
+    pony (1.0.1)
+      mail (> 2.0)
+    rack (1.1.0)
+    rake (0.8.7)
+    ramaze (2010.03)
+      innate (= 2010.03)
+    rdiscount (1.6.5)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    treetop (1.4.8)
+      polyglot (>= 0.3.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  erector
+  haml
+  mongo_mapper (= 0.7.0)
+  pony
+  ramaze (= 2010.03)
+  rdiscount

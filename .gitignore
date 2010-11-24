@@ -1,12 +1,4 @@
-*.swp
-*.pid
-*.tmproj
-.DS_Store
-tags
-log/*.*
-tmp
-logs/*.*
-spec/log/*.*
-coverage/*.*
-couchdb.*
-cache
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
