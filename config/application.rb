@@ -38,5 +38,13 @@ module Agilasverige
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    config.generators do |g|
+      g.orm :active_record
+      g.template_engine :haml
+      g.test_framework :rspec, :fixture => true
+      g.fixture_replacement :machinist
+    end
+
   end
 end
