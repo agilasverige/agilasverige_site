@@ -7,9 +7,14 @@ gem 'rails', '3.0.0'
 
 gem 'pg'
 gem 'erector'
+gem 'inherited_resources'
+
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
 
 group :test do
-  gem 'rspec'
   gem 'machinist'
 end
 
