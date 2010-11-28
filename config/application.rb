@@ -41,7 +41,7 @@ module Agilasverige
 
     config.generators do |g|
       g.orm :active_record
-      g.template_engine :haml
+      g.template_engine :erector
       g.test_framework :rspec, :fixture => true
       g.fixture_replacement :machinist
     end
