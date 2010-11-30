@@ -8,6 +8,7 @@ gem 'rails', '3.0.0'
 gem 'pg'
 gem 'erector'
 gem 'inherited_resources'
+gem 'haml'
 
 group :test, :development do
   gem 'rspec'
