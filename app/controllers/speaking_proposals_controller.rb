@@ -1,2 +1,3 @@
-class SpeakingProposalsController < ApplicationController
+class SpeakingProposalsController < InheritedResources::Base
+
 end
