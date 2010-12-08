@@ -30,22 +30,18 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    bson (1.1.4)
+    bson_ext (1.1.2)
     builder (2.1.2)
     diff-lcs (1.1.2)
-    erector (0.8.1)
-      hoe (>= 1.5.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     haml (3.0.23)
     has_scope (0.5.0)
-    hoe (2.7.0)
-      rake (>= 0.8.7)
-      rubyforge (>= 2.0.4)
     i18n (0.4.2)
     inherited_resources (1.1.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
-    json_pure (1.4.6)
     machinist (1.0.6)
     mail (2.2.10)
       activesupport (>= 2.3.6)
@@ -53,7 +49,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    pg (0.9.0)
+    mongo (1.1.4)
+      bson (>= 1.1.1)
+    mongoid (2.0.0.beta.20)
+      activemodel (~> 3.0)
+      mongo (~> 1.1)
+      tzinfo (~> 0.3.22)
+      will_paginate (~> 3.0.pre)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -85,22 +87,21 @@ GEM
     rspec-mocks (2.1.0)
     rspec-rails (2.1.0)
       rspec (~> 2.1.0)
-    rubyforge (2.0.4)
-      json_pure (>= 1.1.7)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  erector
+  bson_ext (= 1.1.2)
   haml
   inherited_resources
   machinist
-  pg
+  mongoid (= 2.0.0.beta.20)
   rails (= 3.0.0)
   rspec
   rspec-rails
