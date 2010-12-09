@@ -30,32 +30,5 @@ describe SpeakingProposal do
     speaking_proposal
   end
 
-  describe 'handles file name' do
-
-    before(:each) do
-      @speaking_proposal = SpeakingProposal.new
-    end
-
-    it 'should remove non ascii characters' do
-      @speaking_proposal.title = 'hejaåäö!@#$%^&*'
-      @speaking_proposal.base_file_name.should == 'heja'
-    end
-
-    it 'should remove trailing question marks' do
-      @speaking_proposal.title = 'he?ja?'
-      @speaking_proposal.base_file_name.should == 'heja'
-    end
-
-    it 'should convert spaces to underscores' do
-      @speaking_proposal.title = 'heja alla bröd'
-      @speaking_proposal.base_file_name.should == 'heja_alla_brd'
-    end
-
-    it 'should handle personlig kanban' do
-      @speaking_proposal.title = 'Personlig kanban'
-      @speaking_proposal.base_file_name.should == 'Personlig_kanban'
-    end
-
-  end
       
 end
