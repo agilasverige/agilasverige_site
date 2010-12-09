@@ -6,7 +6,7 @@ gem 'rails', '3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mongoid', "2.0.0.beta.20"
-gem "bson_ext", "1.1.2"
+gem "bson_ext", "1.1.4"
 gem 'inherited_resources'
 gem 'haml'
 

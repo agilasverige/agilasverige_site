@@ -1,3 +1,4 @@
+# coding: utf-8
 class Schedule
 
   MONDAY_SLOTS = ['09:12 - 09:22',

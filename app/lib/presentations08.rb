@@ -1,3 +1,4 @@
+# coding: utf-8
 class Presentations08
 
   attr_reader :presentations
