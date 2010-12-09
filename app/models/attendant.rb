@@ -2,6 +2,7 @@ class Attendant
 
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Validations
 
   field :first_name
   field :last_name
@@ -17,6 +18,15 @@ class Attendant
   field :food_preferences
   field :comments
   field :unregistered
+  field :uid
+
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :email
+  validates_presence_of :organization
+  validates_presence_of :address
+  validates_presence_of :zip_code
+  validates_presence_of :postal_address
 
   references_many :speaking_proposals, :stored_as => :array, :inverse_of => :speakers
 
@@ -35,13 +45,13 @@ class Attendant
   end
 
   def unique_url
-    "http://www.agilasverige.se/attendant/#{@uid}"
+    "http://www.agilasverige.se/attendant/#{self.uid}"
   end
 
   private
 
   def set_uid
-    self.uid  = rand(2**256).to_s(36)[0..16]
+    self.uid = rand(2**256).to_s(36)[0..16]
   end
 
 

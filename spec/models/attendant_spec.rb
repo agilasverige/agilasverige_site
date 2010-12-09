@@ -1,6 +1,7 @@
 require File.expand_path(File.join(File.dirname(__FILE__),'..','spec_helper'))
 
 describe Attendant do
+
   describe 'Without mandatory arguments' do
     before(:each) do
       @attendant = Attendant.new
@@ -10,6 +11,7 @@ describe Attendant do
       @attendant.valid?.should == false
     end
   end
+
   describe 'Created with all mandatory argument' do
 
     before(:each) do
