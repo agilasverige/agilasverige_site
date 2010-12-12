@@ -1,0 +1,73 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv"}
+  %head
+    %title Agila Sverige 2011
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
+  %body{:id => controller.name}
+    %header
+      .logo
+        %hgroup
+          %h1
+            %span
+              = link_to "Agila Sverige 2011", root_path
+          %h2 
+            %span "Stockholm 23-24 maj 2011"
+      %nav
+        %ul
+          %li= link_to 'Hem', '#'
+        %ul
+          %li= link_to 'Anmälan', '#'
+        %ul
+          %li= link_to 'Program', '#'
+        %ul
+          %li= link_to 'Tidigare konferenser', '#'
+    %section.main
+      .subnavigation
+        %ul
+          %li
+      .follow_us_twitter
+        %a{:href => "http://www.twitter.com/agilasverige"} Follow us on Twitter 
+      .tweets
+        %script{:src => "http://widgets.twimg.com/j/2/widget.js"}
+        :javascript
+          new TWTR.Widget({
+            version: 2,
+            type: 'search',
+            search: '#agilasverige',
+            interval: 20000,
+            title: 'Twitter',
+            subject: '',
+            width: 'auto',
+            height: 300,
+            theme: {
+              shell: {
+                background: '#e20d82',
+                color: '#ffffff'
+              },
+              tweets: {
+                background: '#ffffff',
+                color: '#444444',
+                links: '#e20d82'
+              }
+            },
+            features: {
+              scrollbar: true,
+              loop: true,
+              live: true,
+              hashtags: true,
+              timestamp: true,
+              avatars: true,
+              behavior: 'default'
+            }
+          }).render().start();
+    %footer
+      .contact
+        %span &copy; Agila Sverige 2010 |
+        %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
+      :javascript 
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      :javascript
+        var pageTracker = _gat._getTracker("UA-160245-3");
+        pageTracker._initData();
+        pageTracker._trackPageview();
