@@ -9,6 +9,7 @@ gem 'mongoid', "2.0.0.beta.20"
 gem "bson_ext", "1.1.4"
 gem 'inherited_resources'
 gem 'haml'
+gem 'rdiscount'
 
 group :test, :development do
   gem 'rspec'
