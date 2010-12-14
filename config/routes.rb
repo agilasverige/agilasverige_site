@@ -1,5 +1,14 @@
 Agilasverige::Application.routes.draw do
+
   resources :speaking_proposals
+
+  resource :attendants
+
+  resource :attendant do
+    resource :speaking_proposals 
+  end
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

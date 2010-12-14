@@ -10,6 +10,8 @@ gem "bson_ext", "1.1.4"
 gem 'inherited_resources'
 gem 'haml'
 gem 'rdiscount'
+gem 'formtastic'
+gem 'show_for'
 
 group :test, :development do
   gem 'rspec'
