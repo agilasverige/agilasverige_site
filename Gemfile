@@ -12,6 +12,8 @@ gem 'haml'
 gem 'rdiscount'
 gem 'formtastic'
 gem 'show_for'
+gem 'compass'
+
 
 group :test, :development do
   gem 'rspec'
