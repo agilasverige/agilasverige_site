@@ -5,7 +5,6 @@
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
     = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
-    = formtastic_stylesheet_link_tag
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
   %body{:id => controller.controller_name, :class => :bp}
@@ -20,11 +19,8 @@
       %nav
         %ul
           %li= link_to 'Hem', root_path
-        %ul
           %li= link_to 'Anmälan', new_attendant_path
-        %ul
           %li= link_to 'Program', '#'
-        %ul
           %li= link_to 'Tidigare konferenser', '#'
     .main
       %section

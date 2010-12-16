@@ -3,4 +3,14 @@
 // forms from scratch if you need to.
 
 form {
-  @include blueprint-form; }
+  @include blueprint-form; 
+
+  label {
+    display: block;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+

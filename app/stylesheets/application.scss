@@ -10,5 +10,32 @@
 // Combine the partials into a single screen stylesheet.
 @import "partials/page";
 @import "partials/form";
-@import "partials/two_col";
+@import "compass/utilities/text/replacement";
+@import "compass/css3/inline-block";
+@import "compass/utilities/lists/horizontal-list";
 
+body {
+    @include container;
+}
+
+header {
+  .logo {
+    h1, h2 {
+      @include inline-block;
+    }
+    h1 {
+     @include replace-text-with-dimensions('as_logo.png');
+    }
+    h2 {
+     @include replace-text-with-dimensions('postit_note.jpg');
+    }
+  }
+}
+
+nav {
+
+  ul {
+    @include horizontal-list;
+  }
+
+}
