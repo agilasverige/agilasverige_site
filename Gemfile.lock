@@ -30,11 +30,15 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    bcrypt-ruby (2.1.2)
     bson (1.1.4)
     bson_ext (1.1.4)
     builder (2.1.2)
     compass (0.10.6)
       haml (>= 3.0.4)
+    devise (1.1.5)
+      bcrypt-ruby (~> 2.1.2)
+      warden (~> 1.0.2)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -102,6 +106,8 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    warden (1.0.3)
+      rack (>= 1.0.0)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -110,6 +116,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext (= 1.1.4)
   compass
+  devise
   formtastic
   haml
   inherited_resources

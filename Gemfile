@@ -13,6 +13,7 @@ gem 'rdiscount'
 gem 'formtastic'
 gem 'show_for'
 gem 'compass'
+gem 'devise'
 
 
 group :test, :development do
