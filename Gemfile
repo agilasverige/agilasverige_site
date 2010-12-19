@@ -19,10 +19,10 @@ gem 'devise'
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'machinist'
 end
 
 group :test do
-  gem 'machinist'
 end
 
 # Use unicorn as the web server
