@@ -39,3 +39,24 @@ nav {
   }
 
 }
+
+.main {
+
+  @include column(24);
+
+  .sidebar {
+    @include column(6);
+  }
+
+  section {
+    @include column(12);
+  }
+
+  .sponsors {
+    @include column(6, true);
+  }
+}
+
+footer {
+  @include column(24, true);
+}

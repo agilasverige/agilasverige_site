@@ -23,9 +23,7 @@
           %li= link_to 'Program', '#'
           %li= link_to 'Tidigare konferenser', '#'
     .main
-      %section
-        = yield
-      %aside
+      %aside.sidebar
         .subnavigation
           %ul
             %li
@@ -64,6 +62,8 @@
                 behavior: 'default'
               }
             }).render().start();
+      %section
+        = yield
       %aside.sponsors 
     %footer
       .contact
