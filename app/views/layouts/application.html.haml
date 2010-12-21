@@ -19,12 +19,15 @@
       %nav
         %ul
           %li= link_to 'Hem', root_path
-          %li= link_to 'Anmälan', new_attendant_path
+          %li= link_to 'Anmälan', new_user_registration_path
           %li= link_to 'Program', '#'
           %li= link_to 'Tidigare konferenser', '#'
+          - if user_signed_in?
+            %li= link_to 'Dina inställningar', edit_user_path
+            %li= link_to 'Anmäl blixttal', new_user_speaking_proposal_path
     .main
       #flash
-        .- if flash.size > 0
+        - if flash.size > 0
           - if flash[:notice]
             %p.flash.notice= flash[:notice]
           - if flash[:error]

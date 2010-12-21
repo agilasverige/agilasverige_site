@@ -1,13 +1,13 @@
 Agilasverige::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :users }
 
   resources :speaking_proposals
 
-  resource :attendants
+  resources :users
 
-  resource :attendant do
-    resource :speaking_proposals 
+  resource :user do
+    resources :speaking_proposals 
   end
 
   resource :home

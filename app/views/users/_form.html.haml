@@ -1,9 +1,10 @@
--# charset utf-8
-= semantic_form_for @attendant do |f|
+= semantic_form_for @user do |f|
   = f.inputs :name => 'Personuppgifter' do
     = f.input :first_name
     = f.input :last_name
     = f.input :email, :as => :email
+    = f.input :password
+    = f.input :password_confirmation
     = f.input :organization
     = f.input :address
     = f.input :zip_code
