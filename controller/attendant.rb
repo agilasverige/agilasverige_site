@@ -1,54 +1,54 @@
-class AttendantController < Controller
+class UserController < Controller
 
   def index(uid, action='')
     Ramaze::Log.debug("Action: #{action}")
-    attendant = Attendant.find_by_uid(uid)
-    Ramaze::Log.debug("Attendant: #{attendant.inspect}")
-    unless(attendant)
+    user = User.find_by_uid(uid)
+    Ramaze::Log.debug("User: #{user.inspect}")
+    unless(user)
       show404
     end
     if request.post?
-      if attendant.update_attributes!(sanitized_request)
-        redirect("/attendant/#{attendant.uid}")
+      if user.update_attributes!(sanitized_request)
+        redirect("/user/#{user.uid}")
       else
-        flash[:error] = attendant.errors 
-        redirect("/attendant/#{attendant.uid}/edit")
+        flash[:error] = user.errors 
+        redirect("/user/#{user.uid}/edit")
       end
     elsif action == 'edit'
-      view = AttendantView::Edit.new(:controller => self, :attendant => attendant, :admin => (require_login == 'thedude'))
+      view = UserView::Edit.new(:controller => self, :user => user, :admin => (require_login == 'thedude'))
     else
       Ramaze::Log.debug("not edit: #{action.inspect}")
-      view = AttendantView::Show.new(:controller => self, :attendant => attendant)
+      view = UserView::Show.new(:controller => self, :user => user)
     end
     view.to_s
   end
 
   def new
     if request.get?
-      AttendantView::New.new(:controller => self).to_s
+      UserView::New.new(:controller => self).to_s
     elsif request.post?
       Ramaze::Log.debug(request.params.inspect)
-      attendant = Attendant.create(sanitized_request)
-      Ramaze::Log.debug(attendant)
+      user = User.create(sanitized_request)
+      Ramaze::Log.debug(user)
       begin
-        if attendant.save
-          send_confirmation_email(attendant)
-          redirect("/attendant/thankyou/#{attendant.uid}")
+        if user.save
+          send_confirmation_email(user)
+          redirect("/user/thankyou/#{user.uid}")
         else
-          flash[:error] = attendant.errors 
-          redirect('/attendant/new')
+          flash[:error] = user.errors 
+          redirect('/user/new')
         end
       rescue Exception => e
          flash[:error] = ["Ett tekniskt fel har inträffat. Var vänlig försök senare #{e}"]
          Ramaze::Log.error e
-         redirect('/attendant/new')
+         redirect('/user/new')
        end
     end
   end
 
   def thankyou(uid)
-    attendant = Attendant.find_by_uid(uid)
-    AttendantView::Show.new(:controller => self, :attendant => attendant, :message => :thanks).to_s
+    user = User.find_by_uid(uid)
+    UserView::Show.new(:controller => self, :user => user, :message => :thanks).to_s
   end
 
 
@@ -67,8 +67,8 @@ class AttendantController < Controller
     request[param.to_s] == param.to_s
   end
 
-  def send_confirmation_email(attendant)
-    email = ConfirmationEmail.new(attendant).send
+  def send_confirmation_email(user)
+    email = ConfirmationEmail.new(user).send
   end
 
 

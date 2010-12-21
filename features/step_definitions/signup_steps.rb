@@ -1,12 +1,12 @@
 TEST_EMAIL_ADDRESS = 'mahnve+test@gmail.com'
 
 Given /^I am a previously unregistered visitor$/ do
-  Attendant.all(:email => TEST_EMAIL_ADDRESS).each {|a| a.destroy}
+  User.all(:email => TEST_EMAIL_ADDRESS).each {|a| a.destroy}
    BaseEmail.testing
 end
 
-When /^I register as an attendant$/ do
-  visit '/attendant/new'
+When /^I register as an user$/ do
+  visit '/user/new'
   fill_in 'first_name', :with => 'Demo'
   fill_in 'last_name', :with => 'Demosson'
   fill_in 'email', :with => TEST_EMAIL_ADDRESS
@@ -18,22 +18,22 @@ When /^I register as an attendant$/ do
 end
 
 Then /^my information is saved$/ do
-  attendant = Attendant.first(:email => TEST_EMAIL_ADDRESS)
-  attendant.first_name.should == 'Demo'
+  user = User.first(:email => TEST_EMAIL_ADDRESS)
+  user.first_name.should == 'Demo'
 end
 
 Then /^a uid is generated$/ do
-  attendant = Attendant.first(:email => TEST_EMAIL_ADDRESS)
-  attendant.uid.should_not == nil
+  user = User.first(:email => TEST_EMAIL_ADDRESS)
+  user.uid.should_not == nil
 end
 
 Then /^I receive an email with an unique link$/ do
   #TODO
 end
 
-Given /^I have previously signed up as an attendant$/ do
+Given /^I have previously signed up as an user$/ do
   clean_test_data
-  Factory(:attendant)
+  Factory(:user)
 end
 
 Then /^I get an error message$/ do
@@ -42,7 +42,7 @@ end
 
 
 Then /^I see a confirmation page$/ do
-  attendant = Attendant.find_by_email(TEST_EMAIL_ADDRESS)
+  user = User.find_by_email(TEST_EMAIL_ADDRESS)
   page.should have_content('Tack för din anmälan')
 end
 

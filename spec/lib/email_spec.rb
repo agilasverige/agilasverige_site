@@ -59,19 +59,19 @@ end
 
 describe ConfirmationEmail do
 
-  describe 'an email to an attendant' do
+  describe 'an email to an user' do
 
     before :each do
-      @attendant = Attendant.new
-      @attendant.first_name = 'Attendant'
-      @attendant.last_name = 'Attendantsson'
-      @attendant.email = 'attendant@localhost.com'
-      @attendant.uid = '234324'
-      @email = ConfirmationEmail.new(@attendant)
+      @user = User.new
+      @user.first_name = 'user'
+      @user.last_name = 'usersson'
+      @user.email = 'user@localhost.com'
+      @user.uid = '234324'
+      @email = ConfirmationEmail.new(@user)
     end
 
-    it 'should be sent to attendant' do
-      @email.to.should == 'attendant@localhost.com'
+    it 'should be sent to user' do
+      @email.to.should == 'user@localhost.com'
     end
 
     it 'should be sent from registrar' do
@@ -79,18 +79,18 @@ describe ConfirmationEmail do
     end
 
     it 'should have name info' do
-      @email.body.should match(/Attendant/) 
+      @email.body.should match(/user/) 
     end
 
     it 'should have correct url' do
-      @email.body.should match(@attendant.unique_url)
+      @email.body.should match(@user.unique_url)
     end
   end
 
   describe 'an email to an speaker' do
 
     before :each do
-      @speaker = Attendant.new
+      @speaker = User.new
       @speaker.first_name = 'Speaker'
       @speaker.last_name = 'Speakersson'
       @speaker.email = 'speaker@localhost.com'
@@ -131,11 +131,11 @@ end
 #describe 'a mass email' do
 
 #  it 'should have addresses as an array' do
-#    Attendant.delete_all
-#    attendant = Factory(:attendant)
+#    user.delete_all
+#    user = Factory(:user)
 #    lars = Factory(:lars)
 #    email = MassEmail.new('subject', 'bodybodybody')
-#    email.all_attendants.sort.should == [lars.email, attendant.email, 'as-xx@googlegroups.com'].sort
+#    email.all_users.sort.should == [lars.email, user.email, 'as-xx@googlegroups.com'].sort
 #  end
 #end
     

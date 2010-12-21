@@ -52,11 +52,11 @@ class MassEmail < BaseEmail
     @body = body
     self.from = 'info@agilasverige.se'
     self.to = 'info@agilasverige.se'
-    self.bcc = all_attendants
+    self.bcc = all_users
   end
 
-  def all_attendants
-    addresses = Attendant.all.inject([]) { |emails, attendant| emails << attendant.email}
+  def all_users
+    addresses = User.all.inject([]) { |emails, user| emails << user.email}
     addresses << 'as-xx@googlegroups.com'
   end
 
@@ -67,9 +67,9 @@ class ConfirmationEmail < BaseEmail
   FROM = 'registrar@agilasverige.se'
   SUBJECT = 'Tack för din anmälan till Agila Sverige 2010'
 
-  def initialize(attendant)
-    @attendant = attendant
-    self.to = @attendant.email
+  def initialize(user)
+    @user = user
+    self.to = @user.email
     self.from = FROM 
     self.subject = SUBJECT
   end
@@ -79,25 +79,25 @@ class ConfirmationEmail < BaseEmail
   end
 
   def salutation
-    " Hej #{@attendant.first_name},  tack för din anmälan till Agila Sverige 2010!"
+    " Hej #{@user.first_name},  tack för din anmälan till Agila Sverige 2010!"
   end
 
   def info
     "Du kan editera dina uppgifter samt anmäla blixttal via din personliga url:
 
-    http://www.agilasverige.se/attendant/#{@attendant.uid}"
+    http://www.agilasverige.se/users/#{@user.uid}"
   end
 end
 
 class SpeakerConfirmationEmail < ConfirmationEmail
 
-  def initialize(attendant, speaking_proposal)
+  def initialize(user, speaking_proposal)
     @speaking_proposal = speaking_proposal
-    super(attendant)
+    super(user)
   end
 
   def salutation
-    "Hej #{@attendant.first_name},  tack för din förslag på blixttal \"#{@speaking_proposal.title}\""
+    "Hej #{@user.first_name},  tack för din förslag på blixttal \"#{@speaking_proposal.title}\""
   end
 
   def info

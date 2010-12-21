@@ -1,15 +1,15 @@
 Given /^I am a logged in administrator$/ do
   BaseEmail.testing
-  Attendant.delete_all
-  @attendant1 = Factory(:attendant)
-  @attendant2 = Factory(:attendant)
+  User.delete_all
+  @user1 = Factory(:user)
+  @user2 = Factory(:user)
 end
 
 When /^I select to send an email$/ do
   visit '/admin/email/new' 
 end
 
-When /^I select all attendants as recipients$/ do
+When /^I select all users as recipients$/ do
   # all implied
 end
 
@@ -25,10 +25,10 @@ When /^I click send button$/ do
   click_button 'Skicka'
 end
 
-Then /^an email is sent to all attendants$/ do
+Then /^an email is sent to all users$/ do
   @sent_email = BaseEmail.sent_emails.first
-  @sent_email.bcc.should include @attendant1.email
-  @sent_email.bcc.should include @attendant2.email
+  @sent_email.bcc.should include @user1.email
+  @sent_email.bcc.should include @user2.email
 end
 
 Then /^a copy is sent to as\-xx list$/ do

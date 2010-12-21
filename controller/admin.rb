@@ -6,18 +6,18 @@ class AdminController < Controller
   
   #HTML views
 
-  def attendants
-    all = Attendant.all
-    AdminView::Attendants.new(:controller => self, :attendants => all).to_s
+  def users
+    all = User.all
+    AdminView::Users.new(:controller => self, :users => all).to_s
   end
 
   def speakers
-    speakers = Attendant.speakers
+    speakers = User.speakers
     AdminView::Speakers.new(:controller => self, :speakers => speakers).to_s
   end
 
   def speaking_proposals
-    speakers =Attendant.all
+    speakers =User.all
     Ramaze::Log.debug speakers.inspect
     AdminView::SpeakingProposals.new(:controller => self, 
                                      :speakers => speakers).to_s
@@ -36,28 +36,28 @@ class AdminController < Controller
 
   # CSV views
   
-  def attendants_csv
-    to_csv(Attendant.by_last_name)
+  def users_csv
+    to_csv(User.by_last_name)
   end
 
   def dinner_guests_csv
-    to_csv(Attendant.dinner_guests_by_lastname)
+    to_csv(User.dinner_guests_by_lastname)
   end
 
   def speaking_proposals_csv
-    to_csv(Attendant.speakers_by_lastname)
+    to_csv(User.speakers_by_lastname)
   end
 
   def speaker_emails
-    to_email(Attendant.speakers_by_lastname)
+    to_email(User.speakers_by_lastname)
   end
 
   def all_emails
-    to_email(Attendant.by_last_name)
+    to_email(User.by_last_name)
   end
 
   def non_speaker_emails
-    to_email(Attendant.non_speakers_by_lastname)
+    to_email(User.non_speakers_by_lastname)
   end
 
   protected
@@ -66,20 +66,20 @@ class AdminController < Controller
 
   def to_csv(list)
     csv = ""
-    list.each do |attendant|
-      add_value_to_csv(attendant.id, csv)
-      add_value_to_csv(attendant.last_name, csv)
-      add_value_to_csv(attendant.first_name, csv)
-      add_value_to_csv(attendant.organization, csv)
-      add_value_to_csv(attendant.email, csv)
-      add_value_to_csv(attendant.address, csv)
-      add_value_to_csv(attendant.zip_code, csv)
-      add_value_to_csv(attendant.postal_address, csv)
-      add_value_to_csv(attendant.attending_dinner, csv)
-      add_value_to_csv(attendant.food_preferences, csv)
-      add_value_to_csv(attendant.comments, csv)
-      add_value_to_csv(attendant.speaking_proposal.title, csv)
-      add_value_to_csv(attendant.speaking_proposal.abstract, csv)
+    list.each do |user|
+      add_value_to_csv(user.id, csv)
+      add_value_to_csv(user.last_name, csv)
+      add_value_to_csv(user.first_name, csv)
+      add_value_to_csv(user.organization, csv)
+      add_value_to_csv(user.email, csv)
+      add_value_to_csv(user.address, csv)
+      add_value_to_csv(user.zip_code, csv)
+      add_value_to_csv(user.postal_address, csv)
+      add_value_to_csv(user.attending_dinner, csv)
+      add_value_to_csv(user.food_preferences, csv)
+      add_value_to_csv(user.comments, csv)
+      add_value_to_csv(user.speaking_proposal.title, csv)
+      add_value_to_csv(user.speaking_proposal.abstract, csv)
       csv << "\n"
     end
     csv
@@ -91,7 +91,7 @@ class AdminController < Controller
   end
 
   def to_email(list)
-    list.collect! { |attendant| attendant.email }
+    list.collect! { |user| user.email }
     list.uniq!
     list.join ' ,'
   end

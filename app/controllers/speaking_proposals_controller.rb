@@ -1,5 +1,5 @@
 class SpeakingProposalsController < InheritedResources::Base
 
-  belongs_to :attendant
+  belongs_to :user
 
 end

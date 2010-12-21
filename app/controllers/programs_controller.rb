@@ -1,4 +1,4 @@
-class ProgramController < Controller
+class ProgramController < ApplicationController
 
   def index
     if Date.today.to_s == '2010-05-11'

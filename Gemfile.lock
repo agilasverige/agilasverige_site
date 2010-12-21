@@ -36,6 +36,7 @@ GEM
     builder (2.1.2)
     compass (0.10.6)
       haml (>= 3.0.4)
+    database_cleaner (0.6.0)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -116,6 +117,7 @@ PLATFORMS
 DEPENDENCIES
   bson_ext (= 1.1.4)
   compass
+  database_cleaner
   devise
   formtastic
   haml

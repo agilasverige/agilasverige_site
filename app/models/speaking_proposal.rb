@@ -5,7 +5,7 @@ class SpeakingProposal
   include Mongoid::Validations
 
 
-  references_many :speakers, :class_name => 'Attendant', :stored_as => :array, :inverse_of => :speaking_proposals
+  references_many :speakers, :class_name => 'User', :stored_as => :array, :inverse_of => :speaking_proposals
 
   field :title
   field :abstract

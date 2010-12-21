@@ -33,15 +33,15 @@ class SpeakingProposalController < Controller
   def new
     if request.get?
       uid = request['uid'] || show_cannot_find_user
-      view = SpeakingProposalView::New.new(:controller => self, :attendant_uid => uid)
+      view = SpeakingProposalView::New.new(:controller => self, :user_uid => uid)
       view.to_s
     elsif request.post?
       begin
-        attendant_uid = request.params.delete('attendant_uid') || show_cannot_find_user
-        attendant = Attendant.find_by_uid(attendant_uid)
-        speaking_proposal = attendant.speaking_proposals.create(request.params)
-        if attendant.save
-          send_confirmation_email(attendant, speaking_proposal)
+        user_uid = request.params.delete('user_uid') || show_cannot_find_user
+        user = user.find_by_uid(user_uid)
+        speaking_proposal = user.speaking_proposals.create(request.params)
+        if user.save
+          send_confirmation_email(user, speaking_proposal)
           redirect("/speaking_proposal/thankyou/#{speaking_proposal.id}")
         else
           flash[:error] = speaking_proposal.errors 
@@ -84,8 +84,8 @@ class SpeakingProposalController < Controller
 
   protected
 
-  def send_confirmation_email(attendant, speaking_proposal)
-    SpeakerConfirmationEmail.new(attendant, speaking_proposal).send
+  def send_confirmation_email(user, speaking_proposal)
+    SpeakerConfirmationEmail.new(user, speaking_proposal).send
   end
 
 

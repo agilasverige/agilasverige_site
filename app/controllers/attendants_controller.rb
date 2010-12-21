@@ -1,3 +1,3 @@
-class AttendantsController < InheritedResources::Base
+class UsersController < InheritedResources::Base
 
 end
