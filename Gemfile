@@ -26,6 +26,16 @@ end
 group :test do
 end
 
+group :cucumber do
+  gem "cucumber"
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'culerity'
+  gem 'jruby-openssl'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
