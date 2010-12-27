@@ -14,6 +14,10 @@ test:
   <<: *defaults
   database: agilasverige_test
 
+cucumber:
+  <<: *test
+
+
 # set these environment variables on your prod server
 production:
   host: <%= ENV['MONGOID_HOST'] %>
