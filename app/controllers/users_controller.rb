@@ -8,4 +8,5 @@ class UsersController < InheritedResources::Base
       render '404.html'
     end
   end
+  
 end

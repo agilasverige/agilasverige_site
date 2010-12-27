@@ -1,0 +1,10 @@
+= semantic_form_for @content do |f|
+  = f.inputs :text do
+    = f.input :content, :as => :text, :input_html => {:class => :markitup}
+  = f.inputs :buttons do
+    = f.commit_button
+
+:javascript
+  $(document).ready(function() {
+    $(".markitup").markItUp(mySettings);
+  });

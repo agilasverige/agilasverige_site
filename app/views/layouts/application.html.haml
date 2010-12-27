@@ -5,8 +5,13 @@
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
     = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    = stylesheet_link_tag '/markitup/skins/simple/style.css'
+    = stylesheet_link_tag '/markitup/sets/markdown/style.css'
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
+    = javascript_include_tag 'http://code.jquery.com/jquery-1.4.4.min.js'
+    = javascript_include_tag '/markitup/jquery.markitup.js'
+    = javascript_include_tag '/markitup/sets/markdown/set.js'
   %body{:id => controller.controller_name, :class => :bp}
     %header
       .logo

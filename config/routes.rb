@@ -3,6 +3,7 @@ Agilasverige::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => :users }
 
   resources :speaking_proposals
+  resources :editable_content
 
   resources :users
 
@@ -10,7 +11,7 @@ Agilasverige::Application.routes.draw do
     resources :speaking_proposals 
   end
 
-  resource :home
+  resource :home, :controller => 'home'
 
   
 
