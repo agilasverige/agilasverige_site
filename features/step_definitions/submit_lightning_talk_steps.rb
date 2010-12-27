@@ -1,3 +1,4 @@
+# coding: utf-8
 Given /^I am a registered attendant$/ do
   SpeakingProposal.delete_all(:title => 'test')
   @attendant = Factory(:attendant)

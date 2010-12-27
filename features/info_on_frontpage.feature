@@ -1,3 +1,4 @@
+# coding: utf-8
 Feature: Front Page
   In order to quickly see the most important information
   As a visitor

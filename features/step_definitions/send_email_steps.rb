@@ -1,3 +1,4 @@
+# coding utf-8
 Given /^I am a logged in administrator$/ do
   BaseEmail.testing
   User.delete_all

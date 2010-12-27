@@ -1,3 +1,4 @@
+# coding: utf-8
 TEST_EMAIL_ADDRESS = 'mahnve+test@gmail.com'
 
 Given /^I am a previously unregistered visitor$/ do

@@ -1,4 +1,4 @@
-@http://www.pivotaltracker.com/story/show/2533927
+# coding: utf-8
 Feature: Signup
   In order to register for the conference
   As someone unregistered
