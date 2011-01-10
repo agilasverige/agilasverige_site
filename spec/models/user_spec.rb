@@ -15,7 +15,7 @@ describe User do
   describe 'Created with all mandatory argument' do
 
     before(:each) do
-      @user = create_user
+      @user = User.make!
     end
 
     it 'should be valid' do
@@ -32,20 +32,5 @@ describe User do
 
   end
 
-  def create_user
-    user = User.new
-    user.first_name = 'User'
-    user.last_name = 'Usersson'
-    user.organization = 'Organization'
-    user.email = 'user@localhost.com'
-    user.address = 'address'
-    user.invoice_reference = 'invoice reference'
-    user.zip_code = '12345'
-    user.postal_address = 'Postal Address'
-    user.country = 'Country'
-    user.password = 'password'
-    user.save
-    user
-  end
       
 end

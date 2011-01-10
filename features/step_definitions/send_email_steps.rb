@@ -2,8 +2,8 @@
 Given /^I am a logged in administrator$/ do
   BaseEmail.testing
   User.delete_all
-  @user1 = Factory(:user)
-  @user2 = Factory(:user)
+  @user1 = User.make
+  @user2 = User.make
 end
 
 When /^I select to send an email$/ do

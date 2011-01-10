@@ -19,8 +19,10 @@ gem 'devise'
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'machinist'
   gem 'database_cleaner'
+  # gem 'machinist', '>= 2.0.0.beta1'
+  gem 'ffaker'
+  gem 'machinist_mongo', :git => 'https://github.com/nmerouze/machinist_mongo.git', :require => 'machinist/mongoid', :branch => 'machinist2'
 end
 
 group :test do
@@ -33,7 +35,6 @@ group :cucumber do
   gem 'capybara'
   gem 'launchy'
   gem 'culerity'
-  gem 'jruby-openssl'
 end
 
 # Use unicorn as the web server

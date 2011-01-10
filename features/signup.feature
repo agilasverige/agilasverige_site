@@ -1,13 +1,22 @@
 # coding: utf-8
 Feature: Signup
   In order to register for the conference
-  As someone unregistered
-  I want to signup on the webpage
+  An visitor wants to sign up on the webpage
 
   Scenario:
     Given I am a previously unregistered visitor
-    When I register as an attendant
-    Then my information is saved
-    And a uid is generated
-    And I see a confirmation page
-    And I receive an email with an unique link
+      And I am on the registration page
+    Then show me the page
+    When I fill in the following:
+      | Förnamn              | Test          |
+      | Efternamn            | Testsson      |
+      | Emailadress          | test@test.com |
+      | Lösenord             | 121212        |
+      | Lösenordsbekräftelse | 121212        |
+      | Organisation         | Test          |
+      | Adress               | Testgatan 1   |
+      | Postnummer           | 12121         |
+      | Postadress           | Testinge      |
+      | Fakturareferens      | Test          |
+      And I click 'Registrera anmälan'
+    Then I should see 'Tack för din anmälan'

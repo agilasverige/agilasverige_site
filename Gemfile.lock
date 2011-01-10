@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/nmerouze/machinist_mongo.git
+  revision: fa4819c4e1233a4e3ce527b68af8aeee85dfc6c3
+  branch: machinist2
+  specs:
+    machinist_mongo (2.0.0.beta.1)
+      machinist (~> 2.0.0.beta2)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,7 +39,6 @@ GEM
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
-    bouncy-castle-java (1.5.0145.2)
     bson (1.1.4)
     bson_ext (1.1.4)
     builder (2.1.2)
@@ -66,6 +73,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    ffaker (1.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
     formtastic (1.2.2)
@@ -80,14 +88,12 @@ GEM
     inherited_resources (1.1.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
-    jruby-openssl (0.7.2)
-      bouncy-castle-java
     json (1.4.6)
     json_pure (1.4.6)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
-    machinist (1.0.6)
+    machinist (2.0.0.beta2)
     mail (2.2.12)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -167,12 +173,12 @@ DEPENDENCIES
   culerity
   database_cleaner
   devise
+  ffaker
   formtastic
   haml
   inherited_resources
-  jruby-openssl
   launchy
-  machinist
+  machinist_mongo!
   mongoid (= 2.0.0.beta.20)
   rails (= 3.0.0)
   rdiscount
