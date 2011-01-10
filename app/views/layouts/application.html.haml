@@ -83,6 +83,10 @@
       %section
         = yield
       %aside.sponsors 
+        %h2 Sponsorer
+        - @sponsors.random_order.each do |sponsor|
+          %li
+            = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
     %footer
       .contact
         %span &copy; Agila Sverige 2010 |
