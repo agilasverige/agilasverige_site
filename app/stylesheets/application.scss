@@ -60,3 +60,19 @@ nav {
 footer {
   @include column(24, true);
 }
+
+.sponsor_list {
+
+  list-style: none;
+  padding-left: 0px;
+
+  img {
+    max-height: 50px;
+    max-width: 150px; 
+  }
+
+
+  li {
+    margin-top: 10px;
+  }
+}
