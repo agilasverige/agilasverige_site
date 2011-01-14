@@ -42,9 +42,27 @@ nav {
     text-decoration: none;
   }
 
+  a:link, a:visited {
+    color: #333;
+  }
+
+
+}
+
+.subnavigation {
+
+  ul {
+    list-style: none;
+  }
+}
+
+form {
+  padding: 20px;
 }
 
 .main {
+
+  padding-top: 20px;
 
   @include column(24);
 

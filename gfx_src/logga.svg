@@ -13,8 +13,8 @@
    height="768px"
    id="svg2816"
    version="1.1"
-   inkscape:version="0.46+devel r22636 custom"
-   sodipodi:docname="New document 1">
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="logga.svg">
   <defs
      id="defs2818">
     <inkscape:perspective
@@ -38,10 +38,10 @@
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:window-width="1436"
-     inkscape:window-height="880"
+     inkscape:window-width="1438"
+     inkscape:window-height="883"
      inkscape:window-x="0"
-     inkscape:window-y="16"
+     inkscape:window-y="15"
      inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
@@ -59,7 +59,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -76,7 +76,8 @@
          sodipodi:role="line"
          id="tspan2815"
          x="69"
-         y="362">agila sverige</tspan></text>
+         y="362"
+         style="-inkscape-font-specification:Inkburrow;font-family:Inkburrow;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">agila sverige</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
@@ -87,7 +88,7 @@
          id="tspan2819"
          x="200"
          y="404"
-         style="fill:#ff00ff">2010</tspan></text>
+         style="fill:#ff00ff">2011</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:50.45756912px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
