@@ -1,11 +1,11 @@
-%h2 'Skicka in förslag på blixttal'
-%p 'Anmälan av blixttal är personlig, man kan med andra ord inte byta ut talaren efter att ett blixttal blivit antaget.'
+%h2 Skicka in förslag på blixttal
+%p Anmälan av blixttal är personlig, man kan med andra ord inte byta ut talaren efter att ett blixttal blivit antaget
 %p 
   = 'Allt presentationsmaterial som används måste licensieras under'
   = link_to 'Creative Commons Attribution Share Alike licens', 'http://creativecommons.org/licenses/by-sa/2.5/se/'
   = '. Alla talare kommer att filmas för distribution på nätet.'
 = semantic_form_for [@user,@speaking_proposal] do |f|
   = f.inputs 'Talinformation' do
-    = f.input :title
-    = f.input :abstract, :as => :text
+    = f.input :title, :label => 'Titel'
+    = f.input :abstract, :as => :text, :label => 'Beskrivning'
   = f.buttons

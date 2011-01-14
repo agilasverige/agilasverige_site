@@ -30,6 +30,9 @@
           - if user_signed_in?
             %li= link_to 'Dina inställningar', edit_user_path
             %li= link_to 'Anmäl blixttal', new_user_speaking_proposal_path
+            %li= link_to 'Logga ut', destroy_user_session_path
+          - else
+            %li= link_to 'Logga in', new_user_session_path
     .main
       #flash
         - if flash.size > 0
@@ -81,7 +84,8 @@
               }
             }).render().start();
       %section
-        = yield
+        .section-wrapper
+          = yield
       %aside.sponsors 
         %h2 Sponsorer
         %ul.sponsor_list

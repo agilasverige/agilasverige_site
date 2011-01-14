@@ -1,0 +1,5 @@
+sv:
+  active_record:
+    attributes:
+      user:
+        first_name: 'Förnamn'

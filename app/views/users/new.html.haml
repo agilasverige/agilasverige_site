@@ -1,24 +1,3 @@
 -# coding: utf-8
-= I18n.t('activerecord.attributes.user.first_name')
-= I18n.t('activerecord.models.user')
-= User.human_name
-= User.human_attribute_name('first_name')
-= semantic_form_for @user do |f|
-  = f.inputs :name => 'Personuppgifter' do
-    = f.input :first_name, :label => 'Förnamn'
-    = f.input :last_name, :label => 'Efternamn'
-    = f.input :email, :as => :email, :label => 'Emailadress'
-    = f.input :password, :label => 'Lösenord'
-    = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
-    = f.input :organization, :label => 'Organisation'
-    = f.input :address, :label => 'Adress'
-    = f.input :zip_code, :label => 'Postnummer'
-    = f.input :postal_address, :label => 'Postadress'
-    = f.input :invoice_reference, :label => 'Fakturareferens'
-    = f.input :country, :label => 'Land'
-    = f.input :telephone_number, :label => 'Telefonnummer'
-  = f.inputs :name => 'Övrigt' do
-    = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
-    = f.input :food_preferences, :label => 'Matpreferenser'
-    = f.input :comments, :label => 'Kommentar'
-  = f.buttons
+%h2 Anmälan till konferens
+= render :partial => 'form'

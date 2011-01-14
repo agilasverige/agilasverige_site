@@ -1,19 +1,19 @@
 = semantic_form_for @user do |f|
   = f.inputs :name => 'Personuppgifter' do
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :email, :as => :email
-    = f.input :password
-    = f.input :password_confirmation
-    = f.input :organization
-    = f.input :address
-    = f.input :zip_code
-    = f.input :postal_address
-    = f.input :invoice_reference
-    = f.input :country
-    = f.input :telephone_number
+    = f.input :first_name, :label => 'Förnamn'
+    = f.input :last_name, :label => 'Efternamn'
+    = f.input :email, :as => :email, :label => 'Emailadress'
+    = f.input :password, :label => 'Lösenord'
+    = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
+    = f.input :organization, :label => 'Organisation'
+    = f.input :address, :label => 'Adress'
+    = f.input :zip_code, :label => 'Postnummer'
+    = f.input :postal_address, :label => 'Postadress'
+    = f.input :invoice_reference, :label => 'Fakturareferens'
+    = f.input :country, :label => 'Land'
+    = f.input :telephone_number, :label => 'Telefonnummer'
   = f.inputs :name => 'Övrigt' do
-    = f.input :attending_dinner, :as => :boolean
-    = f.input :food_preferences
-    = f.input :comments
+    = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
+    = f.input :food_preferences, :label => 'Matpreferenser'
+    = f.input :comments, :label => 'Kommentar'
   = f.buttons
