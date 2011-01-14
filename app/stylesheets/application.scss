@@ -38,6 +38,10 @@ nav {
     @include horizontal-list;
   }
 
+  a {
+    text-decoration: none;
+  }
+
 }
 
 .main {
