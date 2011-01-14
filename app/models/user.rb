@@ -26,6 +26,7 @@ class User
   field :comments
   field :unregistered
   field :uid
+  field :role
 
   validates_presence_of :first_name
   validates_presence_of :last_name
@@ -53,6 +54,10 @@ class User
 
   def unique_url
     "http://www.agilasverige.se/users/#{self.uid}"
+  end
+
+  def admin?
+    role == 'admin'
   end
 
   private
