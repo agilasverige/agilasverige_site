@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   end
 
   def edit
-    @content = EditableContent.find_or_create_by(:page_name => 'home')
+    @content = EditableContent.find_or_create_by_page_name('home')
   end
 
 end
