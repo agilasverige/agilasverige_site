@@ -1,12 +1,10 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '~> 3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mongoid', "2.0.0.beta.20"
-gem "bson_ext", "1.1.4"
 gem 'inherited_resources'
 gem 'haml'
 gem 'rdiscount'
@@ -14,15 +12,15 @@ gem 'formtastic'
 gem 'show_for'
 gem 'compass'
 gem 'devise'
+gem 'pg'
 
 
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
-  # gem 'machinist', '>= 2.0.0.beta1'
+  gem 'machinist', '>= 2.0.0.beta2'
   gem 'ffaker'
-  gem 'machinist_mongo', :git => 'https://github.com/nmerouze/machinist_mongo.git', :require => 'machinist/mongoid', :branch => 'machinist2'
 end
 
 group :test do

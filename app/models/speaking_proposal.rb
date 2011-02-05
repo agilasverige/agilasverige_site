@@ -1,14 +1,7 @@
-class SpeakingProposal 
+class SpeakingProposal  < ActiveRecord::Base  
 
-  include Mongoid::Document
-  include Mongoid::Timestamps
-  include Mongoid::Validations
-
-
-  references_many :speakers, :class_name => 'User', :stored_as => :array, :inverse_of => :speaking_proposals
-
-  field :title
-  field :abstract
+  has_many :speaking_engagements
+  has_many :speakers, :through => :speaking_engagements, :source => :user
 
   validates_presence_of :title
   validates_presence_of :abstract

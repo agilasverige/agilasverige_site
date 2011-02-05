@@ -1,8 +1,4 @@
-class EditableContent
+class EditableContent < ActiveRecord::Base
 
-  include Mongoid::Document
-
-  field :content
-  field :page_name
-
+  set_table_name 'editable_content'
 end

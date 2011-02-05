@@ -83,9 +83,8 @@ class ConfirmationEmail < BaseEmail
   end
 
   def info
-    "Du kan editera dina uppgifter samt anmäla blixttal via din personliga url:
+    "Du kan editera dina uppgifter samt anmäla blixttal via din personliga url:"
 
-    http://www.agilasverige.se/users/#{@user.uid}"
   end
 end
 

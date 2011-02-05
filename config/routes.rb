@@ -1,5 +1,7 @@
 Agilasverige::Application.routes.draw do
 
+  devise_for :users
+
   devise_for :users, :controllers => { :registrations => :users }
 
   resources :speaking_proposals

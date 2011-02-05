@@ -22,14 +22,6 @@ describe User do
       @user.should be_valid
     end
 
-    it 'should have a uid' do
-      @user.uid.should_not be_nil
-    end
-
-    it 'should have a unique url' do
-      @user.unique_url.should == "http://www.agilasverige.se/users/#{@user.uid}"
-    end
-
   end
 
       

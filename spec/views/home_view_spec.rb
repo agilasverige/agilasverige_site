@@ -13,9 +13,9 @@ describe '/home/show' do
   describe 'when admin is logged in' do
     
     before :each do
-      admin = User.make
-      admin.role = 'admin'
-      admin.save!
+      admin = User.make!(:role => 'admin')
+      admin.confirm!
+      assigns[:user] = admin
       sign_in admin
       render
     end

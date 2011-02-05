@@ -66,7 +66,6 @@ describe ConfirmationEmail do
       @user.first_name = 'user'
       @user.last_name = 'usersson'
       @user.email = 'user@localhost.com'
-      @user.uid = '234324'
       @email = ConfirmationEmail.new(@user)
     end
 
@@ -82,9 +81,6 @@ describe ConfirmationEmail do
       @email.body.should match(/user/) 
     end
 
-    it 'should have correct url' do
-      @email.body.should match(@user.unique_url)
-    end
   end
 
   describe 'an email to an speaker' do

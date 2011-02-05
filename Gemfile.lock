@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/nmerouze/machinist_mongo.git
-  revision: fa4819c4e1233a4e3ce527b68af8aeee85dfc6c3
-  branch: machinist2
-  specs:
-    machinist_mongo (2.0.0.beta.1)
-      machinist (~> 2.0.0.beta2)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -39,8 +31,6 @@ GEM
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
-    bson (1.1.4)
-    bson_ext (1.1.4)
     builder (2.1.2)
     capybara (0.4.0)
       celerity (>= 0.7.9)
@@ -100,14 +90,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mongo (1.1.4)
-      bson (>= 1.1.1)
-    mongoid (2.0.0.beta.20)
-      activemodel (~> 3.0)
-      mongo (~> 1.1)
-      tzinfo (~> 0.3.22)
-      will_paginate (~> 3.0.pre)
     nokogiri (1.4.4)
+    pg (0.9.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -157,7 +141,6 @@ GEM
     tzinfo (0.3.23)
     warden (1.0.3)
       rack (>= 1.0.0)
-    will_paginate (3.0.pre2)
     xpath (0.1.2)
       nokogiri (~> 1.3)
 
@@ -165,7 +148,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext (= 1.1.4)
   capybara
   compass
   cucumber
@@ -178,9 +160,9 @@ DEPENDENCIES
   haml
   inherited_resources
   launchy
-  machinist_mongo!
-  mongoid (= 2.0.0.beta.20)
-  rails (= 3.0.0)
+  machinist (>= 2.0.0.beta2)
+  pg
+  rails (~> 3.0.0)
   rdiscount
   rspec
   rspec-rails
