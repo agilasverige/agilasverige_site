@@ -1,17 +1,22 @@
-%h2 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  %p
-    = f.label :email
-    %br/
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %p= f.submit "Sign up"
+%h2 Registrera dig för Agila Sverige
+= semantic_form_for @user do |f|
+  = f.inputs :name => 'Personuppgifter' do
+    = f.input :first_name, :label => 'Förnamn'
+    = f.input :last_name, :label => 'Efternamn'
+    = f.input :email, :as => :email, :label => 'Emailadress'
+    = f.input :password, :label => 'Lösenord'
+    = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
+    = f.input :organization, :label => 'Organisation'
+    = f.input :address, :label => 'Adress'
+    = f.input :zip_code, :label => 'Postnummer'
+    = f.input :postal_address, :label => 'Postadress'
+    = f.input :invoice_reference, :label => 'Fakturareferens'
+    = f.input :country, :label => 'Land', :as => :string
+    = f.input :telephone_number, :label => 'Telefonnummer', :as => :string
+  = f.inputs :name => 'Övrigt' do
+    = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
+    = f.input :food_preferences, :label => 'Matpreferenser'
+    = f.input :comments, :label => 'Kommentar'
+  = f.buttons do
+    = f.commit_button 'Skicka anmälan'
 = render :partial => "devise/shared/links"

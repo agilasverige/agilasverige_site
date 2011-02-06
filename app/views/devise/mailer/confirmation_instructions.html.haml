@@ -1,4 +1,4 @@
 %p
-  Welcome #{@resource.email}!
-%p You can confirm your account through the link below:
-%p= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+  Välkommen #{@resource.email}!
+%p Bekräfta din anmälan genom att klicka på länken nedan:
+%p= link_to 'Bekräfta min anmälan', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
