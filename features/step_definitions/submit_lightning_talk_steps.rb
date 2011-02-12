@@ -1,7 +1,7 @@
 # coding: utf-8
 Given /^I am a registered attendant$/ do
   SpeakingProposal.delete_all(:title => 'test')
-  @attendant = Factory(:attendant)
+  @attendant = User.make!
 end
 
 When /^I submit a lightning talk$/ do
