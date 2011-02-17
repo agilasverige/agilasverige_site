@@ -1,6 +1,4 @@
 # coding: utf-8
-require 'capybara'
-include Capybara
 
 Given /^I am a visitor$/ do
 end  
@@ -16,4 +14,3 @@ end
 Then /^I should see a submenu$/ do
   page.should have_css("#submenu")
 end
-

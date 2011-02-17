@@ -5,7 +5,8 @@ Feature: Signup
 
   Scenario:
     Given I am a previously unregistered visitor
-      And I am on the registration page
+      And I am on the start page
+      And I follow "Anmälan"
     And I fill in the following:
       | Förnamn              | Test          |
       | Efternamn            | Testsson      |
@@ -17,5 +18,5 @@ Feature: Signup
       | Postnummer           | 12121         |
       | Postadress           | Testinge      |
       | Fakturareferens      | Test          |
-      And I click 'Skicka anmälan'
-    Then I should see 'Tack för din anmälan'
+    When I press "Skicka anmälan"
+    Then I should see "Tack för din anmälan"
