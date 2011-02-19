@@ -25,7 +25,9 @@ group :test, :development do
 end
 
 group :test do
+  gem 'email_spec'
 end
+
 
 group :cucumber do
   gem "cucumber"
