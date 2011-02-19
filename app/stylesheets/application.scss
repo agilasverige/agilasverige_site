@@ -14,7 +14,7 @@
 @import "compass/css3/inline-block";
 @import "compass/utilities/lists/horizontal-list";
 
-body {
+#container {
     @include container;
 }
 
