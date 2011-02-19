@@ -1,7 +1,5 @@
 Agilasverige::Application.routes.draw do
 
-  devise_for :users
-
   devise_for :users, :controllers => { :registrations => :users }
 
   resources :speaking_proposals
@@ -9,7 +7,7 @@ Agilasverige::Application.routes.draw do
 
   resources :users
 
-  resource :user do
+  resource :user, :as => 'current_user' do
     resources :speaking_proposals 
   end
 

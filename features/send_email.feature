@@ -1,3 +1,4 @@
+@wip
 Feature: Send email to attendants
   In order to communicate with attendants
   As a conference admin

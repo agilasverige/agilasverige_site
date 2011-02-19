@@ -1,23 +1,12 @@
 # coding: utf-8
-Given /^I am a registered attendant$/ do
-  SpeakingProposal.delete_all(:title => 'test')
-  @attendant = User.make!
+Given /^I am a registered attendant with:$/ do |table|
+  @user = User.make!(table.rows_hash)
+  @user.confirm!
 end
 
-When /^I submit a lightning talk$/ do
-  visit "/attendant/#{@attendant.uid}"
-  click_link "submit_lightning_talk"
-  fill_in 'Titel', :with => 'test'
-  fill_in 'Beskrivning', :with => 'testelitest'
-  click_button 'Anmäl'
+Given /^I am logged in with "(.*)":"(.*)"$/ do |email, password|
+  Given %Q{I follow "Logga in"}
+  And %Q{I fill in "#{email}" for "E-postadress"}
+  And %Q{I fill in "#{password}" for "Lösenord"}
+  And %q{I press "Logga in"}
 end
-
-Then /^my lightning is stored$/ do
-  SpeakingProposal.find_by_title("test").should be_true
-end
-
-Then /^it is shown on my page$/ do
-  visit "/attendant/#{@attendant.uid}"
-  page.should have_content('test')  
-end
-

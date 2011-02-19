@@ -7,6 +7,9 @@
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 
+
+require 'machinist/active_record'
+
 require 'cucumber/formatter/unicode' # Remove this line if you don't want Cucumber Unicode support
 require 'cucumber/rails/rspec'
 require 'cucumber/rails/world'
@@ -55,6 +58,7 @@ Cucumber::Rails::World.use_transactional_fixtures = true
 if defined?(ActiveRecord::Base)
   begin
     require 'database_cleaner'
+    require 'database_cleaner/cucumber'
     DatabaseCleaner.strategy = :truncation
   rescue LoadError => ignore_if_database_cleaner_not_present
   end
