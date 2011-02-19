@@ -13,6 +13,7 @@ gem 'show_for'
 gem 'compass'
 gem 'devise'
 gem 'pg'
+gem 'newrelic_rpm'
 
 
 group :test, :development do
