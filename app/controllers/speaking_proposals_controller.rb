@@ -9,6 +9,6 @@ class SpeakingProposalsController < InheritedResources::Base
   end
 
   def create
-    create!(:notice => "Tack för din blixttalsanmälning, vi har skickat ett e-brev som bekräftar din anmälan")
+    create!(:notice => "Tack för din blixttalsanmälan, vi har skickat ett e-brev som bekräftar din anmälan")
   end
 end

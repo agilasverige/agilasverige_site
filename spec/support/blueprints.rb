@@ -14,7 +14,7 @@ User.blueprint do
 end
 
 
-
-SpeakingEngagement.blueprint do
-  # Attributes here
+SpeakingProposal.blueprint do
+  title { Faker::Lorem.sentence }
+  abstract { Faker::Lorem.paragraphs.join('\n\n').strip }
 end
