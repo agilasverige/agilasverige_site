@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe User do
 
+  it { should have_many :speaking_proposals }
+
   describe 'Without mandatory arguments' do
     before(:each) do
       @user = User.new

@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :token_authenticatable
 
+  has_many :speaking_engagements
+  has_many :speaking_proposals, :through => :speaking_engagements
 
   validates_presence_of :first_name
   validates_presence_of :last_name
