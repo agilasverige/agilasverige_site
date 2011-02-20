@@ -1,3 +1,4 @@
+# coding: utf-8
 class SpeakingProposalsController < InheritedResources::Base
 
   belongs_to :user, :optional => true
@@ -5,5 +6,9 @@ class SpeakingProposalsController < InheritedResources::Base
   def new
     @user = current_user
     @speaking_proposal = SpeakingProposal.new
+  end
+
+  def create
+    create!(:notice => "Tack för din blixttalsanmälning, vi har skickat ett e-brev som bekräftar din anmälan")
   end
 end

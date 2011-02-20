@@ -1,4 +1,7 @@
 sv:
+  errors:
+    messages:
+      blank: 'Kan inte lämnas tom'
   active_record:
     attributes:
       user:

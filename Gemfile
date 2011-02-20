@@ -17,7 +17,6 @@ gem 'newrelic_rpm'
 
 
 group :test, :development do
-  gem 'rspec'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'machinist', '>= 2.0.0.beta2'
@@ -28,6 +27,7 @@ end
 
 group :test do
   gem 'email_spec'
+  gem 'shoulda-matchers'
 end
 
 

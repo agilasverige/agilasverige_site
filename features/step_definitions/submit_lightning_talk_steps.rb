@@ -5,7 +5,8 @@ Given /^I am a registered attendant with:$/ do |table|
 end
 
 Given /^I am logged in with "(.*)":"(.*)"$/ do |email, password|
-  Given %Q{I follow "Logga in"}
+  Given %Q{I am on the start page}
+  And %Q{I follow "Logga in"}
   And %Q{I fill in "#{email}" for "E-postadress"}
   And %Q{I fill in "#{password}" for "Lösenord"}
   And %q{I press "Logga in"}
