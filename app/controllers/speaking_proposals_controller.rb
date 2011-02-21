@@ -1,6 +1,8 @@
 # coding: utf-8
 class SpeakingProposalsController < InheritedResources::Base
 
+  before_filter :authenticate_user!, :except => :show
+  
   belongs_to :user, :optional => true
 
   def new
