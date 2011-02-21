@@ -1,3 +1,4 @@
+#coding: utf-8
 require "spec_helper"
 
 describe SpeakingProposalMailer do
@@ -12,11 +13,15 @@ describe SpeakingProposalMailer do
     @user.speaking_proposals << @speaking_proposal
     @user.save!
 
-    @email = SpeakingProposalMailer.create_thanks_for_submission(@user, @speaking_proposal)
+    @email = SpeakingProposalMailer.thanks_for_submission(@user, @speaking_proposal)
   end
 
   subject {@email}
 
-  it {should deliver_to @user.email}
+  it { should deliver_to @user.email }
+  it { should have_subject 'Tack för din blixttalsanmälan' }
+  it { should have_body_text /#{@speaking_proposal.title}/ }
+  it { should have_body_text /#{current_user_url}/ }
+  it { should have_body_text /Agila Sverige 2011/ }
 
 end
