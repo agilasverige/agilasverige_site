@@ -1,4 +1,5 @@
 %h2 Registrera dig för Agila Sverige
+= render :partial => 'shared/attendant_info'
 = semantic_form_for @user do |f|
   = f.inputs :name => 'Personuppgifter' do
     = f.input :first_name, :label => 'Förnamn'
@@ -14,7 +15,7 @@
     = f.input :country, :label => 'Land', :as => :string
     = f.input :telephone_number, :label => 'Telefonnummer', :as => :string
   = f.inputs :name => 'Övrigt' do
-    = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
+    = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen den 23 maj'
     = f.input :food_preferences, :label => 'Matpreferenser'
     = f.input :comments, :label => 'Kommentar'
   = f.buttons do
