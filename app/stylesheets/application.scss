@@ -14,6 +14,10 @@
 @import "compass/css3/inline-block";
 @import "compass/utilities/lists/horizontal-list";
 
+$pink: #ff1eff;
+$border: 1px solid $pink;
+
+
 #container {
     @include container;
 }
@@ -33,6 +37,15 @@ header {
 }
 
 nav {
+  
+  .selected {
+    background-image: url('images/triangle.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+
+
+  border-bottom: $border;
 
   ul {
     @include horizontal-list;
