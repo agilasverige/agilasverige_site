@@ -14,6 +14,7 @@ Feature: Submit Lightning Talk
     And I follow "Anmäl blixttal"
     And I fill in "Spångar eller spänger" for "Titel"
     And I fill in "En faschinerande tur genom småbrosvenskan" for "Beskrivning"
+    And I check "Jag accepterar villkoren ovan"
     And I press "Skicka in"
     Then I should see "Tack för din blixttalsanmälan"
     And "test3@test.test" should receive an email

@@ -5,5 +5,6 @@ class SpeakingProposal  < ActiveRecord::Base
 
   validates_presence_of :title
   validates_presence_of :abstract
+  validates_acceptance_of :accept_terms
 end
 

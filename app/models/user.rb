@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
@@ -16,6 +17,7 @@ class User < ActiveRecord::Base
   validates_presence_of :address
   validates_presence_of :zip_code
   validates_presence_of :postal_address
+
 
   def full_name
     "#{first_name} #{last_name}"
