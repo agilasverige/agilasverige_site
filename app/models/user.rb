@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
   validates_presence_of :zip_code
   validates_presence_of :postal_address
 
+  scope :created_today, where('created_at > ? AND created_at < ?', Date.today, Date.tomorrow)
+  scope :last_five, limit(5).order('created_at DESC')
+
+  def self.created_by_date 
+    count(:group => "DATE(created_at)")
+  end
 
   def full_name
     "#{first_name} #{last_name}"
