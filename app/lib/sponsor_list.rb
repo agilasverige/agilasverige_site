@@ -18,6 +18,7 @@ class SponsorList
     @sponsors = [
       Sponsor.new("Agical", "agical_logo.png", "http://www.agical.se"),
       Sponsor.new("Dynabyte", "dynabyte_logo.png", "http://www.dynabyte.se"),
+      Sponsor.new("AddQ", "addq_logo.png", "http://www.addq.se"),
       # Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
       # Sponsor.new("Agero", "agero_logo.png", "http://www.agero.se"),
       Sponsor.new("GlobalInn", "globalinn_logo.png", "http://www.globalinn.com"),
