@@ -1,0 +1,22 @@
+%h3#users_count Antal anmälda
+%p=@users_count
+%h3 Användare skapade idag
+%ul#users_created_today
+  - @users_created_today.each do  |user|
+    %li= user.email
+%h3  Senaste 5 användare
+%ul#users_last_five
+  - @users_last_five.each do  |user|
+    %li= link_to user.full_name, user_path(user)
+=@users_count_created_by_date
+%h3#speaking_proposals_count Antal talarförslag
+%p= @speaking_proposals_count
+%h3#speaking_proposals_created_today Talarförslag anmälda idag
+%ul
+- @speaking_proposals_created_today.each do  |speaking_proposal|
+  %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+%h3#speaking_proposals_last_five Senaste 5 talarförslag
+%ul
+- @speaking_proposals_last_five.each do  |speaking_proposal|
+  %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+=@speaking_proposals_count_created_by_date
