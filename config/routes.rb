@@ -14,6 +14,9 @@ Agilasverige::Application.routes.draw do
 
   resource :home, :controller => 'home'
 
+  match '/dashboard' => 'dashboard#show'
+
+
   
 
   # The priority is based upon order of creation:
