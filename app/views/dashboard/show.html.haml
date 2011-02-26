@@ -4,11 +4,15 @@
 %h3 Användare skapade idag
 %ul#users_created_today
   - @users_created_today.each do  |user|
-    %li= user.email
+    %li
+      = image_tag user.gravatar_url
+      = user.email
 %h3  Senaste 5 användare
 %ul#users_last_five
   - @users_last_five.each do  |user|
-    %li= link_to user.full_name, user_path(user)
+    %li
+      = image_tag user.gravatar_url
+      = link_to user.full_name, user_path(user)
 = image_tag @user_signup_chart.to_url
 %h2 Talarförslag
 %h3#speaking_proposals_count Antal talarförslag
@@ -20,5 +24,9 @@
 %h3#speaking_proposals_last_five Senaste 5 talarförslag
 %ul
 - @speaking_proposals_last_five.each do  |speaking_proposal|
-  %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+  %li
+    = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+    - speaking_proposal.speakers.each do |speaker|
+      = speaker.full_name
+      = image_tag speaker.gravatar_url
 = image_tag @speaking_proposal_signup_chart.to_url
