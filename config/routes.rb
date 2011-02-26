@@ -14,7 +14,7 @@ Agilasverige::Application.routes.draw do
 
   resource :home, :controller => 'home'
 
-  match '/dashboard' => 'dashboard#show'
+  match '/dashboard' => 'dashboard#show', :as => 'dashboard'
 
 
   
