@@ -1,0 +1,7 @@
+%h2= @user.full_name
+= link_to 'Editera', edit_user_path(@user)
+%ul
+  - @user.attributes.each do |attr_name, attr_value|
+    %li
+      %strong= attr_name+': '
+      %span= attr_value

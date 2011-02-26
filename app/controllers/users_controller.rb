@@ -1,12 +1,13 @@
 class UsersController < InheritedResources::Base
 
-  before_filter :authenticate_user!, :except => :show
+  before_filter :authenticate_user!
+  before_filter :setup_user
 
-  def edit
-    if user_signed_in?
+  private
+
+  def setup_user
+    if !current_user.admin? || params['id'].blank?
       @user = current_user
-    else
-      render '404.html'
     end
   end
   
