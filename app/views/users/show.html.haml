@@ -1,7 +1,11 @@
 %h2= @user.full_name
+.gravatar
+  = image_tag @user.gravatar_url
 = link_to 'Editera', edit_user_path(@user)
-%ul
-  - @user.attributes.each do |attr_name, attr_value|
-    %li
-      %strong= attr_name+': '
-      %span= attr_value
+%h2 Talarförslag
+- if @user.speaking_proposals.empty?
+  %p 
+    = "Du har inga registrerade talarförslag, men du kanske vill"
+    = link_to 'skicka in ett?', new_speaking_proposal_path
+- @user.speaking_proposals.each do |speaking_proposal|
+  = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)

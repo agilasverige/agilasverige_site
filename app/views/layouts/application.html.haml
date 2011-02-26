@@ -29,7 +29,7 @@
             -# %li= link_to 'Program', '#'
             -# %li= link_to 'Tidigare konferenser', '#'
             - if user_signed_in?
-              %li= link_to 'Dina inställningar', edit_current_user_path
+              %li= link_to 'Dina inställningar', current_user_path
               %li= link_to 'Anmäl blixttal', new_current_user_speaking_proposal_path
               %li= link_to 'Logga ut', destroy_user_session_path
             - else
