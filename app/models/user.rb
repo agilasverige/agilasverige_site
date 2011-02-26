@@ -22,7 +22,14 @@ class User < ActiveRecord::Base
   scope :last_five, limit(5).order('created_at DESC')
 
   def self.created_by_date 
-    count(:group => "DATE(created_at)")
+    orig_data = count(:group => "DATE(created_at)")
+    date_range = (orig_data.keys.min..orig_data.keys.max)
+    
+    data = {}
+    date_range.each do |date|
+      data[date] = orig_data[date] || 0
+    end
+    data
   end
 
   def full_name

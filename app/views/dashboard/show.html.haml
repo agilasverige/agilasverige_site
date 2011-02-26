@@ -8,7 +8,7 @@
 %ul#users_last_five
   - @users_last_five.each do  |user|
     %li= link_to user.full_name, user_path(user)
-=@users_count_created_by_date
+= image_tag @user_signup_chart.to_url
 %h3#speaking_proposals_count Antal talarförslag
 %p= @speaking_proposals_count
 %h3#speaking_proposals_created_today Talarförslag anmälda idag
@@ -19,4 +19,4 @@
 %ul
 - @speaking_proposals_last_five.each do  |speaking_proposal|
   %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
-=@speaking_proposals_count_created_by_date
+= image_tag @speaking_proposal_signup_chart.to_url

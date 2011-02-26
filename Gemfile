@@ -14,6 +14,7 @@ gem 'compass'
 gem 'devise'
 gem 'pg'
 gem 'newrelic_rpm'
+gem 'gchartrb', :require => 'google_chart'
 
 
 group :test, :development do
