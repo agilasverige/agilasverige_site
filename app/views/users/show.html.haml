@@ -1,6 +1,6 @@
 %h2= @user.full_name
 .gravatar
-  = image_tag @user.gravatar_url
+  = image_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
 = link_to 'Editera', edit_user_path(@user)
 %h2 Talarförslag
 - if @user.speaking_proposals.empty?
