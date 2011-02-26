@@ -15,6 +15,7 @@ gem 'devise'
 gem 'pg'
 gem 'newrelic_rpm'
 gem 'gchartrb', :require => 'google_chart'
+gem 'navigasmic'
 
 group :test, :development do
   gem 'rspec-rails'

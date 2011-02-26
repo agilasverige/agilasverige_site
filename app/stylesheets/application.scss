@@ -38,8 +38,8 @@ header {
 
 nav {
   
-  .selected {
-    background-image: url('images/triangle.png');
+  .highlighted {
+    background-image: url('/images/triangle.png');
     background-repeat: no-repeat;
     background-position: bottom center;
   }
@@ -57,6 +57,10 @@ nav {
 
   a:link, a:visited {
     color: #333;
+  }
+
+  li {
+    padding-bottom: 5px;
   }
 
 

@@ -23,17 +23,17 @@
             %h2 
               %span "Stockholm 23-24 maj 2011"
         %nav
-          %ul
-            %li= link_to 'Hem', root_path
-            %li= link_to 'Anmälan', new_user_registration_path
+          - semantic_navigation :main do |n|
+            = n.item 'Hem', :link => root_path
+            = n.item 'Anmälan', :link => new_user_registration_path
             -# %li= link_to 'Program', '#'
             -# %li= link_to 'Tidigare konferenser', '#'
             - if user_signed_in?
-              %li= link_to 'Dina inställningar', current_user_path
-              %li= link_to 'Anmäl blixttal', new_current_user_speaking_proposal_path
-              %li= link_to 'Logga ut', destroy_user_session_path
+              = n.item 'Dina inställningar', :link => current_user_path
+              = n.item 'Anmäl blixttal', :link => new_current_user_speaking_proposal_path
+              = n.item 'Logga ut', :link => destroy_user_session_path
             - else
-              %li= link_to 'Logga in', new_user_session_path
+              = n.item 'Logga in', :link => new_user_session_path
       .main
         #flash
           - if flash.size > 0

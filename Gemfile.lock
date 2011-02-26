@@ -93,6 +93,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    navigasmic (0.5.5)
     newrelic_rpm (2.13.4)
     nokogiri (1.4.4)
     pg (0.10.1)
@@ -170,6 +171,7 @@ DEPENDENCIES
   inherited_resources
   launchy
   machinist (>= 2.0.0.beta2)
+  navigasmic
   newrelic_rpm
   pg
   rails (~> 3.0.0)
