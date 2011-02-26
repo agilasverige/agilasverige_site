@@ -12,6 +12,9 @@ class SpeakingProposalsController < InheritedResources::Base
 
   def create
     create! do |success, failure|
+
+      @speaking_proposal.speakers << current_user
+
       success.html do
         flash[:notice] = "Tack för din blixttalsanmälan, vi har skickat ett e-brev som bekräftar din anmälan"
         SpeakingProposalMailer.thanks_for_submission(current_user, @speaking_proposal).deliver

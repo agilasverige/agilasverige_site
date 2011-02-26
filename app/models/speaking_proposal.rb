@@ -6,6 +6,7 @@ class SpeakingProposal  < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :abstract
   validates_acceptance_of :accept_terms
+  validate :has_speakers
 
   scope :created_today, where('created_at > ? AND created_at < ?', Date.today, Date.tomorrow)
   scope :last_five, limit(5).order('created_at DESC')
@@ -19,6 +20,12 @@ class SpeakingProposal  < ActiveRecord::Base
       data[date] = orig_data[date] || 0
     end
     data
+  end
+
+  private
+
+  def has_speakers
+    speakers.size > 0
   end
 
 end

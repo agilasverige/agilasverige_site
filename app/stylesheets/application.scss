@@ -113,9 +113,14 @@ footer {
     max-width: 150px; 
   }
 
-
   li {
     margin-top: 10px;
+  }
+}
+
+#speaking_proposals {
+  .speaker_info {
+    float: right;
   }
 }
 
