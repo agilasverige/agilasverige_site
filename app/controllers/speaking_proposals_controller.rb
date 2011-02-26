@@ -19,4 +19,5 @@ class SpeakingProposalsController < InheritedResources::Base
       end
     end
   end
+
 end

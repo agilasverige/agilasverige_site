@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 class User < ActiveRecord::Base
 
 
@@ -40,4 +42,13 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
 
+  def gravatar_url
+    "http://www.gravatar.com/avatar/#{gravatar_hash}?d=mm"
+  end
+
+  private
+
+  def gravatar_hash
+    Digest::MD5.hexdigest(email.downcase)
+  end
 end

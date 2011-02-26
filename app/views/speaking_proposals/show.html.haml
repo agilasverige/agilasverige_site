@@ -1,2 +1,9 @@
 %h2= @speaking_proposal.title
+- @speaking_proposal.speakers.each do |speaker|
+  .speaker_info
+    .gravatar
+      =image_tag speaker.gravatar_url
+    .speaker_name
+      = speaker.full_name
 %p= @speaking_proposal.abstract
+
