@@ -19,14 +19,14 @@
 %p= @speaking_proposals_count
 %h3#speaking_proposals_created_today Talarförslag anmälda idag
 %ul
-- @speaking_proposals_created_today.each do  |speaking_proposal|
-  %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+  - @speaking_proposals_created_today.each do  |speaking_proposal|
+    %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
 %h3#speaking_proposals_last_five Senaste 5 talarförslag
 %ul
-- @speaking_proposals_last_five.each do  |speaking_proposal|
-  %li
-    = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
-    - speaking_proposal.speakers.each do |speaker|
-      = speaker.full_name
-      = image_tag speaker.gravatar_url
+  - @speaking_proposals_last_five.each do  |speaking_proposal|
+    %li
+      = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+      - speaking_proposal.speakers.each do |speaker|
+        = speaker.full_name
+        = image_tag speaker.gravatar_url
 = image_tag @speaking_proposal_signup_chart.to_url
