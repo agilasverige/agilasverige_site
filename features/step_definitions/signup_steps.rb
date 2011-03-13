@@ -23,3 +23,7 @@ Then /^I get a confirmation email$/ do
   BaseEmail.sent_emails.first.to.should == TEST_EMAIL_ADDRESS  
 end
 
+Then /^I am registered$/ do
+  User.find_by_email('test@test.com').should_not be_nil
+end
+

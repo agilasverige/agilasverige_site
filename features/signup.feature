@@ -19,5 +19,6 @@ Feature: Signup
       | Postadress           | Testinge      |
       | Fakturareferens      | Test          |
     When I press "Skicka anmälan"
-    Then I should see "Tack för din anmälan"
+    Then I am registered
+    And I should see "Tack för din anmälan"
     And "test@test.com" should receive an email
