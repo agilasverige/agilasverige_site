@@ -17,6 +17,7 @@ describe "SponsorList" do
                 ['Citerus','citerus.se'],
                 ['Jaybis','jaybis.se'],
                 ['Sogeti','sogeti.se'],
+                ['CAG','cag.se'],
                 ['Agero','agero.se'],
                 ['Adaptiv','adaptiv.se'],
                 ['AddQ','addq.se'],
@@ -43,8 +44,8 @@ describe "a random sponsorlist" do
     @random_ordered_sponsors = @sponsor_list.random_order
   end
 
-  it "should have 13 elements" do
-    @random_ordered_sponsors.length.should == 13
+  it "should have 14 elements" do
+    @random_ordered_sponsors.length.should == 14
   end
   
   it "should not provide the list ordered the same way twice" do
