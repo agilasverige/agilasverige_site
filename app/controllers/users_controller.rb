@@ -14,7 +14,8 @@ class UsersController < InheritedResources::Base
       end
       format.csv do
         @users  = User.all
-        csv =CSV.generate(:col_sep => ",") do |csv| 
+        header = "First Name, Last Name, Organization, Address, Zip Code, Postal Address, Country, Invoice Reference, Telephone Number, Attending Dinner, Food Preferences, Comments, Email\n"
+        csv =CSV.generate(header) do |csv| 
           @users.each do |user|
             csv << [user.last_name,
                     user.first_name,
