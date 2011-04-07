@@ -1,3 +1,5 @@
+require 'csv'
+
 class UsersController < InheritedResources::Base
 
   before_filter :authenticate_user!
@@ -5,8 +7,33 @@ class UsersController < InheritedResources::Base
   before_filter :authorize_admin!, :only => [:index]
 
   def index 
-    @users=User.find_for_table(params)
-    render :layout => 'admin'
+    respond_to do |format|
+      format.html do
+        @users=User.find_for_table(params)
+        render :layout => 'admin'
+      end
+      format.csv do
+        @users  = User.all
+        csv =CSV.generate(:col_sep => ",") do |csv| 
+          @users.each do |user|
+            csv << [user.last_name,
+                    user.first_name,
+                    user.organization,
+                    user.address,
+                    user.zip_code,
+                    user.postal_address,
+                    user.country,
+                    user.invoice_reference,
+                    user.telephone_number,
+                    user.attending_dinner,
+                    user.food_preferences,
+                    user.comments,
+                    user.email]
+          end
+        end
+        render :text => csv
+      end
+    end
   end
 
   private
