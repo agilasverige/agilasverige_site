@@ -47,54 +47,11 @@
               %p.flash.notice= flash[:alert]
             - if flash[:warning]
               %p.flash.warning= flash[:warning]
-        %aside.sidebar
-          .subnavigation
-            %ul
-              %li
-          .follow_us_twitter
-            %a{:href => "http://www.twitter.com/agilasverige"} Follow us on Twitter 
-          .tweets
-            %script{:src => "http://widgets.twimg.com/j/2/widget.js"}
-            :javascript
-              new TWTR.Widget({
-                version: 2,
-                type: 'search',
-                search: '#agilasverige',
-                interval: 20000,
-                title: 'Twitter',
-                subject: '',
-                width: 'auto',
-                height: 300,
-                theme: {
-                  shell: {
-                    background: '#e20d82',
-                    color: '#ffffff'
-                  },
-                  tweets: {
-                    background: '#ffffff',
-                    color: '#444444',
-                    links: '#e20d82'
-                  }
-                },
-                features: {
-                  scrollbar: true,
-                  loop: true,
-                  live: true,
-                  hashtags: true,
-                  timestamp: true,
-                  avatars: true,
-                  behavior: 'default'
-                }
-              }).render().start();
+        = yield :left_side_bar
         %section
           .section-wrapper
-            = yield
-        %aside.sponsors 
-          %h2 Sponsorer
-          %ul.sponsor_list
-            - @sponsors.random_order.each do |sponsor|
-              %li
-                = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
+            = content_for?(:content) ? yield(:content) : yield
+        = yield :right_side_bar
       %footer
         .contact
           %span &copy; Agila Sverige 2011 |

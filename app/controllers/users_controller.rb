@@ -6,6 +6,7 @@ class UsersController < InheritedResources::Base
 
   def index 
     @users=User.find_for_table(params)
+    render :layout => 'admin'
   end
 
   private
