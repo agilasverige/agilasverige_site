@@ -4,6 +4,10 @@ class UsersController < InheritedResources::Base
   before_filter :setup_user
   before_filter :authorize_admin!
 
+  def index 
+    @users=User.find_for_table(params)
+  end
+
   private
 
   def setup_user
