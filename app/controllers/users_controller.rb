@@ -2,7 +2,7 @@ class UsersController < InheritedResources::Base
 
   before_filter :authenticate_user!
   before_filter :setup_user
-  before_filter :authorize_admin!
+  before_filter :authorize_admin!, :only => [:index]
 
   def index 
     @users=User.find_for_table(params)
