@@ -16,6 +16,7 @@ gem 'pg'
 gem 'newrelic_rpm'
 gem 'gchartrb', :require => 'google_chart'
 gem 'navigasmic'
+gem 'tabulatr'
 
 group :test, :development do
   gem 'rspec-rails'
