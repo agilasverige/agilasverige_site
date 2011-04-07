@@ -1,7 +1,7 @@
 # coding: utf-8
 class SpeakingProposalsController < InheritedResources::Base
 
-  before_filter :authenticate_user!, :except => :show
+  before_filter :authenticate_user!
   
   belongs_to :user, :optional => true
 
@@ -20,6 +20,13 @@ class SpeakingProposalsController < InheritedResources::Base
         SpeakingProposalMailer.thanks_for_submission(current_user, @speaking_proposal).deliver
         redirect_to speaking_proposal_path(@speaking_proposal)
       end
+    end
+  end
+
+  def edit
+    @speaking_proposal = SpeakingProposal.find(params[:id])
+    unless @speaking_proposal.speakers.include?(current_user)
+      render :file => 'public/404.html', :status_code => 404
     end
   end
 
