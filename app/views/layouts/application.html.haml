@@ -34,7 +34,7 @@
               - if current_user.admin?
                 = n.item 'Dashboard', :link => dashboard_path
             - else
-              = n.item 'Anmälan', :link => new_user_registration_path
+              -# = n.item 'Anmälan', :link => new_user_registration_path
               = n.item 'Logga in', :link => new_user_session_path
       .main
         #flash

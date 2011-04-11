@@ -3,7 +3,8 @@ Feature: Signup
   In order to register for the conference
   An visitor wants to sign up on the webpage
 
-  Scenario:
+  @wip
+  Scenario: User signs up
     Given I am a previously unregistered visitor
       And I am on the start page
       And I follow "Anmälan"
