@@ -30,6 +30,7 @@ end
 group :test do
   gem 'email_spec'
   gem 'shoulda-matchers'
+  gem 'email_spec'
 end
 
 

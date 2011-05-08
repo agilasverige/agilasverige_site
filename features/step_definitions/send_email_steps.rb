@@ -36,3 +36,24 @@ Then /^a copy is sent to as\-xx list$/ do
   @sent_email.bcc.should include 'as-xx@googlegroups.com'
 end
 
+Given /^the following attendants exist:$/ do |table|
+  table.hashes.each do |row|
+    user = User.make(:email => row[:email])
+    user.attending_dinner = row[:dinner]
+    if(row[:speaker])
+      SpeakingProposal
+    end
+
+  end
+end
+
+When /^an admin sends an email to everyone$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then /^'$/ do
+  pending # express the regexp above with the code you wish you had
+end
+
+
+
