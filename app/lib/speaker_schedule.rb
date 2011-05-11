@@ -1,64 +1,54 @@
+# coding: utf-8
 class SpeakerSchedule
 
-  def initialize
-    setup_schedule
+  def monday
+      {'10:20 - 10:30', 56},
+      {'10:32 - 10:42', 59}, 
+      {'10:44 - 10:54', 49},
+      {'10:56 - 11:06', 29},
+      {'11:08 - 11:18', 52},
+      {'11:30 - 11:40', 33},
+      {'11:42 - 11:52', 10},
+      {'11:54 - 12:04', 24},
+      {'12:06 - 12:16', 73},
+      {'12:18 - 12:28', 44},
+      {'13:30 - 13:40', 33},
+      {'13:42 - 13:52', 10},
+      {'13:54 - 14:04', 24},
+      {'14:06 - 14:16', 73},
+      {'14:18 - 14:28', 44},
+      {'14:50 - 15:00', 71},
+      {'15:02 - 15:12', 20},
+      {'15:14 - 15:24', 51},
+      {'15:26 - 15:36', 22},
+      {'15:38 - 15:48', 65}]
   end
 
-  def speaker(args)
-    proposal = speaking_proposal(args)
-    proposal ? proposal.user : ""
-  end
+  def tuesday 
+    [{'09:00 - 09:10', 62},
+      {'09:12 - 09:22', 2},
+      {'09:24 - 09:34', 6},
+      {'09:36 - 09:46', 60},
+      {'09:48 - 09:58', 13},
+      {'10:20 - 10:30', 45},
+      {'10:32 - 10:42', 64}, 
+      {'10:44 - 10:54', 5},
+      {'10:56 - 11:06', 28},
+      {'11:08 - 11:18', 23},
+      {'11:30 - 11:40', 41},
+      {'11:42 - 11:52', 40},
+      {'11:54 - 12:04', 12},
+      {'12:06 - 12:16', 42},
+      {'12:18 - 12:28', 74},
+      {'13:30 - 13:40', 57},
+      {'13:42 - 13:52', 18},
+      {'13:54 - 14:04', 19},
+      {'14:06 - 14:16', 69},
+      {'14:18 - 14:28', 27},
+      {'14:50 - 15:00', 38},
+      {'15:02 - 15:12', 17},
+      {'15:14 - 15:24', 68},
+      {'15:26 - 15:36', 67},
+      {'15:38 - 15:48', 47}]
 
-  def title(args)
-    proposal = speaking_proposal(args)
-    proposal ? proposal.title : ""
-  end
-
-  def description(args)
-    proposal = speaking_proposal(args)
-    proposal ? proposal.description : ""
-  end
-
-  def organization(args)
-    proposal = speaking_proposal(args)
-    proposal ? proposal.user : ""
-  end
-
-
-  private
-
-  def speaking_proposal(args)
-    sp_id = parse_id(args)
-    SpeakingProposal.first(:id => sp_id)
-  end
-
-  def parse_id(args) 
-    day = args[:day] - 1
-    track = args[:track] - 1
-    slot = args[:slot] - 1
-    talk = args[:talk] - 1
-    @schedule[day][track][slot][talk]
-  end
-
-  def setup_schedule
-    slot1_1_1 = [49,5,16,54]
-    slot1_1_2 = [46,2,65,14,77]
-    slot1_1_3 = [64,35,41,48,19]
-    slot1_2_1 = [66,69,10,70]
-    slot1_2_2 = [38,62,50,34,67]
-    slot1_2_3 = [71,31,30,72,73]
-    slot2_1_1 = [37,74,39,57,8]
-    slot2_1_2 = [60,52,59,24,27]
-    slot2_1_3 = [68,15,4,47,58]
-    slot2_2_1 = [56,6,26,76,28]
-    slot2_2_2 = [18,11,17,20,78]
-    slot2_2_3 = [36,63,40,25,29]
-    track1_1 = [slot1_1_1, slot1_1_2, slot1_1_3]
-    track1_2 = [slot1_2_1, slot1_2_2, slot1_2_3]
-    track2_1 = [slot2_1_1, slot2_1_2, slot2_1_3]
-    track2_2 = [slot2_2_1, slot2_2_2, slot2_2_3]
-    day1 = [track1_1, track1_2]
-    day2 = [track2_1, track2_2]
-    @schedule = [day1, day2]
-  end
 end
