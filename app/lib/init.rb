@@ -1,6 +1,0 @@
-require File.expand_path(File.join(File.dirname(__FILE__),'sponsor_list'))
-require File.expand_path(File.join(File.dirname(__FILE__),'presentations08'))
-require File.expand_path(File.join(File.dirname(__FILE__),'presentation'))
-require File.expand_path(File.join(File.dirname(__FILE__),'email'))
-require File.expand_path(File.join(File.dirname(__FILE__),'schedule'))
-require File.expand_path(File.join(File.dirname(__FILE__),'day'))

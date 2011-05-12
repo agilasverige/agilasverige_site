@@ -1,7 +1,7 @@
 module ProgramView
-  class ProgramBaseView < TwoColumnView
 
-    needs :schedule, :sessions
+  class ProgramBaseView 
+    include Crafty::HTML::Basic
 
     def talkinfo(id = '')
       session = find_session(id)
@@ -21,6 +21,7 @@ module ProgramView
         end
       end
     end
+
     def proposal_title(session)
       !session.nil? ? session.title : 'unknown'
     end
