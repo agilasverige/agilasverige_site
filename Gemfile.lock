@@ -95,7 +95,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     navigasmic (0.5.5)
-    newrelic_rpm (2.13.4)
+    newrelic_rpm (3.0.1)
     nokogiri (1.4.4)
     pg (0.10.1)
     polyglot (0.3.1)
