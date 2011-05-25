@@ -17,8 +17,6 @@ Agilasverige::Application.routes.draw do
   match '/dashboard' => 'dashboard#show', :as => 'dashboard'
 
 
-  
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

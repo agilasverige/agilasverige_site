@@ -5,6 +5,7 @@ gem 'rails', '~> 3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'rake', '0.8.7'
 gem 'inherited_resources'
 gem 'haml'
 gem 'rdiscount'
@@ -17,6 +18,7 @@ gem 'newrelic_rpm'
 gem 'gchartrb', :require => 'google_chart'
 gem 'navigasmic'
 gem 'tabulatr'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :test, :development do
   gem 'rspec-rails'
