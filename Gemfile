@@ -18,7 +18,7 @@ gem 'newrelic_rpm'
 gem 'gchartrb', :require => 'google_chart'
 gem 'navigasmic'
 gem 'tabulatr'
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+# gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :test, :development do
   gem 'rspec-rails'
