@@ -25,7 +25,7 @@
         %nav
           - semantic_navigation :main do |n|
             = n.item 'Hem', :link => root_path
-            = n.item 'Program', :link => '/static_files/agila_sverige_program_2011.pdf'
+            = n.item 'Program 2011', :link => '/static_files/agila_sverige_program_2011.pdf'
             -# %li= link_to 'Tidigare konferenser', '#'
             - if user_signed_in?
               = n.item 'Dina inställningar', :link => current_user_path, :highlights_on => {:controller => 'users'}
