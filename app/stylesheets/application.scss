@@ -31,7 +31,7 @@ header {
       @include replace-text-with-dimensions('as_logo.png');
     }
     h2 {
-      @include replace-text-with-dimensions('indexcard2011.png');
+      @include replace-text-with-dimensions('indexcard.png');
     }
   }
 }
