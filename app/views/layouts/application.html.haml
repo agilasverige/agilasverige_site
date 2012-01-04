@@ -1,7 +1,7 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv"}
   %head
-    %title Agila Sverige 2011
+    %title Agila Sverige 2012
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
     = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
@@ -19,9 +19,9 @@
           %hgroup
             %h1
               %span
-                = link_to "Agila Sverige 2011", root_path
+                = link_to "Agila Sverige 2012", root_path
             %h2 
-              %span "Stockholm 23-24 maj 2011"
+              %span "Stockholm 23-24 maj 2012"
         %nav
           - semantic_navigation :main do |n|
             = n.item 'Hem', :link => root_path
@@ -54,7 +54,7 @@
         = yield :right_side_bar
       %footer
         .contact
-          %span &copy; Agila Sverige 2011 |
+          %span &copy; Agila Sverige 2012 |
           %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
         :javascript 
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
