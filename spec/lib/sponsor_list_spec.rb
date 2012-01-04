@@ -11,16 +11,16 @@ describe "SponsorList" do
     sponsors = [['GlobalInn','globalinn.com'],
                 ['Agical','agical.se'],
                 ['Dynabyte','dynabyte.se'],
-                ['Avega','avegagroup.se'],
-                ['Valtech','valtech.se'],
-                ['Omegapoint','omegapoint.se'],
-                ['Citerus','citerus.se'],
-                ['Jaybis','jaybis.se'],
-                ['Sogeti','sogeti.se'],
-                ['CAG','cag.se'],
-                ['Agero','agero.se'],
+                # ['Avega','avegagroup.se'],
+                # ['Valtech','valtech.se'],
+                # ['Omegapoint','omegapoint.se'],
+                # ['Citerus','citerus.se'],
+                # ['Jaybis','jaybis.se'],
+                # ['Sogeti','sogeti.se'],
+                # ['CAG','cag.se'],
+                # ['Agero','agero.se'],
                 ['Adaptiv','adaptiv.se'],
-                ['AddQ','addq.se'],
+                # ['AddQ','addq.se'],
                 ['Responsive', 'responsive.se']]
 
     sponsors.each do |sponsor|
@@ -44,8 +44,8 @@ describe "a random sponsorlist" do
     @random_ordered_sponsors = @sponsor_list.random_order
   end
 
-  it "should have 14 elements" do
-    @random_ordered_sponsors.length.should == 14
+  it "should have 5 elements" do
+    @random_ordered_sponsors.length.should == 5
   end
   
   it "should not provide the list ordered the same way twice" do
