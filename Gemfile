@@ -6,6 +6,7 @@ gem 'rails', '~> 3.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'rake', '0.9.2'
+gem 'capistrano'
 gem 'inherited_resources'
 gem 'haml'
 gem 'rdiscount'
