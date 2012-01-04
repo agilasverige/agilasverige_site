@@ -32,6 +32,8 @@ header {
     }
     h2 {
       @include replace-text-with-dimensions('indexcard.png');
+      float: right;
+      margin-right: 10px;
     }
   }
 }
