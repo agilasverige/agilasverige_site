@@ -26,8 +26,8 @@ class SponsorList
       # Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
       Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
       # Sponsor.new("Sogeti", "sogeti_logo.png", "http://www.sogeti.se"),
-      # Sponsor.new("Attentec", "attentec_logo.png", "http://www.attentec.se"),
-       # Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
+      Sponsor.new("Attentec", "attentec_logo.png", "http://www.attentec.se"),
+      # Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
       Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se"),
       # Sponsor.new("CAG", "cag_logo.png", "http://www.cag.se"),
       # Sponsor.new("Omegapoint", "omegapoint_logo.png", "http://www.omegapoint.se")
