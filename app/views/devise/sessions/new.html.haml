@@ -1,3 +1,7 @@
+%h2 Registrera dig
+%p= link_to "Registera dig här", new_registration_path(resource_name)
+%p När du har registrerat dig och loggat in kan du anmäla tal. 
+
 %h2 Logga in
 = semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   = f.inputs do
