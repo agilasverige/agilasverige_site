@@ -24,6 +24,7 @@ sv:
       send_instructions: 'Du kommer snart att få ett e-brev med instruktioner hur du bekräftar ditt konto.'
       confirmed: 'Ditt konto är bekräftat och du är nu inloggad.'
     registrations:
+      inactive_signed_up: 'Tack för din anmälan! Du är nu registrerad och ett e-brev är skickat med instruktioner om hur du bekräftar din anmälan.'
       signed_up: 'Tack för din anmälan! Du är nu registrerad och ett e-brev är skickat med instruktioner om hur du bekräftar din anmälan.'
       updated: 'Dina kontouppgifter är uppdaterade'
       destroyed: 'Ditt konto är avslutat.'
