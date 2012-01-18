@@ -1,5 +1,5 @@
 %p
-  Välkommen till Agila Sverige 2011 #{@resource.email}!
+  Välkommen till Agila Sverige #{@resource.email}!
 = render :partial => 'shared/attendant_info'
 %p Bekräfta din anmälan genom att klicka på länken nedan:
 %p= link_to 'Bekräfta min anmälan', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
