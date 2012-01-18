@@ -22,6 +22,6 @@ describe SpeakingProposalMailer do
   it { should have_subject 'Tack för din blixttalsanmälan' }
   it { should have_body_text /#{@speaking_proposal.title}/ }
   it { should have_body_text /#{current_user_url}/ }
-  it { should have_body_text /Agila Sverige 2011/ }
+  it { should have_body_text /Agila Sverige 2012/ }
 
 end
