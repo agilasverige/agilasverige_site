@@ -27,6 +27,11 @@ group :test, :development do
   gem 'ffaker'
   gem 'hirb'
   gem 'wirble'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'guard-livereload'
+  gem 'foreman'
 end
 
 group :test do
