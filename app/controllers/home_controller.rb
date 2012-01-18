@@ -12,6 +12,7 @@ class HomeController < ApplicationController
 
   def edit
     @content = EditableContent.find_or_create_by_page_name('home')
+    render layout: 'edit'
   end
 
 end
