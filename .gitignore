@@ -4,3 +4,10 @@ log/*.log
 tmp/**/*
 public/stylesheets/compiled
 config/database.yml
+.sass-cache
+rerun.txt
+.generators
+.rakeTasks
+agilasverige_site.iml
+agilasverige_site.ipr
+agilasverige_site.iws
