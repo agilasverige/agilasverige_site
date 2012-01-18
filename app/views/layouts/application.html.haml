@@ -34,10 +34,8 @@
                 = n.item 'Dashboard', :link => dashboard_path
             - else
               -#= n.item 'Anmälan', :link => new_user_registration_path
-
-              = n.item 'Tidigare konferenser', :link => old_path
-
               = n.item 'Delta i konferensen', :link => new_user_session_path
+              = n.item 'Tidigare konferenser', :link => old_path
       .main
         #flash
           - if flash.size > 0
