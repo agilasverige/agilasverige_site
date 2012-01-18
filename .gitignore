@@ -4,3 +4,8 @@ log/*.log
 tmp/**/*
 public/stylesheets/compiled
 config/database.yml
+.generators
+.rakeTasks
+agilasverige_site.iml
+agilasverige_site.ipr
+agilasverige_site.iws
