@@ -1,6 +1,8 @@
 %h2 Deltagare
 %h3#users_count Antal anmälda
-%p=@users_count
+%p
+  = @users_count
+  = link_to "Lista användare", users_path
 %h3 Användare skapade idag
 %ul#users_created_today
   - @users_created_today.each do  |user|
