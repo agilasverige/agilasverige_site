@@ -1,0 +1,6 @@
+%ul
+  - @proposals.each do  |speaking_proposal|
+    %li
+      = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+      - speaking_proposal.speakers.each do |speaker|
+        = speaker.full_name

@@ -16,7 +16,9 @@
 = image_tag @user_signup_chart.to_url
 %h2 Talarförslag
 %h3#speaking_proposals_count Antal talarförslag
-%p= @speaking_proposals_count
+%p
+  = @speaking_proposals_count
+  = link_to "Lista förslag", speaking_proposals_path
 %h3#speaking_proposals_created_today Talarförslag anmälda idag
 %ul
   - @speaking_proposals_created_today.each do  |speaking_proposal|
