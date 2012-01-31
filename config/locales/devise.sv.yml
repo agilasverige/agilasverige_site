@@ -14,6 +14,7 @@ sv:
       invalid_token: 'Ogiltig autentiseringsnyckel'
       timeout: 'Du har blivit utloggad, var vänlig logga in igen'
       inactive: 'Ditt konto är inte bekräftat'
+      already_authenticated: 'Du är redan inloggad'
     sessions:
       signed_in: 'Du är nu inloggad'
       signed_out: 'Du är nu utloggad'
