@@ -22,7 +22,7 @@ $border: 1px solid $pink;
     @include container;
 }
 
-header {
+.header {
   .logo {
     h1, h2 {
       @include inline-block;
@@ -38,7 +38,7 @@ header {
   }
 }
 
-nav {
+.nav {
   
   .highlighted {
     background-image: url('/images/triangle.png');
@@ -98,7 +98,7 @@ form {
     @include column(6);
   }
 
-  section {
+  .section {
     @include column(12);
   }
 
@@ -107,7 +107,7 @@ form {
   }
 }
 
-footer {
+.footer {
   @include column(24, true);
 }
 

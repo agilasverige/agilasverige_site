@@ -14,15 +14,15 @@
     = javascript_include_tag '/markitup/sets/markdown/set.js'
   %body{:id => controller.controller_name, :class => :bp}
     #container
-      %header
+      .header
         .logo
-          %hgroup
+          .hgroup
             %h1
               %span
                 = link_to "Agila Sverige 2012", root_path
             %h2 
               %span "Stockholm 23-24 maj 2012"
-        %nav
+        .nav
           - semantic_navigation :main do |n|
             = n.item 'Hem', :link => root_path
             -# %li= link_to 'Tidigare konferenser', '#'
@@ -48,11 +48,11 @@
             - if flash[:warning]
               %p.flash.warning= flash[:warning]
         = yield :left_side_bar
-        %section
+        .section
           .section-wrapper
             = content_for?(:content) ? yield(:content) : yield
         = yield :right_side_bar
-      %footer
+      .footer
         .contact
           %span &copy; Agila Sverige 2012 |
           %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
