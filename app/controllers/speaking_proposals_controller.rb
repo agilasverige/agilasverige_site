@@ -5,6 +5,11 @@ class SpeakingProposalsController < InheritedResources::Base
   
   belongs_to :user, :optional => true
 
+  def index
+    @proposals=SpeakingProposal.list
+    render :layout => 'admin'
+  end
+
   def new
     @user = current_user
     @speaking_proposal = SpeakingProposal.new
