@@ -44,9 +44,6 @@ describe "a random sponsorlist" do
     @random_ordered_sponsors = @sponsor_list.random_order
   end
 
-  it "should have 6 elements" do
-    @random_ordered_sponsors.length.should == 6
-  end
   
   it "should not provide the list ordered the same way twice" do
     @sponsor_list.random_order.should_not == @random_ordered_sponsors
