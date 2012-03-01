@@ -21,7 +21,8 @@ describe "SponsorList" do
                 # ['Agero','agero.se'],
                 ['Adaptiv','adaptiv.se'],
                 # ['AddQ','addq.se'],
-                ['Responsive', 'responsive.se']]
+                ['Responsive', 'responsive.se'],
+                ['Spotify', 'spotify.se']]
 
     sponsors.each do |sponsor|
       current_name = sponsor.first

@@ -35,6 +35,7 @@ class SponsorList
       # Sponsor.new("Informator", "informator_logo.png", "http://www.informator.se"),
       # Sponsor.new("Crisp", "crisp_logo.png", "http://www.crisp.se")
       Sponsor.new("Know IT", "knowit_logo.gif", "http://www.knowit.se"),
+      Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se"),
     ]
   end
   
