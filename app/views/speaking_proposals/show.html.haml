@@ -6,10 +6,13 @@
       = speaker.full_name
 %h2= @speaking_proposal.title
 %p= @speaking_proposal.abstract
-- if @speaking_proposal.presentation
-  = link_to 'Presentation', @speaking_proposal.presentation.url
 - if @speaking_proposal.speakers.include?(current_user)
-  = link_to "Editera", edit_speaking_proposal_path(@speaking_proposal)
+  %p
+    = link_to "Editera", edit_speaking_proposal_path(@speaking_proposal)
+  %h3 Presentationsmaterial
+  - if @speaking_proposal.presentation
+    %p
+      = link_to 'Nuvarande', @speaking_proposal.presentation.url
   = form_tag upload_presentation_speaking_proposal_path(@speaking_proposal), :multipart => true do
     = file_field_tag 'file'
     = submit_tag 'Ladda upp'
