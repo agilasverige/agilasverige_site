@@ -9,10 +9,11 @@
 - if @speaking_proposal.speakers.include?(current_user)
   %p
     = link_to "Editera", edit_speaking_proposal_path(@speaking_proposal)
-  %h3 Presentationsmaterial
-  - if @speaking_proposal.presentation
-    %p
-      = link_to 'Nuvarande', @speaking_proposal.presentation.url
+%h3 Presentationsmaterial
+- if not @speaking_proposal.presentation.blank?
+  %p
+    = link_to 'Nuvarande', @speaking_proposal.presentation.url
+- if @speaking_proposal.speakers.include?(current_user)
   = form_tag upload_presentation_speaking_proposal_path(@speaking_proposal), :multipart => true do
     = file_field_tag 'file'
     = submit_tag 'Ladda upp'
