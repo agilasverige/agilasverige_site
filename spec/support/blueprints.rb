@@ -16,3 +16,7 @@ SpeakingProposal.blueprint do
   title { Faker::Lorem.sentence }
   abstract { Faker::Lorem.paragraphs.join('\n\n').strip }
 end
+
+User.blueprint(:admin) do
+  role { 'admin'}
+end
