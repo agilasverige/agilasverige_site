@@ -3,13 +3,17 @@ Agilasverige::Application.routes.draw do
   devise_for :users
 
 
-  resources :speaking_proposals
+  resources :speaking_proposals do
+    member do
+      post 'upload_presentation'
+    end
+  end
   resources :editable_content
 
   resources :users
 
   resource :user, :as => :current_user do
-    resources :speaking_proposals 
+    resources :speaking_proposals
   end
 
   resource :home, :controller => 'home'

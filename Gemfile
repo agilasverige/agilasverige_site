@@ -19,6 +19,7 @@ gem 'newrelic_rpm'
 gem 'gchartrb', :require => 'google_chart'
 gem 'navigasmic'
 gem 'tabulatr'
+gem 'carrierwave'
 
 group :test, :development do
   gem 'rspec-rails'

@@ -35,4 +35,11 @@ class SpeakingProposalsController < InheritedResources::Base
     end
   end
 
+  def upload_presentation
+    speaking_proposal = SpeakingProposal.find(params[:id])
+    speaking_proposal.presentation = params[:file]
+    speaking_proposal.save!
+    redirect_to speaking_proposal_path(@speaking_proposal)
+  end
+
 end

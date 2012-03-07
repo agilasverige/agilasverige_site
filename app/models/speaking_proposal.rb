@@ -3,6 +3,8 @@ class SpeakingProposal  < ActiveRecord::Base
   has_many :speaking_engagements
   has_many :speakers, :through => :speaking_engagements, :source => :user
 
+  mount_uploader :presentation, PresentationUploader
+
   validates_presence_of :title
   validates_presence_of :abstract
   validates_acceptance_of :accept_terms

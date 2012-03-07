@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110205211236) do
+ActiveRecord::Schema.define(:version => 20120307180344) do
 
   create_table "editable_content", :force => true do |t|
     t.text   "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110205211236) do
     t.text     "abstract"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "presentation"
   end
 
   create_table "users", :force => true do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20110205211236) do
     t.datetime "updated_at"
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
