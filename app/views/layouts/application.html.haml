@@ -25,6 +25,7 @@
         .nav
           - semantic_navigation :main do |n|
             = n.item 'Hem', :link => root_path
+            = n.item 'Program', :link => '/static_files/affisch_2012.pdf'
             -# %li= link_to 'Tidigare konferenser', '#'
             - if user_signed_in?
               = n.item 'Dina inställningar', :link => current_user_path, :highlights_on => {:controller => 'users'}
@@ -33,7 +34,6 @@
               - if current_user.admin?
                 = n.item 'Dashboard', :link => dashboard_path
             - else
-              = n.item 'Program', :link => '/static_files/affisch_2012.pdf'
               = n.item 'Delta i konferensen', :link => new_user_session_path
               = n.item 'Tidigare konferenser', :link => old_path
       .main
