@@ -50,5 +50,14 @@ task :console, :roles => :app do
   end
 end
 
+task :notify_ratchetio, :roles => :app do
+  set :revision, `git log -n 1 --pretty=format:"%H"`
+  set :local_user, `whoami`
+  set :ratchetio_token, '7f7e772321a748e4b5c470b5aec54355'
+  rails_env = fetch(:rails_env, 'production')
+  run "curl https://submit.ratchet.io/api/1/deploy/ -F access_token=#{ratchetio_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user}"
+end
+
 after "deploy:update", "newrelic:notice_deployment"
+after :deploy, 'notify_ratchetio'
 after 'deploy:update_code', 'deploy:symlink_shared'
