@@ -3,8 +3,8 @@ Feature: Administrator Sends Email
   In order to deliver information to attendants
   An administrator can send email to them
 
+  @wip
   Scenario: Send to everyone
-
     Given the following attendants exist:
       | email                 | speaker | dinner |
       | attendant@example.org | false   | false  |
