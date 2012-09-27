@@ -20,6 +20,7 @@ gem 'gchartrb', :require => 'google_chart'
 gem 'navigasmic'
 gem 'tabulatr'
 gem 'carrierwave'
+gem 'ratchetio', '>= 0.1.2'
 
 group :test, :development do
   gem 'rspec-rails'
