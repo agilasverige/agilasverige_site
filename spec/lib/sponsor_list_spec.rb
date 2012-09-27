@@ -9,9 +9,9 @@ describe "SponsorList" do
   
   it 'should have all paying sponsors' do
     sponsors = [['GlobalInn','globalinn.com'],
-                ['Agical','agical.se'],
-                ['Dynabyte','dynabyte.se'],
-                ['Attentec','attentec.se'],
+                ['Agical','agical.se']]
+                # ['Dynabyte','dynabyte.se'],
+                # ['Attentec','attentec.se'],
                 # ['Valtech','valtech.se'],
                 # ['Omegapoint','omegapoint.se'],
                 # ['Citerus','citerus.se'],
@@ -19,10 +19,10 @@ describe "SponsorList" do
                 # ['Sogeti','sogeti.se'],
                 # ['CAG','cag.se'],
                 # ['Agero','agero.se'],
-                ['Adaptiv','adaptiv.se'],
+                # ['Adaptiv','adaptiv.se'],
                 # ['AddQ','addq.se'],
-                ['Responsive', 'responsive.se'],
-                ['Spotify', 'spotify.se']]
+                # ['Responsive', 'responsive.se'],
+                # ['Spotify', 'spotify.se']]
 
     sponsors.each do |sponsor|
       current_name = sponsor.first
@@ -47,7 +47,8 @@ describe "a random sponsorlist" do
 
   
   it "should not provide the list ordered the same way twice" do
-    @sponsor_list.random_order.should_not == @random_ordered_sponsors
+    pending 'need more sponsors so randomness is likely :)'
+    # @sponsor_list.random_order.should_not == @random_ordered_sponsors
   end
   
 end
