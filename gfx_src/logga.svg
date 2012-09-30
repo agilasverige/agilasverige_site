@@ -16,8 +16,8 @@
    inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="logga.svg"
    inkscape:export-filename="/home/mahnve/src/agilasverige/app/agilasverige/public/images/as_logo.png"
-   inkscape:export-xdpi="90"
-   inkscape:export-ydpi="90">
+   inkscape:export-xdpi="61.467319"
+   inkscape:export-ydpi="61.467319">
   <defs
      id="defs2818">
     <inkscape:perspective
@@ -36,14 +36,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="303.46547"
-     inkscape:cy="385.86746"
+     inkscape:cx="134.46547"
+     inkscape:cy="377.86746"
      inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:window-width="2558"
-     inkscape:window-height="1418"
-     inkscape:window-x="1440"
+     inkscape:window-width="1438"
+     inkscape:window-height="878"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0">
     <inkscape:grid
@@ -72,47 +72,17 @@
      inkscape:groupmode="layer">
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
-       x="69"
-       y="362"
-       id="text2813"><tspan
+       style="font-size:35.98391342px;font-style:normal;font-weight:normal;fill:#e20d82;fill-opacity:0.99103142;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
+       x="68.931366"
+       y="359.30954"
+       id="text2813"
+       inkscape:export-filename="/home/mahnve/src/agilasverige/app/agilasverige/public/images/text2813.png"
+       inkscape:export-xdpi="61.467319"
+       inkscape:export-ydpi="61.467319"><tspan
          sodipodi:role="line"
          id="tspan2815"
-         x="69"
-         y="362"
-         style="-inkscape-font-specification:Inkburrow;font-family:Inkburrow;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">agila sverige</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
-       x="200"
-       y="404"
-       id="text2817"><tspan
-         sodipodi:role="line"
-         id="tspan2819"
-         x="200"
-         y="404"
-         style="fill:#ff00ff">2013</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:50.45756912px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
-       x="336.74286"
-       y="333.63568"
-       id="text2821"
-       transform="scale(0.82389052,1.2137535)"><tspan
-         sodipodi:role="line"
-         id="tspan2823"
-         x="336.74286"
-         y="333.63568"
-         style="font-size:90.82363892px">/</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow"
-       x="293"
-       y="399.5625"
-       id="text2825"><tspan
-         sodipodi:role="line"
-         id="tspan2827"
-         x="293"
-         y="399.5625">stockholm</tspan></text>
+         x="68.931366"
+         y="359.30954"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#e20d82;fill-opacity:0.99103142;stroke:none;font-family:Inkburrow;-inkscape-font-specification:Inkburrow">agila sverige</tspan></text>
   </g>
 </svg>

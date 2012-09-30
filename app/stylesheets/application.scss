@@ -1,15 +1,4 @@
-// This import applies a global reset to any page that imports this stylesheet.
-@import "blueprint/reset";
-
-// To configure blueprint, edit the partials/base.sass file.
-@import "partials/base";
-
-// Import all the default blueprint modules so that we can access their mixins.
-@import "blueprint";
-
 // Combine the partials into a single screen stylesheet.
-@import "partials/page";
-@import "partials/form";
 @import "compass/utilities/text/replacement";
 @import "compass/css3/inline-block";
 @import "compass/utilities/lists/horizontal-list";
@@ -18,97 +7,18 @@ $pink: #ff1eff;
 $border: 1px solid $pink;
 
 
-#container {
-    @include container;
+body {
+  padding-top: 60px;
 }
 
-.header {
-  .logo {
-    h1, h2 {
-      @include inline-block;
-    }
-    h1 {
-      @include replace-text-with-dimensions('as_logo.png');
-    }
-    h2 {
-      @include replace-text-with-dimensions('indexcard.png');
-      float: right;
-      margin-right: 10px;
-    }
-  }
+.brand {
+  @include replace-text-with-dimensions('as_logo.png');
 }
-
-.nav {
-  
-  .highlighted {
-    background-image: url('/images/triangle.png');
-    background-repeat: no-repeat;
-    background-position: bottom center;
+.hero-unit {
+  h2 {
+    @include replace-text-with-dimensions('indexcard.png');
+    float: right;
   }
-
-
-  border-bottom: $border;
-
-  ul {
-    @include horizontal-list;
-  }
-
-  a {
-    text-decoration: none;
-    font-size: 140%; 
-    margin-right: 20px;
-  }
-
-  a:link, a:visited {
-    color: #333;
-  }
-
-  li {
-    padding-bottom: 5px;
-  }
-
-
-}
-
-.subnavigation {
-
-  ul {
-    list-style: none;
-  }
-}
-
-.section-wrapper {
-  padding: 20px;
-}
-
-form {
-
-  textarea {
-    width: 300px;
-  }
-}
-
-.main {
-
-  padding-top: 20px;
-
-  @include column(24);
-
-  .sidebar {
-    @include column(6);
-  }
-
-  .section {
-    @include column(12);
-  }
-
-  .sponsors {
-    @include column(6, true);
-  }
-}
-
-.footer {
-  @include column(24, true);
 }
 
 .sponsor_list {

@@ -1,40 +1,49 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv"}
   %head
-    %title Agila Sverige 2012
+    %title Agila Sverige 2013
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name=>"viewport"}
     = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     = stylesheet_link_tag '/markitup/skins/simple/style.css'
     = stylesheet_link_tag '/markitup/sets/markdown/style.css'
+    = stylesheet_link_tag 'bootstrap.css'
+    = stylesheet_link_tag 'bootstrap-responsive.css'
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = javascript_include_tag 'http://code.jquery.com/jquery-1.4.4.min.js'
     = javascript_include_tag '/markitup/jquery.markitup.js'
     = javascript_include_tag '/markitup/sets/markdown/set.js'
   %body{:id => controller.controller_name, :class => :bp}
-    #container
-      .header
-        .logo
-          .hgroup
-            %h1
-              %span
-                = link_to "Agila Sverige 2012", root_path
-            %h2 
-              %span "Stockholm 23-24 maj 2012"
-        .nav
-          - semantic_navigation :main do |n|
-            = n.item 'Hem', :link => root_path
-            -# = n.item 'Program', :link => '/static_files/affisch_2012.pdf'
-            -# - if user_signed_in?
-              -# = n.item 'Dina inställningar', :link => current_user_path, :highlights_on => {:controller => 'users'}
-              -# = n.item 'Anmäl blixttal/Open X', :link => new_current_user_speaking_proposal_path, :highlights_on => {:controller => 'speaking_proposals'}
-              -# = n.item 'Logga ut', :link => destroy_user_session_path
-            -# - if current_user.admin?
-              -# = n.item 'Dashboard', :link => dashboard_path
-            -# - else
-              -# = n.item 'Delta i konferensen', :link => new_user_session_path
-            = n.item 'Tidigare konferenser', :link => old_path
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand 
+            Agila Sverige
+          .nav-collapse.collapse
+            %ul.nav
+              %li
+                =link_to 'Hem', :link => root_path
+              -# = n.item 'Program', :link => '/static_files/affisch_2013.pdf'
+              -# - if user_signed_in?
+                -# = n.item 'Dina inställningar', :link => current_user_path, :highlights_on => {:controller => 'users'}
+                -# = n.item 'Anmäl blixttal/Open X', :link => new_current_user_speaking_proposal_path, :highlights_on => {:controller => 'speaking_proposals'}
+                -# = n.item 'Logga ut', :link => destroy_user_session_path
+              -# - if current_user.admin?
+                -# = n.item 'Dashboard', :link => dashboard_path
+              -# - else
+                -# = n.item 'Delta i konferensen', :link => new_user_session_path
+              %li
+                =link_to 'Tidigare konferenser', :link => old_path
+    .container
+      .hero-unit
+        .row
+          .span5
+            %h1 Tillbaka!
+            %p Välkommen till Sveriges agilaste konferens om agila metoder
+          .span5
+            %h2 Stockholm 23-24 maj 2013
       .main
         #flash
           - if flash.size > 0
@@ -46,14 +55,16 @@
               %p.flash.notice= flash[:alert]
             - if flash[:warning]
               %p.flash.warning= flash[:warning]
-        = yield :left_side_bar
-        .section
-          .section-wrapper
+        .row
+          .span3
+            = yield :left_side_bar
+          .span6
             = content_for?(:content) ? yield(:content) : yield
-        = yield :right_side_bar
+          .span3
+            = yield :right_side_bar
       .footer
         .contact
-          %span &copy; Agila Sverige 2012 |
+          %span &copy; Agila Sverige 2013 |
           %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
         :javascript 
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
