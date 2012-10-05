@@ -4,12 +4,12 @@
     %title Agila Sverige 2013
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name=>"viewport"}
-    = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
-    = stylesheet_link_tag '/markitup/skins/simple/style.css'
-    = stylesheet_link_tag '/markitup/sets/markdown/style.css'
     = stylesheet_link_tag 'bootstrap.css'
     = stylesheet_link_tag 'bootstrap-responsive.css'
+    = stylesheet_link_tag '/markitup/skins/simple/style.css'
+    = stylesheet_link_tag '/markitup/sets/markdown/style.css'
+    = stylesheet_link_tag 'compiled/print.css', :media => 'print'
+    = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = javascript_include_tag 'http://code.jquery.com/jquery-1.4.4.min.js'
