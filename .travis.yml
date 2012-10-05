@@ -1,0 +1,10 @@
+language: ruby
+rvm: 
+  - 1.9.2
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate spec cucumber
+before_script:
+  - psql -c 'create database agilasverige_test' -U postgres
+  - cp config/database_travis.yml config/database.yml

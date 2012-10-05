@@ -1,0 +1,5 @@
+test:
+  adapter: postgresql
+  database: agilasverige_test
+  user: postgres
+  password:
