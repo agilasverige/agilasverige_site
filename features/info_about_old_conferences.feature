@@ -1,4 +1,6 @@
-Feature: So that I can find out what kind of topics usually are presented
+Feature: Show old conference programs
+  
+        In order to find out what kind of topics usually are presented
 	As a visitor
 	I want to see the old conference programs
 

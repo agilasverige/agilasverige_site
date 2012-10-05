@@ -24,7 +24,7 @@
           .nav-collapse.collapse
             %ul.nav
               %li
-                =link_to 'Hem', :link => root_path
+                =link_to 'Hem', root_path
               -# = n.item 'Program', :link => '/static_files/affisch_2013.pdf'
               -# - if user_signed_in?
                 -# = n.item 'Dina inställningar', :link => current_user_path, :highlights_on => {:controller => 'users'}
@@ -35,7 +35,7 @@
               -# - else
                 -# = n.item 'Delta i konferensen', :link => new_user_session_path
               %li
-                =link_to 'Tidigare konferenser', :link => old_path
+                =link_to 'Tidigare konferenser', old_path
     .container
       .hero-unit
         .row
