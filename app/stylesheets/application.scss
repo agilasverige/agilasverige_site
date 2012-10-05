@@ -6,17 +6,20 @@
 $pink: #ff1eff;
 $border: 1px solid $pink;
 
+@font-face { font-family: inkburrow; src:'/fonts/inkburrow.ttf' }
 
 body {
   padding-top: 60px;
 }
 
-.brand {
-  @include replace-text-with-dimensions('as_logo.png');
+.navbar-inverse .brand {
+  font-family: inkburrow;
+  color: $pink;
 }
+
 .hero-unit {
   h2 {
-    @include replace-text-with-dimensions('indexcard.png');
+    @include replace-text-with-dimensions('whiteboard.png');
     float: right;
   }
 }
