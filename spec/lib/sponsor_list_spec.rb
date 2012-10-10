@@ -8,7 +8,7 @@ describe "SponsorList" do
   
   
   it 'should have all paying sponsors' do
-    sponsors = [['GlobalInn','globalinn.com'],
+    sponsors = [['Solidtango','solidtango.com'],
                 ['Agical','agical.se']]
                 # ['Dynabyte','dynabyte.se'],
                 # ['Attentec','attentec.se'],
