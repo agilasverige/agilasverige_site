@@ -21,7 +21,7 @@ class SponsorList
       # Sponsor.new("AddQ", "addq_logo.png", "http://www.addq.se"),
       # Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
       # Sponsor.new("Agero", "agero_logo.png", "http://www.agero.se"),
-      Sponsor.new("GlobalInn", "globalinn_logo.png", "http://www.globalinn.com"),
+      Sponsor.new("Solidtango", "solidtango.png", "http://solidtango.com"),
       # Sponsor.new("Avega", "avega_logo.png", "http://www.avegagroup.se"),
       # Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
       # Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
