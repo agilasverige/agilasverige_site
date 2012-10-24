@@ -21,16 +21,16 @@ body {
   .date {
     position: relative;
     background-image: url('/images/whiteboard.png');
-    width: 362px;
-    height: 279px;
+    width: 194px;
+    height: 150px;
     float: right;
     h2 {
       font-family: 'Rock Salt', cursive;
-      font-size: 36px;
+      font-size: 20px;
       position: absolute;
-      top: 5px;
-      left: 5px;
-      padding: 30px;
+      top: 10px;
+      left: 10px;
+      padding: 5px;
       line-height: 1.6;
       text-align: center;
     }
