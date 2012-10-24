@@ -18,9 +18,22 @@ body {
 }
 
 .hero-unit {
-  h2 {
-    @include replace-text-with-dimensions('whiteboard.png');
+  .date {
+    position: relative;
+    background-image: url('/images/whiteboard.png');
+    width: 362px;
+    height: 279px;
     float: right;
+    h2 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 36px;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      padding: 30px;
+      line-height: 1.6;
+      text-align: center;
+    }
   }
 }
 

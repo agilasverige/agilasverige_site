@@ -10,6 +10,7 @@
     = stylesheet_link_tag '/markitup/sets/markdown/style.css'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     = stylesheet_link_tag 'compiled/application.css', :media => 'screen, projection'
+    %link{:href => 'http://fonts.googleapis.com/css?family=Rock+Salt', :rel => 'stylesheet', :type => 'text/css'}
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = javascript_include_tag 'http://code.jquery.com/jquery-1.4.4.min.js'
@@ -43,7 +44,8 @@
             %h1 Tillbaka!
             %p Välkommen till Sveriges agilaste konferens om agila metoder
           .span5
-            %h2 Stockholm 23-24 maj 2013
+            .date
+              %h2 Stockholm 20-21 maj 2013
       .main
         #flash
           - if flash.size > 0
