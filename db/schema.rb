@@ -10,11 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120307180344) do
+ActiveRecord::Schema.define(:version => 20121024173030) do
+
+  create_table "conferences", :force => true do |t|
+    t.integer  "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "editable_content", :force => true do |t|
     t.text   "content"
     t.string "page_name"
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "conference_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "speaking_engagements", :force => true do |t|
@@ -51,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20120307180344) do
     t.datetime "updated_at"
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"

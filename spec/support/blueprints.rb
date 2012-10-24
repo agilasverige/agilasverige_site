@@ -20,3 +20,11 @@ end
 User.blueprint(:admin) do
   role { 'admin'}
 end
+
+Conference.blueprint do
+  # Attributes here
+end
+
+Registrations.blueprint do
+  # Attributes here
+end

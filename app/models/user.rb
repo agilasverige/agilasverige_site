@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 
   has_many :speaking_engagements
   has_many :speaking_proposals, :through => :speaking_engagements
+  has_many :registrations
+  has_many :conferences, through: :registrations
 
   validates_presence_of :first_name
   validates_presence_of :last_name
