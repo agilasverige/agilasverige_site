@@ -22,11 +22,11 @@ class User < ActiveRecord::Base
   validates_presence_of :zip_code
   validates_presence_of :postal_address
 
-  scope :created_today, where('created_at > ? AND created_at < ?', Date.today, Date.tomorrow)
-  scope :last_five, limit(5).order('created_at DESC')
+  scope :created_today, where('users.created_at > ? AND users.created_at < ?', Date.today, Date.tomorrow)
+  scope :last_five, limit(5).order('users.created_at DESC')
 
   def self.created_by_date 
-    orig_data = count(:group => "DATE(created_at)")
+    orig_data = count(:group => "DATE(users.created_at)")
     date_range = (orig_data.keys.min..orig_data.keys.max)
     
     data = {}

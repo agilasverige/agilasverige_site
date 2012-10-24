@@ -34,6 +34,7 @@ group :test, :development do
   gem 'guard-cucumber'
   gem 'guard-livereload'
   gem 'foreman'
+  gem 'pry'
 end
 
 group :test do
