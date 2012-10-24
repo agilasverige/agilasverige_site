@@ -58,9 +58,7 @@
             - if flash[:warning]
               %p.flash.warning= flash[:warning]
         .row
-          .span3
-            = yield :left_side_bar
-          .span6
+          .span9
             = content_for?(:content) ? yield(:content) : yield
           .span3
             = yield :right_side_bar
