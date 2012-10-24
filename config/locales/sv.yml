@@ -9,6 +9,10 @@ sv:
           attributes:
             accept_terms:
               accepted: 'Måste accepteras'
+        user:
+          attributes:
+            email:
+              taken: 'E-post redan registrerad'
   active_record:
     attributes:
       user:
