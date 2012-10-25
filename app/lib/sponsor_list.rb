@@ -5,8 +5,8 @@ class SponsorList
 
   attr_reader :sponsors
   
-  def initialize
-    setup_sponsors
+  def initialize(sponsorslist = nil)
+    @sponsors = sponsorslist || default_sponsors
   end
   
   
@@ -14,8 +14,8 @@ class SponsorList
     @sponsors.find{|o| o.name == name}
   end
 
-  def setup_sponsors
-    @sponsors = [
+  def default_sponsors
+    [
       Sponsor.new("Agical", "agical_logo.png", "http://www.agical.se"),
       # Sponsor.new("Dynabyte", "dynabyte_logo.jpg", "http://www.dynabyte.se"),
       # Sponsor.new("AddQ", "addq_logo.png", "http://www.addq.se"),
@@ -43,4 +43,28 @@ class SponsorList
   def random_order
     @sponsors.sort_by{rand}
   end
+
+  def in_three_random_groups
+    sponsors = random_order
+
+    base, rest = sponsors.size.divmod(3)
+
+    first_group_size = base + (rest > 0 ? 1 : 0)
+    second_group_size = base + (rest > 1 ? 1 : 0)
+    third_group_size = base
+
+    first_break = first_group_size - 1
+    second_break = first_group_size + second_group_size - 1
+
+    first_group = sponsors[0..first_break]
+    second_group = sponsors[(first_break + 1)..second_break]
+    third_group = sponsors[(second_break + 1)..(sponsors.size - 1)]
+
+    [ first_group, second_group, third_group ]
+
+  end
+
+  private
+
+
 end

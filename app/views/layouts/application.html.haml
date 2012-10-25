@@ -91,11 +91,13 @@
               Du kan komma till Agila Sverige som nybörjare eller erfaren, som programmerare eller 
               chef. Det enda de andra konferensdeltagarna förväntar sig är att du beredd att dela
               med dina erfarenheter.
-        .row
-          .span9
-            = content_for?(:content) ? yield(:content) : yield
-          .span3
-            = yield :right_side_bar
+        .row-fluid.sponsors
+          - @sponsors.in_three_random_groups.each do |sponsorgroup|
+            .span4
+              %ul.sponsor_list
+              - sponsorgroup.each do |sponsor|
+                %li
+                  = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
       .footer
         .contact
           %span &copy; Agila Sverige 2013 |

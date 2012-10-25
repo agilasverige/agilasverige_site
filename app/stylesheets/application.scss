@@ -44,7 +44,12 @@ body {
 }
 
 .sponsors {
+  margin-top: 40px;
   margin-bottom: 40px;
+
+  li {
+    list-style-type: none;
+  }
 }
 .sponsor_list {
 

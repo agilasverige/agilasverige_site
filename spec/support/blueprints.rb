@@ -25,6 +25,6 @@ Conference.blueprint do
   # Attributes here
 end
 
-Registrations.blueprint do
+Registration.blueprint do
   # Attributes here
 end

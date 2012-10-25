@@ -1,12 +1,6 @@
 - content_for :left_side_bar do
   .sidebar
 - content_for :right_side_bar do
-  .sponsors
-    %h2 Sponsorer
-    %ul.sponsor_list
-      - @sponsors.random_order.each do |sponsor|
-        %li
-          = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
   .follow_us_twitter
     %a{:href => "http://www.twitter.com/agilasverige"} Follow us on Twitter 
   .tweets
