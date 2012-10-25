@@ -10,6 +10,7 @@
   %p
     = link_to "Editera", edit_speaking_proposal_path(@speaking_proposal)
 %h3 Presentationsmaterial
+%p Möjliga presentationsformat: Powerpoint, Keynote, PDF, HTML (övriga format enligt överenskommelse)     
 - if not @speaking_proposal.presentation.blank?
   %p
     = link_to 'Nuvarande', @speaking_proposal.presentation.url
