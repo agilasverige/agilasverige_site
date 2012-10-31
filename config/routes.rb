@@ -13,9 +13,7 @@ Agilasverige::Application.routes.draw do
 
   resources :users
 
-  resource :user, :as => :current_user do
-    resources :speaking_proposals
-  end
+  resource :user, :as => :current_user
 
   resource :home, :controller => 'home'
 
