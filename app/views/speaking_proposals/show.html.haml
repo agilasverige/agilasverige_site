@@ -18,9 +18,9 @@
   = form_tag upload_presentation_speaking_proposal_path(@speaking_proposal), :multipart => true do
     = file_field_tag 'file'
     = submit_tag 'Ladda upp'
-= semantic_form_for @speaking_proposal, url: schedule_speaking_proposal_path(@speaking_proposal) do |f|
-
-  = f.input :booked_day1, as: :boolean 
-  = f.input :booked_day2, as: :boolean
-  = f.buttons do
-    = f.commit_button :label => "Spara"
+- if current_user.admin?
+  = semantic_form_for @speaking_proposal, url: schedule_speaking_proposal_path(@speaking_proposal) do |f|
+    = f.input :booked_day1, as: :boolean 
+    = f.input :booked_day2, as: :boolean
+    = f.buttons do
+      = f.commit_button :label => "Spara"

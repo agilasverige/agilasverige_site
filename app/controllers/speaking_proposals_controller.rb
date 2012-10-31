@@ -44,7 +44,12 @@ class SpeakingProposalsController < InheritedResources::Base
   end
 
   def schedule
-    binding.pry
-    @speaking_proposal = SpeakingProposal.find(params[:id])
+    unless current_user && current_user.admin?
+      render '/public/404.html', :status => 404
+    else
+      @speaking_proposal = SpeakingProposal.find(params[:id])
+      @speaking_proposal.update_attributes!(params[:speaking_proposal])
+      redirect_to speaking_proposal_path(@speaking_proposal)
+    end
   end
 end
