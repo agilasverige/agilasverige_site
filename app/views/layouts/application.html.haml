@@ -58,7 +58,8 @@
             - if flash[:warning]
               %p.flash.warning= flash[:warning]
         .row
-          = yield          
+          .span12
+            = yield          
         .row-fluid.sponsors
           - @sponsors.in_three_random_groups.each do |sponsorgroup|
             .span4
