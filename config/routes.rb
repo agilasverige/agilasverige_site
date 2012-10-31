@@ -6,6 +6,7 @@ Agilasverige::Application.routes.draw do
   resources :speaking_proposals do
     member do
       post 'upload_presentation'
+      post 'schedule'
     end
   end
   resources :editable_content

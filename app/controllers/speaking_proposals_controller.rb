@@ -43,4 +43,8 @@ class SpeakingProposalsController < InheritedResources::Base
     redirect_to speaking_proposal_path(@speaking_proposal)
   end
 
+  def schedule
+    binding.pry
+    @speaking_proposal = SpeakingProposal.find(params[:id])
+  end
 end
