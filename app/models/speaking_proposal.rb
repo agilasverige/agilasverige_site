@@ -14,6 +14,8 @@ class SpeakingProposal  < ActiveRecord::Base
   scope :created_today, where('created_at > ? AND created_at < ?', Date.today, Date.tomorrow)
   scope :last_five, limit(5).order('created_at DESC')
   scope :list, order('created_at DESC')
+  scope :day1, where('booked_day1 = true')
+  scope :day2, where('booked_day2 = true')
 
   def self.created_by_date 
     orig_data = count(:group => "DATE(created_at)")

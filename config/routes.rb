@@ -17,6 +17,7 @@ Agilasverige::Application.routes.draw do
 
   resource :home, :controller => 'home'
 
+  match '/program' => 'program#show', :as => 'program'
   match '/dashboard' => 'dashboard#show', :as => 'dashboard'
 	match '/old' => 'old#index', :as => 'old'
 

@@ -1,0 +1,15 @@
+%h2 
+  Program
+  = @conference.year
+
+%h3 Dag 1
+%ul
+  - @day1.each do |s|
+    %li
+      = s.title
+  
+%h3 Dag 2
+%ul
+  - @day2.each do |s|
+    %li
+      = s.title
