@@ -8,3 +8,4 @@ script:
 before_script:
   - psql -c 'create database agilasverige_test' -U postgres
   - cp config/database_travis.yml config/database.yml
+  - cp config/payson_travis.yml config/payson.yml
