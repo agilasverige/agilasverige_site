@@ -64,9 +64,9 @@
           - @sponsors.in_three_random_groups.each do |sponsorgroup|
             .span4
               %ul.sponsor_list
-              - sponsorgroup.each do |sponsor|
-                %li
-                  = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
+                - sponsorgroup.each do |sponsor|
+                  %li
+                    = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
       .footer
         .contact
           %span &copy; Agila Sverige 2013 |
