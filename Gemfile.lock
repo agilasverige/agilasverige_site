@@ -141,6 +141,7 @@ GEM
     newrelic_rpm (3.0.1)
     nokogiri (1.4.4)
     orm_adapter (0.0.5)
+    payson_api (0.3.0)
     pg (0.11.0)
     polyglot (0.3.1)
     pry (0.9.10)
@@ -237,6 +238,7 @@ DEPENDENCIES
   machinist (>= 2.0.0.beta2)
   navigasmic
   newrelic_rpm
+  payson_api
   pg
   pry
   rails (~> 3.0.0)
