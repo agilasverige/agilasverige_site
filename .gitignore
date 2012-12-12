@@ -16,3 +16,4 @@ agilasverige_site.ids
 *.sw*
 /as.sublime-project
 /as.sublime-workspace
+/config/payson.yml

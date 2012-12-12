@@ -34,6 +34,7 @@ namespace :deploy do
 
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
+    run "ln -nfs #{shared_path}/config/payson.yml #{release_path}/config/payson.yml"
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/files #{release_path}/public/files"
     run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
