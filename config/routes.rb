@@ -17,6 +17,11 @@ Agilasverige::Application.routes.draw do
 
   resource :home, :controller => 'home'
 
+  get '/payment/start', to: 'payson#payment_start'
+  get '/payment/success', to: 'payson#payment_success'
+  get '/payment/cancel', to: 'payson#payment_cancel'
+  get '/payment/ipn', to: 'payson#payment_ipn'
+
   match '/program' => 'program#show', :as => 'program'
   match '/dashboard' => 'dashboard#show', :as => 'dashboard'
 	match '/old' => 'old#index', :as => 'old'
