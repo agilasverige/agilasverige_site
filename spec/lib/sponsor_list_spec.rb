@@ -35,10 +35,10 @@ describe "SponsorList" do
   
 end
 
-describe "#in_three_random_groups" do
+describe "#randomized_rows" do
 
   before do
-    @sponsor_list =SponsorList.new([1,2,3,4,5,6,7,8,9,10]).in_three_random_groups  
+    @sponsor_list =SponsorList.new([1,2,3,4,5,6,7]).randomized_rows  
   end
 
   subject { @sponsor_list }
@@ -49,7 +49,7 @@ describe "#in_three_random_groups" do
 
     subject { @sponsor_list.first }
 
-    it { should have(4).items }
+    it { should have(3).items }
   end
 
   describe 'the second group' do
@@ -63,7 +63,7 @@ describe "#in_three_random_groups" do
 
     subject { @sponsor_list[2] }
 
-    it { should have(3).items }
+    it { should have(1).items }
   end
 end
 

@@ -22,7 +22,7 @@ class SponsorList
       # Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
       # Sponsor.new("Agero", "agero_logo.png", "http://www.agero.se"),
       Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
-      # Sponsor.new("Avega", "avega_logo.png", "http://www.avegagroup.se"),
+      Sponsor.new("Avega", "avega_logo.png", "http://www.avegagroup.se"),
       # Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
       # Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
       # Sponsor.new("Sogeti", "sogeti_logo.png", "http://www.sogeti.se"),
@@ -44,27 +44,7 @@ class SponsorList
     @sponsors.sort_by{rand}
   end
 
-  def in_three_random_groups
-    sponsors = random_order
-
-    base, rest = sponsors.size.divmod(3)
-
-    first_group_size = base + (rest > 0 ? 1 : 0)
-    second_group_size = base + (rest > 1 ? 1 : 0)
-    third_group_size = base
-
-    first_break = first_group_size - 1
-    second_break = first_group_size + second_group_size - 1
-
-    first_group = sponsors[0..first_break]
-    second_group = sponsors[(first_break + 1)..second_break]
-    third_group = sponsors[(second_break + 1)..(sponsors.size - 1)]
-
-    [ first_group, second_group, third_group ]
-
+  def randomized_rows(columns=3)
+    random_order.in_groups_of(columns, false)
   end
-
-  private
-
-
 end
