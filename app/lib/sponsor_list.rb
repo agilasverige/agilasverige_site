@@ -24,13 +24,13 @@ class SponsorList
       Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
       Sponsor.new("Avega", "avega_logo.png", "http://www.avegagroup.se"),
       # Sponsor.new("Jaybis", "jaybis_logo.png", "http://www.jaybis.se"),
-      # Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
+      Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
       # Sponsor.new("Sogeti", "sogeti_logo.png", "http://www.sogeti.se"),
       # Sponsor.new("Attentec", "attentec_logo.png", "http://www.attentec.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
       # Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se"),
       # Sponsor.new("CAG", "cag_logo.png", "http://www.cag.se"),
-      # Sponsor.new("Omegapoint", "omegapoint_logo.png", "http://www.omegapoint.se")
+      Sponsor.new("Omegapoint", "omegapoint_logo.png", "http://www.omegapoint.se")
       # Sponsor.new("Abiliteam", "abiliteam_logo.png", "http://www.abiliteam.se")
       # Sponsor.new("Informator", "informator_logo.png", "http://www.informator.se"),
       # Sponsor.new("Crisp", "crisp_logo.png", "http://www.crisp.se")
