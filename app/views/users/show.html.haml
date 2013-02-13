@@ -1,13 +1,39 @@
-%h2= @user.full_name
-.gravatar
-  = image_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
-= link_to 'Editera', edit_user_path(@user)
-%h2 Betala
-= payment_status current_user
-%h2 Talarförslag
-- if @user.speaking_proposals.empty?
-  %p 
-    = "Du har inga registrerade talarförslag, men du kanske vill"
-    = link_to 'skicka in ett?', new_speaking_proposal_path
-- @user.speaking_proposals.each do |speaking_proposal|
-  = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+%p.alert
+  För att slutföra din anmälan måste du--- alalalalalalal
+
+.row-fluid
+  .span4
+    %h2 Tala
+    - if @user.speaking_proposals.empty?
+      %p 
+        Du har inga registrerade talarförslag, men du kanske vill
+        skicka in ett?
+
+    = render :partial => 'shared/speaking_proposal_info'
+    = semantic_form_for @speaking_proposal do |f|
+      = f.inputs 'Talinformation' do
+        = f.input :title, :label => 'Titel'
+        = f.input :abstract, :as => :text, :label => 'Beskrivning'
+        = f.input :accept_terms, :as => :boolean, :label => "Jag accepterar villkoren ovan"
+      = f.buttons do
+        = f.commit_button :label => "Skicka in"
+
+    - @user.speaking_proposals.each do |speaking_proposal|
+      = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+  .span4
+    %h2 Betala
+    - if @registration_status == :paid
+      %p Din avgift är betald
+    - elsif @registration_status == :not_started
+      %p Du har inte betalat ännu
+      = link_to "Betala", payment_start_path, class: 'btn btn-success'
+    - else 
+      = link_to @registration_status, '', class: 'btn btn-success'
+
+  .span4
+    %h2 Dina uppgifter  
+    = @user.full_name
+    .gravatar
+      = image_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
+    = link_to 'Editera', edit_user_path(@user)
+

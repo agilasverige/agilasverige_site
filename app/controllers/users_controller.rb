@@ -37,6 +37,12 @@ class UsersController < InheritedResources::Base
     end
   end
 
+  def show
+    @speaking_proposal = SpeakingProposal.new
+    @registration_status = PaysonClient.load_registration_status(current_user)
+    super
+  end
+
   private
 
   def setup_user

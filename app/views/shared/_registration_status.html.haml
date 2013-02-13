@@ -1,0 +1,6 @@
+#register-box.hidden
+  - if @registration_status == :not_logged_in
+    %p Om du redan har ett konto här
+    = link_to "Logga in", new_user_session_path, class: 'btn btn-primary'
+    %p om du inte har ett konto sedan tidigare
+    = link_to "Skapa konto", new_user_registration_path, class: 'btn btn-primary'

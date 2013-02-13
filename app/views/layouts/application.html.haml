@@ -16,6 +16,7 @@
     = javascript_include_tag 'http://code.jquery.com/jquery-1.4.4.min.js'
     = javascript_include_tag '/markitup/jquery.markitup.js'
     = javascript_include_tag '/markitup/sets/markdown/set.js'
+    = javascript_include_tag '/javascripts/application.js'
   %body{:id => controller.controller_name, :class => :bp}
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
@@ -26,26 +27,17 @@
             %ul.nav
               %li
                 =link_to 'Hem', root_path
-              -# = n.item 'Program', :link => '/static_files/affisch_2013.pdf'
-              -# - if user_signed_in?
-                -# = n.item 'Dina inställningar', :link => current_user_path, :highlights_on => {:controller => 'users'}
-                -# = n.item 'Anmäl blixttal/Open X', :link => new_current_user_speaking_proposal_path, :highlights_on => {:controller => 'speaking_proposals'}
-                -# = n.item 'Logga ut', :link => destroy_user_session_path
-              -# - if current_user.admin?
-                -# = n.item 'Dashboard', :link => dashboard_path
-              -# - else
-                -# = n.item 'Delta i konferensen', :link => new_user_session_path
+              - if user_signed_in?
+                %li
+                  = link_to 'Dina inställningar', user_root_path
+                - if current_user.admin?
+                  %li
+                    = n.item 'Dashboard', :link => dashboard_path
+                %li
+                  = link_to 'Logga ut', destroy_user_session_path
               %li
                 =link_to 'Tidigare konferenser', old_path
     .container
-      .hero-unit
-        .row
-          .span6
-            %h1 Sjätte året i rad!
-            %p Oavsett om du är nyfiken eller erfaren är du varmt välkommen till Sveriges agilaste konferens om agila metoder.
-          .span3
-            .date
-              %h2 Stockholm 20-21 maj 2013
       .main
         #flash
           - if flash.size > 0
@@ -57,9 +49,8 @@
               %p.flash.notice= flash[:alert]
             - if flash[:warning]
               %p.flash.warning= flash[:warning]
-        .row
-          .span12
-            = yield          
+
+        = yield          
         - @sponsors.randomized_rows.each do |sponsorrow|    
           .row-fluid.sponsors
             - sponsorrow.each do |sponsor|

@@ -1,9 +1,12 @@
-module PaysonHelper
+module PaysonClient
 
-  def payment_status(user)
+  def self.load_registration_status(user)
+    return :not_logged_in unless user
+
     registration = user.registrations.where(conference_id: Conference.current.id).first
+    return :not_started unless registration
+
     token = registration.payson_token
-    status = ""    
 
     unless token.blank?
       payment_details = PaysonAPI::Request::PaymentDetails.new(token)
@@ -11,13 +14,13 @@ module PaysonHelper
 
       status = nil
       if response.success?
-        status = "Betalstatus: #{response.status}"
+        # TODO: map these
+        return response.status.to_sym
       else
-        status = "Kunde inte ladda betalstatus #{response.errors}"
+        return :unknown
       end
-      return status
     end
-
-    link_to "Betala", payment_start_path
+    return :not_started
   end
+
 end

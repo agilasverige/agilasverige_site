@@ -13,7 +13,7 @@ Agilasverige::Application.routes.draw do
 
   resources :users
 
-  resource :user, :as => :current_user
+  resource :user, :as => :user_root
 
   resource :home, :controller => 'home'
 

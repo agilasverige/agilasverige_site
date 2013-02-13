@@ -1,10 +1,6 @@
 %h2 Skicka in förslag på blixttal
 = render :partial => 'shared/speaking_proposal_info'
-%p 
-  = 'Allt presentationsmaterial som används måste licensieras under'
-  = link_to 'Creative Commons Attribution Share Alike licens', 'http://creativecommons.org/licenses/by-sa/2.5/se/'
-  = '. Alla talare kommer att filmas för distribution på nätet.'
-= semantic_form_for [@user,@speaking_proposal], :url => current_user_speaking_proposals_path do |f|
+= semantic_form_for @speaking_proposal do |f|
   = f.inputs 'Talinformation' do
     = f.input :title, :label => 'Titel'
     = f.input :abstract, :as => :text, :label => 'Beskrivning'

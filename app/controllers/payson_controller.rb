@@ -8,7 +8,7 @@ class PaysonController < ApplicationController
     memo = 'Konferensavgift Agila Sverige'
 
     receivers = [ PaysonAPI::Receiver.new(email = 'info@agilasverige.se',
-                                          amount = 125,
+                                          amount = 2500,
                                           first_name = 'Agila',
                                           last_name = 'Sverige',
                                           primary = true) ] 
@@ -18,7 +18,7 @@ class PaysonController < ApplicationController
                                    last_name = current_user.last_name)
 
     order_items = [ PaysonAPI::OrderItem.new(description = 'Agila Sverige 2013',
-                                             unit_price = 100,
+                                             unit_price = 2000,
                                              quantity = 1,
                                              tax = 0.25,
                                              sku = 'AS-2013') ]
@@ -43,6 +43,7 @@ class PaysonController < ApplicationController
   def payment_success
     token = params['TOKEN']
     reg = current_user.registrations.where(conference_id: Conference.current.id).first
+    reg = Registration.create!(conference_id: Conference.current.id, user_id: current_user.id) unless reg
     reg.payson_token = token
     reg.save!
     redirect_to user_path(current_user.id)
