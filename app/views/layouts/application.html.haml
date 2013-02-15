@@ -21,7 +21,7 @@
     .navbar.navbar-inverse.navbar-fixed-top
       .navbar-inner
         .container
-          .brand 
+          .brand
             Agila Sverige
           .nav-collapse.collapse
             %ul.nav
@@ -42,16 +42,16 @@
         #flash
           - if flash.size > 0
             - if flash[:notice]
-              %p.flash.notice= flash[:notice]
+              %p.alert.alert-success= flash[:notice]
             - if flash[:error]
-              %p.flash.error= flash[:error]
+              %p.alert.alert-error= flash[:error]
             - if flash[:alert]
-              %p.flash.notice= flash[:alert]
+              %p.alert= flash[:alert]
             - if flash[:warning]
-              %p.flash.warning= flash[:warning]
+              %p.alert= flash[:warning]
 
-        = yield          
-        - @sponsors.randomized_rows.each do |sponsorrow|    
+        = yield
+        - @sponsors.randomized_rows.each do |sponsorrow|
           .row-fluid.sponsors
             - sponsorrow.each do |sponsor|
               .span4
@@ -60,7 +60,7 @@
         .contact
           %span &copy; Agila Sverige 2013 |
           %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
-        :javascript 
+        :javascript
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
           document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
         :javascript
