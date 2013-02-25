@@ -17,3 +17,6 @@ agilasverige_site.ids
 /as.sublime-project
 /as.sublime-workspace
 /config/payson.yml
+vendor/ruby
+TAGS
+.#*
