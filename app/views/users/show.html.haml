@@ -1,11 +1,16 @@
-%p.alert
-  För att slutföra din anmälan måste du--- alalalalalalal
-
+- if @user.confirmed_attendant_this_year?
+  %p.alert.alert-info
+    Tack för din anmälan till årets konferens! Vi ser fram emot att träffa dig
+    den 20-21 maj.
+- else
+  %p.alert
+    För att delta i årets konferens måste du antingen vara talare eller |
+    betalande deltagare. Nedan har du möjligheter att anmäla tal eller betala.
 .row-fluid
-  .span4
+  .span6
     %h2 Tala
     - if @user.speaking_proposals.empty?
-      %p 
+      %p
         Du har inga registrerade talarförslag, men du kanske vill
         skicka in ett?
 
@@ -20,20 +25,25 @@
 
     - @user.speaking_proposals.each do |speaking_proposal|
       = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
-  .span4
+  .span6
     %h2 Betala
     - if @registration_status == :paid
       %p Din avgift är betald
     - elsif @registration_status == :not_started
-      %p Du har inte betalat ännu
+      %p
+        Vi har inte tagit emot någon betalning för ditt deltagande.
+      %p
+        Priset för att deltaga i årets konferens är SEK 2500. I priset ingår
+        deltagande i konferensen, lunch bägge dagarna samt konferensmiddagen den
+        20:e maj, som inkluderar tre DJ:s. Untz, untz, untz.
+      %p
+        Klicka på länken nedan för att komma till vår betalningstjänst.
       = link_to "Betala", payment_start_path, class: 'btn btn-success'
-    - else 
+    - else
       = link_to @registration_status, '', class: 'btn btn-success'
-
-  .span4
-    %h2 Dina uppgifter  
-    = @user.full_name
-    .gravatar
-      = image_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
-    = link_to 'Editera', edit_user_path(@user)
-
+.row
+  %h2 Dina uppgifter
+  = @user.full_name
+  .gravatar
+    = iage_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
+  = link_to 'Editera', edit_user_path(@user)

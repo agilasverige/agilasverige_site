@@ -25,15 +25,19 @@ class User < ActiveRecord::Base
   scope :created_today, where('users.created_at > ? AND users.created_at < ?', Date.today, Date.tomorrow)
   scope :last_five, limit(5).order('users.created_at DESC')
 
-  def self.created_by_date 
+  def self.created_by_date
     orig_data = count(:group => "DATE(users.created_at)")
     date_range = (orig_data.keys.min..orig_data.keys.max)
-    
+
     data = {}
     date_range.each do |date|
       data[date] = orig_data[date] || 0
     end
     data
+  end
+
+  def confirmed_attendant_this_year?
+    Conference.current.users.include?(self)
   end
 
   def full_name

@@ -4,6 +4,7 @@ module PaysonClient
     return :not_logged_in unless user
 
     registration = user.registrations.where(conference_id: Conference.current.id).first
+
     return :not_started unless registration
 
     token = registration.payson_token
