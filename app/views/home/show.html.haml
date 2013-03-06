@@ -3,14 +3,20 @@
     .span6
       %h1 Sjätte året i rad!
       %p Oavsett om du är nyfiken eller erfaren är du varmt välkommen till Sveriges agilaste konferens om agila metoder.
-    .span3
+    .span6
       .date
         %h2 Stockholm 20-21 maj 2013
+  .row-fluid
     .span3
-      = link_to "Anmäl dig", '#register', class: 'btn-large btn-primary register-button'
-
-= render :partial => "shared/registration_status"
-
+      %p
+        = link_to new_user_session_path, class: 'btn btn-large btn-info' do
+          %i.icon-white.icon-user
+          Jag vill logga in
+    .span3
+      %p
+        = link_to new_user_registration_path, class: 'btn btn-info btn-large' do
+          %i.icon-white.icon-pencil
+          Jag vill registrera mig
 .row-fluid
   .span4
     %h2 Öppenhet
