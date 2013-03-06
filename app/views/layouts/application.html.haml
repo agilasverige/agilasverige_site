@@ -32,7 +32,7 @@
                   = link_to 'Dina inställningar', user_root_path
                 - if current_user.admin?
                   %li
-                    = n.item 'Dashboard', :link => dashboard_path
+                    = link_to 'Dashboard', dashboard_path
                 %li
                   = link_to 'Logga ut', destroy_user_session_path
               %li

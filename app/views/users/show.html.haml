@@ -45,5 +45,5 @@
   %h2 Dina uppgifter
   = @user.full_name
   .gravatar
-    = iage_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
+    = image_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
   = link_to 'Editera', edit_user_path(@user)
