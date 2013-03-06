@@ -18,8 +18,9 @@ class SpeakingProposalsController < InheritedResources::Base
   def create
     create! do |success, failure|
 
-      @speaking_proposal.speakers << current_user
-      @speaking_proposal.conference = Conference.current
+      registration = Registration.create!(user_id: current_user.id, conference_id: Conference.current.id)
+      @speaking_proposal.registration = registration
+      @speaking_proposal.save!
 
       success.html do
         flash[:notice] = "Tack för din blixttalsanmälan, vi har skickat ett e-brev som bekräftar din anmälan"
