@@ -81,5 +81,9 @@ $border: 1px solid $pink;
   ol {
     margin: 0;
   }
+
+  input[type=submit] {
+    float:right;
+  }
 }
 
