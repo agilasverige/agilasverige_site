@@ -2,7 +2,6 @@ Agilasverige::Application.routes.draw do
 
   devise_for :users
 
-
   resources :speaking_proposals do
     member do
       post 'upload_presentation'
@@ -24,7 +23,7 @@ Agilasverige::Application.routes.draw do
 
   match '/program' => 'program#show', :as => 'program'
   match '/dashboard' => 'dashboard#show', :as => 'dashboard'
-	match '/old' => 'old#index', :as => 'old'
+  match '/old' => 'old#index', :as => 'old'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

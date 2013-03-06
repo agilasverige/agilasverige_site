@@ -9,6 +9,7 @@ class HomeController < ApplicationController
       @content = static.content
     end
 
+    @user = User.new
     @registration_status = PaysonClient.load_registration_status(current_user)
   end
 

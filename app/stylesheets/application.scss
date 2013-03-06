@@ -8,10 +8,6 @@ $border: 1px solid $pink;
 
 @font-face { font-family: inkburrow; src:'/fonts/inkburrow.ttf' }
 
-body {
-  padding-top: 60px;
-}
-
 .navbar-inverse .brand {
   font-family: inkburrow;
   color: $pink;
@@ -68,7 +64,22 @@ body {
   }
 }
 
-#register-box {
-  
+.formtastic {
+  li {
+    list-style: none;
+  }
+
+  label {
+    display: inline-block;
+    min-width: 160px;
+  }
+
+  textarea {
+    max-height: 120px;
+  }
+
+  ol {
+    margin: 0;
+  }
 }
 
