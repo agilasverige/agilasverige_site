@@ -20,3 +20,4 @@ agilasverige_site.ids
 vendor/ruby
 TAGS
 .#*
+/.idea
