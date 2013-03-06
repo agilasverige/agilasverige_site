@@ -6,7 +6,7 @@ class UsersController < InheritedResources::Base
   before_filter :setup_user
   before_filter :authorize_admin!, :only => [:index, :new, :create]
 
-  def index 
+  def index
     respond_to do |format|
       format.html do
         @users=User.find_for_table(params)
@@ -15,7 +15,7 @@ class UsersController < InheritedResources::Base
       format.csv do
         @users  = User.all
         header = "First Name, Last Name, Organization, Address, Zip Code, Postal Address, Country, Invoice Reference, Telephone Number, Attending Dinner, Food Preferences, Comments, Email\n"
-        csv =CSV.generate(header) do |csv| 
+        csv =CSV.generate(header) do |csv|
           @users.each do |user|
             csv << [user.last_name,
                     user.first_name,
@@ -43,6 +43,15 @@ class UsersController < InheritedResources::Base
     super
   end
 
+  def create
+    create! do |format|
+      format.html do
+        redirect_to root_path
+      end
+    end
+  end
+
+
   private
 
   def setup_user
@@ -56,5 +65,5 @@ class UsersController < InheritedResources::Base
       render :file => 'public/404.html', :status => 404
     end
   end
-  
+
 end

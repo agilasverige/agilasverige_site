@@ -18,9 +18,6 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   validates_presence_of :email
   validates_presence_of :organization
-  validates_presence_of :address
-  validates_presence_of :zip_code
-  validates_presence_of :postal_address
 
   scope :created_today, where('users.created_at > ? AND users.created_at < ?', Date.today, Date.tomorrow)
   scope :last_five, limit(5).order('users.created_at DESC')
