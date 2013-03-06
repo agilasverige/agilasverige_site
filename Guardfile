@@ -1,6 +1,8 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
+notification :emacs
+
 guard 'livereload' do
   watch(%r{app/views/.+\.(rb)})
   watch(%r{app/widgets/.+\.(rb)})
