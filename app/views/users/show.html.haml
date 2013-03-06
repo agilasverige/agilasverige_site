@@ -29,7 +29,13 @@
     %h2 Betala
     - if @registration_status == :paid
       %p Din avgift är betald
-    - elsif @registration_status == :not_started
+    - elsif @registration_status == :failed
+      .alert.alert-error
+        Din betalning misslyckades, var vänlig
+        %a{:href => 'mailto:info@agilasverige.se'}kontakta oss
+        eller
+        = link_to "Försök igen", payment_start_path, class: 'btn btn-success'
+    - else
       %p
         Vi har inte tagit emot någon betalning för ditt deltagande.
       %p
@@ -39,8 +45,6 @@
       %p
         Klicka på länken nedan för att komma till vår betalningstjänst.
       = link_to "Betala", payment_start_path, class: 'btn btn-success'
-    - else
-      = link_to @registration_status, '', class: 'btn btn-success'
 .row
   %h2 Dina uppgifter
   = @user.full_name
