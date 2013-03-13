@@ -1,3 +1,5 @@
+%h2.well
+  Välkommen till Agila Sverige 2013
 - if @user.confirmed_attendant_this_year?
   %p.alert.alert-info
     Tack för din anmälan till årets konferens! Vi ser fram emot att träffa dig
@@ -6,7 +8,7 @@
   %p.alert
     För att delta i årets konferens måste du antingen vara talare eller |
     betalande deltagare. Nedan har du möjligheter att anmäla tal eller betala.
-.row-fluid
+.row-fluid.well
   .span6
     %h2 Tala
     - if @user.speaking_proposals.empty?
@@ -21,7 +23,7 @@
         = f.input :abstract, :as => :text, :label => 'Beskrivning'
         = f.input :accept_terms, :as => :boolean, :label => "Jag accepterar villkoren ovan"
       = f.buttons do
-        = f.commit_button :label => "Skicka in"
+        = f.commit_button :label => "Skicka in", button_html: {class: 'btn btn-info'}
 
     - @user.speaking_proposals.each do |speaking_proposal|
       = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
@@ -44,10 +46,23 @@
         20:e maj, som inkluderar tre DJ:s. Untz, untz, untz.
       %p
         Klicka på länken nedan för att komma till vår betalningstjänst.
-      = link_to "Betala", payment_start_path, class: 'btn btn-success'
-.row
+      = link_to "Betala", payment_start_path, class: 'btn btn-info'
+.row-fluid.well
   %h2 Dina uppgifter
-  = @user.full_name
   .gravatar
     = image_tag @user.gravatar_url, :alt => 'Ändra din bild på gravatar.com', :title => 'Ändra din bild på gravatar.com'
-  = link_to 'Editera', edit_user_path(@user)
+  = semantic_form_for @user do |f|
+    = f.inputs :name => 'Personuppgifter' do
+      .span6
+        = f.input :first_name, :label => 'Förnamn'
+        = f.input :last_name, :label => 'Efternamn'
+        = f.input :email, :as => :email, :label => 'Emailadress'
+        = f.input :password, :label => 'Lösenord'
+        = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
+        = f.input :organization, :label => 'Organisation'
+      .span6
+        = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
+        = f.input :food_preferences, :label => 'Matpreferenser'
+        = f.input :comments, :label => 'Kommentar'
+    = f.buttons do
+      = f.commit_button :label => "Uppdatera uppgifter"
