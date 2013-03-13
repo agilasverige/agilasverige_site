@@ -1,13 +1,15 @@
-%h2.well
-  Välkommen till Agila Sverige 2013
-- if @user.confirmed_attendant_this_year?
-  %p.alert.alert-info
-    Tack för din anmälan till årets konferens! Vi ser fram emot att träffa dig
-    den 20-21 maj.
-- else
-  %p.alert
-    För att delta i årets konferens måste du antingen vara talare eller |
-    betalande deltagare. Nedan har du möjligheter att anmäla tal eller betala.
+.row-fluid.well
+  %h2
+    Välkommen till Agila Sverige 2013
+.row-fluid
+  - if @user.confirmed_attendant_this_year?
+    %p.alert.alert-info
+      Tack för din anmälan till årets konferens! Vi ser fram emot att träffa dig
+      den 20-21 maj.
+  - else
+    %p.alert
+      För att delta i årets konferens måste du antingen vara talare eller |
+      betalande deltagare. Nedan har du möjligheter att anmäla tal eller betala.
 .row-fluid.well
   .span6
     %h2 Tala
