@@ -2,7 +2,7 @@
 class SpeakingProposalsController < InheritedResources::Base
 
   before_filter :authenticate_user!
-  
+
   belongs_to :user, :optional => true
 
   def index
@@ -20,12 +20,16 @@ class SpeakingProposalsController < InheritedResources::Base
 
       registration = Registration.create!(user_id: current_user.id, conference_id: Conference.current.id)
       @speaking_proposal.registration = registration
-      @speaking_proposal.save!
+      @speaking_proposal.save
 
       success.html do
         flash[:notice] = "Tack för din blixttalsanmälan, vi har skickat ett e-brev som bekräftar din anmälan"
         SpeakingProposalMailer.thanks_for_submission(current_user, @speaking_proposal).deliver
-        redirect_to speaking_proposal_path(@speaking_proposal)
+        redirect_to user_path(current_user)
+      end
+      failure.html do
+        flash[:error] = "Kunde ej spara talarförslag"
+        redirect_to user_path(current_user)
       end
     end
   end

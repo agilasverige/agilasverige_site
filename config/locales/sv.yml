@@ -4,6 +4,8 @@ sv:
       blank: 'Kan inte lämnas tom'
   activerecord:
     errors:
+      messages:
+        record_invalid: 'Ogiltigt värde'
       models:
         speaking_proposal:
           attributes:
