@@ -2,6 +2,10 @@ class HomeController < ApplicationController
 
   def show
 
+    if current_user
+      redirect_to user_root_path
+    end
+
     @content = ''
 
     static = EditableContent.first(:conditions => {:page_name => 'home'})
