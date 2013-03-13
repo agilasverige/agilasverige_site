@@ -1,12 +1,8 @@
 <p>Hej <%= @user.first_name%></p>
 
-<p>Tack för din blixttalsanmälan <%= @speaking_proposal.title %>. 
+<p>Tack för din blixttalsanmälan <%= @speaking_proposal.title %>.
 När talarschemat är klart återkommer vi och meddelar om ditt förslag blivit
 accepterat.</p>
-
-<p>Om du vill ändra något i ditt förslag, lägga till en talare eller
-ta bort det kan du göra det från dina inställningar: 
-<%= edit_user_root_url %></p>
 
 <p><%= render :partial => 'shared/speaking_proposal_info' %></p>
 
