@@ -54,12 +54,7 @@ ActiveRecord::Schema.define(:version => 20130306200503) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "organization"
-    t.string   "address"
-    t.string   "zip_code"
-    t.string   "postal_address"
-    t.string   "country"
     t.string   "invoice_reference"
-    t.string   "telephone_number"
     t.boolean  "attending_dinner"
     t.string   "food_preferences"
     t.text     "comments"
@@ -69,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130306200503) do
     t.datetime "updated_at"
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
