@@ -31,6 +31,7 @@ class PaysonController < ApplicationController
                                               receivers)
     payment.order_items = order_items
 
+    payment.fundings = [ PaysonAPI::Funding.new('INVOICE') ]
     response = PaysonAPI::Client.initiate_payment(payment)
 
     if response.success?
