@@ -15,7 +15,6 @@ sv:
           attributes:
             email:
               taken: 'E-post redan registrerad'
-  active_record:
-    attributes:
-      user:
-        first_name: 'Förnamn'
+            first_name: 'Förnamn'
+            password:
+              too_short: 'Lösenordet är för kort'
