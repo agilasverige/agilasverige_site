@@ -15,7 +15,7 @@
     %h2 Tala
     = render :partial => 'shared/speaking_proposal_info'
 
-    - if @user.speaking_proposals.empty?
+    - if @user.speaking_proposals.for_current_conference.empty?
       %p
         Du har inga registrerade talarförslag, men du kanske vill
         skicka in ett?
@@ -24,7 +24,7 @@
         %fieldset
           %legend Anmälda talförslag
         %ul
-          - @user.speaking_proposals.each do |speaking_proposal|
+          - @user.speaking_proposals.for_current_conference.each do |speaking_proposal|
             %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
 
 

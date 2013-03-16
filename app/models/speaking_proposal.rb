@@ -15,6 +15,7 @@ class SpeakingProposal  < ActiveRecord::Base
   scope :list, order('speaking_proposals.created_at DESC')
   scope :day1, where('booked_day1 = true')
   scope :day2, where('booked_day2 = true')
+  scope :for_current_conference, joins(:registration).where('registrations.conference_id = ?', Conference.current.id)
 
   def self.created_by_date 
     orig_data = count(:group => "DATE(speaking_proposals.created_at)")
