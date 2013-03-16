@@ -1,7 +1,18 @@
-.row-fluid.well
-  %ul
-    - @proposals.each do  |speaking_proposal|
-      %li
-        = link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
-        - speaking_proposal.speakers.each do |speaker|
-          = speaker.full_name
+.row-fluid
+  %ul.nav.nav-pills
+    - Conference.order("year desc").all.each do |c|
+      %li{class: c == @conference ? "active" : ""}
+        %a{href: "?conference_id=#{c.id}"}= c.year
+
+  %table.table.table-condensed.table-hover
+    %thead
+      %tr
+        %th Namn
+        %th Titel
+    %tbody
+      - @proposals.each do |speaking_proposal|
+        %tr
+          %td
+            - speaking_proposal.speakers.each do |speaker|
+              = speaker.full_name
+          %td= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)

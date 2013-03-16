@@ -5,6 +5,9 @@ class DashboardController < ApplicationController
       render '/public/404.html', :status => 404
     else
       @conference = Conference.current
+      if params[:conference_id]
+        @conference = Conference.find(params[:conference_id])
+      end
 
       @users_count = @conference.users.count
       @users_created_today = @conference.users.created_today

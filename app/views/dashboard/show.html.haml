@@ -1,32 +1,49 @@
+.row-fluid
+  %ul.nav.nav-pills
+    - Conference.order("year desc").all.each do |c|
+      %li{class: c == @conference ? "active" : ""}
+        %a{href: "?conference_id=#{c.id}"}= c.year
+
 .row-fluid.well
-  %h2 Deltagare
-  %h3#users_count Antal anmälda
+  %h2 Anmälda
+  %h4#users_count Antal anmälda
   %p
     = @users_count
     = link_to "Lista användare", users_path
-  %h3 Användare skapade idag
-  %ul#users_created_today
+  %h4 Anmälda idag
+
+  %ul#users_created_today.media-list
     - @users_created_today.each do  |user|
-      %li
-        = image_tag user.gravatar_url
-        = user.email
-  %h3  Senaste 5 användare
-  %ul#users_last_five
+      %li.media
+        %a.pull-left
+          = image_tag user.gravatar_url, class: "media-object"
+        .media-body
+          %h4.media-heading
+            = link_to user.full_name, user_path(user)
+
+
+  %h4  Senaste 5 anmälda
+  %ul#users_last_five.media-list
     - @users_last_five.each do  |user|
-      %li
-        = image_tag user.gravatar_url
-        = link_to user.full_name, user_path(user)
+      %li.media
+        %a.pull-left
+          = image_tag user.gravatar_url, class: "media-object"
+        .media-body
+          %h4.media-heading
+            = link_to user.full_name, user_path(user)
+
   = image_tag @user_signup_chart.to_url
+.row-fluid.well
   %h2 Talarförslag
-  %h3#speaking_proposals_count Antal talarförslag
+  %h4#speaking_proposals_count Antal talarförslag
   %p
     = @speaking_proposals_count
     = link_to "Lista förslag", speaking_proposals_path
-  %h3#speaking_proposals_created_today Talarförslag anmälda idag
+  %h4#speaking_proposals_created_today Talarförslag anmälda idag
   %ul
     - @speaking_proposals_created_today.each do  |speaking_proposal|
       %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
-  %h3#speaking_proposals_last_five Senaste 5 talarförslag
+  %h4#speaking_proposals_last_five Senaste 5 talarförslag
   %ul
     - @speaking_proposals_last_five.each do  |speaking_proposal|
       %li

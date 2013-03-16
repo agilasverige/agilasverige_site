@@ -1,8 +1,24 @@
-.row-fluid.well
-  = table_for @users do |t|
-    = t.column :first_name
-    = t.column :last_name
-    = t.column :organization
-    = t.column :email
-    = t.column :attending_dinner
-    = t.column :food_preferences
+.row-fluid
+  %ul.nav.nav-pills
+    - Conference.order("year desc").all.each do |c|
+      %li{class: c == @conference ? "active" : ""}
+        %a{href: "?conference_id=#{c.id}"}= c.year
+
+  %table.table.table-condensed.table-hover.table-bordered
+    %thead
+      %tr
+        %th Förnamn
+        %th Efternamn
+        %th Företag
+        %th E-post
+        %th Middag
+        %th Matpreferenser
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.first_name
+          %td= user.last_name
+          %td= user.organization
+          %td= user.email
+          %td= user.attending_dinner ? "Jao" : "Nei"
+          %td= user.food_preferences

@@ -6,7 +6,11 @@ class SpeakingProposalsController < InheritedResources::Base
   belongs_to :user, :optional => true
 
   def index
-    @proposals=SpeakingProposal.list.for_current_conference
+    @conference = Conference.current
+    if params[:conference_id]
+      @conference = Conference.find(params[:conference_id])
+    end
+    @proposals = @conference.speaking_proposals.list
     render :layout => 'admin'
   end
 

@@ -9,13 +9,17 @@ class UsersController < InheritedResources::Base
   def index
     respond_to do |format|
       format.html do
-        @users=User.find_for_table(params)
+        @conference = Conference.current
+        if params[:conference_id]
+          @conference = Conference.find(params[:conference_id])
+        end
+        @users = @conference.users.order("first_name, last_name")
         render :layout => 'admin'
       end
       format.csv do
         @users  = User.all
         header = "First Name, Last Name, Organization, Address, Zip Code, Postal Address, Country, Invoice Reference, Telephone Number, Attending Dinner, Food Preferences, Comments, Email\n"
-        csv =CSV.generate(header) do |csv|
+        csv = CSV.generate(header) do |csv|
           @users.each do |user|
             csv << [user.last_name,
                     user.first_name,
