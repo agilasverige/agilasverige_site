@@ -4,12 +4,12 @@ class ProposalToConference < ActiveRecord::Migration
 
     c = Conference.first
     SpeakingProposal.all.each do |sp|
-      sp.conference = c
+      sp.conference_id = c.id
       sp.save!
     end
   end
 
   def self.down
-    remo_column :speaking_proposals, :conference_id
+    remove_column :speaking_proposals, :conference_id
   end
 end
