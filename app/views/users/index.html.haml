@@ -1,7 +1,8 @@
-= table_for @users do |t|
-  = t.column :first_name
-  = t.column :last_name
-  = t.column :organization
-  = t.column :email
-  = t.column :attending_dinner
-  = t.column :food_preferences
+.row-fluid.well
+  = table_for @users do |t|
+    = t.column :first_name
+    = t.column :last_name
+    = t.column :organization
+    = t.column :email
+    = t.column :attending_dinner
+    = t.column :food_preferences

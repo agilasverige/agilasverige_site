@@ -31,7 +31,7 @@ class SpeakingProposalsController < InheritedResources::Base
         redirect_to user_path(current_user)
       end
       failure.html do
-        flash[:error] = "Kunde ej spara talarförslag"
+        flash[:error] = "Kunde ej spara talarförslag. Accepterade du villkoren?"
         redirect_to user_path(current_user)
       end
     end

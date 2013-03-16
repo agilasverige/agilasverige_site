@@ -1,8 +1,9 @@
-%h2 Editera blixttal
-= render :partial => 'shared/speaking_proposal_info'
-= semantic_form_for @speaking_proposal do |f|
-  = f.inputs 'Talinformation' do
-    = f.input :title, :label => 'Titel'
-    = f.input :abstract, :as => :text, :label => 'Beskrivning'
-  = f.buttons do
-    = f.commit_button :label => "Uppdatera"
+.row-fluid.well
+  %h2 Editera blixttal
+  = render :partial => 'shared/speaking_proposal_info'
+  = semantic_form_for @speaking_proposal do |f|
+    = f.inputs 'Talinformation' do
+      = f.input :title, :label => 'Titel'
+      = f.input :abstract, :as => :text, :label => 'Beskrivning'
+    = f.buttons do
+      = f.commit_button :label => "Uppdatera"
