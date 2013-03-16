@@ -18,7 +18,10 @@ class SpeakingProposalsController < InheritedResources::Base
   def create
     create! do |success, failure|
 
-      registration = Registration.create!(user_id: current_user.id, conference_id: Conference.current.id)
+      registration = Registration.where(user_id: current_user.id, conference_id: Conference.current.id).first
+      unless registration
+        registration = Registration.create!(user_id: current_user.id, conference_id: Conference.current.id)
+      end
       @speaking_proposal.registration = registration
       @speaking_proposal.save
 
