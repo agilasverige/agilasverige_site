@@ -4,7 +4,7 @@ class MoveSpeakingProposalFromConferenceToRegistration < ActiveRecord::Migration
 
     SpeakingProposal.all.each do |sp|
       speaker = sp.speakers.first
-      conf = sp.conference
+      conf = sp.conference_id
       unless speaker.nil? or conf.nil?
         reg = Registration.create!(user_id: speaker.id, conference_id: conf.id)
         sp.registration = reg

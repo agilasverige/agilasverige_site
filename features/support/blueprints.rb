@@ -15,6 +15,3 @@ end
 
 
 
-SpeakingEngagement.blueprint do
-  # Attributes here
-end
