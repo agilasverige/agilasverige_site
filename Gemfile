@@ -5,6 +5,7 @@ gem 'rails', '~>3.0.20'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'activeadmin'
 gem 'rake', '0.9.2'
 gem 'capistrano'
 gem 'inherited_resources'
