@@ -4,12 +4,12 @@ Sponsor = Struct.new :name, :logo_file, :url
 class SponsorList
 
   attr_reader :sponsors
-  
+
   def initialize(sponsorslist = nil)
     @sponsors = sponsorslist || default_sponsors
   end
-  
-  
+
+
   def sponsor(name)
     @sponsors.find{|o| o.name == name}
   end
@@ -28,18 +28,18 @@ class SponsorList
       # Sponsor.new("Sogeti", "sogeti_logo.png", "http://www.sogeti.se"),
       # Sponsor.new("Attentec", "attentec_logo.png", "http://www.attentec.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
-      # Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se"),
+      Sponsor.new("Responsive", "responsive_logo.png", "http://www.responsive.se"),
       # Sponsor.new("CAG", "cag_logo.png", "http://www.cag.se"),
       Sponsor.new("Omegapoint", "omegapoint_logo.png", "http://www.omegapoint.se"),
       # Sponsor.new("Abiliteam", "abiliteam_logo.png", "http://www.abiliteam.se")
       # Sponsor.new("Informator", "informator_logo.png", "http://www.informator.se"),
-      Sponsor.new("Crisp", "crisp_logo.png", "http://www.crisp.se")
+      Sponsor.new("Crisp", "crisp_logo.png", "http://www.crisp.se"),
       # Sponsor.new("Know IT", "knowit_logo.png", "http://www.knowit.se"),
-      # Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se"),
+      Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se")
       # Sponsor.new("Scania", "scania_logo.gif", "http://www.scania.se"),
     ]
   end
-  
+
   def random_order
     @sponsors.sort_by{rand}
   end
