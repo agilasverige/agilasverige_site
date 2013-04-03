@@ -12,6 +12,7 @@
         %th Accepterat
         %th Namn
         %th Titel
+        %th Intern anteckning
     %tbody
       - @proposals.each do |speaking_proposal|
         %tr
@@ -20,3 +21,4 @@
             - speaking_proposal.speakers.each do |speaker|
               = speaker.full_name
           %td= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+          %td= speaking_proposal.note
