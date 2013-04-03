@@ -3,7 +3,9 @@
     - Conference.order("year desc").all.each do |c|
       %li{class: c == @conference ? "active" : ""}
         %a{href: "?conference_id=#{c.id}"}= c.year
-
+  %p
+    Totalt antal accepterade tal:
+    = @proposals.accepted.count
   %table.table.table-condensed.table-hover
     %thead
       %tr
@@ -13,7 +15,7 @@
     %tbody
       - @proposals.each do |speaking_proposal|
         %tr
-          %td= (speaking_proposal.booked_day1 || speaking_proposal.booked_day2) ? "✔" : ""
+          %td= speaking_proposal.accepted ? "✔" : ""
           %td
             - speaking_proposal.speakers.each do |speaker|
               = speaker.full_name

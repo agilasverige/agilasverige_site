@@ -16,6 +16,7 @@ class SpeakingProposal  < ActiveRecord::Base
   scope :day1, where('booked_day1 = true')
   scope :day2, where('booked_day2 = true')
   scope :for_current_conference, joins(:registration).where('registrations.conference_id = ?', Conference.current.id)
+  scope :accepted, where('booked_day1 = true OR booked_day2 = true')
 
   def self.created_by_date 
     orig_data = count(:group => "DATE(speaking_proposals.created_at)")
@@ -26,6 +27,10 @@ class SpeakingProposal  < ActiveRecord::Base
       data[date] = orig_data[date] || 0
     end
     data
+  end
+
+  def accepted
+    booked_day1 || booked_day2
   end
 
   private
