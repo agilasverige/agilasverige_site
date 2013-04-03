@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130320204326) do
+ActiveRecord::Schema.define(:version => 20130403173246) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20130320204326) do
     t.boolean  "booked_day1"
     t.boolean  "booked_day2"
     t.integer  "registration_id"
+    t.text     "note"
   end
 
   create_table "users", :force => true do |t|

@@ -21,6 +21,7 @@
       = submit_tag 'Ladda upp'
   - if current_user.present? && current_user.admin?
     = semantic_form_for @speaking_proposal, url: schedule_speaking_proposal_path(@speaking_proposal) do |f|
+      = f.input :note
       = f.input :booked_day1, as: :boolean
       = f.input :booked_day2, as: :boolean
       = f.buttons do
