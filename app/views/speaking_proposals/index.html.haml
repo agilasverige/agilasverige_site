@@ -7,11 +7,13 @@
   %table.table.table-condensed.table-hover
     %thead
       %tr
+        %th Accepterat
         %th Namn
         %th Titel
     %tbody
       - @proposals.each do |speaking_proposal|
         %tr
+          %td= (speaking_proposal.booked_day1 || speaking_proposal.booked_day2) ? "✔" : ""
           %td
             - speaking_proposal.speakers.each do |speaker|
               = speaker.full_name
