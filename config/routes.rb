@@ -28,6 +28,7 @@ Agilasverige::Application.routes.draw do
   match '/program' => 'program#show', :as => 'program'
   match '/dashboard' => 'dashboard#show', :as => 'dashboard'
   match '/old' => 'old#index', :as => 'old'
+  match '/location' => 'location#index', :as => 'location'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
