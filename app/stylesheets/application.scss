@@ -35,6 +35,17 @@ $border: 1px solid $pink;
       text-align: center;
     }
   }
+  .latest {
+    position: relative;
+    float: left;
+    h3 {
+    font-family: 'Rock Salt', cursive;
+    font-size: 15px;
+    font-color:red;
+
+    }
+
+  }
 
 
   .register-button {
