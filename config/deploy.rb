@@ -21,6 +21,9 @@ set :branch, "master"
 set :scm, :git
 set :deploy_via, :remote_cache
 
+# Not much diskspace on our server
+set :keep_releases, 3
+
 role :web, "agilasverige.cust.globalinn.com"                          # Your HTTP server, Apache/etc
 role :app, "agilasverige.cust.globalinn.com"                          # This may be the same as your `Web` server
 role :db,  "agilasverige.cust.globalinn.com", :primary => true # This is where Rails migrations will run
