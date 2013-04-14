@@ -65,3 +65,6 @@ end
 after "deploy:update", "newrelic:notice_deployment"
 after :deploy, 'notify_ratchetio'
 after 'deploy:update_code', 'deploy:symlink_shared'
+
+# Clean out old releases
+after "deploy:update", "deploy:cleanup"
