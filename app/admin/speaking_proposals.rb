@@ -4,7 +4,7 @@ ActiveAdmin.register SpeakingProposal do
     column :title
     column :abstract
     column :speaker do |proposal|
-      proposal.registration.user.full_name
+      link_to proposal.registration.user.full_name, admin_speaking_proposal_path(proposal)
     end
 
   end
