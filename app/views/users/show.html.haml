@@ -9,7 +9,8 @@
   - else
     %p.alert.alert-info
       För att delta i årets konferens måste du antingen vara talare eller |
-      betalande deltagare. Nedan har du möjligheter att anmäla tal eller betala.
+      betalande deltagare. Talaranmälan är stängd, men du har möjlighet att |
+      betala nedan
 .row-fluid.well
   .span6
     %h2 Tala
@@ -17,8 +18,7 @@
 
     - if @user.speaking_proposals.for_current_conference.empty?
       %p
-        Du har inga registrerade talarförslag, men du kanske vill
-        skicka in ett?
+        Du har inga registrerade talarförslag
     - else
       %form
         %fieldset
@@ -27,14 +27,6 @@
           - @user.speaking_proposals.for_current_conference.each do |speaking_proposal|
             %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
 
-
-    = semantic_form_for @speaking_proposal do |f|
-      = f.inputs 'Anmäl ett nytt tal' do
-        = f.input :title, :label => 'Titel'
-        = f.input :abstract, :as => :text, :label => 'Beskrivning'
-        = f.input :accept_terms, :as => :boolean, :label => "Jag accepterar villkoren ovan"
-      = f.buttons do
-        = f.commit_button :label => "Skicka in", button_html: {class: 'btn btn-info'}
 
   .span6
     %h2 Betala
