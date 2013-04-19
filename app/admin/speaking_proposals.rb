@@ -8,6 +8,9 @@ ActiveAdmin.register SpeakingProposal do
     column :speaker do |proposal|
       link_to proposal.registration.user.full_name, admin_user_path(proposal.registration.user)
     end
+    column :year do |p|
+      p.registration.conference.year.to_s
+    end
     default_actions
   end
 
@@ -24,6 +27,9 @@ ActiveAdmin.register SpeakingProposal do
     column :title
     column :abstract
     column("speaker") {|p| p.registration.user.full_name}
+    column :year do |p|
+      p.registration.conference.year.to_s
+    end
   end
 
 end
