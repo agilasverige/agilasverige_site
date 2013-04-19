@@ -20,4 +20,10 @@ ActiveAdmin.register SpeakingProposal do
     end
   end
 
+  csv do
+    column :title
+    column :abstract
+    column("speaker") {|p| p.registration.user.full_name}
+  end
+
 end
