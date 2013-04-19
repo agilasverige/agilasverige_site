@@ -12,6 +12,9 @@ ActiveAdmin.register User do
     column :created_at
     column :updated_at
     column :invoice_reference
+    column :speaking_proposals do |user|
+      user.speaking_proposals.count.to_s
+    end
     default_actions
   end
 
