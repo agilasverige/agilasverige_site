@@ -4,6 +4,10 @@
       %li{class: c == @conference ? "active" : ""}
         %a{href: "?conference_id=#{c.id}"}= c.year
 
+  %p
+    Totalt antal deltagare:
+    = @users.count
+
   %table.table.table-condensed.table-hover.table-bordered
     %thead
       %tr
@@ -13,6 +17,7 @@
         %th E-post
         %th Middag
         %th Matpreferenser
+        %th Kommentar
     %tbody
       - @users.each do |user|
         %tr
@@ -20,5 +25,6 @@
           %td= user.last_name
           %td= user.organization
           %td= user.email
-          %td= user.attending_dinner ? "Jao" : "Nei"
+          %td= user.attending_dinner ? "✔" : "-"
           %td= user.food_preferences
+          %td= user.type_of_attendant

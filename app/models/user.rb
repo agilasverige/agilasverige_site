@@ -36,6 +36,17 @@ class User < ActiveRecord::Base
     Conference.current.users.include?(self)
   end
 
+  def type_of_attendant
+    registration = Conference.current.registrations.where("user_id = ?", self.id).first
+    if registration.payson_token != nil
+      "Betalande"
+    elsif registration.speaking_proposals.accepted.count > 0
+      "Talare"
+    else
+      ""
+    end
+  end
+  
   def full_name
     "#{first_name} #{last_name}"
   end
