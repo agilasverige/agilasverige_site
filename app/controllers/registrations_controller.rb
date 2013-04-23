@@ -2,8 +2,7 @@
 class RegistrationsController < InheritedResources::Base
 
   before_filter :authenticate_user!
-
-#  belongs_to :user
+  before_filter :authorize_admin!, :only => [:index, :show, :update_comment]
 
   def index
     @conference = Conference.current
@@ -27,4 +26,11 @@ class RegistrationsController < InheritedResources::Base
       redirect_to users_path
     end
   end
+
+  def authorize_admin!
+    unless current_user.admin?
+      render :file => 'public/404.html', :status => 404
+    end
+  end
+
 end
