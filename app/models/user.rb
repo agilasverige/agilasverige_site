@@ -36,17 +36,6 @@ class User < ActiveRecord::Base
     Conference.current.users.include?(self)
   end
 
-  def type_of_attendant
-    registration = Conference.current.registrations.where("user_id = ?", self.id).first
-    if registration.payson_token != nil
-      "Betalande"
-    elsif registration.speaking_proposals.accepted.count > 0
-      "Talare"
-    else
-      registration.comment
-    end
-  end
-  
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -59,7 +48,31 @@ class User < ActiveRecord::Base
     "http://www.gravatar.com/avatar/#{gravatar_hash}?d=mm"
   end
 
+  def type_of_attendant
+    registration = current_registration
+    if registration.payson_token != nil
+      "Betalande"
+    elsif registration.speaking_proposals.accepted.count > 0
+      "Talare"
+    else
+      ""
+    end
+  end
+
+  def registration_comment
+    comment = current_registration.comment
+    (comment ? comment : "-")
+  end
+  
+  def registration_id
+    current_registration.id
+  end
+
   private
+
+  def current_registration
+    self.registrations.where(conference_id: Conference.current.id).first
+  end
 
   def gravatar_hash
     Digest::MD5.hexdigest(email.downcase)

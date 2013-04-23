@@ -17,6 +17,7 @@
         %th E-post
         %th Middag
         %th Matpreferenser
+        %th Typ av deltagare
         %th Kommentar
     %tbody
       - @users.each do |user|
@@ -28,3 +29,4 @@
           %td= user.attending_dinner ? "✔" : "-"
           %td= user.food_preferences
           %td= user.type_of_attendant
+          %td= link_to user.registration_comment, registration_path(user.registration_id)

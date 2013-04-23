@@ -16,6 +16,12 @@ Agilasverige::Application.routes.draw do
 
   resources :users
 
+  resources :registrations do
+    member do
+      put 'update_comment'
+    end
+  end
+
   resource :user, :as => :user_root
 
   resource :home, :controller => 'home'

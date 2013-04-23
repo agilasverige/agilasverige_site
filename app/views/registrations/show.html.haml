@@ -1,0 +1,22 @@
+.row-fluid.well
+  %h2 Registrering
+  - if current_user.present? && current_user.admin?
+    %table.table.table-condensed.table-hover
+      %thead
+        %tr
+          %th Namn
+          %th Konferensår
+          %th Paysontoken
+          %th Accepterat tal
+      %tbody
+        %tr
+          %td= @registration.user.full_name
+          %td= @registration.conference.year
+          %td= @registration.payson_token
+          %td
+            - @registration.speaking_proposals.accepted.each do |speaking_proposal|
+              %p= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
+    = semantic_form_for @registration, url: update_comment_registration_path(@registration) do |f|
+      = f.input :comment
+      = f.buttons do
+        = f.commit_button :label => "Spara"
