@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     elsif registration.speaking_proposals.accepted.count > 0
       "Talare"
     else
-      ""
+      registration.comment
     end
   end
   

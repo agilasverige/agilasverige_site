@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130403173246) do
+ActiveRecord::Schema.define(:version => 20130423180321) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130403173246) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "payson_token"
+    t.text     "comment"
   end
 
   create_table "speaking_proposals", :force => true do |t|
