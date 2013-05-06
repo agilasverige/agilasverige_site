@@ -52,24 +52,30 @@
       chef. Det enda de andra konferensdeltagarna förväntar sig är att du beredd att dela
       med dina erfarenheter.
 #registration.row-fluid.well
-  .span12
-    %h2 Jag vill gå på konferensen
-    = render :partial => 'shared/attendant_info'
-  = semantic_form_for @user do |f|
-    = f.inputs :name => 'Personuppgifter' do
-      .span6
-        = f.input :first_name, :label => 'Förnamn'
-        = f.input :last_name, :label => 'Efternamn'
-        = f.input :email, :as => :email, :label => 'Emailadress'
-        = f.input :password, :label => 'Lösenord'
-        = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
-        = f.input :organization, :label => 'Organisation'
-      .span6
-        = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
-        = f.input :food_preferences, :label => 'Matpreferenser'
-        = f.input :comments, :label => 'Kommentar'
-    = f.buttons do
-      = f.commit_button 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
+  - if true
+    .span12
+      %h2 Anmälan stängd för i år
+      %p På grund av väldigt stort intresse har vi tvingats stänga anmälan för i år.
+
+  - if false
+    .span12
+      %h2 Jag vill gå på konferensen
+      = render :partial => 'shared/attendant_info'
+    = semantic_form_for @user do |f|
+      = f.inputs :name => 'Personuppgifter' do
+        .span6
+          = f.input :first_name, :label => 'Förnamn'
+          = f.input :last_name, :label => 'Efternamn'
+          = f.input :email, :as => :email, :label => 'Emailadress'
+          = f.input :password, :label => 'Lösenord'
+          = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
+          = f.input :organization, :label => 'Organisation'
+        .span6
+          = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
+          = f.input :food_preferences, :label => 'Matpreferenser'
+          = f.input :comments, :label => 'Kommentar'
+      = f.buttons do
+        = f.commit_button 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
 #login.row-fluid.well
   .span12
     %h2 Logga in
