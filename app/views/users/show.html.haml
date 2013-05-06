@@ -39,15 +39,20 @@
         eller
         = link_to "Försök igen", payment_start_path, class: 'btn btn-success'
     - else
-      %p
-        Vi har inte tagit emot någon betalning för ditt deltagande.
-      %p
-        Priset för att deltaga i årets konferens är SEK 2000 (ex. moms). I priset ingår
-        deltagande i konferensen, lunch bägge dagarna samt konferensmiddagen den
-        20:e maj, som inkluderar tre DJ:s. Untz, untz, untz.
-      %p
-        Klicka på länken nedan för att komma till vår betalningstjänst.
-      = link_to "Betala", payment_start_path, class: 'btn btn-info'
+      - closed = true
+      - if closed
+        %p
+          Anmälan till årets konferens har tyvärr stängt.
+      - else
+        %p
+          Vi har inte tagit emot någon betalning för ditt deltagande.
+        %p
+          Priset för att deltaga i årets konferens är SEK 2000 (ex. moms). I priset ingår
+          deltagande i konferensen, lunch bägge dagarna samt konferensmiddagen den
+          20:e maj, som inkluderar tre DJ:s. Untz, untz, untz.
+        %p
+          Klicka på länken nedan för att komma till vår betalningstjänst.
+        = link_to "Betala", payment_start_path, class: 'btn btn-info'
 .row-fluid.well
   %h2 Dina uppgifter
   .gravatar
