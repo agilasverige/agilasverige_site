@@ -52,12 +52,13 @@
       chef. Det enda de andra konferensdeltagarna förväntar sig är att du beredd att dela
       med dina erfarenheter.
 #registration.row-fluid.well
-  - if true
+  - closed = true
+  - if closed
     .span12
       %h2 Anmälan stängd för i år
       %p På grund av väldigt stort intresse har vi tvingats stänga anmälan för i år.
 
-  - if false
+  - unless closed
     .span12
       %h2 Jag vill gå på konferensen
       = render :partial => 'shared/attendant_info'
