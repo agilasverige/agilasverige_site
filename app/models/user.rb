@@ -63,7 +63,11 @@ class User < ActiveRecord::Base
     comment = current_registration.comment
     (comment ? comment : "-")
   end
-  
+
+  def has_registered_this_year?
+    current_registration.present?
+  end
+
   def registration_id
     current_registration.id
   end

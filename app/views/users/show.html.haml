@@ -40,7 +40,7 @@
         = link_to "Försök igen", payment_start_path, class: 'btn btn-success'
     - else
       - closed = true
-      - if closed
+      - if closed && !@user.has_registered_this_year?
         %p
           Anmälan till årets konferens har tyvärr stängt.
       - else
