@@ -24,6 +24,7 @@ gem 'carrierwave'
 gem 'ratchetio', '>= 0.1.2'
 gem 'payson_api'
 gem 'rb-inotify'
+gem 'rvm-capistrano'
 
 group :test, :development do
   gem 'rspec-rails'
