@@ -22,3 +22,5 @@ TAGS
 .#*
 /.idea
 .rvmrc
+*.iml
+out
