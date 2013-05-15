@@ -21,3 +21,4 @@ vendor/ruby
 TAGS
 .#*
 /.idea
+.rvmrc
