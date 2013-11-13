@@ -1,6 +1,13 @@
 Agilasverige::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
+  # Fix so migrations can run
+  # This loads the world before a database exists,
+  # which doesn't work so well
+  begin 
+    ActiveAdmin.routes(self)
+  rescue Exception => e
+    puts "ActiveAdmin: #{e.class}: #{e}"
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 

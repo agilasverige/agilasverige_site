@@ -14,3 +14,5 @@ end
   u.speaking_proposals << s
   u.save!
 end
+
+AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
