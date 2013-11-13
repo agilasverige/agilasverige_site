@@ -1,33 +1,19 @@
 .hero-unit
   .row-fluid
     .span6
-      %h1 Följ oss live!
-      %p <a href="https://agilasverige.solidtango.com/">https://agilasverige.solidtango.com/</a> 
-      %p  Anmälan är tyvärr stängd, men du kan fortfarande komma på eftersläpp på måndag kväll nedan
+      %h1 Ringa in i kalendern!
+      %p  Missa inte nästa konferens! Anmälan öppnar snart. Hoppas vi.
     .span6
       .date
-        %h2 Stockholm 20-21 maj 2013
-  .row-fluid
-    .span3
-      %p
-        = link_to '#login', class: 'btn btn-large btn-info' do
-          %i.icon-white.icon-user
-          Jag vill logga in
--#    .span3
--#      %p
--#        = link_to "#registration", class: 'btn btn-info btn-large' do
--#          %i.icon-white.icon-pencil
--#         Jag vill registrera mig
-#conference_details.row-fluid.well
-  = render :partial  => 'shared/conference_details'
+        %h2
+          Stockholm
+          %br
+          4-5 juni 2014
 
-#registration.row-fluid.well
   - closed = true
   - if closed
-    .span12
-      <iframe src="https://docs.google.com/a/agilasverige.se/spreadsheet/embeddedform?formkey=dHRiSGJ0aU45QzFtb1JmMlVBM1ZpWmc6MQ" width="760" height="743" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
-  - unless closed
+  - else
     .span12
       %h2 Jag vill gå på konferensen
       = render :partial => 'shared/attendant_info'
@@ -46,12 +32,3 @@
           = f.input :comments, :label => 'Kommentar'
       = f.buttons do
         = f.commit_button 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
-#login.row-fluid.well
-  .span12
-    %h2 Logga in
-    = semantic_form_for(@user, :url => session_path(@user)) do |f|
-      = f.inputs do
-        = f.input :email, :label => 'E-postadress'
-        = f.input :password, :label => 'Lösenord'
-      = f.buttons do
-        = f.commit_button "Logga in", button_html: {class: 'btn btn-primary'}
