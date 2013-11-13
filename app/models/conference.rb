@@ -4,6 +4,6 @@ class Conference < ActiveRecord::Base
   has_many :speaking_proposals, through: :registrations
 
   def self.current
-    order('year DESC').first
+    order('year DESC').first || Conference.new
   end
 end

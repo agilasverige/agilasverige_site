@@ -10,7 +10,9 @@ describe SpeakingProposalMailer do
   before :each do
     @user = User.make!
     @speaking_proposal = SpeakingProposal.make!
-    @user.speaking_proposals << @speaking_proposal
+    @registration = Registration.make!
+    @registration.speaking_proposals << @speaking_proposal
+    @user.registrations << @registration
     @user.save!
 
     @email = SpeakingProposalMailer.thanks_for_submission(@user, @speaking_proposal)
@@ -21,7 +23,6 @@ describe SpeakingProposalMailer do
   it { should deliver_to @user.email }
   it { should have_subject 'Tack för din blixttalsanmälan' }
   it { should have_body_text /#{@speaking_proposal.title}/ }
-  it { should have_body_text /#{current_user_url}/ }
-  it { should have_body_text /Agila Sverige 2012/ }
+  it { should have_body_text /Agila Sverige 2013/ }
 
 end
