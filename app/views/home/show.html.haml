@@ -72,7 +72,7 @@
         = f.input :food_preferences, :label => 'Matpreferenser'
         = f.input :comments, :label => 'Kommentar'
     = f.actions do
-      = f.action :submit, button_html: {class: 'btn btn-primary'}
+      = f.action :submit, label: 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
 #login.row-fluid.well
   .span12
     %h2 Logga in
@@ -81,4 +81,4 @@
         = f.input :email, :label => 'E-postadress'
         = f.input :password, :label => 'Lösenord'
       = f.actions do
-        = f.action :submit, button_html: {class: 'btn btn-primary'}
+        = f.action :submit, label: 'Logga in', button_html: {class: 'btn btn-primary'}
