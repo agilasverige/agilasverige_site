@@ -1,34 +1,84 @@
 .hero-unit
   .row-fluid
     .span6
-      %h1 Ringa in i kalendern!
-      %p  Missa inte nästa konferens! Anmälan öppnar snart. Hoppas vi.
+      %h1 Sjätte året i rad!
+      %p Oavsett om du är nyfiken eller erfaren är du varmt välkommen till Sveriges agilaste konferens om agila metoder.
     .span6
       .date
-        %h2
-          Stockholm
-          %br
-          4-5 juni 2014
-
-  - closed = true
-  - if closed
-
-  - else
-    .span12
-      %h2 Jag vill gå på konferensen
-      = render :partial => 'shared/attendant_info'
-    = semantic_form_for @user do |f|
-      = f.inputs :name => 'Personuppgifter' do
-        .span6
-          = f.input :first_name, :label => 'Förnamn'
-          = f.input :last_name, :label => 'Efternamn'
-          = f.input :email, :as => :email, :label => 'Emailadress'
-          = f.input :password, :label => 'Lösenord'
-          = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
-          = f.input :organization, :label => 'Organisation'
-        .span6
-          = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
-          = f.input :food_preferences, :label => 'Matpreferenser'
-          = f.input :comments, :label => 'Kommentar'
-      = f.buttons do
-        = f.commit_button 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
+        %h2 Stockholm 20-21 maj 2013
+    .span6
+      .latest  
+        %h3 Anmäl ditt tal senast 18 april!
+  .row-fluid
+    .span3
+      %p
+        = link_to '#login', class: 'btn btn-large btn-info' do
+          %i.icon-white.icon-user
+          Jag vill logga in
+    .span3
+      %p
+        = link_to "#registration", class: 'btn btn-info btn-large' do
+          %i.icon-white.icon-pencil
+          Jag vill registrera mig
+.row-fluid
+  .span4
+    %h2 Öppenhet
+    %p
+      Agila Sverige är en konferens där till och med konferensformatet är agilt.
+      Förmiddagarna ägnas åt blixttal, 10-minuters koncentrerade presentationer från
+      olika medlemmar i det agila communityt. Vi har 60 platser till förfogande och tar
+      gärna med dig som talar för första gången.
+    %p
+      Intresserad av att tala? Du kan anmäla tal när du registrerat dig och loggat in.
+    %p
+      Efter en förmiddag med många intressanta tal så öppnas diskussionsslussarna på
+      eftermiddagen med Open X. Här anmäler du som konferensdeltagare det ämne du är
+      intresserad av att diskutera.
+  .span4
+    %h2 Gemenskap
+    %p
+      Stockholms mest intresserade agilister samlas i två dagar i de fantastiska
+      lokalerna på Meeting Room för att diskutera hur vi kan göra systemutveckling
+      effektivare, roligare och mer värdeskapande.
+    %p
+      På måndagskvällen kör vi först en gemensam middag för alla konferensdeltagare. När
+      maten är uppäten öppnar vi dörrarna för Eftersläpp Agile Style, där även de som
+      inte deltagit på konferensen är välkomna.
+  .span4
+    %h2 Kunskap
+    %p
+      När vi för sjätte året i rad arrangerar Agila Sverige vet vi att de som återkommer
+      gör det för kunskapsutbytet. Ingen annanstans har du möjligheten att dela med dig och
+      ta del av så många branschkollegers erfarenheter från arbetet med agil systemutveckling.
+    %p
+      Du kan komma till Agila Sverige som nybörjare eller erfaren, som programmerare eller
+      chef. Det enda de andra konferensdeltagarna förväntar sig är att du beredd att dela
+      med dina erfarenheter.
+#registration.row-fluid.well
+  .span12
+    %h2 Jag vill gå på konferensen
+    = render :partial => 'shared/attendant_info'
+  = semantic_form_for @user do |f|
+    = f.inputs :name => 'Personuppgifter' do
+      .span6
+        = f.input :first_name, :label => 'Förnamn'
+        = f.input :last_name, :label => 'Efternamn'
+        = f.input :email, :as => :email, :label => 'Emailadress'
+        = f.input :password, :label => 'Lösenord'
+        = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
+        = f.input :organization, :label => 'Organisation'
+      .span6
+        = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
+        = f.input :food_preferences, :label => 'Matpreferenser'
+        = f.input :comments, :label => 'Kommentar'
+    = f.actions do
+      = f.action :submit, button_html: {class: 'btn btn-primary'}
+#login.row-fluid.well
+  .span12
+    %h2 Logga in
+    = semantic_form_for(@user, :url => session_path(@user)) do |f|
+      = f.inputs do
+        = f.input :email, :label => 'E-postadress'
+        = f.input :password, :label => 'Lösenord'
+      = f.actions do
+        = f.action :submit, button_html: {class: 'btn btn-primary'}
