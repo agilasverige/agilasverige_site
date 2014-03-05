@@ -10,5 +10,5 @@
     = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
     = f.input :food_preferences, :label => 'Matpreferenser'
     = f.input :comments, :label => 'Kommentar'
-  = f.buttons do
-    = f.commit_button :label => "Skicka anmälan"
+  = f.actions do
+    = f.action :subbmit, :label => "Skicka anmälan"

@@ -39,7 +39,7 @@
         eller
         = link_to "Försök igen", payment_start_path, class: 'btn btn-success'
     - else
-      - closed = true
+      - closed = false
       - if closed
         %p
           Anmälan till årets konferens har tyvärr stängt.
@@ -49,7 +49,7 @@
         %p
           Priset för att deltaga i årets konferens är SEK 3000 (ex. moms). I priset ingår
           deltagande i konferensen, lunch bägge dagarna samt konferensmiddagen den
-          20:e maj, som inkluderar tre DJ:s. Untz, untz, untz.
+          4:e juni.
         %p
           Klicka på länken nedan för att komma till vår betalningstjänst.
         = link_to "Betala", payment_start_path, class: 'btn btn-info'
@@ -70,5 +70,5 @@
         = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middag'
         = f.input :food_preferences, :label => 'Matpreferenser'
         = f.input :comments, :label => 'Kommentar'
-    = f.buttons do
-      = f.commit_button :label => "Uppdatera uppgifter"
+    = f.actions do
+      = f.action :submit, :label => "Uppdatera uppgifter"

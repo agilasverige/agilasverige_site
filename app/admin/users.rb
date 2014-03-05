@@ -28,7 +28,7 @@ ActiveAdmin.register User do
       f.input :food_preferences
       f.input :comments
     end
-    f.buttons
+    f.actions
   end
 
 

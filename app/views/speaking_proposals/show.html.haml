@@ -24,5 +24,5 @@
       = f.input :note
       = f.input :booked_day1, as: :boolean
       = f.input :booked_day2, as: :boolean
-      = f.buttons do
-        = f.commit_button :label => "Spara"
+      = f.actions do
+        = f.action :submit, :label => "Spara"

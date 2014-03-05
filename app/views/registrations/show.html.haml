@@ -18,5 +18,5 @@
               %p= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
     = semantic_form_for @registration, url: update_comment_registration_path(@registration) do |f|
       = f.input :comment
-      = f.buttons do
-        = f.commit_button :label => "Spara"
+      = f.actions do
+        = f.action :submit, :label => "Spara"

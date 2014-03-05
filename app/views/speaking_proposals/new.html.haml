@@ -5,5 +5,5 @@
     = f.input :title, :label => 'Titel'
     = f.input :abstract, :as => :text, :label => 'Beskrivning'
     = f.input :accept_terms, :as => :boolean, :label => "Jag accepterar villkoren ovan"
-  = f.buttons do
-    = f.commit_button :label => "Skicka in"
+  = f.actions do
+    = f.action :subbmit, :label => "Skicka in"
