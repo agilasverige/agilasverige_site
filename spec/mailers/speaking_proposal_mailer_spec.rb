@@ -23,6 +23,6 @@ describe SpeakingProposalMailer do
   it { should deliver_to @user.email }
   it { should have_subject 'Tack för din blixttalsanmälan' }
   it { should have_body_text /#{@speaking_proposal.title}/ }
-  it { should have_body_text /Agila Sverige 2013/ }
+  it { should have_body_text /Agila Sverige 2014/ }
 
 end

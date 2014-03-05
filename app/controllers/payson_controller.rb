@@ -8,7 +8,7 @@ class PaysonController < ApplicationController
     memo = 'Konferensavgift Agila Sverige'
 
     receivers = [ PaysonAPI::Receiver.new(email = 'info@agilasverige.se',
-                                          amount = 2500,
+                                          amount = 3750,
                                           first_name = 'Agila',
                                           last_name = 'Sverige',
                                           primary = true) ] 
@@ -17,11 +17,11 @@ class PaysonController < ApplicationController
                                    first_name = current_user.first_name,
                                    last_name = current_user.last_name)
 
-    order_items = [ PaysonAPI::OrderItem.new(description = 'Agila Sverige 2013',
-                                             unit_price = 2000,
+    order_items = [ PaysonAPI::OrderItem.new(description = 'Agila Sverige 2014',
+                                             unit_price = 3000,
                                              quantity = 1,
                                              tax = 0.25,
-                                             sku = 'AS-2013') ]
+                                             sku = 'AS-2014') ]
 
     payment = PaysonAPI::Request::Payment.new(return_url,
                                               cancel_url,
