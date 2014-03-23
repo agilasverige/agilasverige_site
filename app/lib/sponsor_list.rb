@@ -35,7 +35,8 @@ class SponsorList
       Sponsor.new("Informator", "informator_logo.png", "http://www.informator.se"),
       Sponsor.new("Crisp", "crisp_logo.png", "http://www.crisp.se"),
       Sponsor.new("King", "king_logo.png", "http://www.king.com"),
-      Sponsor.new("Claremont", "claremont_logo.jpg", "http://www.claremont.se")
+      Sponsor.new("Claremont", "claremont_logo.jpg", "http://www.claremont.se"),
+      Sponsor.new("TriOptima", "trioptima_logo.jpg", "http://www.trioptima.com")
       # Sponsor.new("Know IT", "knowit_logo.png", "http://www.knowit.se"),
       #Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se")
       # Sponsor.new("Scania", "scania_logo.gif", "http://www.scania.se"),
