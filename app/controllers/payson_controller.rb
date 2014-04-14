@@ -55,5 +55,6 @@ class PaysonController < ApplicationController
   end
 
   def payment_ipn
+    Ipn.create!(data: "Parameters: " + params.to_json + "\nBody: " + request.body.read())
   end
 end

@@ -32,3 +32,7 @@ end
 AdminUser.blueprint do
   # Attributes here
 end
+
+Ipn.blueprint do
+  # Attributes here
+end
