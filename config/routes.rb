@@ -36,7 +36,7 @@ Agilasverige::Application.routes.draw do
   get '/payment/start', to: 'payson#payment_start'
   get '/payment/success', to: 'payson#payment_success'
   get '/payment/cancel', to: 'payson#payment_cancel'
-  match '/payment/ipn' => 'payson#payment_ipn', :as => 'ipn'
+  match '/payment/ipn' => 'payson#payment_ipn', :as => 'payment_ipn'
 
   match '/program' => 'program#show', :as => 'program'
   match '/dashboard' => 'dashboard#show', :as => 'dashboard'
