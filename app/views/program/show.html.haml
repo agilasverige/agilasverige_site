@@ -1,15 +1,29 @@
 %h2 
-  Program
+  Preliminärt program
   = @conference.year
+%p 
+  Förutom 5-6 open space-pass med plats för diskussioner är vi glada över att få presentera följande tal!
+%p
+  Listan är 
+  %strong oordnad 
+  med största möjliga slumpmässighet.
 
-%h3 Dag 1
+
+%h3 Onsdag 4 juni 
 %ul
   - @day1.each do |s|
     %li
       = s.title
-  
-%h3 Dag 2
+    - s.speakers.each do |x|
+      %i 
+        = x.first_name + ' ' + x.last_name
+
+%h3 Torsdag 5 juni
 %ul
   - @day2.each do |s|
     %li
       = s.title
+    - s.speakers.each do |x|
+      %i 
+        = x.first_name + ' ' + x.last_name
+
