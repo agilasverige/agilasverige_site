@@ -16,7 +16,7 @@
       = s.title
     - s.speakers.each do |x|
       %i 
-        = x.first_name + ' ' + x.last_name
+        = x.first_name + ' ' + x.last_name + ', ' + x.organization
 
 %h3 Torsdag 5 juni
 %ul
@@ -25,5 +25,5 @@
       = s.title
     - s.speakers.each do |x|
       %i 
-        = x.first_name + ' ' + x.last_name
+        = x.first_name + ' ' + x.last_name + ', ' + x.organization
 
