@@ -19,6 +19,10 @@ module PaysonClient
 
     return :not_started unless registration
 
+    # Bit of an ugly hack to handle the registrations loaded from payson transaction export
+    if registration.payson_ref.present?
+      return :paid
+    end
     token = registration.payson_token
 
     unless token.blank?

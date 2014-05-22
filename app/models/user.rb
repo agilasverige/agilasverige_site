@@ -50,13 +50,14 @@ class User < ActiveRecord::Base
 
   def type_of_attendant
     registration = current_registration
-    if registration.payson_token != nil
-      "Betalande"
-    elsif registration.speaking_proposals.accepted.count > 0
-      "Talare"
-    else
-      ""
+    result = ""
+    if registration.payson_token.present? or registration.payson_ref.present?
+      result += "Betalande "
     end
+    if registration.speaking_proposals.accepted.count > 0
+      result += "Talare"
+    end
+    result
   end
 
   def registration_comment
