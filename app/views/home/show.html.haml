@@ -18,9 +18,6 @@
           Jag vill logga in
     .span3
       %p
-        = link_to "#registration", class: 'btn btn-info btn-large' do
-          %i.icon-white.icon-pencil
-          Jag vill registrera mig
 .row-fluid
   .span4
     %h2 Öppenhet
@@ -55,25 +52,6 @@
       Du kan komma till Agila Sverige som nybörjare eller erfaren, som programmerare eller
       chef. Det enda de andra konferensdeltagarna förväntar sig är att du beredd att dela
       med dina erfarenheter.
-#registration.row-fluid.well
-  .span12
-    %h2 Jag vill gå på konferensen
-    = render :partial => 'shared/attendant_info'
-    = semantic_form_for @user do |f|
-      = f.inputs :name => 'Personuppgifter' do
-        .span6
-          = f.input :first_name, :label => 'Förnamn'
-          = f.input :last_name, :label => 'Efternamn'
-          = f.input :email, :as => :email, :label => 'Emailadress'
-          = f.input :password, :label => 'Lösenord'
-          = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
-          = f.input :organization, :label => 'Organisation'
-        .span6
-          = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
-          = f.input :food_preferences, :label => 'Matpreferenser'
-          = f.input :comments, :label => 'Kommentar'
-      = f.actions do
-        = f.action :submit, label: 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
 #login.row-fluid.well
   .span12
     %h2 Logga in
