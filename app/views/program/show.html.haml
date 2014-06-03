@@ -1,3 +1,49 @@
+%script{:type => "text/javascript"} 
+:javascript
+  $(function initMenus() {
+    if (!document.getElementsByTagName) return;
+    
+    var aMenus = document.getElementsByTagName("LI");
+    for (var i = 0; i < aMenus.length; i++) {
+      var mclass = aMenus[i].className;
+      if (mclass.indexOf("treenode") > -1) {
+        var submenu = aMenus[i].childNodes;
+        for (var j = 0; j < submenu.length; j++) {
+          if (submenu[j].tagName == "A") {
+            
+            submenu[j].onclick = function() {
+              var node = this.nextSibling;
+                        
+              while (1) {
+                if (node != null) {
+                  if (node.tagName == "UL") {
+                    var d = (node.style.display == "none")
+                    node.style.display = (d) ? "block" : "none";
+                    this.className = (d) ? "treeopen" : "treeclosed";
+                    return false;
+                  }
+                  node = node.nextSibling;
+                } else {
+                  return false;
+                }
+              }
+              return false;
+            }
+            
+            submenu[j].className = (mclass.indexOf("open") > -1) ? "treeopen" : "treeclosed";
+          }
+          
+          if (submenu[j].tagName == "UL")
+            submenu[j].style.display = (mclass.indexOf("open") > -1) ? "block" : "none";
+        }
+      }
+    }
+  });
+
+:javascript
+  window.onload = initMenus;
+
+
 %h2 
   Preliminärt program
   = @conference.year
@@ -13,8 +59,11 @@
 %h3 Onsdag 4 juni 
 %ul
   - @day1.each do |s|
-    %li
-      = s.title
+    %li.treenode
+      = link_to s.title, ''
+      %ul 
+        %li 
+          = s.abstract
     - s.speakers.each do |x|
       %i 
         = x.first_name + ' ' + x.last_name + ', ' + x.organization
@@ -22,8 +71,11 @@
 %h3 Torsdag 5 juni
 %ul
   - @day2.each do |s|
-    %li
-      = s.title
+    %li.treenode
+      = link_to s.title, ''
+      %ul
+        %li
+          = s.abstract
     - s.speakers.each do |x|
       %i 
         = x.first_name + ' ' + x.last_name + ', ' + x.organization
