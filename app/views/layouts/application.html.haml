@@ -48,11 +48,16 @@
               %p.alert= flash[:alert]
             - if flash[:warning]
               %p.alert= flash[:warning]
-      =yield
 
+        = yield
+        - @sponsors.randomized_rows.each do |sponsorrow|
+          .row-fluid.sponsors
+            - sponsorrow.each do |sponsor|
+              .span4
+                = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
       .footer
         .contact
-          %span &copy; Agila Sverige 2015 |
+          %span &copy; Agila Sverige 2014 |
           %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
         :javascript
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

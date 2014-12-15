@@ -2,25 +2,28 @@
   .row-fluid
     .span6
       .latest
-        %h1 Save the date!
+        %h1 Programmet!
         %p
           %br
-        Vi har bokat lokalen för Agila Sverige 2015. Den går av stapeln den 3-4 juni på konferens 7A. 
+          =link_to 'Ladda ner programmet här', '/static_files/agila_sverige_program_2014.pdf'
         %p
-          Se förra årets tal
+          Nu konferensen igång! Följ den på
           = link_to 'https://agilasverige.solidtango.com/','https://agilasverige.solidtango.com/'
     .span6
       .date
-        %h2 Stockholm 3-4 juni 2015
+        %h2 Stockholm 4-5 juni 2014
   .row-fluid
     .span3
       %p
         %br
+        = link_to '#login', class: 'btn btn-large btn-info' do
+          %i.icon-white.icon-user
+          Jag vill logga in
     .span3
       %p
 #hitta.row-fluid.well
   .span4
-    %h2 Plats
+    %h2 Hitta hit
     %p I år har vi hittat en konferenslokal som vi tror kommer att toppa föregående års lokaler!
     Mest av allt ser vi fram emot att utnytja dess takterass för spännande diskussioner.
     %p
@@ -61,3 +64,12 @@
       Du kan komma till Agila Sverige som nybörjare eller erfaren, som programmerare eller
       chef. Det enda de andra konferensdeltagarna förväntar sig är att du beredd att dela
       med dina erfarenheter.
+#login.row-fluid.well
+  .span12
+    %h2 Logga in
+    = semantic_form_for(@user, :url => session_path(@user)) do |f|
+      = f.inputs do
+        = f.input :email, :label => 'E-postadress'
+        = f.input :password, :label => 'Lösenord'
+      = f.actions do
+        = f.action :submit, label: 'Logga in', button_html: {class: 'btn btn-primary'}
