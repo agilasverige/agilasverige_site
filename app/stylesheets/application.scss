@@ -82,6 +82,14 @@ $border: 1px solid $pink;
   }
 }
 
+#speaking_proposal_abstract {
+  width: 300px;
+  max-height: 200px;
+}
+
+#speaking_proposal_title {
+  width: 300px;
+}
 .formtastic {
   li {
     list-style: none;
