@@ -219,6 +219,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  bourbon
   capistrano
   carrierwave
   compass
