@@ -26,14 +26,18 @@
           %ul.nav
             %li
               =link_to 'Hem', root_path
+            %li
+              =link_to 'Tidigare konferenser', old_path
+            %li 
+              = link_to 'Plats', '#location'
+            %li 
+              = link_to 'Om konferensen', '#about'
             - if user_signed_in?
               - if current_user.admin?
                 %li
                   = link_to 'Dashboard', dashboard_path
               %li
                 = link_to 'Logga ut', destroy_user_session_path
-            %li
-              =link_to 'Tidigare konferenser', old_path
     .container#bodybody
       .main
         #flash
