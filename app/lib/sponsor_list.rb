@@ -19,11 +19,11 @@ class SponsorList
       Sponsor.new("Agical", "agical_logo.png", "http://www.agical.se"),
 #      Sponsor.new("Dynabyte", "dynabyte_logo.jpg", "http://www.dynabyte.se"),
 #      Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
-#      Sponsor.new("IT-HUSET", 'it-huset_logo.png', "http://www.it-huset.se"),
-#      Sponsor.new("Assa Abloy", 'assa-abloy_logo.png', "http://www.assaabloy.com/en/com/About-us/Innovation"),
+      Sponsor.new("IT-HUSET", 'it-huset_logo.png', "http://www.it-huset.se"),
+      Sponsor.new("Assa Abloy", 'assa-abloy_logo.png', "http://www.assaabloy.com/en/com/About-us/Innovation"),
 #      Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
 #      Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
-#      Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
+      Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
 #      Sponsor.new("Informator", "informator_logo.png", "http://www.informator.se"),
 #      Sponsor.new("Crisp", "crisp_logo.png", "http://www.crisp.se"),
 #      Sponsor.new("King", "king_logo.png", "http://www.king.com"),
@@ -43,6 +43,7 @@ class SponsorList
       # Sponsor.new("Know IT", "knowit_logo.png", "http://www.knowit.se"),
       # Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se")
       # Sponsor.new("Scania", "scania_logo.gif", "http://www.scania.se"),
+      # Sponsor.new("Inceptive", "Inceptive_logo.jpg", "http://www.inceptivestockholm.se"),
     ]
   end
 
