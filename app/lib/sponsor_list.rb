@@ -17,7 +17,7 @@ class SponsorList
   def default_sponsors
     [
       Sponsor.new("Agical", "agical_logo.png", "http://www.agical.se"),
-#      Sponsor.new("Dynabyte", "dynabyte_logo.jpg", "http://www.dynabyte.se"),
+      Sponsor.new("Dynabyte", "dynabyte_logo.jpg", "http://www.dynabyte.se"),
 #      Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
       Sponsor.new("IT-HUSET", 'it-huset_logo.png', "http://www.it-huset.se"),
       Sponsor.new("Assa Abloy", 'assa-abloy_logo.png', "http://www.assaabloy.com/en/com/About-us/Innovation"),
