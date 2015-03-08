@@ -45,6 +45,7 @@ class SponsorList
       # Sponsor.new("Scania", "scania_logo.gif", "http://www.scania.se"),
        Sponsor.new("Inceptive", "inceptive_logo.jpg", "http://www.inceptivestockholm.se"),
        Sponsor.new("Transmode", "TRM_logo_green-blue_.jpg", "http://www.transmode.com"),
+      Sponsor.new("Avidity", "avidity_logo.jpg", "http://www.avidity.se")
     ]
   end
 
