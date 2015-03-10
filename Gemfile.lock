@@ -145,7 +145,7 @@ GEM
       net-ssh (>= 1.99.1)
     newrelic_rpm (3.7.3.204)
     orm_adapter (0.0.7)
-    payson_api (0.3.0)
+    payson_api (0.4.2)
     pg (0.11.0)
     polyglot (0.3.3)
     pry (0.9.10)
