@@ -46,7 +46,7 @@ class SponsorList
        Sponsor.new("Inceptive", "inceptive_logo.jpg", "http://www.inceptivestockholm.se"),
        Sponsor.new("Transmode", "TRM_logo_green-blue_.jpg", "http://www.transmode.com"),
       Sponsor.new("Avidity", "avidity_logo.png", "http://www.avidity.se"),
-      Sponsor.new("Kambi", "kambi_logo.png", "http://www.kambi.com")
+      Sponsor.new("Kambi", "kambi_logo.jpg", "http://www.kambi.com")
     ]
   end
 
