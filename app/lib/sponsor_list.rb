@@ -21,7 +21,7 @@ class SponsorList
       Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
       Sponsor.new("IT-HUSET", 'it-huset_logo.png', "http://www.it-huset.se"),
       Sponsor.new("Assa Abloy", 'assa-abloy_logo.png', "http://www.assaabloy.com/en/com/About-us/Innovation"),
-#      Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
+      Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
 #      Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
       Sponsor.new("Informator", "informator_logo.png", "http://informator.se/utbildningar/agila-metoder"),
