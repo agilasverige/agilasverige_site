@@ -1,6 +1,7 @@
 require 'digest/md5'
 
 class User < ActiveRecord::Base
+  attr_accessor :comment #fake antispam
 
 
   # Include default devise modules. Others available are:
@@ -17,7 +18,8 @@ class User < ActiveRecord::Base
   validates_presence_of :last_name
   validates_presence_of :email
   validates_presence_of :organization
-
+  validates_length_of   :comment, :is => 0 
+	
   scope :created_today, where('users.created_at > ? AND users.created_at < ?', Date.today, Date.tomorrow)
   scope :last_five, limit(5).order('users.created_at DESC')
 
