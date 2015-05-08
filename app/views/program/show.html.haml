@@ -53,10 +53,8 @@
   Listan är 
   %strong oordnad 
   med största möjliga slumpmässighet.
-%p
-  =link_to 'Ladda ner programmet i PDF format här!', '/static_files/agila_sverige_program_2014.pdf'
 
-%h3 Onsdag 4 juni 
+%h3 Onsdag 3 juni 
 %ul
   - @day1.each do |s|
     %li.treenode
@@ -68,7 +66,7 @@
       %i 
         = x.first_name + ' ' + x.last_name + ', ' + x.organization
 
-%h3 Torsdag 5 juni
+%h3 Torsdag 4 juni
 %ul
   - @day2.each do |s|
     %li.treenode
