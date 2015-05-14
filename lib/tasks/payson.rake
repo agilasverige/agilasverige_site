@@ -14,11 +14,13 @@ namespace :payson do
     puts("#\n\n")
 
     CSV.foreach(path, headers: :first_row, skip_blanks: true, encoding: "UTF-8") do |row|
+ 
       attrs = row.to_hash
-
-      email = attrs['Från']
-      payson_ref = attrs['PaysonRef']
-
+   
+      date = attrs['Date']
+      email = attrs['Counterparty']
+      payson_ref = attrs['Payson Ref.']
+   
       user = User.find_by_email(email)
       registration = user.registrations.where(conference_id: conference).first
 
