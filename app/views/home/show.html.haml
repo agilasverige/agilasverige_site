@@ -2,9 +2,9 @@
   .row-fluid
     .span6
       .latest
-        %h1 Snart smäller det!
+        %h1 Fullt! 
         %p
-          %br Ta en titt på det 
+          %br Nu är tyvärr konferensen full. Vi kommer att livesända som vanligt, håll utkik här efter en länk. Tills vidare, ta en titt på det 
           = link_to 'preliminära programmet', '/program' 
           %p
     .span6
@@ -16,11 +16,6 @@
         = link_to '#login', class: 'btn btn-large btn-info' do
           %i.icon-white.icon-user
           Jag vill logga in
-    .span3
-      %p
-        = link_to "#registration", class: 'btn btn-info btn-large' do
-          %i.icon-white.icon-pencil
-          Jag vill registrera mig
 #location.row-fluid.well
   .span4
     %h2 Plats
@@ -74,26 +69,6 @@
         = f.input :password, :label => 'Lösenord'
       = f.actions do
         = f.action :submit, label: 'Logga in', button_html: {class: 'btn btn-primary'}
-#registration.row-fluid.well
-  .span12
-    %h2 Jag vill gå på konferensen
-    = render :partial => 'shared/attendant_info'
-    = semantic_form_for @user do |f|
-      = f.inputs :name => 'Personuppgifter' do
-        .span6
-          = f.input :first_name, :label => 'Förnamn'
-          = f.input :last_name, :label => 'Efternamn'
-          = f.input :email, :as => :email, :label => 'Emailadress'
-          = f.input :password, :label => 'Lösenord'
-          = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
-          = f.input :organization, :label => 'Organisation'
-        .span6
-          = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
-          = f.input :food_preferences, :label => 'Matpreferenser'
-          = f.input :comments, :label => 'Kommentar'
-          = f.input :comment, :as => :hidden, :label => 'Lämna tom'
-      = f.actions do
-        = f.action :submit, label: 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
 
 .span12 
   .h2 Sponsorer
