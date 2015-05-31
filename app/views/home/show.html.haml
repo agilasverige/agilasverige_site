@@ -2,10 +2,12 @@
   .row-fluid
     .span6
       .latest
-        %h1 Fullt! 
+        %h1 Programmet! 
         %p
-          %br Nu är tyvärr konferensen full. Vi kommer att livesända som vanligt, håll utkik här efter en länk. Tills vidare, ta en titt på det 
-          = link_to 'preliminära programmet', '/program' 
+          %br Nu kan du läsa det fullständiga programmet som PDF eller se mer detaljerade beskrivningar av talen
+          = link_to 'Fullständiga programmet', 'static_files/agila_sverige_program_2015.pdf'		
+          %p
+          = link_to 'Beskrivningar', '/program' 
           %p
     .span6
       .date
