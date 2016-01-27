@@ -26,7 +26,13 @@
         %ul
           - @user.speaking_proposals.for_current_conference.each do |speaking_proposal|
             %li= link_to speaking_proposal.title, speaking_proposal_path(speaking_proposal)
-
+    = semantic_form_for @speaking_proposal do |f|
+      = f.inputs 'Anmäl ett nytt tal' do
+        = f.input :title, :label => 'Titel'
+        = f.input :abstract, :as => :text, :label => 'Beskrivning'
+        = f.input :accept_terms, :as => :boolean, :label => "Jag accepterar villkoren ovan"
+      = f.actions do
+        = f.action :submit, :label => "Skicka in", button_html: {class: 'btn btn-info'}
 
   .span6
     %h2 Betala
@@ -45,15 +51,7 @@
           Anmälan till årets konferens har tyvärr stängt.
       - else
         %p
-          Vi har inte tagit emot någon betalning för ditt deltagande.
-        %p
-          Priset för att deltaga i årets konferens är SEK 3000 (ex. moms). I priset ingår
-          deltagande i konferensen, lunch bägge dagarna samt konferensmiddagen den
-          första kvällen.
-        %p
-          Klicka på länken nedan för att komma till vår betalningstjänst.
-          (Glöm inte bort att återvända till vår sajt från Payson för att slutföra betalningen)
-        = link_to "Betala", payment_start_path, class: 'btn btn-info'
+          Det går inte att betala än.
 .row-fluid.well
   %h2 Dina uppgifter
   .gravatar
