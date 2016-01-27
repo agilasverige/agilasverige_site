@@ -2,26 +2,27 @@
   .row-fluid
     .span6
       .latest
-        %h1 Programmet! 
+        %h1 Anmälan är öppen! 
         %p
-          %br Nu kan du läsa det fullständiga programmet som PDF eller se mer detaljerade beskrivningar av talen
-          = link_to 'Fullständiga programmet', 'static_files/agila_sverige_program_2015.pdf'		
-          %p
-          = link_to 'Beskrivningar', '/program' 
-          %p
+          %br Nu är det fritt fram att anmäla sig själv, ett tal eller en workshop till årets konferens! 
     .span6
       .date
-        %h2 Stockholm 3-4 juni 2015 
+        %h2 Stockholm 1-2 juni 2016
   .row-fluid
     .span3
       %p
         = link_to '#login', class: 'btn btn-large btn-info' do
           %i.icon-white.icon-user
           Jag vill logga in
+    .span3
+      %p
+        = link_to '#registration', class: 'btn btn-info btn-large' do
+          %i.icon-white.icon-pencil
+          Jag vill registrera mig
 #location.row-fluid.well
   .span4
     %h2 Plats
-    %p Vi återanvänder förra årets succélokal med bland annat gott om plats för Open Space och takterrass för mingel.
+    %p Vi återanvänder succélokalen med bland annat gott om plats för Open Space och takterrass för mingel.
     %p
       7A Odenplan, Odengatan 65 - T-bana Odenplan
   .span2
@@ -55,7 +56,7 @@
   .span4
     %h2 Kunskap
     %p
-      När vi för åttonde året i rad arrangerar Agila Sverige vet vi att de som återkommer
+      När vi för nionde året i rad arrangerar Agila Sverige vet vi att de som återkommer
       gör det för kunskapsutbytet. Ingen annanstans har du möjligheten att dela med dig och
       ta del av så många branschkollegers erfarenheter från arbetet med agil systemutveckling.
     %p
@@ -71,6 +72,24 @@
         = f.input :password, :label => 'Lösenord'
       = f.actions do
         = f.action :submit, label: 'Logga in', button_html: {class: 'btn btn-primary'}
-
+#registration.row-fluid.well
+  .span12
+    %h2 Jag vill gå på konferensen
+    = render :partial => 'shared/attendant_info'
+    = semantic_form_for @user do |f|
+      = f.inputs :name => 'Personuppgifter' do
+        .span6
+          = f.input :first_name, :label => 'Förnamn'
+          = f.input :last_name, :label => 'Efternamn'
+          = f.input :email, :as => :email, :label => 'Emailadress'
+          = f.input :password, :label => 'Lösenord'
+          = f.input :password_confirmation, :label => 'Lösenordsbekräftelse'
+          = f.input :organization, :label => 'Organisation'
+        .span6
+          = f.input :attending_dinner, :as => :boolean, :label => 'Kommer på middagen'
+          = f.input :food_preferences, :label => 'Matpreferenser'
+          = f.input :comments, :label => 'Kommentar'
+      = f.actions do
+        = f.action :submit, label: 'Skicka anmälan', button_html: {class: 'btn btn-primary'}
 .span12 
   .h2 Sponsorer
