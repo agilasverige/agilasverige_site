@@ -17,11 +17,11 @@ class PaysonController < ApplicationController
                                    first_name = current_user.first_name,
                                    last_name = current_user.last_name)
 
-    order_items = [ PaysonAPI::OrderItem.new(description = 'Agila Sverige 2015',
+    order_items = [ PaysonAPI::OrderItem.new(description = 'Agila Sverige 2016',
                                              unit_price = 3000,
                                              quantity = 1,
                                              tax = 0.25,
-                                             sku = 'AS-2015') ]
+                                             sku = 'AS-2016') ]
 
     payment = PaysonAPI::Request::Payment.new(return_url,
                                               cancel_url,
