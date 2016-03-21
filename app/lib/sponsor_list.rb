@@ -24,7 +24,7 @@ class SponsorList
       Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
 #      Sponsor.new("Adaptiv", "adaptiv_logo.png", "http://www.adaptiv.se"),
       Sponsor.new("Citerus", "citerus_logo.png", "http://www.citerus.se"),
-#      Sponsor.new("Informator", "informator_logo.png", "http://informator.se/utbildningar/agila-metoder"),
+      Sponsor.new("Informator", "informator_logo.png", "http://informator.se/utbildningar/agila-metoder"),
       Sponsor.new("Crisp", "crisp_logo_liggande.png", "http://www.crisp.se"),
       Sponsor.new("King", "king_logo.png", "http://www.king.com"),
 #      Sponsor.new("Claremont", "claremont_logo.jpg", "http://www.claremont.se"),
