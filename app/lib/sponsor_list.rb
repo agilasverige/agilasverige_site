@@ -48,6 +48,7 @@ class SponsorList
 #      Sponsor.new("Avidity", "avidity_logo.png", "http://www.avidity.se"),
       Sponsor.new("Kambi", "kambi_logo.jpg", "http://www.kambi.com"),
       Sponsor.new("Frontit", "frontit_logo.png", "http://www.frontit.se"),
+      Sponsor.new("EPAM", "epam_logo.png", "http://www.epam.com"),
       Sponsor.new("Betsson", "betsson_logo.png", "http://www.betsson.se")
     ]
   end
