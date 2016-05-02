@@ -57,8 +57,10 @@
           deltagande i konferensen, lunch bägge dagarna samt konferensmiddagen den
           första kvällen.
         %p
-          Klicka på länken nedan för att komma till vår betalningstjänst.
-          (Glöm inte bort att återvända till vår sajt från Payson för att slutföra betalningen)
+          Klicka på länken nedan för att komma till vår betalningstjänst. 
+        %p.alert.alert-info 
+          Vi har problem med vår Payson-integration och i vissa fall uppdateras inte betalstatus på rätt sätt här på sajten. Har du fått ett kvitto från Payson är allt som det ska, och din betalstatus kommer att uppdateras inom ett par dagar. 
+          
         = link_to "Betala", payment_start_path, class: 'btn btn-info'
 .row-fluid.well
   %h2 Dina uppgifter
