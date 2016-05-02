@@ -18,7 +18,7 @@ class SponsorList
     [
       Sponsor.new("Agical", "agical_logo.png", "http://www.agical.se"),
       Sponsor.new("Dynabyte", "dynabyte_logo.png", "http://www.dynabyte.se"),
-#      Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
+      Sponsor.new("Valtech", "valtech_logo.png", "http://www.valtech.se"),
 #      Sponsor.new("IT-HUSET", 'it-huset_logo.png', "http://www.it-huset.se"),
       Sponsor.new("Assa Abloy", 'assa-abloy_logo.png', "http://www.assaabloy.com/en/com/About-us/Innovation"),
       Sponsor.new("Solidtango", "solidtango_logo.png", "http://www.solidtango.com"),
