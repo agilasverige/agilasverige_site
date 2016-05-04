@@ -11,7 +11,7 @@ options = {
             :enable_starttls_auto => true  
 }
 
-conn = PGconn.open(:dbname => 'agilasverige_development')
+conn = PGconn.open(:dbname => 'agilasverige_production')
 res = conn.exec('select title as title, email as email, first_name as first_name from speaking_proposals sp left join registrations r on sp.registration_id = r.id left join users u on r.user_id = u.id where (booked_day2 = true or booked_day1 = true) and sp.created_at between \'2016-01-01\' and \'2016-05-08\' offset 46')
 
 information = '<p> Senast den 29/5 kommer vi att behöva din presentation för att kunna förbereda våra presentationsdatorer (mer information om hur vi tar emot presentationerna kommer).
