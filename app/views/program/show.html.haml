@@ -46,34 +46,3 @@
 
 %h2 
   Program
-%p 
-  = link_to 'Programmet som PDF!', 'static_files/agila_sverige_program_2015.pdf'
-%p
-  Listan är 
-  %strong oordnad 
-  med största möjliga slumpmässighet.
-
-%h3 Onsdag 3 juni 
-%ul
-  - @day1.each do |s|
-    %li.treenode
-      = link_to s.title, ''
-      %ul 
-        %li 
-          = s.abstract
-    - s.speakers.each do |x|
-      %i 
-        = x.first_name + ' ' + x.last_name + ', ' + x.organization
-
-%h3 Torsdag 4 juni
-%ul
-  - @day2.each do |s|
-    %li.treenode
-      = link_to s.title, ''
-      %ul
-        %li
-          = s.abstract
-    - s.speakers.each do |x|
-      %i 
-        = x.first_name + ' ' + x.last_name + ', ' + x.organization
-
