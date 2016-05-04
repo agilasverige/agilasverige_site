@@ -45,4 +45,34 @@
 
 
 %h2 
-  Program
+  Preliminärt program
+%p
+  Listan är 
+  %strong oordnad
+ 
+
+
+%h3 Onsdag 1 juni 
+%ul
+  - @day1.each do |s|
+    %li.treenode
+      = link_to s.title, ''
+      %ul 
+        %li 
+          = s.abstract
+    - s.speakers.each do |x|
+      %i 
+        = x.first_name + ' ' + x.last_name + ', ' + x.organization
+
+%h3 Torsdag 2 juni
+%ul
+  - @day2.each do |s|
+    %li.treenode
+      = link_to s.title, ''
+      %ul
+        %li
+          = s.abstract
+    - s.speakers.each do |x|
+      %i 
+        = x.first_name + ' ' + x.last_name + ', ' + x.organization
+
