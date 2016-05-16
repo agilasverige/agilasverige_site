@@ -49,7 +49,7 @@ class SponsorList
       Sponsor.new("Kambi", "kambi_logo.jpg", "http://www.kambi.com"),
       Sponsor.new("Frontit", "frontit_logo.png", "http://www.frontit.se"),
       Sponsor.new("EPAM", "epam_logo.png", "http://www.epam.com"),
-      Sponsor.new("Betsson", "betsson_logo.png", "http://www.betsson.se")
+      Sponsor.new("Betsson", "betsson_logo.png", "http://www.betssongroup.com")
     ]
   end
 
