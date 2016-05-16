@@ -35,7 +35,7 @@
         eller
         = link_to "Försök igen", payment_start_path, class: 'btn btn-success'
     - else
-      - closed = false
+      - closed = true
       - if closed
         %p
           Anmälan till årets konferens har tyvärr stängt.
