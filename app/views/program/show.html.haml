@@ -45,14 +45,14 @@
 
 
 %h2 
-  Preliminärt program
-%p
-  Listan är 
-  %strong oordnad
- 
+  Program
+
+%p 
+  =link_to 'Fullständiga programmet 2016 [PDF]', '/static_files/agila_sverige_program_2016.pdf'
 
 
-%h3 Onsdag 1 juni 
+
+%h3 Talen på onsdag 1 juni 
 %ul
   - @day1.each do |s|
     %li.treenode
@@ -64,7 +64,7 @@
       %i 
         = x.first_name + ' ' + x.last_name + ', ' + x.organization
 
-%h3 Torsdag 2 juni
+%h3 Talen på torsdag 2 juni
 %ul
   - @day2.each do |s|
     %li.treenode
