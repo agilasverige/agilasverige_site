@@ -28,7 +28,7 @@ class SponsorList
       Sponsor.new("Crisp", "crisp_logo_liggande.png", "http://www.crisp.se"),
       Sponsor.new("King", "king_logo.png", "http://www.king.com"),
 #      Sponsor.new("Claremont", "claremont_logo.jpg", "http://www.claremont.se"),
-      Sponsor.new("TriOptima", "trioptima_logo.jpg", "http://www.trioptima.com"),
+#      Sponsor.new("TriOptima", "trioptima_logo.jpg", "http://www.trioptima.com"),
 #      Sponsor.new("Mynewsdesk", "mynewsdesk_logo.png", "http://www.mynewsdesk.com")
       # Sponsor.new("Agero", "agero_logo.png", "http://www.agero.se"),
       #Sponsor.new("Avega", "avega_logo.png", "http://www.avegagroup.se"),
