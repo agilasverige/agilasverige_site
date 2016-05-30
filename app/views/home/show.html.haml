@@ -1,17 +1,24 @@
 .hero-unit
   .row-fluid
-    .span6
+    .span8
       .latest
       %p 
-      %h1 Nästa vecka! 
+      %h1 På onsdag smäller det!
+      %br 
+      %p  
+      Följ oss live under konferensen på  
+      = link_to 'Solidtango', 'http://agilasverige.solidtango.com' 
+
+ 
       %p
-      Kolla in 
+      Spana in 
       = link_to 'programmet', '/program'
-    .span6
+    .span4
       .date
         %h2 Stockholm 1-2 juni 2016
   .row-fluid
-    .span3
+    .span3i
+      %br
       %p
         = link_to '#login', class: 'btn btn-large btn-info' do
           %i.icon-white.icon-user
