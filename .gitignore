@@ -24,3 +24,6 @@ TAGS
 .rvmrc
 *.iml
 out
+Gemfile.lock
+*.css.css
+logfile
