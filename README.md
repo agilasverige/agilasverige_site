@@ -5,7 +5,7 @@
 ...eller hur vi gjorde 2016-12-14 för att få den att snurra på en mac:
 
 ### 1. Installera rvm
-```
+```bash
 $ curl -sSL https://get.rvm.io | bash -s stable --ruby
 $ source <your/home/dir>/.rvm/scripts/rvm
 ```
@@ -22,7 +22,6 @@ $ gem install bundler
 ### 4. Installera alla dependencies
 ```
 $ cd <path/to/agilasverige_site>
-
 $ bundle install
 ```
 
