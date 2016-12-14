@@ -1,6 +1,6 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "sv", :lang => "sv"}
-  %title Agila Sverige 2016
+  %title Agila Sverige 2017
   %head
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "content-type"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name=>"viewport"}
@@ -27,12 +27,10 @@
             %li
               =link_to 'Hem', root_path
             %li
-              =link_to 'Program ', program_path
-            %li
               =link_to 'Tidigare konferenser', old_path
-            %li 
+            %li
               = link_to 'Plats', '#location'
-            %li 
+            %li
               = link_to 'Om konferensen', '#about'
             - if user_signed_in?
               - if current_user.admin?
@@ -61,7 +59,7 @@
                 = link_to(image_tag(sponsor.logo_file, :alt => sponsor.name), sponsor.url)
       .footer
         .contact
-          %span &copy; Agila Sverige 2016 |
+          %span &copy; Agila Sverige 2017 |
           %a{:href => 'mailto:info@agilasverige.se'}Kontakta oss
         :javascript
           var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
