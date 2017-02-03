@@ -39,7 +39,7 @@ class SponsorList
       # Sponsor.new("CAG", "cag_logo.png", "http://www.cag.se"),
       Sponsor.new("Omegapoint", "omegapoint_logo.png", "http://www.omegapoint.se"),
       # Sponsor.new("Abiliteam", "abiliteam_logo.png", "http://www.abiliteam.se")
-      # Sponsor.new("AddQ", "addq_logo.png", "http://www.addq.se"),
+      Sponsor.new("AddQ", "addq_logo.png", "http://www.addq.se"),
       # Sponsor.new("Know IT", "knowit_logo.png", "http://www.knowit.se"),
       # Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se")
       # Sponsor.new("Scania", "scania_logo.gif", "http://www.scania.se"),
@@ -49,7 +49,7 @@ class SponsorList
 #      Sponsor.new("Frontit", "frontit_logo.png", "http://www.frontit.se"),
 #      Sponsor.new("EPAM", "epam_logo.png", "http://www.epam.com"),
 #      Sponsor.new("Betsson", "betsson_logo.png", "http://www.betssongroup.com")
-      Sponsor.new("Snow Software", "snow-software_logo.png", "http://www.snowsoftware.com"),
+      Sponsor.new("Snow Software", "snow-software_logo.jpg", "http://www.snowsoftware.com"),
       Sponsor.new("Nepa", "nepa_logo.png", "http://www.nepa.com"),
       Sponsor.new("Agile People", "agile-people_logo.png", "http://agilepeoplesweden.com")
     ]
