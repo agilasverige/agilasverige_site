@@ -51,7 +51,8 @@ class SponsorList
 #      Sponsor.new("Betsson", "betsson_logo.png", "http://www.betssongroup.com")
       Sponsor.new("Snow Software", "snow-software_logo.jpg", "http://www.snowsoftware.com"),
       Sponsor.new("Nepa", "nepa_logo.png", "http://www.nepa.com"),
-      Sponsor.new("Agile People", "agile-people_logo.png", "http://agilepeoplesweden.com")
+      Sponsor.new("Agile People", "agile-people_logo.png", "http://agilepeoplesweden.com"),
+      Sponsor.new("Linkon", "linkon-logo.jpg", "http://www.linkon.se")
     ]
   end
 
