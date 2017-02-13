@@ -42,7 +42,7 @@ class SponsorList
       Sponsor.new("AddQ", "addq_logo.png", "http://www.addq.se"),
       # Sponsor.new("Know IT", "knowit_logo.png", "http://www.knowit.se"),
       # Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se")
-      # Sponsor.new("Scania", "scania_logo.gif", "http://www.scania.se"),
+      Sponsor.new("Scania", "scania_logo.png", "http://www.scania.se"),
 #      Sponsor.new("Inceptive", "inceptive_logo.jpg", "http://www.inceptivestockholm.se"),
 #      Sponsor.new("Avidity", "avidity_logo.png", "http://www.avidity.se"),
 #      Sponsor.new("Kambi", "kambi_logo.jpg", "http://www.kambi.com"),
