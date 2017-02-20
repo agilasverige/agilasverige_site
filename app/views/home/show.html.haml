@@ -5,23 +5,19 @@
       %p
       %h1     Välkomna till vårt 10&#8209årsjubileum 2017!
       %br
-      %p      Vi roddar för fullt med att förbereda konferensen 2017. Anmälan öppnar under våren.
       %p
-      Filmerna från tidigare konferenser hittar du hos
-      = link_to 'Solidtango', 'http://agilasverige.solidtango.com'
-      %br
+      Snart släpper vi biljetterna till konferensen, men redan nu kan du anmäla blixttal och workshops
+      = link_to 'här', 'https://docs.google.com/forms/d/e/1FAIpQLSdyswsnDscoRfND94WltsUCh9ZZ6cVfIbimZaudM2tvKAKZ6Q/viewform'
+      \.
+      %p
+      Vi reserverar plats på konferensen till alla som anmält ett bidrag. Du som får ditt bidrag accepterat får en fribiljett till konferensen. Blir ditt bidrag inte antaget garanterar vi att det finns en betalplats kvar till dig.
+      %p
+      Filmer och program från tidigare konferenser hittar du
+      = link_to 'här', '/old'
       %p
     .span4
       .date
         %h2 Stockholm 1-2 juni 2017
-  .row-fluid
-    .span3i
-      %br
-      %p
-        = link_to '#login', class: 'btn btn-large btn-info' do
-          %i.icon-white.icon-user
-          Jag vill logga in
-    .span3
       %p
 
 #location.row-fluid.well
@@ -36,14 +32,3 @@
     <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Odengatan+65,+Stockholm,+Sweden&amp;aq=0&amp;oq=odengatan+65,+s&amp;sll=37.0625,-95.677068&amp;sspn=43.307813,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Odengatan+65,+113+22+Stockholm,+Sweden&amp;t=m&amp;z=14&amp;ll=59.343034,18.052216&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Odengatan+65,+Stockholm,+Sweden&amp;aq=0&amp;oq=odengatan+65,+s&amp;sll=37.0625,-95.677068&amp;sspn=43.307813,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Odengatan+65,+113+22+Stockholm,+Sweden&amp;t=m&amp;z=14&amp;ll=59.343034,18.052216" style="color:#0000FF;text-align:left">View Larger Map</a></small>
 #about.row-fluid.well
   =render :partial => 'shared/about_conference'
-#login.row-fluid.well
-  .span12
-    %h2 Logga in
-    = semantic_form_for(@user, :url => session_path(@user)) do |f|
-      = f.inputs do
-        = f.input :email, :label => 'E-postadress'
-        = f.input :password, :label => 'Lösenord'
-      = f.actions do
-        = f.action :submit, label: 'Logga in', button_html: {class: 'btn btn-primary'}
-.span12
-  .h2 Sponsorer
