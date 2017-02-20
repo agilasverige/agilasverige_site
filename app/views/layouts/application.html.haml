@@ -52,6 +52,8 @@
               %p.alert= flash[:warning]
 
         = yield
+        .row-fluid
+          %h3 Sponsorer:
         - @sponsors.randomized_rows.each do |sponsorrow|
           .row-fluid.sponsors
             - sponsorrow.each do |sponsor|
