@@ -43,7 +43,7 @@ class SponsorList
       # Sponsor.new("Know IT", "knowit_logo.png", "http://www.knowit.se"),
       # Sponsor.new("Spotify", "spotify_logo.png", "http://www.spotify.se")
       Sponsor.new("Scania", "scania_logo.png", "https://www.scania.com/group/en/it/"),
-#      Sponsor.new("Inceptive", "inceptive_logo.jpg", "http://www.inceptivestockholm.se"),
+      Sponsor.new("Inceptive", "inceptive_logo.png", "http://www.inceptivestockholm.se"),
 #      Sponsor.new("Avidity", "avidity_logo.png", "http://www.avidity.se"),
 #      Sponsor.new("Kambi", "kambi_logo.jpg", "http://www.kambi.com"),
 #      Sponsor.new("Frontit", "frontit_logo.png", "http://www.frontit.se"),
