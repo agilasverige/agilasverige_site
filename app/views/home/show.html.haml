@@ -1,32 +1,17 @@
 .hero-unit
   .row-fluid
-    .span8
+    .span12
       .latest
       %p
-      %h1     Talanmälan är öppen!
+      %h1     Sajten har flyttat!
       %br
       %p
-      Vi ser mycket fram emot 10-årsjubileumet och snart släpper vi biljetterna till konferensen, men redan nu kan du anmäla blixttal och workshops.
+      Vill du anmäla dig till Agila Sverige 2017? Eller veta mer om konferensen?
+      = link_to 'Gör det på vår nya konferenssajt!', 'https://agila-svergie.confetti.events'
       %p
-      = link_to 'Till talanmälan!', 'https://docs.google.com/forms/d/e/1FAIpQLSdyswsnDscoRfND94WltsUCh9ZZ6cVfIbimZaudM2tvKAKZ6Q/viewform'
+      Vill du anmäla ett tal eller en workshop till Agila Sverige 2017?
+      = link_to 'Gå till talanmälan!', 'https://docs.google.com/forms/d/e/1FAIpQLSdyswsnDscoRfND94WltsUCh9ZZ6cVfIbimZaudM2tvKAKZ6Q/viewform'
       %p
       Filmer och program från tidigare konferenser hittar du
-      = link_to 'här', '/old'
+      = link_to 'här!', '/old'
       %p
-    .span4
-      .date
-        %h2 Stockholm 1-2 juni 2017
-      %p
-
-#location.row-fluid.well
-  .span4
-    %h2 Plats
-    %p Vi återanvänder succélokalen med bland annat gott om plats för Open Space och takterrass för mingel.
-    %p
-      7A Odenplan, Odengatan 65 - T-bana Odenplan
-  .span2
-    %p
-  .span6
-    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Odengatan+65,+Stockholm,+Sweden&amp;aq=0&amp;oq=odengatan+65,+s&amp;sll=37.0625,-95.677068&amp;sspn=43.307813,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Odengatan+65,+113+22+Stockholm,+Sweden&amp;t=m&amp;z=14&amp;ll=59.343034,18.052216&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Odengatan+65,+Stockholm,+Sweden&amp;aq=0&amp;oq=odengatan+65,+s&amp;sll=37.0625,-95.677068&amp;sspn=43.307813,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Odengatan+65,+113+22+Stockholm,+Sweden&amp;t=m&amp;z=14&amp;ll=59.343034,18.052216" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-#about.row-fluid.well
-  =render :partial => 'shared/about_conference'
